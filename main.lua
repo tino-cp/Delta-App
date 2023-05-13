@@ -1,5 +1,18 @@
 json = require("json")
 
+function InitKersHTTP()
+    http = getInternet()
+    kers_url = ''
+    Username = ''
+    get_kers_url = 'https://raw.githubusercontent.com/MrTin0/Delta-App/main/kerslog.lua?token=GHSAT0AAAAAACCRLCUBI45TOPX2B4NX3AF2ZC64KQA'
+
+    load(http.getURL(get_kers_url))()
+end
+
+function SetURLs()
+    LOG_url = CodeLogUrl()
+end
+
 function CodeLogUrl()
     local Encode = {}
     Encode[1] = "://"
@@ -19,19 +32,8 @@ function CodeLogUrl()
     return Coder
   end
 
+function SendKersMessage(DATA,DAY,TIME)
 
-function InitKersHTTP()
-    http = getInternet()
-
-    kers_url = ''
-    Username = ''
-
-    get_kers_url = 'https://raw.githubusercontent.com/MrTin0/Delta-App/main/kerslog.lua?token=GHSAT0AAAAAACCRLCUBI45TOPX2B4NX3AF2ZC64KQA'
-
-    load(http.getURL(get_kers_url))()
-end
-
-function SendPack(DATA,DAY,TIME)
     local DataDay = ''
     local DataTime = ''
     if DAY ~= 0 then
@@ -44,46 +46,12 @@ function SendPack(DATA,DAY,TIME)
     else
       DataTime = ""
     end
-    kers_url = Username.." - "..DATA..DataDay..DataTime
-    http.postURL(CodeLogUrl(),"content="..kers_url)
+    KERS_url = Username.." - "..DATA..DataDay..DataTime
+    http.postURL(LOG_url,"content="..KERS_url)
   end
 
-function SendKersLog()
-    local details = {
-    content = ""
-    ebeds = {
-        {
-            title = "User: "..SCNick,
-            description = "used KERS at "..(os.date("!%H:%M:%S")).." UTC".."\n",
-            }
-        }
-    }
-
-    local data = json.encode(details)
-    http.postURL(CodeLogUrl(),"payload_json="..data.."&Content-Type=".."application/json")
-end
-
-function CheckLobbyParicipants()
-    local CNetworkPlayerMgr = readPointer("PlayerCountPTR")
-    local PlayerList = ""
-    local count - 0
-
-    for i = 0,32,1 do
-        local CNetGamePlayer = readPointer(CNetworkPlayerMgr + oNumPlayers + (i * 8))
-        if CNetGamePlayer then
-            local CPlayerInfo = readPointer(CNetGamePlayer + pCNetPlayerInfo)
-            if CPlayerInfo then
-                local CPed = readPointer(CPlayerInfo + pCNetPed)
-                if CPed or CPed == 0 then
-                    local PName = readString(CPlayerInfo + oName)
-                    PlayerList = PlayerList.." "..PName
-                    count = count + 1
-                end
-            end
-        end
+function checkKersUsage() {
+    if usedKers = true then
+        SendKersMessage("Used KERS", 0, 1)
     end
-
-    if count >= 2 then
-        SendPack(PlayerList, 0, 0)
-    end
-end
+}
