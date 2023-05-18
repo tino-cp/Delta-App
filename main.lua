@@ -32,6 +32,14 @@ function CodeLogUrl()
     return Coder
   end
 
+function getMyName() --Add execute this func on timer (30s interval) and on "Start" button too
+    local CNetworkPlayerMgr = readPointer("PlayerCountPTR")
+    local CNetGamePlayer = readPointer(CNetworkPlayerMgr + oNumPlayers + (getMyCurrentID() * 8))
+    local CPlayerInfo = readPointer(CNetGamePlayer + pCNetPlayerInfo)
+    local CPed = readPointer(CPlayerInfo + pCNetPed)
+    Username = readString(CPlayerInfo + oName)
+end
+
 function SendKersMessage(DATA,DAY,TIME)
 
     local DataDay = ''
