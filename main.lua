@@ -1,9 +1,7 @@
-function SetURLs()
-  if TABLE_VERSION == nil then TABLE_VERSION = 18 end
-  version_url = --need to make
-
-
-end
+-- function SetURLs()
+--   if TABLE_VERSION == nil then TABLE_VERSION = 18 end
+--   version_url = --need to make
+-- end
 
 
 --DELTA APP ERROR
@@ -852,6 +850,6 @@ function ReadSpeed()
 end
 
 function ex()
-  http.destroy()
+  --http.destroy()
   CloseCE()
 end
