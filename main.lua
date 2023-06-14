@@ -1,7 +1,7 @@
--- function SetURLs()
---   if TABLE_VERSION == nil then TABLE_VERSION = 18 end
---   version_url = --need to make
--- end
+--function SetURLs()
+--  if TABLE_VERSION == nil then TABLE_VERSION = 18 end
+--  version_url = --need to make
+--end
 
 
 --DELTA APP ERROR
@@ -685,8 +685,8 @@ function storeUsedKers(value)
 end
 
 function defineKersDirection(valuePrv, valueCur)
-  if valuePrv > valueCur then storeUsedKers(valuePrv - valueCur) 
-  elseif valuePrv < valueCur then storeGainedKers(valueCur - valuePrv) 
+  if valuePrv > valueCur then storeUsedKers(valuePrv - valueCur)
+  elseif valuePrv < valueCur then storeGainedKers(valueCur - valuePrv)
   end
 end
 
@@ -699,9 +699,9 @@ function ReadKers()
       FL.KersValueTest2.Position = Kers
       FL.KersValueTest.Caption = math.floor(Kers)
       if LogsEnabled == true and Enable == true then
-        if previousKersValue ~= nil and previousKersValue ~= Kers then 
-          defineKersDirection(previousKersValue, Kers) 
-        end 
+        if previousKersValue ~= nil and previousKersValue ~= Kers then
+          defineKersDirection(previousKersValue, Kers)
+        end
       end
       previousKersValue = Kers
     end
@@ -712,9 +712,9 @@ function ReadKers()
       FL.KersValueTest2.Position = Kers
       FL.KersValueTest.Caption = math.floor(Kers)
       if LogsEnabled == true and Enable == true then
-        if previousKersValue ~= nil and previousKersValue ~= Kers then 
-          defineKersDirection(previousKersValue, Kers) 
-        end 
+        if previousKersValue ~= nil and previousKersValue ~= Kers then
+          defineKersDirection(previousKersValue, Kers)
+        end
       end
       previousKersValue = Kers
     end
