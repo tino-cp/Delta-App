@@ -1,9 +1,3 @@
---function SetURLs()
---  if TABLE_VERSION == nil then TABLE_VERSION = 18 end
---  version_url = --need to make
---end
-
-
 --DELTA APP ERROR
 openProcess'GTA5.exe'
 autoAssemble([[
@@ -850,6 +844,5 @@ function ReadSpeed()
 end
 
 function ex()
-  --http.destroy()
   CloseCE()
 end
