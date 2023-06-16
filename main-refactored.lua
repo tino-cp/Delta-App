@@ -14,11 +14,11 @@ Gears = 1
 Inputs = 1
 
 function InitOffsets()
-  pCNetPlayerInfo = 0xA8 -- A0 98 A8
-  pCNetPed = 0x1F0 -- 1E8 1E0 1F0
-  oNumPlayers = 0x188 -- 180 178 188
-  oRid = 0x098 -- 090 088 098
-  pCPed = 0x10 -- 8 0 10
+  pCNetPlayerInfo = 0xA0 -- A0 98 A8
+  pCNetPed = 0x1E8 -- 1E8 1E0 1F0
+  oNumPlayers = 0x180 -- 180 178 188
+  oRid = 0x090 -- 090 088 098
+  pCPed = 0x8 -- 8 0 10
   pCPlayerInfo = 0x10A8 -- 10A8 10A0 10B0
   oCurCheck = 0x11578   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
   oCurLap = 0x11570   --11828  118280 11108 x10F40 --119C0 tomo | 11560
@@ -124,6 +124,11 @@ function ActivateApp()
   timer_onTimer(Kers, ReadKers)
   timer_setInterval(Kers, 50)
   timer_setEnabled(Kers, true)
+
+  Pit = createTimer(nil, false)
+  timer_onTimer(Pit, checkPitDeltaValue)
+  timer_setInterval(Pit, 100)
+  timer_setEnabled(Pit, true)
 end
 
 
@@ -273,7 +278,7 @@ function UpdateInfo()
       --Take values
       CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
-      CurCheckpoint = readInteger(ChecksPTR + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
+      CurCheckpoint = readInteger(ChecksPTR + oCurCheck) --+ (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       FL.LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
@@ -851,35 +856,38 @@ function ReadSpeed()
   end
 end
 
-local isTimerRunning = false
+--local isTimerRunning = false
+local startTime = 0
 
 function startPitDelta()
-  if isTimerRunning == false then
+  --if isTimerRunning == false then
     startTime = os.clock() -- I looked this up and they say its not good for timer implementation u have better alternative?
-    isTimerRunning = true
-    --FL.PitDeltaValue.Caption = startTime
-  end
+    --isTimerRunning = true
+    FL.PitDeltaValue.Caption = 0
+  --end
 end
 
 function stopPitDelta()
-  if isTimerRunning then
-    local elapsedTime = os.clock() - startTime
-    isTimerRunning = false
-    --FL.PitDeltaValue.Caption = elapsedTime
-  end
+  startTime = 0
 end
 
 function checkPitDeltaValue()
   local inPit = readInteger("GTA5.exe+2A320D0")
   
-  if inPit == 1 and isTimerRunning == false then
-    FL.CurrentLapValue.Visible = false
-    --FL.PitDeltaValue.Visible = true
-    startPitDelta()
-  elseif inPit == 0 and isTimerRunning then
-    stopPitDelta()
-    --FL.PitDeltaValue.Visible = false
-    FL.CurrentLapValue.Visible = true
+  if Enable == true then
+    if inPit == 1 then --and isTimerRunning == false then
+      FL.CurrentLapValue.Visible = false
+      startPitDelta()
+      FL.CurrentLapLabel.Caption = 'Pit Delta:'
+      FL.PitDeltaValue.Visible = true
+      FL.PitDeltaValue.Caption = string.format("%.1f", startTime)
+
+    elseif inPit == 0 then --and isTimerRunning then
+      stopPitDelta()
+      FL.PitDeltaValue.Visible = false
+      FL.CurrentLapLabel.Caption = 'Current Lap:'
+      FL.CurrentLapValue.Visible = true
+    end
   end
 end
 
