@@ -851,6 +851,38 @@ function ReadSpeed()
   end
 end
 
+local isTimerRunning = false
+
+function startPitDelta()
+  if isTimerRunning == false then
+    startTime = os.clock() -- I looked this up and they say its not good for timer implementation u have better alternative?
+    isTimerRunning = true
+    --FL.PitDeltaValue.Caption = startTime
+  end
+end
+
+function stopPitDelta()
+  if isTimerRunning then
+    local elapsedTime = os.clock() - startTime
+    isTimerRunning = false
+    --FL.PitDeltaValue.Caption = elapsedTime
+  end
+end
+
+function checkPitDeltaValue()
+  local inPit = readInteger("GTA5.exe+2A320D0")
+  
+  if inPit == 1 and isTimerRunning == false then
+    FL.CurrentLapValue.Visible = false
+    --FL.PitDeltaValue.Visible = true
+    startPitDelta()
+  elseif inPit == 0 and isTimerRunning then
+    stopPitDelta()
+    --FL.PitDeltaValue.Visible = false
+    FL.CurrentLapValue.Visible = true
+  end
+end
+
 function ex()
   CloseCE()
 end
