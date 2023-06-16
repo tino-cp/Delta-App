@@ -14,10 +14,10 @@ Gears = 1
 Inputs = 1
 
 function InitOffsets()
-  pCNetPlayerInfo = 0x98 -- A0 98 A8
+  pCNetPlayerInfo = 0xA0 -- A0 98 A8
   pCNetPed = 0x1E8 -- 1E8 1E0 1F0
   oNumPlayers = 0x180 -- 180 178 188
-  oRid = 0x090 -- 090 088 098
+  oRid = 0x088 -- 090 088 098
   pCPed = 0x8 -- 8 0 10
   pCPlayerInfo = 0x10A8 -- 10A8 10A0 10B0
   oCurCheck = 0x11578   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
