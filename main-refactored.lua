@@ -15,9 +15,9 @@ Inputs = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0 -- A0 98 A8
-  pCNetPed = 0x1E8 -- 1E8 1E0 1F0
+  pCNetPed = 0x248 -- 1E8 1E0 1F0
   oNumPlayers = 0x180 -- 180 178 188
-  oRid = 0x090 -- 090 088 098
+  oRid = 0x28 -- 090 088 098
   pCPed = 0x8 -- 8 0 10
   pCPlayerInfo = 0x10A8 -- 10A8 10A0 10B0
   oCurCheck = 0x11578   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
@@ -127,13 +127,12 @@ function ActivateApp()
 
   Pit = createTimer(nil, false)
   timer_onTimer(Pit, checkPitDeltaValue)
-  timer_setInterval(Pit, 100)
+  timer_setInterval(Pit, 50)
   timer_setEnabled(Pit, true)
 end
 
 
 function InitTrackInfo()
-  -- sectors can go ?
   --Build Sectors
   S1_raw=0
   S2_raw=0
@@ -205,7 +204,6 @@ function NewLapProcedure()
       --Record laptime
       LogsLaptime = CurLapLastCheckpointTime
       --Record Sectors
-      -- can go away?
       LogsSector1 = S1_raw
       LogsSector2 = S2_raw
       LogsSector3 = CurLapLastCheckpointTime-S1_raw-S2_raw
@@ -234,7 +232,6 @@ function NewLapProcedure()
   end
 end
 
--- function prob way too big ?
 function UpdateInfo()
 
   if Enable == true then
@@ -395,7 +392,6 @@ function UpdateInfo()
       end
 
       --Detect Sector's marks
-      -- This is useless can go?
       local TimeSectors=CurLapMils
       if CurCheckpoint == S1 and NewSector==true then
         S1_raw = TimeSectors
@@ -499,7 +495,6 @@ function LogsSwitcher()
   if LogsEnabled == false then
     LogsEnabled=true
     FL.LogBuildingButton.Caption = 'LOGS ON'
-    -- last element?
     LastElement = 100
   else
     LogsEnabled=false
@@ -523,7 +518,6 @@ function PackLogs()
   end
 end
 
--- what does this even do?
 function ShowTime()
        local TimeStamp=FastLapSectors[0]
         local FMins = TimeStamp//60000
@@ -763,7 +757,6 @@ function ReadSpeed()
        Speed = readFloat("GTA5.exe+2698D6C")
        if Speed ~= nil then
          if Metrics == 1 then
-          -- does the * 10 //1 /10 do anything?
             Speed = Speed * 10 //1 /10
             FL.SpeedLabel.Caption = "Kph: "..Speed
          else
@@ -798,7 +791,7 @@ function ReadSpeed()
        end
     end
   end
--- nothing to do with speed seperate function?
+
   if Gears == 1 then
      RescanUNK()
      local RPM = readFloat("UNK+E50")
@@ -856,37 +849,72 @@ function ReadSpeed()
   end
 end
 
---local isTimerRunning = false
 local startTime = 0
+local pitEntry = 0
+local pitExit = 0
+local isPitEntrySet = false
+
+function getPitEntry()
+  if isPitEntrySet == false then
+    pitEntry = CurLapMils
+    isPitEntrySet = true
+  end
+end
+
+function getPitExit()
+  if isPitEntrySet == true then
+    pitExit = CurLapMils
+    pitExitTime = startTime
+    isPitEntrySet = false
+  end
+end
 
 function startPitDelta()
-  --if isTimerRunning == false then
-    startTime = os.clock() -- I looked this up and they say its not good for timer implementation u have better alternative?
-    --isTimerRunning = true
-    FL.PitDeltaValue.Caption = 0
-  --end
+  startTime = CurLapMils - pitEntry
+  CalcSec = startTime//1000
+  CalcMils = (startTime - (CalcSec*1000))
+  if CalcMils<10 then
+    FL.PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
+  elseif CalcMils<100 then
+    FL.PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
+  else
+    FL.PitDeltaValue.Caption=CalcSec..'.'..CalcMils
+  end
 end
 
 function stopPitDelta()
-  startTime = 0
+    CalcSec = pitExitTime//1000
+    CalcMils = (pitExitTime - (CalcSec*1000))
+    if CalcMils<10 then
+      FL.PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
+    elseif CalcMils<100 then
+      FL.PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
+    else
+      FL.PitDeltaValue.Caption=CalcSec..'.'..CalcMils
+    end
 end
 
 function checkPitDeltaValue()
   local inPit = readInteger("GTA5.exe+2A320D0")
   
   if Enable == true then
-    if inPit == 1 then --and isTimerRunning == false then
+    if inPit == 1 then
       FL.CurrentLapValue.Visible = false
-      startPitDelta()
       FL.CurrentLapLabel.Caption = 'Pit Delta:'
       FL.PitDeltaValue.Visible = true
-      FL.PitDeltaValue.Caption = string.format("%.1f", startTime)
-
-    elseif inPit == 0 then --and isTimerRunning then
-      stopPitDelta()
-      FL.PitDeltaValue.Visible = false
-      FL.CurrentLapLabel.Caption = 'Current Lap:'
-      FL.CurrentLapValue.Visible = true
+      getPitEntry()
+      startPitDelta()
+    elseif inPit == 0 then
+      getPitExit()
+      local freezeTime = 2000
+      if (CurLapMils - pitExit) < freezeTime then
+        stopPitDelta()
+      else
+        startTime = 0
+        FL.PitDeltaValue.Visible = false
+        FL.CurrentLapLabel.Caption = 'Current Lap:'
+        FL.CurrentLapValue.Visible = true
+      end
     end
   end
 end
