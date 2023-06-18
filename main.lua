@@ -15,7 +15,7 @@ Inputs = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0 -- A0 98 A8
-  pCNetPed = 0x1E8 -- 1E8 1E0 1F0
+  pCNetPed = 0x248 -- 1E8 1E0 1F0
   oNumPlayers = 0x180 -- 180 178 188
   oRid = 0x28 -- 090 088 098
   pCPed = 0x8 -- 8 0 10
@@ -124,6 +124,11 @@ function ActivateApp()
   timer_onTimer(Kers, ReadKers)
   timer_setInterval(Kers, 50)
   timer_setEnabled(Kers, true)
+
+  Pit = createTimer(nil, false)
+  timer_onTimer(Pit, checkPitDeltaValue)
+  timer_setInterval(Pit, 50)
+  timer_setEnabled(Pit, true)
 end
 
 
@@ -840,7 +845,76 @@ function ReadSpeed()
      FL.Brake.Caption = math.floor(BrakePos * 100)
      FL.Gas.Caption = math.floor(ThrottlePos * 100)
   end
+end
 
+local startTime = 0
+local pitEntry = 0
+local pitExit = 0
+local isPitEntrySet = false
+
+function getPitEntry()
+  if isPitEntrySet == false then
+    pitEntry = CurLapMils
+    isPitEntrySet = true
+  end
+end
+
+function getPitExit()
+  if isPitEntrySet == true then
+    pitExit = CurLapMils
+    pitExitTime = startTime
+    isPitEntrySet = false
+  end
+end
+
+function startPitDelta()
+  startTime = CurLapMils - pitEntry
+  CalcSec = startTime//1000
+  CalcMils = (startTime - (CalcSec*1000))
+  if CalcMils<10 then
+    FL.PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
+  elseif CalcMils<100 then
+    FL.PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
+  else
+    FL.PitDeltaValue.Caption=CalcSec..'.'..CalcMils
+  end
+end
+
+function stopPitDelta()
+    CalcSec = pitExitTime//1000
+    CalcMils = (pitExitTime - (CalcSec*1000))
+    if CalcMils<10 then
+      FL.PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
+    elseif CalcMils<100 then
+      FL.PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
+    else
+      FL.PitDeltaValue.Caption=CalcSec..'.'..CalcMils
+    end
+end
+
+function checkPitDeltaValue()
+  local inPit = readInteger("GTA5.exe+2A320D0")
+  
+  if Enable == true then
+    if inPit == 1 then
+      FL.CurrentLapValue.Visible = false
+      FL.CurrentLapLabel.Caption = 'Pit Delta:'
+      FL.PitDeltaValue.Visible = true
+      getPitEntry()
+      startPitDelta()
+    elseif inPit == 0 then
+      getPitExit()
+      local freezeTime = 2000
+      if (CurLapMils - pitExit) < freezeTime then
+        stopPitDelta()
+      else
+        startTime = 0
+        FL.PitDeltaValue.Visible = false
+        FL.CurrentLapLabel.Caption = 'Current Lap:'
+        FL.CurrentLapValue.Visible = true
+      end
+    end
+  end
 end
 
 function ex()
