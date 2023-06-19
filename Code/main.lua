@@ -16,7 +16,7 @@ Inputs = 1
 function InitOffsets()
   pCNetPlayerInfo = 0xA0 -- A0 98 A8
   pCNetPed = 0x248 -- 1E8 1E0 1F0
-  oNumPlayers = 0x180 -- 180 178 188
+  oNumPlayers = 0x170 -- 180 178 188
   oRid = 0x30 -- 090 088 098
   pCPed = 0x8 -- 8 0 10
   pCPlayerInfo = 0x10A8 -- 10A8 10A0 10B0
@@ -60,8 +60,6 @@ function GetPTRs()
   local ridaddr = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oRid"
 
   local testy = readPointer(ridaddr)
-
-  print(testy)
 
   if not testy then
   else
@@ -213,7 +211,7 @@ function NewLapProcedure()
       LogsSector2 = S2_raw
       LogsSector3 = CurLapLastCheckpointTime-S1_raw-S2_raw
       --RecordLap
-      CurrentLap = readInteger(ChecksPTR + oCurLap + (MyIDNumber*0x670))
+      CurrentLap = readInteger(ChecksPTR + oCurLap) --+ (MyIDNumber*0x670))
       LogsLap = CurrentLap - 1
       local SpeedTrap = GetSpeed()
       -- same for sectors here
@@ -280,7 +278,7 @@ function UpdateInfo()
       --Take values
       CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
-      CurCheckpoint = readInteger(ChecksPTR + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
+      CurCheckpoint = readInteger(ChecksPTR + oCurCheck) -- + (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       FL.LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
