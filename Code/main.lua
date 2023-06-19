@@ -117,9 +117,9 @@ function ActivateApp()
   kersUsedOnLap = 0
 
   Value = createTimer(nil, false)
-  timer_onTimer(Speed, ReadValue)
-  timer_setInterval(Speed, 50)
-  timer_setEnabled(Speed, true)
+  timer_onTimer(Value, ReadValue)
+  timer_setInterval(Value, 50)
+  timer_setEnabled(Value, true)
   
 end
 
