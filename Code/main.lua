@@ -128,7 +128,8 @@ function ActivateApp()
   Pit = createTimer(nil, false)
   timer_onTimer(Pit, checkPitDeltaValue)
   timer_setInterval(Pit, 50)
-  timer_setEnabled(Pit, true)
+  -- timer_setEnabled(Pit, true)
+  
 end
 
 
@@ -280,6 +281,7 @@ function UpdateInfo()
       FL.LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
       --Checks
+      checkPitDeltaValue()
       Drive()
       CloseToTheEnd()
       NewLapProcedure()
