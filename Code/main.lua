@@ -20,8 +20,8 @@ function InitOffsets()
   oRid = 0x28 -- 090 088 098
   pCPed = 0x8 -- 8 0 10
   pCPlayerInfo = 0x10A8 -- 10A8 10A0 10B0
-  oCurCheck = 0x11578   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
-  oCurLap = 0x11570   --11828  118280 11108 x10F40 --119C0 tomo | 11560
+  oCurCheck = 0x11BE8   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
+  oCurLap = 0x11BE0   --11828  118280 11108 x10F40 --119C0 tomo | 11560
 end
 
 InitOffsets()
@@ -208,9 +208,10 @@ function NewLapProcedure()
       LogsSector2 = S2_raw
       LogsSector3 = CurLapLastCheckpointTime-S1_raw-S2_raw
       --RecordLap
-      CurrentLap = readInteger(ChecksPTR + oCurLap + (MyIDNumber*0x658))
+      CurrentLap = readInteger(ChecksPTR + oCurLap + (MyIDNumber*0x670))
       LogsLap = CurrentLap - 1
       local SpeedTrap = GetSpeed()
+      -- same for sectors here
       --LogArray=LogArray.."Lap №"..LogsLap..": Lap time - "..LogsLaptime.."\n".." With sectors: S1-"..LogsSector1.." S2-"..LogsSector2.." S3-"..LogsSector3.."\n"
       LogArray = LogArray..LogsLap..", "..LogsLaptime..", "..SpeedTrap..", "..((SpeedTrap/1.6)*10//1/10)..", "..TopSpeed..", "..((TopSpeed/1.6)*10//1/10)..", "..AvgSpeed..", "..((AvgSpeed/1.6)*10//1/10)..", "..LogsSector1..", "..LogsSector2..", "..LogsSector3..", "..kersGainedOnLap..", "..kersUsedOnLap.."\n"
       TopSpeed = 0
@@ -659,6 +660,7 @@ function ChangeInputs()
   end
 end
 
+-- Not used?
 function GetKers()
   if ADR == 0 then
     Kers = readFloat("GTA5.exe+1D59B60")
