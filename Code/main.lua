@@ -111,24 +111,15 @@ function ActivateApp()
   Enable=false
   LogsEnabled=false
   FL.FormStyle = 'fsSystemStayOnTop'
-  Speed = createTimer(nil, false)
-  timer_onTimer(Speed, ReadSpeed)
-  timer_setInterval(Speed, 50)
-  timer_setEnabled(Speed, true)
 
   previousKersValue = nil
   kersGainedOnLap = 0
   kersUsedOnLap = 0
 
-  Kers = createTimer(nil, false)
-  timer_onTimer(Kers, ReadKers)
-  timer_setInterval(Kers, 50)
-  timer_setEnabled(Kers, true)
-
-  Pit = createTimer(nil, false)
-  timer_onTimer(Pit, checkPitDeltaValue)
-  timer_setInterval(Pit, 50)
-  -- timer_setEnabled(Pit, true)
+  Value = createTimer(nil, false)
+  timer_onTimer(Speed, ReadValue)
+  timer_setInterval(Speed, 50)
+  timer_setEnabled(Speed, true)
   
 end
 
@@ -919,6 +910,11 @@ function checkPitDeltaValue()
       end
     end
   end
+end
+
+function ReadValue()
+  ReadKers()
+  ReadSpeed()
 end
 
 function ex()
