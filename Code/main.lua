@@ -77,6 +77,9 @@ function FoundMyCurrentID()
       goto continue
     end
     local CPlayerInfo = readPointer(CNetGamePlayer + pCNetPlayerInfo)
+    if CPlayerInfo == nil then
+      print('skill issue')
+    end
     if not CPlayerInfo then
       goto continue
     end
