@@ -61,6 +61,8 @@ function GetPTRs()
 
   local testy = readPointer(ridaddr)
 
+  print(testy)
+
   if not testy then
   else
     markMyRid = testy
