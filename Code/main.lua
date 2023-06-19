@@ -846,6 +846,7 @@ end
 local startTime = 0
 local pitEntry = 0
 local pitExit = 0
+local pitExitTime = 0
 local isPitEntrySet = false
 
 function getPitEntry()

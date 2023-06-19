@@ -1,19 +1,18 @@
-
-object FL: TCEForm
-  Left = -1047
-  Height = 214
-  Top = 705
-  Width = 500
-  ActiveControl = Steer
-  BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSingle
-  Caption = 'DeltaApp by Vi''o''Lence'
-  ClientHeight = 214
-  ClientWidth = 500
-  Color = clGrayText
-  Font.Color = clWhite
-  FormStyle = fsSystemStayOnTop
-  Icon.Data = {
+FL = createForm()
+  FL.Left = -1047
+  FL.Height = 214
+  FL.Top = 705
+  FL.Width = 500
+  FL.ActiveControl = Steer
+  FL.BorderIcons = [biSystemMenu, biMinimize]
+  FL.BorderStyle = bsSingle
+  FL.Caption = 'DeltaApp by Vi''o''Lence'
+  FL.ClientHeight = 214
+  FL.ClientWidth = 500
+  FL.Color = clGrayText
+  FL.Font.Color = clWhite
+  FL.FormStyle = fsSystemStayOnTop
+  FL.Icon.Data = {
     x
   }
   OnClose = ex
