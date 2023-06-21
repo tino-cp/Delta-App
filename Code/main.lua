@@ -21,8 +21,8 @@ function InitOffsets()
   oRid = 0xE8 -- 30 090 088 098
   pCPed = 0x8 -- 8 0 10
   pCPlayerInfo = 0x10A8 -- 10A8 10A0 10B0
-  oCurCheck = 0x11BE8   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
-  oCurLap = 0x11BE0   --11828  118280 11108 x10F40 --119C0 tomo | 11560
+  oCurCheck = 0x11578   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
+  oCurLap = 0x11570   --11828  118280 11108 x10F40 --119C0 tomo | 11560
 end
 
 InitOffsets()
