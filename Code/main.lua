@@ -201,7 +201,7 @@ function NewLapProcedure()
       LogsSector2 = S2_raw
       LogsSector3 = CurLapLastCheckpointTime-S1_raw-S2_raw
       --RecordLap
-      CurrentLap = readInteger(ChecksPTR + oCurLap) --+ (MyIDNumber*0x670))
+      CurrentLap = readInteger(ChecksPTR + oCurLap + (MyIDNumber*0x670))
       LogsLap = CurrentLap - 1
       local SpeedTrap = GetSpeed()
       -- same for sectors here
@@ -268,7 +268,7 @@ function UpdateInfo()
       --Take values
       CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
-      CurCheckpoint = readInteger(ChecksPTR + oCurCheck) -- + (MyIDNumber*0x670)) --7598 74E8
+      CurCheckpoint = readInteger(ChecksPTR + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       FL.LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
