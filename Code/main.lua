@@ -1,5 +1,5 @@
 --DELTA APP ERROR
-Build_Version = 'v1.0.0'
+Build_Version = 'v1.0.1'
 openProcess'GTA5.exe'
 autoAssemble([[
 unregistersymbol(adr)
