@@ -16,9 +16,9 @@ Inputs = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0 -- A0 98 A8
-  pCNetPed = 0x248 -- 1E8 1E0 1F0
-  oNumPlayers = 0x170 -- 180 178 188
-  oRid = 0x30 -- 090 088 098
+  pCNetPed = 0x240 -- 248 1E8 1E0 1F0
+  oNumPlayers = 0x188 -- 180 178 188
+  oRid = 0xE8 -- 30 090 088 098
   pCPed = 0x8 -- 8 0 10
   pCPlayerInfo = 0x10A8 -- 10A8 10A0 10B0
   oCurCheck = 0x11BE8   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
