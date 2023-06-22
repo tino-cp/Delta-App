@@ -32,7 +32,7 @@ function createUI()
 
 
   SettingButton = createButton()
-    SettingButton.Left = 387
+    UI.SettingButton.Left = 387
     SettingButton.Height = 36
     SettingButton.Top = 13
     SettingButton.Width = 90
