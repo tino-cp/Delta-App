@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 9" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 10" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -21,7 +21,7 @@ function createUI()
     UI.Visible = true
 
 
-  KersValueBar =  createProgressBar()
+  KersValueBar = createProgressBar()
     KersValueBar.Left = 393
     KersValueBar.Height = 16
     KersValueBar.Top = 179
@@ -31,7 +31,7 @@ function createUI()
     KersValueBar.TabOrder = 10
 
 
-  SettingButton = createButton()
+  SettingButton = createButton(UI)
     SettingButton.Left = 387
     SettingButton.Height = 36
     SettingButton.Top = 13
@@ -46,7 +46,7 @@ function createUI()
     SettingButton.TabOrder = 7
 
 
-  StartDetect = createButton()
+  StartDetect = createButton(UI)
     StartDetect.Left = 295
     StartDetect.Height = 36
     StartDetect.Top = 13
