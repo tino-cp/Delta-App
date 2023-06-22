@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 14" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 15" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -356,7 +356,7 @@ function createUI()
     SettingPanel.Visible = false
 
 
-  SpeedTurnOn = createButton(UI)
+  SpeedTurnOn = createButton(SettingPanel)
     SpeedTurnOn.Left = 5
     SpeedTurnOn.Height = 30
     SpeedTurnOn.Top = 5
@@ -369,7 +369,7 @@ function createUI()
     SpeedTurnOn.ParentFont = false
     SpeedTurnOn.TabOrder = 0
 
-  MetricsTurnOn = createButton(UI)
+  MetricsTurnOn = createButton(SettingPanel)
     MetricsTurnOn.Left = 5
     MetricsTurnOn.Height = 30
     MetricsTurnOn.Top = 35
@@ -383,7 +383,7 @@ function createUI()
     MetricsTurnOn.TabOrder = 1
 
 
-  GearsTurnOn = createButton(UI)
+  GearsTurnOn = createButton(SettingPanel)
     GearsTurnOn.Left = 5
     GearsTurnOn.Height = 30
     GearsTurnOn.Top = 65
@@ -397,7 +397,7 @@ function createUI()
     GearsTurnOn.TabOrder = 2
 
 
-  InputsTurnOn = createButton(UI)
+  InputsTurnOn = createButton(SettingPanel)
     InputsTurnOn.Left = 5
     InputsTurnOn.Height = 30
     InputsTurnOn.Top = 95
@@ -410,16 +410,12 @@ function createUI()
     InputsTurnOn.ParentFont = false
     InputsTurnOn.TabOrder = 3
 
-  KersValueTurnOn = createButton(UI)
+  KersValueTurnOn = createButton(SettingPanel)
     KersValueTurnOn.Left = 5
     KersValueTurnOn.Height = 30
     KersValueTurnOn.Top = 125
     KersValueTurnOn.Width = 100
     KersValueTurnOn.Caption = 'KERS: ON'
-    KersValueTurnOn.Font.CharSet = ANSI_CHARSET
-    KersValueTurnOn.Font.Color = clWhite
-    KersValueTurnOn.Font.Pitch = fpVariable
-    KersValueTurnOn.Font.Quality = fqDraft
     KersValueTurnOn.Font.fsBold = true
     KersValueTurnOn.Font.fsItalic = true
     KersValueTurnOn.OnClick = ChangeKers
@@ -588,7 +584,7 @@ function createUI()
     InitPanel.TabOrder = 2
 
 
-  OnOffButtonLabel = createLabel(UI)
+  OnOffButtonLabel = createLabel(InitPanel)
     OnOffButtonLabel.Left = 76
     OnOffButtonLabel.Height = 100
     OnOffButtonLabel.Top = 102
@@ -603,7 +599,7 @@ function createUI()
     OnOffButtonLabel.ParentFont = false
 
 
-  Enable = createButton(UI)
+  Enable = createButton(InitPanel)
     Enable.Left = 150
     Enable.Height = 40
     Enable.Top = 51
