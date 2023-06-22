@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 12" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 13" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -71,8 +71,8 @@ function createUI()
     CurrentLapLabel.Font.Color = clWindow
     CurrentLapLabel.Font.Height = -21
     CurrentLapLabel.Font.Name = 'Segoe UI'
-    CurrentLapLabel.Font.Style.fsBold = true
-    CurrentLapLabel.Font.Style.fsItalic = true
+    CurrentLapLabel.Font.fsBold = true
+    CurrentLapLabel.Font.fsItalic = true
     CurrentLapLabel.ParentColor = false
     CurrentLapLabel.ParentFont = false
 
@@ -87,7 +87,7 @@ function createUI()
     FastestLapLabel.Font.Height = -21
     FastestLapLabel.Font.Name = 'Segoe UI'
     FastestLapLabel.Font.fsBold = true
-    FastestLapLabel.Font.Style.fsItalic = true
+    FastestLapLabel.Font.fsItalic = true
     FastestLapLabel.ParentColor = false
     FastestLapLabel.ParentFont = false
 
@@ -101,8 +101,8 @@ function createUI()
     CL2.Font.Color = clWindow
     CL2.Font.Height = -19
     CL2.Font.Name = 'Segoe UI'
-    CL2.Font.Style.fsBold = true
-    CL2.Font.Style.fsItalic = true
+    CL2.Font.fsBold = true
+    CL2.Font.fsItalic = true
     CL2.ParentColor = false
     CL2.ParentFont = false
 
@@ -116,8 +116,8 @@ function createUI()
     CL3.Font.Color = clWindow
     CL3.Font.Height = -19
     CL3.Font.Name = 'Segoe UI'
-    CL3.Font.Style.fsBold = true
-    CL3.Font.Style.fsItalic = true
+    CL3.Font.fsBold = true
+    CL3.Font.fsItalic = true
     CL3.ParentColor = false
     CL3.ParentFont = false
 
@@ -131,8 +131,8 @@ function createUI()
     CL4.Font.Color = clWindow
     CL4.Font.Height = -19
     CL4.Font.Name = 'Segoe UI'
-    CL4.Font.Style.fsBold = true
-    CL4.Font.Style.fsItalic = true
+    CL4.Font.fsBold = true
+    CL4.Font.fsItalic = true
     CL4.ParentColor = false
     CL4.ParentFont = false
 
@@ -155,8 +155,8 @@ function createUI()
     CurrentLapValue.Font.Color = clWindow
     CurrentLapValue.Font.Height = -21
     CurrentLapValue.Font.Name = 'Segoe UI'
-    CurrentLapValue.Font.Style.fsBold = true
-    CurrentLapValue.Font.Style.fsItalic = true
+    CurrentLapValue.Font.fsBold = true
+    CurrentLapValue.Font.fsItalic = true
     CurrentLapValue.ParentColor = false
     CurrentLapValue.ParentFont = false
 
@@ -170,8 +170,8 @@ function createUI()
     FastestLapValue.Font.Color = clFuchsia
     FastestLapValue.Font.Height = -21
     FastestLapValue.Font.Name = 'Segoe UI'
-    FastestLapValue.Font.Style.fsBold = true
-    FastestLapValue.Font.Style.fsItalic = true
+    FastestLapValue.Font.fsBold = true
+    FastestLapValue.Font.fsItalic = true
     FastestLapValue.ParentColor = false
     FastestLapValue.ParentFont = false
 
@@ -185,8 +185,8 @@ function createUI()
     S1Label.Font.Color = clWindow
     S1Label.Font.Height = -19
     S1Label.Font.Name = 'Segoe UI'
-    S1Label.Font.Style.fsBold = true
-    S1Label.Font.Style.fsItalic = true
+    S1Label.Font.fsBold = true
+    S1Label.Font.fsItalic = true
     S1Label.ParentColor = false
     S1Label.ParentFont = false
 
@@ -200,8 +200,8 @@ function createUI()
     S2Label.Font.Color = clWindow
     S2Label.Font.Height = -19
     S2Label.Font.Name = 'Segoe UI'
-    S2Label.Font.Style.fsBold = true
-    S2Label.Font.Style.fsItalic = true
+    S2Label.Font.fsBold = true
+    S2Label.Font.fsItalic = true
     S2Label.ParentColor = false
     S2Label.ParentFont = false
 
@@ -215,8 +215,8 @@ function createUI()
     S3Label.Font.Color = clWindow
     S3Label.Font.Height = -19
     S3Label.Font.Name = 'Segoe UI'
-    S3Label.Font.Style.fsBold = true
-    S3Label.Font.Style.fsItalic = true
+    S3Label.Font.fsBold = true
+    S3Label.Font.fsItalic = true
     S3Label.ParentColor = false
     S3Label.ParentFont = false
 
@@ -230,8 +230,8 @@ function createUI()
     DeltaLabel.Font.Color = clWindow
     DeltaLabel.Font.Height = -32
     DeltaLabel.Font.Name = 'Segoe UI'
-    DeltaLabel.Font.Style.fsBold = true
-    DeltaLabel.Font.Style.fsItalic = true
+    DeltaLabel.Font.fsBold = true
+    DeltaLabel.Font.fsItalic = true
     DeltaLabel.ParentColor = false
     DeltaLabel.ParentFont = false
 
@@ -245,7 +245,7 @@ function createUI()
     S1ProggressBar.Font.Color = clMenuBar
     S1ProggressBar.Font.Height = -13
     S1ProggressBar.Font.Name = 'Segoe UI'
-    S1ProggressBar.Font.Style.fsItalic = true
+    S1ProggressBar.Font.fsItalic = true
     S1ProggressBar.ParentColor = false
     S1ProggressBar.ParentFont = false
 
@@ -259,7 +259,7 @@ function createUI()
     S1ProggressBar1.Font.Color = clMenuBar
     S1ProggressBar1.Font.Height = -13
     S1ProggressBar1.Font.Name = 'Segoe UI'
-    S1ProggressBar1.Font.Style.fsItalic = true
+    S1ProggressBar1.Font.fsItalic = true
     S1ProggressBar1.ParentColor = false
     S1ProggressBar1.ParentFont = false
 
@@ -273,8 +273,8 @@ function createUI()
     SectorsCurrent.Font.Color = clMenuBar
     SectorsCurrent.Font.Height = -16
     SectorsCurrent.Font.Name = 'Segoe UI'
-    SectorsCurrent.Font.Style.fsBold = true
-    SectorsCurrent.Font.Style.fsItalic = true
+    SectorsCurrent.Font.fsBold = true
+    SectorsCurrent.Font.fsItalic = true
     SectorsCurrent.ParentColor = false
     SectorsCurrent.ParentFont = false
 
@@ -288,8 +288,8 @@ function createUI()
     BestSectors.Font.Color = clMenuBar
     BestSectors.Font.Height = -13
     BestSectors.Font.Name = 'Segoe UI'
-    BestSectors.Font.Style.fsBold = true
-    BestSectors.Font.Style.fsItalic = true
+    BestSectors.Font.fsBold = true
+    BestSectors.Font.fsItalic = true
     BestSectors.ParentColor = false
     BestSectors.ParentFont = false
     BestSectors.Visible = false
@@ -303,8 +303,8 @@ function createUI()
     LogBuildingButton.Enabled = false
     LogBuildingButton.Font.Height = -16
     LogBuildingButton.Font.Name = 'Segoe UI'
-    LogBuildingButton.Font.Style.fsBold = true
-    LogBuildingButton.Font.Style.fsItalic = true
+    LogBuildingButton.Font.fsBold = true
+    LogBuildingButton.Font.fsItalic = true
     LogBuildingButton.OnClick = LogsSwitcher
     LogBuildingButton.ParentFont = false
     LogBuildingButton.TabOrder = 4
@@ -319,8 +319,8 @@ function createUI()
     LoadFLButton.Enabled = false
     LoadFLButton.Font.Height = -16
     LoadFLButton.Font.Name = 'Segoe UI'
-    LoadFLButton.Font.Style.fsBold = true
-    LoadFLButton.Font.Style.fsItalic = true
+    LoadFLButton.Font.fsBold = true
+    LoadFLButton.Font.fsItalic = true
     LoadFLButton.OnClick = LoadFastLap
     LoadFLButton.ParentFont = false
     LoadFLButton.TabOrder = 5
@@ -335,8 +335,8 @@ function createUI()
     SaveFLButton.Enabled = false
     SaveFLButton.Font.Height = -16
     SaveFLButton.Font.Name = 'Segoe UI'
-    SaveFLButton.Font.Style.fsBold = true
-    SaveFLButton.Font.Style.fsItalic = true
+    SaveFLButton.Font.fsBold = true
+    SaveFLButton.Font.fsItalic = true
     SaveFLButton.OnClick = SaveFastLap
     SaveFLButton.OnMouseEnter = ShowTime
     SaveFLButton.OnMouseLeave = RevertCaption
@@ -364,8 +364,8 @@ function createUI()
     SpeedTurnOn.Width = 100
     SpeedTurnOn.Caption = 'SPEED: ON'
     SpeedTurnOn.Font.Name = 'Segoe UI'
-    SpeedTurnOn.Font.Style.fsBold = true
-    SpeedTurnOn.Font.Style.fsItalic = true
+    SpeedTurnOn.Font.fsBold = true
+    SpeedTurnOn.Font.fsItalic = true
     SpeedTurnOn.OnClick = ChangeSpeed
     SpeedTurnOn.ParentFont = false
     SpeedTurnOn.TabOrder = 0
@@ -377,8 +377,8 @@ function createUI()
     MetricsTurnOn.Width = 100
     MetricsTurnOn.Caption = 'SPEED: KPH'
     MetricsTurnOn.Font.Name = 'Segoe UI'
-    MetricsTurnOn.Font.Style.fsBold = true
-    MetricsTurnOn.Font.Style.fsItalic = true
+    MetricsTurnOn.Font.fsBold = true
+    MetricsTurnOn.Font.fsItalic = true
     MetricsTurnOn.OnClick = ChangeMetrics
     MetricsTurnOn.ParentFont = false
     MetricsTurnOn.TabOrder = 1
@@ -391,8 +391,8 @@ function createUI()
     GearsTurnOn.Width = 100
     GearsTurnOn.Caption = 'GEARS: ON'
     GearsTurnOn.Font.Name = 'Segoe UI'
-    GearsTurnOn.Font.Style.fsBold = true
-    GearsTurnOn.Font.Style.fsItalic = true
+    GearsTurnOn.Font.fsBold = true
+    GearsTurnOn.Font.fsItalic = true
     GearsTurnOn.OnClick = ChangeGears
     GearsTurnOn.ParentFont = false
     GearsTurnOn.TabOrder = 2
@@ -405,8 +405,8 @@ function createUI()
     InputsTurnOn.Width = 100
     InputsTurnOn.Caption = 'INPUT: ON'
     InputsTurnOn.Font.Name = 'Segoe UI'
-    InputsTurnOn.Font.Style.fsBold = true
-    InputsTurnOn.Font.Style.fsItalic = true
+    InputsTurnOn.Font.fsBold = true
+    InputsTurnOn.Font.fsItalic = true
     InputsTurnOn.OnClick = ChangeInputs
     InputsTurnOn.ParentFont = false
     InputsTurnOn.TabOrder = 3
@@ -421,8 +421,8 @@ function createUI()
     KersValueTurnOn.Font.Color = clWhite
     KersValueTurnOn.Font.Pitch = fpVariable
     KersValueTurnOn.Font.Quality = fqDraft
-    KersValueTurnOn.Font.Style.fsBold = true
-    KersValueTurnOn.Font.Style.fsItalic = true
+    KersValueTurnOn.Font.fsBold = true
+    KersValueTurnOn.Font.fsItalic = true
     KersValueTurnOn.OnClick = ChangeKers
     KersValueTurnOn.ParentFont = False
     KersValueTurnOn.TabOrder = 4
@@ -436,8 +436,8 @@ function createUI()
     SpeedLabel.Font.Color = clWindow
     SpeedLabel.Font.Height = -21
     SpeedLabel.Font.Name = 'Segoe UI'
-    SpeedLabel.Font.Style.fsBold = true
-    SpeedLabel.Font.Style.fsItalic = true
+    SpeedLabel.Font.fsBold = true
+    SpeedLabel.Font.fsItalic = true
     SpeedLabel.ParentColor = false
     SpeedLabel.ParentFont = false
 
@@ -453,9 +453,9 @@ function createUI()
     GearLabel.Font.Color = clWindow
     GearLabel.Font.Height = -32
     GearLabel.Font.Name = 'Segoe UI'
-    GearLabel.Font.Style.fsBold = true
-    GearLabel.Font.Style.fsItalic = true
-    GearLabel.Font.Style.fsUnderline = true
+    GearLabel.Font.fsBold = true
+    GearLabel.Font.fsItalic = true
+    GearLabel.Font.fsUnderline = true
     GearLabel.ParentColor = false
     GearLabel.ParentFont = false
 
@@ -469,8 +469,8 @@ function createUI()
     RPM1.Font.Color = clLime
     RPM1.Font.Height = -48
     RPM1.Font.Name = 'Segoe UI'
-    RPM1.Font.Style.fsBold = true
-    RPM1.Font.Style.fsItalic = true
+    RPM1.Font.fsBold = true
+    RPM1.Font.fsItalic = true
     RPM1.ParentColor = false
     RPM1.ParentFont = false
     RPM1.Visible = false
@@ -485,8 +485,8 @@ function createUI()
     RPM2.Font.Color = clYellow
     RPM2.Font.Height = -48
     RPM2.Font.Name = 'Segoe UI'
-    RPM2.Font.Style.fsBold = true
-    RPM2.Font.Style.fsItalic = true
+    RPM2.Font.fsBold = true
+    RPM2.Font.fsItalic = true
     RPM2.ParentColor = false
     RPM2.ParentFont = false
     RPM2.Visible = false
@@ -501,8 +501,8 @@ function createUI()
     RPM3.Font.Color = clRed
     RPM3.Font.Height = -48
     RPM3.Font.Name = 'Segoe UI'
-    RPM3.Font.Style.fsBold = true
-    RPM3.Font.Style.fsItalic = true
+    RPM3.Font.fsBold = true
+    RPM3.Font.fsItalic = true
     RPM3.ParentColor = false
     RPM3.ParentFont = false
     RPM3.Visible = false
@@ -516,8 +516,8 @@ function createUI()
     RPM4.Font.Color = clBlue
     RPM4.Font.Height = -48
     RPM4.Font.Name = 'Segoe UI'
-    RPM4.Font.Style.fsBold = true
-    RPM4.Font.Style.fsItalic = true
+    RPM4.Font.fsBold = true
+    RPM4.Font.fsItalic = true
     RPM4.ParentColor = false
     RPM4.ParentFont = false
     RPM4.Visible = false
@@ -548,8 +548,8 @@ function createUI()
     Gas.Font.Color = clLime
     Gas.Font.Height = -22
     Gas.Font.Name = 'Segoe UI'
-    Gas.Font.Style.fsBold = true
-    Gas.Font.Style.fsItalic = true
+    Gas.Font.fsBold = true
+    Gas.Font.fsItalic = true
     Gas.ParentColor = false
     Gas.ParentFont = false
 
@@ -563,8 +563,8 @@ function createUI()
     Brake.Font.Color = clRed
     Brake.Font.Height = -22
     Brake.Font.Name = 'Segoe UI'
-    Brake.Font.Style.fsBold = true
-    Brake.Font.Style.fsItalic = true
+    Brake.Font.fsBold = true
+    Brake.Font.fsItalic = true
     Brake.ParentColor = false
     Brake.ParentFont = false
 
@@ -598,8 +598,8 @@ function createUI()
     OnOffButtonLabel.Font.Color = clWindow
     OnOffButtonLabel.Font.Height = -19
     OnOffButtonLabel.Font.Name = 'Segoe UI'
-    OnOffButtonLabel.Font.Style.fsItalic = true
-    OnOffButtonLabel.Font.Style.fsUnderline = true
+    OnOffButtonLabel.Font.fsItalic = true
+    OnOffButtonLabel.Font.fsUnderline = true
     OnOffButtonLabel.ParentColor = false
     OnOffButtonLabel.ParentFont = false
 
@@ -615,7 +615,7 @@ function createUI()
     Enable.Font.Name = 'Segoe UI'
     Enable.Font.Pitch = fpVariable
     Enable.Font.Quality = fqDraft
-    Enable.Font.Style.fsBold = true
+    Enable.Font.fsBold = true
     Enable.OnClick = Startup
     Enable.ParentFont = false
     Enable.TabOrder = 0
@@ -631,8 +631,8 @@ function createUI()
     KersValue.Font.Height = -19
     KersValue.Font.Pitch = fpVariable
     KersValue.Font.Quality = fqDraft
-    KersValue.Font.Style.fsBold = true
-    KersValue.Font.Style.fsItalic = true
+    KersValue.Font.fsBold = true
+    KersValue.Font.fsItalic = true
     KersValue.ParentColor = false
     KersValue.ParentFont = false
 
@@ -648,8 +648,8 @@ function createUI()
     PitDeltaValue.Font.Name = 'Segoe UI'
     PitDeltaValue.Font.Pitch = fpVariable
     PitDeltaValue.Font.Quality = fqDraft
-    PitDeltaValue.Font.Style.fsBold = true
-    PitDeltaValue.Font.Style.fsItalic = true
+    PitDeltaValue.Font.fsBold = true
+    PitDeltaValue.Font.fsItalic = true
     PitDeltaValue.ParentColor = false
     PitDeltaValue.ParentFont = false
     PitDeltaValue.Visible = false
