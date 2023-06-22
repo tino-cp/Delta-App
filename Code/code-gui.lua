@@ -649,5 +649,5 @@ function createUI()
     PitDeltaValue.ParentFont = false
     PitDeltaValue.Visible = false
 
-    return UI
+  return UI
 end
