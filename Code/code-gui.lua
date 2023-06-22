@@ -6,7 +6,7 @@ function createUI()
       UI.Width = 500
       UI.ActiveControl = Steer
       UI.BorderStyle = bsSingle
-      UI.Caption = "DeltaApp by Vi'o'Lence 2" 
+      UI.Caption = "DeltaApp by Vi'o'Lence 3" 
       UI.ClientHeight = 214
       UI.ClientWidth = 500
       UI.Color = clGrayText
@@ -653,4 +653,6 @@ function createUI()
     UI.PitDeltaValue.ParentColor = false
     UI.PitDeltaValue.ParentFont = false
     UI.PitDeltaValue.Visible = false
+
+    return UI
 end
