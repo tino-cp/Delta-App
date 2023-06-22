@@ -5,8 +5,6 @@ function createUI()
       UI.Top = 705
       UI.Width = 500
       UI.ActiveControl = Steer
-      -- UI.BorderIcons.biSystemMenu = true
-      -- UI.BorderIcons.biMinimize = true
       UI.BorderStyle = bsSingle
       UI.Caption = 'DeltaApp by Vi'..'o'..'Lence'
       UI.ClientHeight = 214
