@@ -5,7 +5,7 @@ autoAssemble([[
 unregistersymbol(adr)
 unregistersymbol(TimesPTR)]])
 FL.InitPanel.Visible=true
-form_show(FL)
+form_show(UI)
 markMyRid = -1
 LoadedTime = false
 ADR = 0
@@ -13,6 +13,7 @@ Metrics = 1
 SpeedStatus = 1
 Gears = 1
 Inputs = 1
+KersValue = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0 -- A0 98 A8
@@ -654,6 +655,20 @@ function ChangeInputs()
   end
 end
 
+function ChangeKers()
+  if KersValue == 1 then
+     KersValue = 0
+     FL.KersValueTurnOn.Caption = "KERS: OFF"
+     FL.KersValueTest.Visible = false
+     FL.KersValueTest2.Visible = false
+  elseif KersValue == 0 then
+    KersValue = 1
+     FL.KersValueTurnOn.Caption = "KERS: ON"
+     FL.KersValueTest.Visible = true
+     FL.KersValueTest2.Visible = true
+  end
+end
+
 -- Not used?
 function GetKers()
   if ADR == 0 then
@@ -687,31 +702,33 @@ end
 
 function ReadKers()
   local Kers = 0
-  if ADR == 0 then
-    Kers = readFloat("GTA5.exe+1D59B60")
-    if Kers ~= nil then
-      Kers = Kers * 10 //1 /10
-      FL.KersValueTest2.Position = Kers
-      FL.KersValueTest.Caption = math.floor(Kers)
-      if LogsEnabled == true and Enable == true then
-        if previousKersValue ~= nil and previousKersValue ~= Kers then
-          defineKersDirection(previousKersValue, Kers)
+  if KersValue == 1 then
+    if ADR == 0 then
+      Kers = readFloat("GTA5.exe+1D59B60")
+      if Kers ~= nil then
+        Kers = Kers * 10 //1 /10
+        FL.KersValueTest2.Position = Kers
+        FL.KersValueTest.Caption = math.floor(Kers)
+        if LogsEnabled == true and Enable == true then
+          if previousKersValue ~= nil and previousKersValue ~= Kers then
+            defineKersDirection(previousKersValue, Kers)
+          end
         end
+        previousKersValue = Kers
       end
-      previousKersValue = Kers
-    end
-  elseif ADR == 1 then
-    Kers = readFloat("GTA5.exe+1D59B60")
-    if Kers ~= nil then
-      Kers = Kers * 10 //1 /10
-      FL.KersValueTest2.Position = Kers
-      FL.KersValueTest.Caption = math.floor(Kers)
-      if LogsEnabled == true and Enable == true then
-        if previousKersValue ~= nil and previousKersValue ~= Kers then
-          defineKersDirection(previousKersValue, Kers)
+    elseif ADR == 1 then
+      Kers = readFloat("GTA5.exe+1D59B60")
+      if Kers ~= nil then
+        Kers = Kers * 10 //1 /10
+        FL.KersValueTest2.Position = Kers
+        FL.KersValueTest.Caption = math.floor(Kers)
+        if LogsEnabled == true and Enable == true then
+          if previousKersValue ~= nil and previousKersValue ~= Kers then
+            defineKersDirection(previousKersValue, Kers)
+          end
         end
+        previousKersValue = Kers
       end
-      previousKersValue = Kers
     end
   end
 end
