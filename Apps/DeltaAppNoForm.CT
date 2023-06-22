@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries/>
+  <UserdefinedSymbols/>
+  <LuaScript>--DELTA APP
+local Source_url = "https://raw.githubusercontent.com/MrTin0/Delta-App/main/Code/main.lua"
+local GUI_url = "https://raw.githubusercontent.com/MrTin0/Delta-App/main/Code/code-gui.lua"
+TABLE_VERSION = 1
+local http = getInternet()
+Source = http.getURL(Source_url)
+GUI = http.getURL(GUI_url)
+
+http.destroy()
+load(Source)()
+load(GUI)()
+createUI()
+</LuaScript>
+</CheatTable>
