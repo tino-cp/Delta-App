@@ -6,7 +6,7 @@ function createUI()
       UI.Width = 500
       UI.ActiveControl = Steer
       UI.BorderStyle = bsSingle
-      UI.Caption = "DeltaApp by Vi'o'Lence" 
+      UI.Caption = "DeltaApp by Vi'o'Lence 2" 
       UI.ClientHeight = 214
       UI.ClientWidth = 500
       UI.Color = clGrayText
