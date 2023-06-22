@@ -1,5 +1,4 @@
 function createUI()
-  KersValueBar =  createProgressBar()
   UI = createForm()
       UI.Left = -1047
       UI.Height = 214
@@ -22,14 +21,14 @@ function createUI()
       UI.Visible = true
 
 
-
-    UI.KersValueBar.Left = 393
-    UI.KersValueBar.Height = 16
-    UI.KersValueBar.Top = 179
-    UI.KersValueBar.Width = 100
-    UI.KersValueBar.BorderWidth = 1
-    UI.KersValueBar.Position = 100
-    UI.KersValueBar.TabOrder = 10
+  KersValueBar =  createProgressBar()
+    KersValueBar.Left = 393
+    KersValueBar.Height = 16
+    KersValueBar.Top = 179
+    KersValueBar.Width = 100
+    KersValueBar.BorderWidth = 1
+    KersValueBar.Position = 100
+    KersValueBar.TabOrder = 10
 
 
   SettingButton = createButton()
