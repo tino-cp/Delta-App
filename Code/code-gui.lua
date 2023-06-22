@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 13" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 14" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -344,7 +344,7 @@ function createUI()
     SaveFLButton.TabOrder = 6
 
 
-  SettingPanel = createPanel()
+  SettingPanel = createPanel(UI)
     SettingPanel.Left = 375
     SettingPanel.Height = 130
     SettingPanel.Top = 50
@@ -569,7 +569,7 @@ function createUI()
     Brake.ParentFont = false
 
 
-  InitPanel = createPanel()
+  InitPanel = createPanel(UI)
     InitPanel.Left = -2
     InitPanel.Height = 217
     InitPanel.Top = -2
