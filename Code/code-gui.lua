@@ -17,7 +17,6 @@ function createUI()
     UI.OnDestroy = ex
     UI.OnKeyDown = Speed
     UI.ShowInTaskBar = stAlways
-    --UI.LCLVersion = '2.2.2.0'
     UI.Visible = true
 
 
