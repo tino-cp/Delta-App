@@ -1,3 +1,5 @@
+SettingButton = nil
+
 function createUI()
   UI = createForm()
     UI.Left = -1047
@@ -6,7 +8,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 7" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 8" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -32,7 +34,7 @@ function createUI()
 
 
   SettingButton = createButton()
-    UI.SettingButton.Left = 387
+    SettingButton.Left = 387
     SettingButton.Height = 36
     SettingButton.Top = 13
     SettingButton.Width = 90
