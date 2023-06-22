@@ -55,8 +55,8 @@ function createUI()
     StartDetect.Enabled = false
     StartDetect.Font.Height = -16
     StartDetect.Font.Name = 'Segoe UI'
-    StartDetect.Font.Style.fsBold = true
-    StartDetect.Font.Style.fsItalic = true
+    StartDetect.Font.fsBold = true
+    StartDetect.Font.fsItalic = true
     StartDetect.OnClick = UpdateInfo
     StartDetect.ParentFont = false
     StartDetect.TabOrder = 0
