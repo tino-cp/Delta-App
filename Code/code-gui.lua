@@ -1,5 +1,3 @@
-SettingButton = nil
-
 function createUI()
   UI = createForm()
     UI.Left = -1047
