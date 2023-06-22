@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 15" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 16" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -589,7 +589,7 @@ function createUI()
     OnOffButtonLabel.Height = 100
     OnOffButtonLabel.Top = 102
     OnOffButtonLabel.Width = 347
-    OnOffButtonLabel.Caption = '-Enable only after u spawned on track and crossed the 1st checkpoint. -Any errors or issues report via Discord PM @vi.o.lence or @mrtino.'
+    OnOffButtonLabel.Caption = '-Enable only after u spawned on track \nand crossed the 1st checkpoint\n-Any errors or issues report via Discord PM\n@vi.o.lence or @mrtino.'
     OnOffButtonLabel.Font.Color = clWindow
     OnOffButtonLabel.Font.Height = -19
     OnOffButtonLabel.Font.Name = 'Segoe UI'
