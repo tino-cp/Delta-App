@@ -5,7 +5,7 @@ autoAssemble([[
 unregistersymbol(adr)
 unregistersymbol(TimesPTR)]])
 FL.InitPanel.Visible=true
-form_show(UI)
+form_show(FL)
 markMyRid = -1
 LoadedTime = false
 ADR = 0
