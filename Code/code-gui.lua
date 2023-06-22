@@ -1,24 +1,24 @@
 function createUI()
   UI = createForm()
-      UI.Left = -1047
-      UI.Height = 214
-      UI.Top = 705
-      UI.Width = 500
-      UI.ActiveControl = Steer
-      UI.BorderStyle = bsSingle
-      UI.Caption = "DeltaApp by Vi'o'Lence 5" 
-      UI.ClientHeight = 214
-      UI.ClientWidth = 500
-      UI.Color = clGrayText
-      UI.Font.Color = clWhite
-      UI.FormStyle = fsSystemStayOnTop
-      UI.Icon.Data = {}
-      UI.OnClose = ex
-      UI.OnDestroy = ex
-      UI.OnKeyDown = Speed
-      UI.ShowInTaskBar = stAlways
-      --UI.LCLVersion = '2.2.2.0'
-      UI.Visible = true
+    UI.Left = -1047
+    UI.Height = 214
+    UI.Top = 705
+    UI.Width = 500
+    UI.ActiveControl = Steer
+    UI.BorderStyle = bsSingle
+    UI.Caption = "DeltaApp by Vi'o'Lence 6" 
+    UI.ClientHeight = 214
+    UI.ClientWidth = 500
+    UI.Color = clGrayText
+    UI.Font.Color = clWhite
+    UI.FormStyle = fsSystemStayOnTop
+    UI.Icon.Data = {}
+    UI.OnClose = ex
+    UI.OnDestroy = ex
+    UI.OnKeyDown = Speed
+    UI.ShowInTaskBar = stAlways
+    --UI.LCLVersion = '2.2.2.0'
+    UI.Visible = true
 
 
   KersValueBar =  createProgressBar()
