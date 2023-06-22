@@ -1,4 +1,5 @@
 function createUI()
+  KersValueBar =  createProgressBar()
   UI = createForm()
       UI.Left = -1047
       UI.Height = 214
@@ -21,7 +22,7 @@ function createUI()
       UI.Visible = true
 
 
-  local KersValueBar =  createProgressBar()
+
     UI.KersValueBar.Left = 393
     UI.KersValueBar.Height = 16
     UI.KersValueBar.Top = 179
@@ -31,7 +32,7 @@ function createUI()
     UI.KersValueBar.TabOrder = 10
 
 
-  local SettingButton = createButton()
+  SettingButton = createButton()
     UI.SettingButton.Left = 387
     UI.SettingButton.Height = 36
     UI.SettingButton.Top = 13
@@ -46,7 +47,7 @@ function createUI()
     UI.SettingButton.TabOrder = 7
 
 
-  local StartDetect = createButton()
+  StartDetect = createButton()
     UI.StartDetect.Left = 295
     UI.StartDetect.Height = 36
     UI.StartDetect.Top = 13
@@ -62,7 +63,7 @@ function createUI()
     UI.StartDetect.TabOrder = 0
 
 
-  local CurrentLapLabel = createLabel(UI)
+  CurrentLapLabel = createLabel(UI)
     UI.CurrentLapLabel.Left = 10
     UI.CurrentLapLabel.Height = 30
     UI.CurrentLapLabel.Top = 58
@@ -77,7 +78,7 @@ function createUI()
     UI.CurrentLapLabel.ParentFont = false
 
 
-  local FastestLapLabel = createLabel(UI)
+  FastestLapLabel = createLabel(UI)
     UI.FastestLapLabel.Left = 10
     UI.FastestLapLabel.Height = 30
     UI.FastestLapLabel.Top = 94
@@ -92,7 +93,7 @@ function createUI()
     UI.FastestLapLabel.ParentFont = false
 
 
-  local CL2 = createLabel(UI)
+  CL2 = createLabel(UI)
     UI.CL2.Left = 380
     UI.CL2.Height = 25
     UI.CL2.Top = 86
@@ -107,7 +108,7 @@ function createUI()
     UI.CL2.ParentFont = false
 
 
-  local CL3 = createLabel(UI)
+  CL3 = createLabel(UI)
     UI.CL3.Left = 380
     UI.CL3.Height = 25
     UI.CL3.Top = 118
@@ -122,7 +123,7 @@ function createUI()
     UI.CL3.ParentFont = false
 
 
-  local CL4 = createLabel(UI)
+  CL4 = createLabel(UI)
     UI.CL4.Left = 380
     UI.CL4.Height = 25
     UI.CL4.Top = 150
@@ -137,7 +138,7 @@ function createUI()
     UI.CL4.ParentFont = false
 
 
-  local LapProgress = createProgressBar()
+  LapProgress = createProgressBar()
     UI.LapProgress.Left = 0
     UI.LapProgress.Height = 10
     UI.LapProgress.Top = 202
@@ -146,7 +147,7 @@ function createUI()
     UI.LapProgress.TabOrder = 1
 
 
-  local CurrentLapValue = createLabel(UI)
+  CurrentLapValue = createLabel(UI)
     UI.CurrentLapValue.Left = 144
     UI.CurrentLapValue.Height = 30
     UI.CurrentLapValue.Top = 58
@@ -161,7 +162,7 @@ function createUI()
     UI.CurrentLapValue.ParentFont = false
 
 
-  local FastestLapValue = createLabel(UI)
+  FastestLapValue = createLabel(UI)
     UI.FastestLapValue.Left = 144
     UI.FastestLapValue.Height = 30
     UI.FastestLapValue.Top = 94
@@ -176,7 +177,7 @@ function createUI()
     UI.FastestLapValue.ParentFont = false
 
 
-  local S1Label = createLabel(UI)
+  S1Label = createLabel(UI)
     UI.S1Label.Left = 420
     UI.S1Label.Height = 25
     UI.S1Label.Top = 86
@@ -191,7 +192,7 @@ function createUI()
     UI.S1Label.ParentFont = false
 
 
-  local S2Label = createLabel(UI)
+  S2Label = createLabel(UI)
     UI.S2Label.Left = 420
     UI.S2Label.Height = 25
     UI.S2Label.Top = 118
@@ -206,7 +207,7 @@ function createUI()
     UI.S2Label.ParentFont = false
 
 
-  local S3Label = createLabel(UI)
+  S3Label = createLabel(UI)
     UI.S3Label.Left = 420
     UI.S3Label.Height = 25
     UI.S3Label.Top = 150
@@ -221,7 +222,7 @@ function createUI()
     UI.S3Label.ParentFont = false
 
 
-  local DeltaLabel = createLabel(UI)
+  DeltaLabel = createLabel(UI)
     UI.DeltaLabel.Left = 186
     UI.DeltaLabel.Height = 45
     UI.DeltaLabel.Top = 134
@@ -236,7 +237,7 @@ function createUI()
     UI.DeltaLabel.ParentFont = false
 
 
-  local S1ProggressBar = createLabel(UI)
+  S1ProggressBar = createLabel(UI)
     UI.S1ProggressBar.Left = 145
     UI.S1ProggressBar.Height = 17
     UI.S1ProggressBar.Top = 183
@@ -250,7 +251,7 @@ function createUI()
     UI.S1ProggressBar.ParentFont = false
 
 
-  local S1ProggressBar1 = createLabel(UI)
+  S1ProggressBar1 = createLabel(UI)
     UI.S1ProggressBar1.Left = 310
     UI.S1ProggressBar1.Height = 17
     UI.S1ProggressBar1.Top = 183
@@ -264,7 +265,7 @@ function createUI()
     UI.S1ProggressBar1.ParentFont = false
 
 
-  local SectorsCurrent = createLabel(UI)
+  SectorsCurrent = createLabel(UI)
     UI.SectorsCurrent.Left = 386
     UI.SectorsCurrent.Height = 21
     UI.SectorsCurrent.Top = 61
@@ -279,7 +280,7 @@ function createUI()
     UI.SectorsCurrent.ParentFont = false
 
 
-  local BestSectors = createLabel(UI)
+  BestSectors = createLabel(UI)
     UI.BestSectors.Left = 401
     UI.BestSectors.Height = 17
     UI.BestSectors.Top = 13
@@ -294,7 +295,7 @@ function createUI()
     UI.BestSectors.ParentFont = false
     UI.BestSectors.Visible = false
 
-  local LogBuildingButton = createButton()
+  LogBuildingButton = createButton()
     UI.LogBuildingButton.Left = 10
     UI.LogBuildingButton.Height = 36
     UI.LogBuildingButton.Top = 13
@@ -310,7 +311,7 @@ function createUI()
     UI.LogBuildingButton.TabOrder = 4
 
 
-  local LoadFLButton = createButton()
+  LoadFLButton = createButton()
     UI.LoadFLButton.Left = 105
     UI.LoadFLButton.Height = 36
     UI.LoadFLButton.Top = 13
@@ -326,7 +327,7 @@ function createUI()
     UI.LoadFLButton.TabOrder = 5
 
 
-  local SaveFLButton = createButton()
+  SaveFLButton = createButton()
     UI.SaveFLButton.Left = 200
     UI.SaveFLButton.Height = 36
     UI.SaveFLButton.Top = 13
@@ -344,7 +345,7 @@ function createUI()
     UI.SaveFLButton.TabOrder = 6
 
 
-  local SettingPanel = createPanel()
+  SettingPanel = createPanel()
     UI.SettingPanel.Left = 375
     UI.SettingPanel.Height = 130
     UI.SettingPanel.Top = 50
@@ -357,7 +358,7 @@ function createUI()
     UI.SettingPanel.Visible = false
 
 
-  local SpeedTurnOn = createButton()
+  SpeedTurnOn = createButton()
     UI.SpeedTurnOn.Left = 5
     UI.SpeedTurnOn.Height = 30
     UI.SpeedTurnOn.Top = 5
@@ -370,7 +371,7 @@ function createUI()
     UI.SpeedTurnOn.ParentFont = false
     UI.SpeedTurnOn.TabOrder = 0
 
-  local MetricsTurnOn = createButton()
+  MetricsTurnOn = createButton()
     UI.MetricsTurnOn.Left = 5
     UI.MetricsTurnOn.Height = 30
     UI.MetricsTurnOn.Top = 35
@@ -384,7 +385,7 @@ function createUI()
     UI.MetricsTurnOn.TabOrder = 1
 
 
-  local GearsTurnOn = createButton()
+  GearsTurnOn = createButton()
     UI.GearsTurnOn.Left = 5
     UI.GearsTurnOn.Height = 30
     UI.GearsTurnOn.Top = 65
@@ -398,7 +399,7 @@ function createUI()
     UI.GearsTurnOn.TabOrder = 2
 
 
-  local InputsTurnOn = createButton()
+  InputsTurnOn = createButton()
     UI.InputsTurnOn.Left = 5
     UI.InputsTurnOn.Height = 30
     UI.InputsTurnOn.Top = 95
@@ -411,7 +412,7 @@ function createUI()
     UI.InputsTurnOn.ParentFont = false
     UI.InputsTurnOn.TabOrder = 3
 
-  local KersValueTurnOn = createButton()
+  KersValueTurnOn = createButton()
     UI.KersValueTurnOn.Left = 5
     UI.KersValueTurnOn.Height = 30
     UI.KersValueTurnOn.Top = 125
@@ -427,7 +428,7 @@ function createUI()
     UI.KersValueTurnOn.ParentFont = False
     UI.KersValueTurnOn.TabOrder = 4
 
-  local SpeedLabel = createLabel(UI)
+  SpeedLabel = createLabel(UI)
     UI.SpeedLabel.Left = 24
     UI.SpeedLabel.Height = 30
     UI.SpeedLabel.Top = 166
@@ -442,7 +443,7 @@ function createUI()
     UI.SpeedLabel.ParentFont = false
 
 
-  local GearLabel = createLabel(UI)
+  GearLabel = createLabel(UI)
     UI.GearLabel.Left = 40
     UI.GearLabel.Height = 42
     UI.GearLabel.Top = 126
@@ -460,7 +461,7 @@ function createUI()
     UI.GearLabel.ParentFont = false
 
 
-  local RPM1 = createLabel(UI)
+  RPM1 = createLabel(UI)
     UI.RPM1.Left = 47
     UI.RPM1.Height = 65
     UI.RPM1.Top = 113
@@ -476,7 +477,7 @@ function createUI()
     UI.RPM1.Visible = false
 
 
-  local RPM2 = createLabel(UI)
+  RPM2 = createLabel(UI)
     UI.RPM2.Left = 34
     UI.RPM2.Height = 65
     UI.RPM2.Top = 113
@@ -492,7 +493,7 @@ function createUI()
     UI.RPM2.Visible = false
 
 
-  local RPM3 = createLabel(UI)
+  RPM3 = createLabel(UI)
     UI.RPM3.Left = 20
     UI.RPM3.Height = 65
     UI.RPM3.Top = 113
@@ -507,7 +508,7 @@ function createUI()
     UI.RPM3.ParentFont = false
     UI.RPM3.Visible = false
 
-  local RPM4 = createLabel(UI)
+  RPM4 = createLabel(UI)
     UI.RPM4.Left = 8
     UI.RPM4.Height = 65
     UI.RPM4.Top = 113
@@ -522,7 +523,7 @@ function createUI()
     UI.RPM4.ParentFont = false
     UI.RPM4.Visible = false
 
-  local Steer = createTrackBar()
+  Steer = createTrackBar()
     UI.Steer.Left = 255
     UI.Steer.Height = 20
     UI.Steer.Top = 110
@@ -539,7 +540,7 @@ function createUI()
     UI.Steer.TabOrder = 9
 
 
-  local Gas = createLabel(UI)
+  Gas = createLabel(UI)
     UI.Gas.Left = 316
     UI.Gas.Height = 30
     UI.Gas.Top = 78
@@ -554,7 +555,7 @@ function createUI()
     UI.Gas.ParentFont = false
 
 
-  local Brake = createLabel(UI)
+  Brake = createLabel(UI)
     UI.Brake.Left = 264
     UI.Brake.Height = 30
     UI.Brake.Top = 78
@@ -569,7 +570,7 @@ function createUI()
     UI.Brake.ParentFont = false
 
 
-  local InitPanel = createPanel()
+  InitPanel = createPanel()
     UI.InitPanel.Left = -2
     UI.InitPanel.Height = 217
     UI.InitPanel.Top = -2
@@ -589,7 +590,7 @@ function createUI()
     UI.InitPanel.TabOrder = 2
 
 
-  local OnOffButtonLabel = createLabel(UI)
+  OnOffButtonLabel = createLabel(UI)
     UI.OnOffButtonLabel.Left = 76
     UI.OnOffButtonLabel.Height = 100
     UI.OnOffButtonLabel.Top = 102
@@ -604,7 +605,7 @@ function createUI()
     UI.OnOffButtonLabel.ParentFont = false
 
 
-  local Enable = createButton()
+  Enable = createButton()
     UI.Enable.Left = 150
     UI.Enable.Height = 40
     UI.Enable.Top = 51
@@ -620,7 +621,7 @@ function createUI()
     UI.Enable.ParentFont = false
     UI.Enable.TabOrder = 0
 
-  local KersValue = createLabel(UI)
+  KersValue = createLabel(UI)
     UI.KersValue.Left = 357
     UI.KersValue.Height = 25
     UI.KersValue.Top = 174
@@ -636,7 +637,7 @@ function createUI()
     UI.KersValue.ParentColor = false
     UI.KersValue.ParentFont = false
 
-  local PitDeltaValue = createLabel(UI)
+  PitDeltaValue = createLabel(UI)
     UI.PitDeltaValue.Left = 144
     UI.PitDeltaValue.Height = 30
     UI.PitDeltaValue.Top = 58
