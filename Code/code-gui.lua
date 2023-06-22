@@ -86,7 +86,7 @@ function createUI()
     FastestLapLabel.Font.Color = clFuchsia
     FastestLapLabel.Font.Height = -21
     FastestLapLabel.Font.Name = 'Segoe UI'
-    FastestLapLabel.Font.Style.fsBold = true
+    FastestLapLabel.Font.fsBold = true
     FastestLapLabel.Font.Style.fsItalic = true
     FastestLapLabel.ParentColor = false
     FastestLapLabel.ParentFont = false
@@ -294,7 +294,7 @@ function createUI()
     BestSectors.ParentFont = false
     BestSectors.Visible = false
 
-  LogBuildingButton = createButton()
+  LogBuildingButton = createButton(UI)
     LogBuildingButton.Left = 10
     LogBuildingButton.Height = 36
     LogBuildingButton.Top = 13
@@ -310,7 +310,7 @@ function createUI()
     LogBuildingButton.TabOrder = 4
 
 
-  LoadFLButton = createButton()
+  LoadFLButton = createButton(UI)
     LoadFLButton.Left = 105
     LoadFLButton.Height = 36
     LoadFLButton.Top = 13
@@ -326,7 +326,7 @@ function createUI()
     LoadFLButton.TabOrder = 5
 
 
-  SaveFLButton = createButton()
+  SaveFLButton = createButton(UI)
     SaveFLButton.Left = 200
     SaveFLButton.Height = 36
     SaveFLButton.Top = 13
@@ -357,7 +357,7 @@ function createUI()
     SettingPanel.Visible = false
 
 
-  SpeedTurnOn = createButton()
+  SpeedTurnOn = createButton(UI)
     SpeedTurnOn.Left = 5
     SpeedTurnOn.Height = 30
     SpeedTurnOn.Top = 5
@@ -370,7 +370,7 @@ function createUI()
     SpeedTurnOn.ParentFont = false
     SpeedTurnOn.TabOrder = 0
 
-  MetricsTurnOn = createButton()
+  MetricsTurnOn = createButton(UI)
     MetricsTurnOn.Left = 5
     MetricsTurnOn.Height = 30
     MetricsTurnOn.Top = 35
@@ -384,7 +384,7 @@ function createUI()
     MetricsTurnOn.TabOrder = 1
 
 
-  GearsTurnOn = createButton()
+  GearsTurnOn = createButton(UI)
     GearsTurnOn.Left = 5
     GearsTurnOn.Height = 30
     GearsTurnOn.Top = 65
@@ -398,7 +398,7 @@ function createUI()
     GearsTurnOn.TabOrder = 2
 
 
-  InputsTurnOn = createButton()
+  InputsTurnOn = createButton(UI)
     InputsTurnOn.Left = 5
     InputsTurnOn.Height = 30
     InputsTurnOn.Top = 95
@@ -411,7 +411,7 @@ function createUI()
     InputsTurnOn.ParentFont = false
     InputsTurnOn.TabOrder = 3
 
-  KersValueTurnOn = createButton()
+  KersValueTurnOn = createButton(UI)
     KersValueTurnOn.Left = 5
     KersValueTurnOn.Height = 30
     KersValueTurnOn.Top = 125
@@ -604,7 +604,7 @@ function createUI()
     OnOffButtonLabel.ParentFont = false
 
 
-  Enable = createButton()
+  Enable = createButton(UI)
     Enable.Left = 150
     Enable.Height = 40
     Enable.Top = 51
