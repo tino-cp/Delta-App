@@ -571,7 +571,6 @@ function LoadFastLap()
 end
 
 function Startup()
-  --StartHotkey = createHotkey(UpdateInfo,VK_DOWN)
   Enable.Enabled = false
   FindAdr()
   FindTimes()
