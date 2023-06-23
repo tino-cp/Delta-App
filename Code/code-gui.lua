@@ -36,7 +36,7 @@ function createUI()
     SettingButton.Caption = 'SETTINGS'
     SettingButton.Font.Height = -16
     SettingButton.Font.Name = 'Segoe UI'
-    SettingButton.Font.fsBold = true
+    SettingButton.Font.Style = fsBold
     SettingButton.Font.fsItalic = true
     SettingButton.OnClick = ShowHideSettings
     SettingButton.ParentFont = false
