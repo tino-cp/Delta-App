@@ -355,7 +355,6 @@ function createUI()
     SettingPanel.TabOrder = 8
     SettingPanel.Visible = false
 
-
   SpeedTurnOn = createButton(SettingPanel)
     SpeedTurnOn.Left = 5
     SpeedTurnOn.Height = 30
