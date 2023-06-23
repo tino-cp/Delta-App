@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 26" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 27" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -24,8 +24,8 @@ function createUI()
     KersValueBar.Height = 16
     KersValueBar.Top = 179
     KersValueBar.Width = 100
-    KersValueBar.BorderWidth = 1
-    KersValueBar.Position = 100
+    KersValueBar.BorderWidth = 0
+    KersValueBar.Position = 0
     KersValueBar.TabOrder = 10
 
   SettingButton = createButton(UI)
@@ -132,6 +132,7 @@ function createUI()
     LapProgress.Height = 10
     LapProgress.Top = 202
     LapProgress.Width = 500
+    LapProgress.BorderWidth = 0
     LapProgress.Position = 50
     LapProgress.TabOrder = 1
 
@@ -490,7 +491,7 @@ function createUI()
     RPM4.ParentFont = false
     RPM4.Visible = false
 
-  Steer = createTrackBar()
+  Steer = createTrackBar(UI)
     Steer.Left = 255
     Steer.Height = 20
     Steer.Top = 110
