@@ -15,14 +15,14 @@ Inputs = 1
 KersValue = 1
 
 function InitOffsets()
-  pCNetPlayerInfo = 0xA0 -- A0 98 A8
-  pCNetPed = 0x240 -- 248 1E8 1E0 1F0
-  oNumPlayers = 0x188 -- 180 178 188
-  oRid = 0xE8 -- 30 090 088 098
-  pCPed = 0x8 -- 8 0 10
-  pCPlayerInfo = 0x10A8 -- 10A8 10A0 10B0
-  oCurCheck = 0x11578   --11558 --11830  11110 0x10F48 --119C8 tomo | 11568
-  oCurLap = 0x11570   --11828  118280 11108 x10F40 --119C0 tomo | 11560
+  pCNetPlayerInfo = 0xA0
+  pCNetPed = 0x240
+  oNumPlayers = 0x188
+  oRid = 0xE8
+  pCPed = 0x8
+  pCPlayerInfo = 0x10A8
+  oCurCheck = 0x11578
+  oCurLap = 0x11570
 end
 
 InitOffsets()
