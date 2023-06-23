@@ -342,7 +342,6 @@ function createUI()
     SaveFLButton.ParentFont = false
     SaveFLButton.TabOrder = 6
 
-
   SettingPanel = createPanel(UI)
     SettingPanel.Left = 375
     SettingPanel.Height = 130
