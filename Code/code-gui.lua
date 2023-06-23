@@ -1,15 +1,9 @@
-local Icon_url = "https://raw.githubusercontent.com/MrTin0/Delta-App/main/Code/main.lua"
-local GUI_url = "https://raw.githubusercontent.com/MrTin0/Delta-App/main/Code/code-gui.lua"
+local Icon_url = "https://raw.githubusercontent.com/MrTin0/Delta-App/main/.ico/Delta%20App%20Online%20v1_101.ico"
 local http = getInternet()
-Source = http.getURL(Source_url)
-GUI = http.getURL(GUI_url)
+Icons = http.getURL(Icon_url)
 
 http.destroy()
-load(GUI)()
-load(Source)()
-createUI()
-form_show(UI)
-
+icon = loadImage(Icons)()
 
 function createUI()
   UI = createForm()
@@ -25,7 +19,7 @@ function createUI()
     UI.Color = clGrayText
     UI.Font.Color = clWhite
     UI.FormStyle = fsSystemStayOnTop
-    UI.Icon.Data = 
+    UI.Icon.Data = icon
     UI.OnClose = ex
     UI.OnDestroy = ex
     UI.OnKeyDown = Speed
