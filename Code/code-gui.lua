@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 4" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 5" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -360,7 +360,7 @@ function createUI()
 
   LapProgress = createProgressBar(UI)
     LapProgress.Left = 0
-    LapProgress.Height = 15
+    LapProgress.Height = 13
     LapProgress.Top = 202
     LapProgress.Width = 500
     LapProgress.BorderWidth = 0
@@ -429,7 +429,6 @@ function createUI()
     GearLabel.Top = 126
     GearLabel.Width = 80
     GearLabel.Alignment = taCenter
-    --GearLabel.AutoSize = false
     GearLabel.Caption = '1'
     GearLabel.Font.Color = clWhite
     GearLabel.Font.Height = -32
