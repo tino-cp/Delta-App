@@ -444,7 +444,7 @@ function createUI()
     GearLabel.Width = 80
     GearLabel.Alignment = taCenter
     GearLabel.AutoSize = false
-    GearLabel.Caption = 'N'
+    GearLabel.Caption = '1'
     GearLabel.Font.Color = clWindow
     GearLabel.Font.Height = -32
     GearLabel.Font.Name = 'Segoe UI'

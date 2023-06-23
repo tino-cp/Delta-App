@@ -658,13 +658,13 @@ function ChangeKers()
   if KersValue == 1 then
      KersValue = 0
      KersValueTurnOn.Caption = "KERS: OFF"
-     KersValueTest.Visible = false
-     KersValueTest2.Visible = false
+     KersValue.Visible = false
+     KersValueBar.Visible = false
   elseif KersValue == 0 then
     KersValue = 1
      KersValueTurnOn.Caption = "KERS: ON"
-     KersValueTest.Visible = true
-     KersValueTest2.Visible = true
+     KersValue.Visible = true
+     KersValueBar.Visible = true
   end
 end
 
@@ -706,8 +706,8 @@ function ReadKers()
       Kers = readFloat("GTA5.exe+1D59B60")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
-        KersValueTest2.Position = Kers
-        KersValueTest.Caption = math.floor(Kers)
+        KersValueBar.Position = Kers
+        KersValue.Caption = math.floor(Kers)
         if LogsEnabled == true and Enable == true then
           if previousKersValue ~= nil and previousKersValue ~= Kers then
             defineKersDirection(previousKersValue, Kers)
@@ -719,8 +719,8 @@ function ReadKers()
       Kers = readFloat("GTA5.exe+1D59B60")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
-        KersValueTest2.Position = Kers
-        KersValueTest.Caption = math.floor(Kers)
+        KersValueBar.Position = Kers
+        KersValue.Caption = math.floor(Kers)
         if LogsEnabled == true and Enable == true then
           if previousKersValue ~= nil and previousKersValue ~= Kers then
             defineKersDirection(previousKersValue, Kers)
