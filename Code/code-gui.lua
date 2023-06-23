@@ -6,7 +6,7 @@ function loadIcon()
   local logo = createStringStream(Icon)
   ico = createPicture()
   ico.loadFromStream(logo)
-  Logo.destroy()
+  logo.destroy()
   http.destroy()
   return ico
 end
