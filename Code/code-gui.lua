@@ -2,6 +2,7 @@ local Icon_url = "https://raw.githubusercontent.com/MrTin0/Delta-App/main/.ico/D
 local http = getInternet()
 Icons = http.getURL(Icon_url)
 
+local icon = nil
 http.destroy()
 icon = load(Icons)()
 
