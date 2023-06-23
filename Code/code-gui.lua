@@ -2,7 +2,7 @@ local Icon_url = "https://raw.githubusercontent.com/MrTin0/Delta-App/main/.ico/D
 local http = getInternet()
 Icons = http.getURL(Icon_url)
 
-local icon = nil
+local icon = 0
 http.destroy()
 icon = load(Icons)()
 
@@ -14,7 +14,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 2" 
+    UI.Caption = "DeltaApp by Vi'o'Lence" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
