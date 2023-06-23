@@ -381,7 +381,6 @@ function createUI()
     MetricsTurnOn.ParentFont = false
     MetricsTurnOn.TabOrder = 1
 
-
   GearsTurnOn = createButton(SettingPanel)
     GearsTurnOn.Left = 5
     GearsTurnOn.Height = 30
