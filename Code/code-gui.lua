@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 23" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 24" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -438,7 +438,7 @@ function createUI()
 
 
   GearLabel = createLabel(UI)
-    GearLabel.Left = 40
+    GearLabel.Left = 55
     GearLabel.Height = 42
     GearLabel.Top = 126
     GearLabel.Width = 80
