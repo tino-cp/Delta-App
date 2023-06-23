@@ -4,6 +4,7 @@ openProcess'GTA5.exe'
 autoAssemble([[
 unregistersymbol(adr)
 unregistersymbol(TimesPTR)]])
+form_show(UI)
 markMyRid = -1
 LoadedTime = false
 ADR = 0
