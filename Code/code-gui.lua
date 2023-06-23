@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 1" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 2" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -36,7 +36,7 @@ function createUI()
     SettingButton.Caption = 'SETTINGS'
     SettingButton.Font.Height = -16
     SettingButton.Font.Name = 'Segoe UI'
-    SettingButton.FontStyle = fsBold
+    SettingButton.Font.Style = fsBold
     SettingButton.Font.fsItalic = true
     SettingButton.OnClick = ShowHideSettings
     SettingButton.ParentFont = false
