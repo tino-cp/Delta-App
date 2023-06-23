@@ -934,14 +934,6 @@ function ReadValue()
   ReadSpeed()
 end
 
-local GUI_url = "https://raw.githubusercontent.com/MrTin0/Delta-App/main/Code/code-gui.lua"
-local http = getInternet()
-GUI = http.getURL(GUI_url)
-http.destroy()
-load(GUI)()
-createUI()
-form_show(UI)
-
 function ex()
   CloseCE()
 end
