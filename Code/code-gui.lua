@@ -7,6 +7,7 @@ function loadIcon()
   ico = createPicture()
   ico.loadFromStream(logo)
   Logo.destroy()
+  http.destroy()
   return ico
 end
 
