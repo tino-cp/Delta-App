@@ -618,5 +618,4 @@ function createUI()
     OnOffButtonLabel.Font.fsUnderline = true
     OnOffButtonLabel.ParentColor = false
     OnOffButtonLabel.ParentFont = false
-
 end
