@@ -101,17 +101,17 @@ function Fetch()
 end
 
 function ActivateApp()
-  UI.Enable.Caption = "Activating app"
-  UI.InitPanel.Enabled=false
-  UI.InitPanel.Visible=false
-  UI.StartDetect.Enabled=true
+  Enable.Caption = "Activating app"
+  InitPanel.Enabled=false
+  InitPanel.Visible=false
+  StartDetect.Enabled=true
   NewCheckpoint=true
   NewSector=true
   DeltaMils=1
   FirstLap=true
   Enable=false
   LogsEnabled=false
-  UI.FormStyle = 'fsSystemStayOnTop'
+  FormStyle = 'fsSystemStayOnTop'
 
   previousKersValue = nil
   kersGainedOnLap = 0
@@ -132,7 +132,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('adr + D3618') --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('adr + E5AF0')
-  UI.Caption = Track_Name.." DeltaApp by Vi'o'lence"
+  Caption = Track_Name.." DeltaApp by Vi'o'lence"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -229,20 +229,20 @@ function UpdateInfo()
 
   if Enable == true then
     Enable = false
-    UI.StartDetect.Caption='START'
+    StartDetect.Caption='START'
     if LogsEnabled ==true then
       PackLogs()
       LogsSwitcher()
     end
     LoadedTime = false
-    UI.LoadFLButton.Enabled = false
-    UI.LogBuildingButton.Enabled = false
+    LoadFLButton.Enabled = false
+    LogBuildingButton.Enabled = false
     UI.Caption = "DeltaApp by Vi'o'lence"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
     Enable = true
-    UI.StartDetect.Caption='STOP'
+    StartDetect.Caption='STOP'
     ChecksPTR = getAddress('TimesPTR')
     ForLogs_TrackName=readString('adr + E5AF0') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
@@ -254,9 +254,9 @@ function UpdateInfo()
     previousKersValue = nil
     kersGainedOnLap = 0
     kersUsedOnLap = 0
-    UI.LogBuildingButton.Enabled = true
-    UI.SaveFLButton.Enabled = true
-    UI.LoadFLButton.Enabled = true
+    LogBuildingButton.Enabled = true
+    SaveFLButton.Enabled = true
+    LoadFLButton.Enabled = true
   end
 
   local timer_ps = createTimer()
@@ -270,7 +270,7 @@ function UpdateInfo()
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
       CurCheckpoint = readInteger(ChecksPTR + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
-      UI.LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
+      LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
       --Checks
       checkPitDeltaValue()
@@ -289,40 +289,40 @@ function UpdateInfo()
 
         if DeltaMils>9999 then
 
-          UI.DeltaLabel.Caption="+ 9.999"
-          UI.DeltaLabel.Font.Color=clRed
+          DeltaLabel.Caption="+ 9.999"
+          DeltaLabel.Font.Color=clRed
 
         elseif DeltaMils>0 then
 
           if (DeltaMils-1000*(DeltaMils//1000))<10 then
-            UI.DeltaLabel.Caption='+'..(DeltaMils//1000)..'.00'..(DeltaMils-1000*(DeltaMils//1000))
+            DeltaLabel.Caption='+'..(DeltaMils//1000)..'.00'..(DeltaMils-1000*(DeltaMils//1000))
           elseif (DeltaMils-1000*(DeltaMils//1000))<100 then
-            UI.DeltaLabel.Caption='+'..(DeltaMils//1000)..'.0'..(DeltaMils-1000*(DeltaMils//1000))
+            DeltaLabel.Caption='+'..(DeltaMils//1000)..'.0'..(DeltaMils-1000*(DeltaMils//1000))
           else
-            UI.DeltaLabel.Caption='+'..(DeltaMils//1000)..'.'..(DeltaMils-1000*(DeltaMils//1000))
+            DeltaLabel.Caption='+'..(DeltaMils//1000)..'.'..(DeltaMils-1000*(DeltaMils//1000))
           end
-          UI.DeltaLabel.Font.Color=clRed
+          DeltaLabel.Font.Color=clRed
 
         elseif DeltaMils<-9999 then
 
-          UI.DeltaLabel.Caption="- 9.999"
-          UI.DeltaLabel.Font.Color=clLime
+          DeltaLabel.Caption="- 9.999"
+          DeltaLabel.Font.Color=clLime
 
         elseif DeltaMils<0 then
 
           DeltaMils=DeltaMils*(-1)
           if (DeltaMils-1000*(DeltaMils//1000))<10 then
-            UI.DeltaLabel.Caption='-'..(DeltaMils//1000)..'.00'..(DeltaMils-1000*(DeltaMils//1000))
+            DeltaLabel.Caption='-'..(DeltaMils//1000)..'.00'..(DeltaMils-1000*(DeltaMils//1000))
           elseif (DeltaMils-1000*(DeltaMils//1000))<100 then
-            UI.DeltaLabel.Caption='-'..(DeltaMils//1000)..'.0'..(DeltaMils-1000*(DeltaMils//1000))
+            DeltaLabel.Caption='-'..(DeltaMils//1000)..'.0'..(DeltaMils-1000*(DeltaMils//1000))
           else
-            UI.DeltaLabel.Caption='-'..(DeltaMils//1000)..'.'..(DeltaMils-1000*(DeltaMils//1000))
+            DeltaLabel.Caption='-'..(DeltaMils//1000)..'.'..(DeltaMils-1000*(DeltaMils//1000))
           end
-          UI.DeltaLabel.Font.Color=clLime
+          DeltaLabel.Font.Color=clLime
 
         elseif DeltaMils==0 then
-          UI.DeltaLabel.Caption="0.000"
-          UI.DeltaLabel.Font.Color=clWhite
+          DeltaLabel.Caption="0.000"
+          DeltaLabel.Font.Color=clWhite
 
         end
       end
@@ -339,22 +339,22 @@ function UpdateInfo()
         CalcSec = (CurLapMils - (60000*CalcMins))//1000
         CalcMils = (CurLapMils - (CalcMins*60000) - (CalcSec*1000))
         if CalcMils<10 then
-          UI.CurrentLapValue.Caption=CalcMins..':'..CalcSec..'.00'..CalcMils
+          CurrentLapValue.Caption=CalcMins..':'..CalcSec..'.00'..CalcMils
         elseif CalcMils<100 then
-          UI.CurrentLapValue.Caption=CalcMins..':'..CalcSec..'.0'..CalcMils
+          CurrentLapValue.Caption=CalcMins..':'..CalcSec..'.0'..CalcMils
         else
-          UI.CurrentLapValue.Caption=CalcMins..':'..CalcSec..'.'..CalcMils
+          CurrentLapValue.Caption=CalcMins..':'..CalcSec..'.'..CalcMils
         end
 
         FCalcMins = TimeStamp//60000
         FCalcSec = (TimeStamp - (60000*FCalcMins))//1000
         FCalcMils = (TimeStamp - 60000*FCalcMins - 1000*FCalcSec)
         if FCalcMils<10 then
-          UI.FastestLapValue.Caption=FCalcMins..':'..FCalcSec..'.00'..FCalcMils
+          FastestLapValue.Caption=FCalcMins..':'..FCalcSec..'.00'..FCalcMils
         elseif FCalcMils<100 then
-          UI.FastestLapValue.Caption=FCalcMins..':'..FCalcSec..'.0'..FCalcMils
+          FastestLapValue.Caption=FCalcMins..':'..FCalcSec..'.0'..FCalcMils
         else
-          UI.FastestLapValue.Caption=FCalcMins..':'..FCalcSec..'.'..FCalcMils
+          FastestLapValue.Caption=FCalcMins..':'..FCalcSec..'.'..FCalcMils
         end
 
       elseif CurCheckpoint==0 then
@@ -365,22 +365,22 @@ function UpdateInfo()
         CalculateSec = (CurLapLastCheckpointTime - (60000*CalculateMins))//1000
         CalculateMils = (CurLapLastCheckpointTime - 60000*CalculateMins - 1000*CalculateSec)
         if CalculateMils<10 then
-          UI.CurrentLapValue.Caption=CalculateMins..':'..CalculateSec..'.00'..CalculateMils
+          CurrentLapValue.Caption=CalculateMins..':'..CalculateSec..'.00'..CalculateMils
         elseif CalculateMils<100 then
-          UI.CurrentLapValue.Caption=CalculateMins..':'..CalculateSec..'.0'..CalculateMils
+          CurrentLapValue.Caption=CalculateMins..':'..CalculateSec..'.0'..CalculateMils
         else
-          UI.CurrentLapValue.Caption=CalculateMins..':'..CalculateSec..'.'..CalculateMils
+          CurrentLapValue.Caption=CalculateMins..':'..CalculateSec..'.'..CalculateMils
         end
 
         FCalculateMins = TimeStamp//60000
         FCalculateSec = (TimeStamp - (60000*FCalculateMins))//1000
         FCalculateMils = (TimeStamp - 60000*FCalculateMins - 1000*FCalculateSec)
         if FCalculateMils<10 then
-          UI.FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.00'..FCalculateMils
+          FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.00'..FCalculateMils
         elseif FCalculateMils<100 then
-          UI.FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.0'..FCalculateMils
+          FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.0'..FCalculateMils
         else
-          UI.FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.'..FCalculateMils
+          FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.'..FCalculateMils
         end
 
       end
@@ -415,30 +415,30 @@ function UpdateInfo()
       --Display Sector info
 
       if S1_mil<10 then
-        UI.S1Label.Caption=S1_sec..'.00'..S1_mil
+        S1Label.Caption=S1_sec..'.00'..S1_mil
         if S1_mil<100 then
-          UI.S1Label.Caption=S1_sec..'.0'..S1_mil
+          S1Label.Caption=S1_sec..'.0'..S1_mil
         end
       else
-        UI.S1Label.Caption=S1_sec..'.'..S1_mil
+        S1Label.Caption=S1_sec..'.'..S1_mil
       end
 
       if S2_mil<10 then
-        UI.S2Label.Caption=S2_sec..'.00'..S2_mil
+        S2Label.Caption=S2_sec..'.00'..S2_mil
         if S2_mil<100 then
-          UI.S2Label.Caption=S2_sec..'.0'..S2_mil
+          S2Label.Caption=S2_sec..'.0'..S2_mil
         end
       else
-        UI.S2Label.Caption=S2_sec..'.'..S2_mil
+        S2Label.Caption=S2_sec..'.'..S2_mil
       end
 
       if S3_mil<10 then
-        UI.S3Label.Caption=S3_sec..'.00'..S3_mil
+        S3Label.Caption=S3_sec..'.00'..S3_mil
         if S3_mil<100 then
-          UI.S3Label.Caption=S3_sec..'.0'..S3_mil
+          S3Label.Caption=S3_sec..'.0'..S3_mil
         end
       else
-        UI.S3Label.Caption=S3_sec..'.'..S3_mil
+        S3Label.Caption=S3_sec..'.'..S3_mil
       end
 
     end
@@ -448,7 +448,7 @@ end
 --STARTUP FUNCS
 
 function FindAdr()
-  UI.Enable.Caption = "Scanning memory 1/3"
+  Enable.Caption = "Scanning memory 1/3"
   local results = AOBScan('02 00 00 00 ?? 0? 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? 0? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00', '*X*C*W', 2, '000')
   assert(results, 'aobscan failed')
   local addr = results[0]
@@ -457,7 +457,7 @@ function FindAdr()
 end
 
 function FindTimes()
-  UI.Enable.Caption = "Scanning memory 2/3"
+  Enable.Caption = "Scanning memory 2/3"
   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
   assert(results, 'aobscan failed')
   local addr = results[0]
@@ -466,7 +466,7 @@ function FindTimes()
 end
 
 function FindCar()
-  UI.Enable.Caption = "Scanning memory 3/3"
+  Enable.Caption = "Scanning memory 3/3"
   autoAssemble([[
   aobscanmodule(WorldPTR,GTA5.exe,48 8B 05 ? ? ? ? 45 ? ? ? ? 48 8B 48 08 48 85 C9 74 07)
   registersymbol(WorldPTR)
@@ -488,11 +488,11 @@ end
 function LogsSwitcher()
   if LogsEnabled == false then
     LogsEnabled=true
-    UI.LogBuildingButton.Caption = 'LOGS ON'
+    LogBuildingButton.Caption = 'LOGS ON'
     LastElement = 100
   else
     LogsEnabled=false
-    UI.LogBuildingButton.Caption = 'LOGS OFF'
+    LogBuildingButton.Caption = 'LOGS OFF'
   end
 end
 
@@ -518,16 +518,16 @@ function ShowTime()
         FSec = (TimeStamp - (60000*FMins))//1000
         FMils = (TimeStamp - 60000*FMins - 1000*FSec)
         if FMils<10 then
-          UI.SaveFLButton.Caption=FMins..':'..FSec..'.00'..FMils
+          SaveFLButton.Caption=FMins..':'..FSec..'.00'..FMils
         elseif FMils<100 then
-          UI.SaveFLButton.Caption=FMins..':'..FSec..'.0'..FMils
+          SaveFLButton.Caption=FMins..':'..FSec..'.0'..FMils
         else
-          UI.SaveFLButton.Caption=FMins..':'..FSec..'.'..FMils
+          SaveFLButton.Caption=FMins..':'..FSec..'.'..FMils
         end
 end
 
 function RevertCaption()
-         UI.SaveFLButton.Caption="SAVE LAP"
+         SaveFLButton.Caption="SAVE LAP"
 end
 
 function SaveFastLap()
@@ -573,13 +573,13 @@ end
 
 function Startup()
   --StartHotkey = createHotkey(UpdateInfo,VK_DOWN)
-  UI.Enable.Enabled = false
+  Enable.Enabled = false
   FindAdr()
   FindTimes()
   FindCar()
   ActivateApp()
-  if UI.SteamVersion.Checked == true then ADR = 0 end
-  if UI.NonSteamVersion.Checked == true then ADR = 1 end
+  if SteamVersion.Checked == true then ADR = 0 end
+  if NonSteamVersion.Checked == true then ADR = 1 end
 end
 
 function RescanUNK()
@@ -595,76 +595,76 @@ function RescanUNK()
 end
 
 function ShowHideSettings()
-  if UI.SettingPanel.Visible == true then
-     UI.SettingPanel.Visible = false
-     UI.SettingPanel.Enable = false
+  if SettingPanel.Visible == true then
+     SettingPanel.Visible = false
+     SettingPanel.Enable = false
   else
-     UI.SettingPanel.Visible = true
-     UI.SettingPanel.Enable = true
+     SettingPanel.Visible = true
+     SettingPanel.Enable = true
   end
 end
 
 function ChangeMetrics()
   if Metrics == 1 then
      Metrics = 0
-     UI.MetricsTurnOn.Caption = "SPEED: MPH"
+     MetricsTurnOn.Caption = "SPEED: MPH"
   elseif Metrics == 0 then
      Metrics = 1
-     UI.MetricsTurnOn.Caption = "SPEED: KPH"
+     MetricsTurnOn.Caption = "SPEED: KPH"
   end
 end
 
 function ChangeSpeed()
   if SpeedStatus == 1 then
      SpeedStatus = 0
-     UI.SpeedTurnOn.Caption = "SPEED: OFF"
-     UI.SpeedLabel.Visible = false
+     SpeedTurnOn.Caption = "SPEED: OFF"
+     SpeedLabel.Visible = false
   elseif SpeedStatus == 0 then
      SpeedStatus = 1
-     UI.SpeedTurnOn.Caption = "SPEED: ON"
-     UI.SpeedLabel.Visible = true
+     SpeedTurnOn.Caption = "SPEED: ON"
+     SpeedLabel.Visible = true
   end
 end
 
 function ChangeGears()
   if Gears == 1 then
      Gears = 0
-     UI.GearsTurnOn.Caption = "GEARS: OFF"
-     UI.GearLabel.Visible = false
+     GearsTurnOn.Caption = "GEARS: OFF"
+     GearLabel.Visible = false
   elseif Gears == 0 then
      Gears = 1
-     UI.GearsTurnOn.Caption = "GEARS: ON"
-     UI.GearLabel.Visible = true
+     GearsTurnOn.Caption = "GEARS: ON"
+     GearLabel.Visible = true
   end
 end
 
 function ChangeInputs()
   if Inputs == 1 then
      Inputs = 0
-     UI.InputsTurnOn.Caption = "INPUT: OFF"
-     UI.Gas.Visible = false
-     UI.Brake.Visible = false
-     UI.Steer.Visible = false
+     InputsTurnOn.Caption = "INPUT: OFF"
+     Gas.Visible = false
+     Brake.Visible = false
+     Steer.Visible = false
   elseif Inputs == 0 then
      Inputs = 1
-     UI.InputsTurnOn.Caption = "INPUT: ON"
-     UI.Gas.Visible = true
-     UI.Brake.Visible = true
-     UI.Steer.Visible = true
+     InputsTurnOn.Caption = "INPUT: ON"
+     Gas.Visible = true
+     Brake.Visible = true
+     Steer.Visible = true
   end
 end
 
 function ChangeKers()
   if KersValue == 1 then
      KersValue = 0
-     UI.KersValueTurnOn.Caption = "KERS: OFF"
-     UI.KersValueTest.Visible = false
-     UI.KersValueTest2.Visible = false
+     KersValueTurnOn.Caption = "KERS: OFF"
+     KersValueTest.Visible = false
+     KersValueTest2.Visible = false
   elseif KersValue == 0 then
     KersValue = 1
-     UI.KersValueTurnOn.Caption = "KERS: ON"
-     UI.KersValueTest.Visible = true
-     UI.KersValueTest2.Visible = true
+     KersValueTurnOn.Caption = "KERS: ON"
+     KersValueTest.Visible = true
+     KersValueTest2.Visible = true
   end
 end
 
@@ -706,8 +706,8 @@ function ReadKers()
       Kers = readFloat("GTA5.exe+1D59B60")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
-        UI.KersValueTest2.Position = Kers
-        UI.KersValueTest.Caption = math.floor(Kers)
+        KersValueTest2.Position = Kers
+        KersValueTest.Caption = math.floor(Kers)
         if LogsEnabled == true and Enable == true then
           if previousKersValue ~= nil and previousKersValue ~= Kers then
             defineKersDirection(previousKersValue, Kers)
@@ -719,8 +719,8 @@ function ReadKers()
       Kers = readFloat("GTA5.exe+1D59B60")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
-        UI.KersValueTest2.Position = Kers
-        UI.KersValueTest.Caption = math.floor(Kers)
+        KersValueTest2.Position = Kers
+        KersValueTest.Caption = math.floor(Kers)
         if LogsEnabled == true and Enable == true then
           if previousKersValue ~= nil and previousKersValue ~= Kers then
             defineKersDirection(previousKersValue, Kers)
@@ -768,11 +768,11 @@ function ReadSpeed()
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
-            UI.SpeedLabel.Caption = "Kph: "..Speed
+            SpeedLabel.Caption = "Kph: "..Speed
          else
              Speed = Speed/1.6
              Speed = Speed * 10 //1 /10
-             UI.SpeedLabel.Caption = "Mph: "..Speed
+             SpeedLabel.Caption = "Mph: "..Speed
          end
          if LogsEnabled == true and Enable == true then
            if Speed > TopSpeed  then TopSpeed = Speed end
@@ -786,11 +786,11 @@ function ReadSpeed()
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
-            UI.SpeedLabel.Caption = "Kph: "..Speed
+            SpeedLabel.Caption = "Kph: "..Speed
          else
              Speed = Speed/1.6
              Speed = Speed * 10 //1 /10
-             UI.SpeedLabel.Caption = "Mph: "..Speed
+             SpeedLabel.Caption = "Mph: "..Speed
          end
          if LogsEnabled == true and Enable == true then
            if Speed > TopSpeed  then TopSpeed = Speed end
@@ -807,38 +807,38 @@ function ReadSpeed()
      local RPM = readFloat("UNK+E50")
      local Gear = readInteger("UNK+FD4")
      if Gear and RPM then
-        if Gear == 0 then UI.GearLabel.Caption = "N" end
-        if Gear == 0 and Speed < 0 then UI.GearLabel.Caption = "R" end
-        if Gear > 0 then UI.GearLabel.Caption = Gear end
-        if RPM > 0.5 then UI.RPM1.Visible = true
-           if RPM > 0.7 then UI.RPM2.Visible = true
-              if RPM > 0.8 then UI.RPM3.Visible = true
-                 if RPM > 0.9 then UI.RPM4.Visible = true
-                   if RPM > 0.96 then UI.GearLabel.Font.Color = clRed
-                   else UI.GearLabel.Font.Color = clWhite
+        if Gear == 0 then GearLabel.Caption = "N" end
+        if Gear == 0 and Speed < 0 then GearLabel.Caption = "R" end
+        if Gear > 0 then GearLabel.Caption = Gear end
+        if RPM > 0.5 then RPM1.Visible = true
+           if RPM > 0.7 then RPM2.Visible = true
+              if RPM > 0.8 then RPM3.Visible = true
+                 if RPM > 0.9 then RPM4.Visible = true
+                   if RPM > 0.96 then GearLabel.Font.Color = clRed
+                   else GearLabel.Font.Color = clWhite
                    end
-                 else UI.RPM4.Visible = false
+                 else RPM4.Visible = false
                  end
               else
-                  UI.RPM3.Visible = false
-                  UI.RPM4.Visible = false
+                  RPM3.Visible = false
+                  RPM4.Visible = false
               end
            else
-             UI.RPM2.Visible = false
-             UI.RPM3.Visible = false
-             UI.RPM4.Visible = false
+             RPM2.Visible = false
+             RPM3.Visible = false
+             RPM4.Visible = false
            end
         else
-          UI.RPM1.Visible = false
-          UI.RPM2.Visible = false
-          UI.RPM3.Visible = false
-          UI.RPM4.Visible = false
+          RPM1.Visible = false
+          RPM2.Visible = false
+          RPM3.Visible = false
+          RPM4.Visible = false
         end
      end
   else
-    UI.RPM1.Visible = false
-    UI.RPM2.Visible = false
-    UI.RPM3.Visible = false
+    RPM1.Visible = false
+    RPM2.Visible = false
+    RPM3.Visible = false
   end
 
   if Inputs == 1 then
@@ -847,15 +847,15 @@ function ReadSpeed()
      local ThrottlePos = readFloat("GTA5.exe+25E7974")
      if SteerPos ~= nil then
        if SteerPos < 0 then
-          UI.Steer.Position = (((SteerPos * (-1) *50) + 50) // 1)
+          Steer.Position = (((SteerPos * (-1) *50) + 50) // 1)
        elseif SteerPos > 0 then
-              UI.Steer.Position = ((50 - (SteerPos *50)) // 1)
+              Steer.Position = ((50 - (SteerPos *50)) // 1)
        else
-           UI.Steer.Position = 50
+           Steer.Position = 50
        end
      end
-     UI.Brake.Caption = math.floor(BrakePos * 100)
-     UI.Gas.Caption = math.floor(ThrottlePos * 100)
+     Brake.Caption = math.floor(BrakePos * 100)
+     Gas.Caption = math.floor(ThrottlePos * 100)
   end
 end
 
@@ -885,11 +885,11 @@ function startPitDelta()
   CalcSec = startTime//1000
   CalcMils = (startTime - (CalcSec*1000))
   if CalcMils<10 then
-    UI.PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
+    PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
   elseif CalcMils<100 then
-    UI.PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
+    PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
   else
-    UI.PitDeltaValue.Caption=CalcSec..'.'..CalcMils
+    PitDeltaValue.Caption=CalcSec..'.'..CalcMils
   end
 end
 
@@ -897,11 +897,11 @@ function stopPitDelta()
     CalcSec = pitExitTime//1000
     CalcMils = (pitExitTime - (CalcSec*1000))
     if CalcMils<10 then
-      UI.PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
+      PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
     elseif CalcMils<100 then
-      UI.PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
+      PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
     else
-      UI.PitDeltaValue.Caption=CalcSec..'.'..CalcMils
+      PitDeltaValue.Caption=CalcSec..'.'..CalcMils
     end
 end
 
@@ -910,9 +910,9 @@ function checkPitDeltaValue()
   
   if Enable == true then
     if inPit == 1 then
-      UI.CurrentLapValue.Visible = false
-      UI.CurrentLapLabel.Caption = 'Pit Delta:'
-      UI.PitDeltaValue.Visible = true
+      CurrentLapValue.Visible = false
+      CurrentLapLabel.Caption = 'Pit Delta:'
+      PitDeltaValue.Visible = true
       getPitEntry()
       startPitDelta()
     elseif inPit == 0 then
@@ -922,9 +922,9 @@ function checkPitDeltaValue()
         stopPitDelta()
       else
         startTime = 0
-        UI.PitDeltaValue.Visible = false
-        UI.CurrentLapLabel.Caption = 'Current Lap:'
-        UI.CurrentLapValue.Visible = true
+        PitDeltaValue.Visible = false
+        CurrentLapLabel.Caption = 'Current Lap:'
+        CurrentLapValue.Visible = true
       end
     end
   end
