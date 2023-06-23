@@ -12,7 +12,7 @@ Metrics = 1
 SpeedStatus = 1
 Gears = 1
 Inputs = 1
-KersValue = 1
+KersValues = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0
@@ -655,13 +655,13 @@ function ChangeInputs()
 end
 
 function ChangeKers()
-  if KersValue == 1 then
-     KersValue = 0
+  if KersValues == 1 then
+     KersValues = 0
      KersValueTurnOn.Caption = "KERS: OFF"
      KersValue.Visible = false
      KersValueBar.Visible = false
-  elseif KersValue == 0 then
-    KersValue = 1
+  elseif KersValues == 0 then
+    KersValues = 1
      KersValueTurnOn.Caption = "KERS: ON"
      KersValue.Visible = true
      KersValueBar.Visible = true
@@ -701,7 +701,7 @@ end
 
 function ReadKers()
   local Kers = 0
-  if KersValue == 1 then
+  if KersValues == 1 then
     if ADR == 0 then
       Kers = readFloat("GTA5.exe+1D59B60")
       if Kers ~= nil then
