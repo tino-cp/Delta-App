@@ -3,7 +3,7 @@ local http = getInternet()
 Icons = http.getURL(Icon_url)
 
 http.destroy()
-icon = loadImage(Icons)()
+icon = load(Icons)()
 
 function createUI()
   UI = createForm()
@@ -13,7 +13,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 1" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 2" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
