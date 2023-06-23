@@ -443,7 +443,6 @@ function createUI()
     GearLabel.Top = 126
     GearLabel.Width = 80
     GearLabel.Alignment = taCenter
-    --GearLabel.AutoSize = false
     GearLabel.Caption = '1'
     GearLabel.Font.Color = clWhite
     GearLabel.Font.Height = -32
