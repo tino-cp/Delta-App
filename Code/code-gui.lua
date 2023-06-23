@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 3" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 4" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -18,55 +18,6 @@ function createUI()
     UI.OnKeyDown = Speed
     UI.ShowInTaskBar = stAlways
     UI.Visible = true
-
-  InitPanel = createPanel(UI)
-    InitPanel.Left = -2
-    InitPanel.Height = 217
-    InitPanel.Top = -2
-    InitPanel.Width = 503
-    InitPanel.ClientHeight = 217
-    InitPanel.ClientWidth = 503
-    InitPanel.Color = clGrayText
-    InitPanel.DoubleBuffered = true
-    InitPanel.Font.CharSet = ANSI_CHARSET
-    InitPanel.Font.Color = clWhite
-    InitPanel.Font.Height = -16
-    InitPanel.Font.Pitch = fpVariable
-    InitPanel.Font.Quality = fqDraft
-    InitPanel.ParentColor = false
-    InitPanel.ParentDoubleBuffered = false
-    InitPanel.ParentFont = false
-    InitPanel.TabOrder = 2
-
-  Enable = createButton(InitPanel)
-    Enable.Left = 150
-    Enable.Height = 40
-    Enable.Top = 51
-    Enable.Width = 200
-    Enable.Caption = 'Enable'
-    Enable.Font.CharSet = ANSI_CHARSET
-    Enable.Font.Height = -16
-    Enable.Font.Name = 'Segoe UI'
-    Enable.Font.Pitch = fpVariable
-    Enable.Font.Quality = fqDraft
-    Enable.Font.fsBold = true
-    Enable.OnClick = Startup
-    Enable.ParentFont = false
-    Enable.TabOrder = 0
-
-  OnOffButtonLabel = createLabel(InitPanel)
-    OnOffButtonLabel.Left = 76
-    OnOffButtonLabel.Height = 100
-    OnOffButtonLabel.Top = 102
-    OnOffButtonLabel.Width = 347
-    OnOffButtonLabel.Caption = '-Enable only after u spawned on track \nand crossed the 1st checkpoint\n-Any errors or issues report via Discord PM\n@vi.o.lence or @mrtino.'
-    OnOffButtonLabel.Font.Color = clWindow
-    OnOffButtonLabel.Font.Height = -19
-    OnOffButtonLabel.Font.Name = 'Segoe UI'
-    OnOffButtonLabel.Font.fsItalic = true
-    OnOffButtonLabel.Font.fsUnderline = true
-    OnOffButtonLabel.ParentColor = false
-    OnOffButtonLabel.ParentFont = false
 
   LogBuildingButton = createButton(UI)
     LogBuildingButton.Left = 10
@@ -618,4 +569,54 @@ function createUI()
     KersValueBar.BorderWidth = 0
     KersValueBar.Position = 0
     KersValueBar.TabOrder = 10
+
+  InitPanel = createPanel(UI)
+    InitPanel.Left = -2
+    InitPanel.Height = 217
+    InitPanel.Top = -2
+    InitPanel.Width = 503
+    InitPanel.ClientHeight = 217
+    InitPanel.ClientWidth = 503
+    InitPanel.Color = clGrayText
+    InitPanel.DoubleBuffered = true
+    InitPanel.Font.CharSet = ANSI_CHARSET
+    InitPanel.Font.Color = clWhite
+    InitPanel.Font.Height = -16
+    InitPanel.Font.Pitch = fpVariable
+    InitPanel.Font.Quality = fqDraft
+    InitPanel.ParentColor = false
+    InitPanel.ParentDoubleBuffered = false
+    InitPanel.ParentFont = false
+    InitPanel.TabOrder = 2
+
+  Enable = createButton(InitPanel)
+    Enable.Left = 150
+    Enable.Height = 40
+    Enable.Top = 51
+    Enable.Width = 200
+    Enable.Caption = 'Enable'
+    Enable.Font.CharSet = ANSI_CHARSET
+    Enable.Font.Height = -16
+    Enable.Font.Name = 'Segoe UI'
+    Enable.Font.Pitch = fpVariable
+    Enable.Font.Quality = fqDraft
+    Enable.Font.fsBold = true
+    Enable.OnClick = Startup
+    Enable.ParentFont = false
+    Enable.TabOrder = 0
+
+  OnOffButtonLabel = createLabel(InitPanel)
+    OnOffButtonLabel.Left = 76
+    OnOffButtonLabel.Height = 100
+    OnOffButtonLabel.Top = 102
+    OnOffButtonLabel.Width = 347
+    OnOffButtonLabel.Caption = '-Enable only after u spawned on track \nand crossed the 1st checkpoint\n-Any errors or issues report via Discord PM\n@vi.o.lence or @mrtino.'
+    OnOffButtonLabel.Font.Color = clWindow
+    OnOffButtonLabel.Font.Height = -19
+    OnOffButtonLabel.Font.Name = 'Segoe UI'
+    OnOffButtonLabel.Font.fsItalic = true
+    OnOffButtonLabel.Font.fsUnderline = true
+    OnOffButtonLabel.ParentColor = false
+    OnOffButtonLabel.ParentFont = false
+
 end
