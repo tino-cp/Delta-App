@@ -7,7 +7,6 @@ function loadIcon()
   ico = createPicture()
   ico.loadFromStream(logo)
   logo.destroy()
-  http.destroy()
   return ico
 end
 
@@ -630,4 +629,6 @@ function createUI()
     OnOffButtonLabel.Font.fsUnderline = true
     OnOffButtonLabel.ParentColor = false
     OnOffButtonLabel.ParentFont = false
+
+    http.destroy()
 end
