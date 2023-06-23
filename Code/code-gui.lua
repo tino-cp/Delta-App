@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "DeltaApp by Vi'o'Lence 27" 
+    UI.Caption = "DeltaApp by Vi'o'Lence 28" 
     UI.ClientHeight = 214
     UI.ClientWidth = 500
     UI.Color = clGrayText
@@ -131,6 +131,7 @@ function createUI()
     LapProgress.Left = 0
     LapProgress.Height = 10
     LapProgress.Top = 202
+    LapProgress.Bottom = 0
     LapProgress.Width = 500
     LapProgress.BorderWidth = 0
     LapProgress.Position = 50
