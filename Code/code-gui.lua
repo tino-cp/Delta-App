@@ -19,7 +19,7 @@ function createUI()
     UI.ShowInTaskBar = stAlways
     UI.Visible = true
 
-  KersValueBar = createProgressBar()
+  KersValueBar = createProgressBar(UI)
     KersValueBar.Left = 393
     KersValueBar.Height = 16
     KersValueBar.Top = 179
@@ -127,7 +127,7 @@ function createUI()
     CL4.ParentColor = false
     CL4.ParentFont = false
 
-  LapProgress = createProgressBar()
+  LapProgress = createProgressBar(UI)
     LapProgress.Left = 0
     LapProgress.Height = 10
     LapProgress.Top = 202
