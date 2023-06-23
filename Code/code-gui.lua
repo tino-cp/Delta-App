@@ -19,7 +19,6 @@ function createUI()
     UI.ShowInTaskBar = stAlways
     UI.Visible = true
 
-
   KersValueBar = createProgressBar()
     KersValueBar.Left = 393
     KersValueBar.Height = 16
@@ -28,7 +27,6 @@ function createUI()
     KersValueBar.BorderWidth = 1
     KersValueBar.Position = 100
     KersValueBar.TabOrder = 10
-
 
   SettingButton = createButton(UI)
     SettingButton.Left = 387
@@ -43,7 +41,6 @@ function createUI()
     SettingButton.OnClick = ShowHideSettings
     SettingButton.ParentFont = false
     SettingButton.TabOrder = 7
-
 
   StartDetect = createButton(UI)
     StartDetect.Left = 295
@@ -60,7 +57,6 @@ function createUI()
     StartDetect.ParentFont = false
     StartDetect.TabOrder = 0
 
-
   CurrentLapLabel = createLabel(UI)
     CurrentLapLabel.Left = 10
     CurrentLapLabel.Height = 30
@@ -74,7 +70,6 @@ function createUI()
     CurrentLapLabel.Font.fsItalic = true
     CurrentLapLabel.ParentColor = false
     CurrentLapLabel.ParentFont = false
-
 
   FastestLapLabel = createLabel(UI)
     FastestLapLabel.Left = 10
@@ -90,7 +85,6 @@ function createUI()
     FastestLapLabel.ParentColor = false
     FastestLapLabel.ParentFont = false
 
-
   CL2 = createLabel(UI)
     CL2.Left = 380
     CL2.Height = 25
@@ -104,7 +98,6 @@ function createUI()
     CL2.Font.fsItalic = true
     CL2.ParentColor = false
     CL2.ParentFont = false
-
 
   CL3 = createLabel(UI)
     CL3.Left = 380
@@ -120,7 +113,6 @@ function createUI()
     CL3.ParentColor = false
     CL3.ParentFont = false
 
-
   CL4 = createLabel(UI)
     CL4.Left = 380
     CL4.Height = 25
@@ -135,7 +127,6 @@ function createUI()
     CL4.ParentColor = false
     CL4.ParentFont = false
 
-
   LapProgress = createProgressBar()
     LapProgress.Left = 0
     LapProgress.Height = 10
@@ -143,7 +134,6 @@ function createUI()
     LapProgress.Width = 500
     LapProgress.Position = 50
     LapProgress.TabOrder = 1
-
 
   CurrentLapValue = createLabel(UI)
     CurrentLapValue.Left = 144
@@ -159,7 +149,6 @@ function createUI()
     CurrentLapValue.ParentColor = false
     CurrentLapValue.ParentFont = false
 
-
   FastestLapValue = createLabel(UI)
     FastestLapValue.Left = 144
     FastestLapValue.Height = 30
@@ -173,7 +162,6 @@ function createUI()
     FastestLapValue.Font.fsItalic = true
     FastestLapValue.ParentColor = false
     FastestLapValue.ParentFont = false
-
 
   S1Label = createLabel(UI)
     S1Label.Left = 420
@@ -189,7 +177,6 @@ function createUI()
     S1Label.ParentColor = false
     S1Label.ParentFont = false
 
-
   S2Label = createLabel(UI)
     S2Label.Left = 420
     S2Label.Height = 25
@@ -203,7 +190,6 @@ function createUI()
     S2Label.Font.fsItalic = true
     S2Label.ParentColor = false
     S2Label.ParentFont = false
-
 
   S3Label = createLabel(UI)
     S3Label.Left = 420
@@ -219,7 +205,6 @@ function createUI()
     S3Label.ParentColor = false
     S3Label.ParentFont = false
 
-
   DeltaLabel = createLabel(UI)
     DeltaLabel.Left = 186
     DeltaLabel.Height = 45
@@ -234,7 +219,6 @@ function createUI()
     DeltaLabel.ParentColor = false
     DeltaLabel.ParentFont = false
 
-
   S1ProggressBar = createLabel(UI)
     S1ProggressBar.Left = 145
     S1ProggressBar.Height = 17
@@ -247,7 +231,6 @@ function createUI()
     S1ProggressBar.Font.fsItalic = true
     S1ProggressBar.ParentColor = false
     S1ProggressBar.ParentFont = false
-
 
   S1ProggressBar1 = createLabel(UI)
     S1ProggressBar1.Left = 310
@@ -262,7 +245,6 @@ function createUI()
     S1ProggressBar1.ParentColor = false
     S1ProggressBar1.ParentFont = false
 
-
   SectorsCurrent = createLabel(UI)
     SectorsCurrent.Left = 386
     SectorsCurrent.Height = 21
@@ -276,7 +258,6 @@ function createUI()
     SectorsCurrent.Font.fsItalic = true
     SectorsCurrent.ParentColor = false
     SectorsCurrent.ParentFont = false
-
 
   BestSectors = createLabel(UI)
     BestSectors.Left = 401
@@ -308,7 +289,6 @@ function createUI()
     LogBuildingButton.ParentFont = false
     LogBuildingButton.TabOrder = 4
 
-
   LoadFLButton = createButton(UI)
     LoadFLButton.Left = 105
     LoadFLButton.Height = 36
@@ -323,7 +303,6 @@ function createUI()
     LoadFLButton.OnClick = LoadFastLap
     LoadFLButton.ParentFont = false
     LoadFLButton.TabOrder = 5
-
 
   SaveFLButton = createButton(UI)
     SaveFLButton.Left = 200
@@ -481,7 +460,6 @@ function createUI()
     RPM2.ParentFont = false
     RPM2.Visible = false
 
-
   RPM3 = createLabel(UI)
     RPM3.Left = 20
     RPM3.Height = 65
@@ -528,7 +506,6 @@ function createUI()
     Steer.ParentFont = false
     Steer.TabOrder = 9
 
-
   Gas = createLabel(UI)
     Gas.Left = 316
     Gas.Height = 30
@@ -558,7 +535,6 @@ function createUI()
     Brake.ParentColor = false
     Brake.ParentFont = false
 
-
   InitPanel = createPanel(UI)
     InitPanel.Left = -2
     InitPanel.Height = 217
@@ -578,7 +554,6 @@ function createUI()
     InitPanel.ParentFont = false
     InitPanel.TabOrder = 2
 
-
   OnOffButtonLabel = createLabel(InitPanel)
     OnOffButtonLabel.Left = 76
     OnOffButtonLabel.Height = 100
@@ -592,7 +567,6 @@ function createUI()
     OnOffButtonLabel.Font.fsUnderline = true
     OnOffButtonLabel.ParentColor = false
     OnOffButtonLabel.ParentFont = false
-
 
   Enable = createButton(InitPanel)
     Enable.Left = 150
