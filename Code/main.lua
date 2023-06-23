@@ -578,8 +578,8 @@ function Startup()
   FindTimes()
   FindCar()
   ActivateApp()
-  if SteamVersion.Checked == true then ADR = 0 end
-  if NonSteamVersion.Checked == true then ADR = 1 end
+  -- if SteamVersion.Checked == true then ADR = 0 end
+  -- if NonSteamVersion.Checked == true then ADR = 1 end
 end
 
 function RescanUNK()
