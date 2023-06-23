@@ -648,6 +648,4 @@ function createUI()
     PitDeltaValue.ParentColor = false
     PitDeltaValue.ParentFont = false
     PitDeltaValue.Visible = false
-
-  return UI
 end
