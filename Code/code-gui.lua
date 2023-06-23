@@ -454,7 +454,6 @@ function createUI()
     GearLabel.ParentColor = false
     GearLabel.ParentFont = false
 
-
   RPM1 = createLabel(UI)
     RPM1.Left = 47
     RPM1.Height = 65
@@ -469,7 +468,6 @@ function createUI()
     RPM1.ParentColor = false
     RPM1.ParentFont = false
     RPM1.Visible = false
-
 
   RPM2 = createLabel(UI)
     RPM2.Left = 34
