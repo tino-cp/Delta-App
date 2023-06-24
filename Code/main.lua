@@ -667,7 +667,7 @@ function ChangeKers()
   end
 end
 
-function darkMode()
+function darkModeTurnOn()
   if darkMode == 1 then
     darkMode = 0
     DarkModeTurnOn.Caption = 'DARK: ON'
