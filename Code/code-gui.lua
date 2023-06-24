@@ -493,14 +493,14 @@ function createUI()
       SettingButton.TabOrder = 7
 
     SettingPanel = createPanel(UI)
-      SettingPanel.Left = 375
+      SettingPanel.Left = 265
       SettingPanel.Height = 130
       SettingPanel.Top = 50
       SettingPanel.Width = 110
       SettingPanel.BevelColor = clBackground
       SettingPanel.BevelWidth = 2
       SettingPanel.ClientHeight = 190
-      SettingPanel.ClientWidth = 110
+      SettingPanel.ClientWidth = 220
       SettingPanel.TabOrder = 8
       SettingPanel.Visible = false
 
@@ -570,9 +570,9 @@ function createUI()
       KersValueTurnOn.TabOrder = 4
 
     DarkModeTurnOn = createButton(SettingPanel)
-      DarkModeTurnOn.Left = 5
+      DarkModeTurnOn.Left = 115
       DarkModeTurnOn.Height = 30
-      DarkModeTurnOn.Top = 155
+      DarkModeTurnOn.Top = 5
       DarkModeTurnOn.Width = 100
       DarkModeTurnOn.Caption = 'DARK: ON'
       DarkModeTurnOn.Font.fsBold = true
