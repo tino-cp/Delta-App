@@ -1,8 +1,4 @@
 function createUI()
-  local darkMode = 1
-
-  if darkMode == 1 then
-  darkMode = 0
     UI = createForm()
       UI.Left = 0
       UI.Height = 214
@@ -29,7 +25,7 @@ function createUI()
       CurrentLapLabel.Top = 58
       CurrentLapLabel.Width = 121
       CurrentLapLabel.Caption = 'Current Lap:'
-      CurrentLapLabel.Font.Color = clWhiteText
+      CurrentLapLabel.Font.Color = clWhite
       CurrentLapLabel.Font.Height = -21
       CurrentLapLabel.Font.Name = 'Segoe UI'
       CurrentLapLabel.Font.fsBold = true
@@ -621,18 +617,4 @@ function createUI()
       OnOffButtonLabel.Font.fsUnderline = true
       OnOffButtonLabel.ParentColor = false
       OnOffButtonLabel.ParentFont = false
-  elseif darkMode == 0 then
-    OnOffButtonLabel.Font.Color = clWindow
-    CurrentLapLabel.Font.Color = clWindow
-    SpeedLabel.Font.Color = clWindow
-    S3Label.Font.Color = clWindow
-    S2Label.Font.Color = clWindow
-    S1Label.Font.Color = clWindow
-    CL4.Font.Color = clWindow
-    CL3.Font.Color = clWindow
-    CL2.Font.Color = clWindow
-    DeltaLabel.Font.Color = clWindow
-    CurrentLapLabel.Font.Color = clWindow
-    CurrentLapValue.Font.Color = clWindow
-  end
 end
