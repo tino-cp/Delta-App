@@ -499,7 +499,7 @@ function createUI()
       SettingPanel.Width = 110
       SettingPanel.BevelColor = clBackground
       SettingPanel.BevelWidth = 2
-      SettingPanel.ClientHeight = 190
+      SettingPanel.ClientHeight = 160
       SettingPanel.ClientWidth = 220
       SettingPanel.TabOrder = 8
       SettingPanel.Visible = false
