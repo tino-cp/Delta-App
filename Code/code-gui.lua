@@ -577,7 +577,7 @@ function createUI()
       DarkModeTurnOn.Caption = 'DARK: ON'
       DarkModeTurnOn.Font.fsBold = true
       DarkModeTurnOn.Font.fsItalic = true
-      DarkModeTurnOn.OnClick = darkMode
+      DarkModeTurnOn.OnClick = darkModeTurnOn
       DarkModeTurnOn.ParentFont = False
       DarkModeTurnOn.TabOrder = 4
 
