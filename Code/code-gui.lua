@@ -9,7 +9,7 @@ function createUI()
       UI.Caption = "DeltaApp by Vi'o'Lence" 
       UI.ClientHeight = 214
       UI.ClientWidth = 500
-      UI.Color = clWindow
+      UI.Color = clBlack
       UI.Font.Color = clWhite
       UI.FormStyle = fsSystemStayOnTop
       -- UI.Icon.Data = loadIcon()
