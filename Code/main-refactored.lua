@@ -673,7 +673,7 @@ function darkMode()
     darkMode = 0
     DarkModeTurnOn.Caption = 'DARK: ON'
     UI.Color = clGray
-    OnOffButtonLabel.Font.Color = clGrayText
+    OnOffButtonLabel.Font.Color = clGray
     CurrentLapLabel.Font.Color = clWhite
     SpeedLabel.Font.Color = clWhite
     S3Label.Font.Color = clWhite
@@ -682,6 +682,7 @@ function darkMode()
     CL4.Font.Color = clWhite
     CL3.Font.Color = clWhite
     CL2.Font.Color = clWhite
+    GearLabel.Font.Color = clWhite
     DeltaLabel.Font.Color = clWhite
     CurrentLapLabel.Font.Color = clWhite
     CurrentLapValue.Font.Color = clWhite
@@ -689,18 +690,19 @@ function darkMode()
     darkMode = 1
     UI.Color = clWhite
     DarkModeTurnOn.Caption = 'DARK: OFF'
-    OnOffButtonLabel.Font.Color = clGrayText
-    CurrentLapLabel.Font.Color = clGrayText
-    SpeedLabel.Font.Color = clGrayText
-    S3Label.Font.Color = clGrayText
-    S2Label.Font.Color = clGrayText
-    S1Label.Font.Color = clGrayText
-    CL4.Font.Color = clGrayText
-    CL3.Font.Color = clGrayText
-    CL2.Font.Color = clGrayText
-    DeltaLabel.Font.Color = clGrayText
-    CurrentLapLabel.Font.Color = clGrayText
-    CurrentLapValue.Font.Color = clGrayText
+    OnOffButtonLabel.Font.Color = clGray
+    CurrentLapLabel.Font.Color = clGray
+    SpeedLabel.Font.Color = clGray
+    S3Label.Font.Color = clGray
+    S2Label.Font.Color = clGray
+    S1Label.Font.Color = clGray
+    CL4.Font.Color = clGray
+    CL3.Font.Color = clGray
+    CL2.Font.Color = clGray
+    GearLabel.Font.Color = clGray
+    DeltaLabel.Font.Color = clGray
+    CurrentLapLabel.Font.Color = clGray
+    CurrentLapValue.Font.Color = clGray
   end
 end
 
