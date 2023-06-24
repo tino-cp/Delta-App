@@ -666,6 +666,44 @@ function ChangeKers()
   end
 end
 
+function darkMode()
+  local darkMode = 1
+
+  if darkMode == 1 then
+    darkMode = 0
+    DarkModeTurnOn.Caption = 'DARK: ON'
+    UI.Color = clGrayText
+    OnOffButtonLabel.Font.Color = clGrayText
+    CurrentLapLabel.Font.Color = clWhite
+    SpeedLabel.Font.Color = clWhite
+    S3Label.Font.Color = clWhite
+    S2Label.Font.Color = clWhite
+    S1Label.Font.Color = clWhite
+    CL4.Font.Color = clWhite
+    CL3.Font.Color = clWhite
+    CL2.Font.Color = clWhite
+    DeltaLabel.Font.Color = clWhite
+    CurrentLapLabel.Font.Color = clWhite
+    CurrentLapValue.Font.Color = clWhite
+  elseif darkMode == 0 then
+    darkMode = 1
+    UI.Color = clWhite
+    DarkModeTurnOn.Caption = 'DARK: OFF'
+    OnOffButtonLabel.Font.Color = clGrayText
+    CurrentLapLabel.Font.Color = clGrayText
+    SpeedLabel.Font.Color = clGrayText
+    S3Label.Font.Color = clGrayText
+    S2Label.Font.Color = clGrayText
+    S1Label.Font.Color = clGrayText
+    CL4.Font.Color = clGrayText
+    CL3.Font.Color = clGrayText
+    CL2.Font.Color = clGrayText
+    DeltaLabel.Font.Color = clGrayText
+    CurrentLapLabel.Font.Color = clGrayText
+    CurrentLapValue.Font.Color = clGrayText
+  end
+end
+
 -- Not used?
 function GetKers()
   if ADR == 0 then

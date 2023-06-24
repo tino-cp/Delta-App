@@ -12,6 +12,7 @@ SpeedStatus = 1
 Gears = 1
 Inputs = 1
 KersValues = 1
+darkMode = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0
@@ -663,6 +664,42 @@ function ChangeKers()
      KersValueTurnOn.Caption = "KERS: ON"
      KersValue.Visible = true
      KersValueBar.Visible = true
+  end
+end
+
+function darkMode()
+  if darkMode == 1 then
+    darkMode = 0
+    DarkModeTurnOn.Caption = 'DARK: ON'
+    UI.Color = clGrayText
+    OnOffButtonLabel.Font.Color = clGrayText
+    CurrentLapLabel.Font.Color = clWhite
+    SpeedLabel.Font.Color = clWhite
+    S3Label.Font.Color = clWhite
+    S2Label.Font.Color = clWhite
+    S1Label.Font.Color = clWhite
+    CL4.Font.Color = clWhite
+    CL3.Font.Color = clWhite
+    CL2.Font.Color = clWhite
+    DeltaLabel.Font.Color = clWhite
+    CurrentLapLabel.Font.Color = clWhite
+    CurrentLapValue.Font.Color = clWhite
+  elseif darkMode == 0 then
+    darkMode = 1
+    UI.Color = clWhite
+    DarkModeTurnOn.Caption = 'DARK: OFF'
+    OnOffButtonLabel.Font.Color = clGrayText
+    CurrentLapLabel.Font.Color = clGrayText
+    SpeedLabel.Font.Color = clGrayText
+    S3Label.Font.Color = clGrayText
+    S2Label.Font.Color = clGrayText
+    S1Label.Font.Color = clGrayText
+    CL4.Font.Color = clGrayText
+    CL3.Font.Color = clGrayText
+    CL2.Font.Color = clGrayText
+    DeltaLabel.Font.Color = clGrayText
+    CurrentLapLabel.Font.Color = clGrayText
+    CurrentLapValue.Font.Color = clGrayText
   end
 end
 
