@@ -29,7 +29,7 @@ function createUI()
       CurrentLapLabel.Top = 58
       CurrentLapLabel.Width = 121
       CurrentLapLabel.Caption = 'Current Lap:'
-      CurrentLapLabel.Font.Color = clGrayText
+      CurrentLapLabel.Font.Color = clWhiteText
       CurrentLapLabel.Font.Height = -21
       CurrentLapLabel.Font.Name = 'Segoe UI'
       CurrentLapLabel.Font.fsBold = true
