@@ -593,6 +593,119 @@ function createUI()
       SimpleModeTurnOn.ParentFont = False
       SimpleModeTurnOn.TabOrder = 4
 
+    SimpleButton = createButton(UI)
+      SimpleButton.Left = 10
+      SimpleButton.Height = 30
+      SimpleButton.Top = 10
+      SimpleButton.Width = 90
+      SimpleButton.Caption = 'EXPAND'
+      SimpleButton.Font.Height = -16
+      SimpleButton.Font.Name = 'Segoe UI'
+      SimpleButton.Font.Style = fsBold
+      SimpleButton.Font.fsItalic = true
+      SimpleButton.OnClick = ShowHideSimple
+      SimpleButton.ParentFont = false
+      SimpleButton.TabOrder = 7
+
+    SimplePanel = createPanel(UI)
+      SimplePanel.Left = 10
+      SimplePanel.Height = 130
+      SimplePanel.Top = 50
+      SimplePanel.Width = 110
+      SimplePanel.BevelColor = clBackground
+      SimplePanel.BevelWidth = 2
+      SimplePanel.ClientHeight = 160
+      SimplePanel.ClientWidth = 220
+      SimplePanel.TabOrder = 8
+      SimplePanel.Visible = false
+  
+    LogBuildingButtonSimple = createButton(SimplePanel)
+      LogBuildingButtonSimple.Left = 10
+      LogBuildingButtonSimple.Height = 30
+      LogBuildingButtonSimple.Top = 65
+      LogBuildingButtonSimple.Width = 90
+      LogBuildingButtonSimple.Caption = 'LOGS OFF'
+      LogBuildingButtonSimple.Enabled = false
+      LogBuildingButtonSimple.Font.Height = -16
+      LogBuildingButtonSimple.Font.Name = 'Segoe UI'
+      LogBuildingButtonSimple.Font.fsBold = true
+      LogBuildingButtonSimple.Font.fsItalic = true
+      LogBuildingButtonSimple.OnClick = LogsSwitcher
+      LogBuildingButtonSimple.ParentFont = false
+      LogBuildingButtonSimple.TabOrder = 4
+  
+    LoadFLButtonSimple = createButton(SimplePanel)
+      LoadFLButtonSimple.Left = 105
+      LoadFLButtonSimple.Height = 30
+      LoadFLButtonSimple.Top = 15
+      LoadFLButtonSimple.Width = 90
+      LoadFLButtonSimple.Caption = 'LOAD LAP'
+      LoadFLButtonSimple.Enabled = false
+      LoadFLButtonSimple.Font.Height = -16
+      LoadFLButtonSimple.Font.Name = 'Segoe UI'
+      LoadFLButtonSimple.Font.fsBold = true
+      LoadFLButtonSimple.Font.fsItalic = true
+      LoadFLButtonSimple.OnClick = LoadFastLap
+      LoadFLButtonSimple.ParentFont = false
+      LoadFLButtonSimple.TabOrder = 5
+  
+    SaveFLButtonSimple = createButton(SimplePanel)
+      SaveFLButtonSimple.Left = 10
+      SaveFLButtonSimple.Height = 65
+      SaveFLButtonSimple.Top = 15
+      SaveFLButtonSimple.Width = 90
+      SaveFLButtonSimple.Caption = 'SAVE LAP'
+      SaveFLButtonSimple.Enabled = false
+      SaveFLButtonSimple.Font.Height = -16
+      SaveFLButtonSimple.Font.Name = 'Segoe UI'
+      SaveFLButtonSimple.Font.fsBold = true
+      SaveFLButtonSimple.Font.fsItalic = true
+      SaveFLButtonSimple.OnClick = SaveFastLap
+      SaveFLButtonSimple.OnMouseEnter = ShowTime
+      SaveFLButtonSimple.OnMouseLeave = RevertCaption
+      SaveFLButtonSimple.ParentFont = false
+      SaveFLButtonSimple.TabOrder = 6
+  
+    StartDetectSimple = createButton(SimplePanel)
+      StartDetectSimple.Left = 105
+      StartDetectSimple.Height = 65
+      StartDetectSimple.Top = 15
+      StartDetectSimple.Width = 90
+      StartDetectSimple.Caption = 'START'
+      StartDetectSimple.Enabled = false
+      StartDetectSimple.Font.Height = -16
+      StartDetectSimple.Font.Name = 'Segoe UI'
+      StartDetectSimple.FontStyle = 'bold'
+      StartDetectSimple.FontStyle = 'italic'
+      StartDetectSimple.OnClick = UpdateInfo
+      StartDetectSimple.ParentFont = false
+      StartDetectSimple.TabOrder = 0
+  
+    DarkModeTurnOnSimple = createButton(SimplePanel)
+      DarkModeTurnOnSimple.Left = 10
+      DarkModeTurnOnSimple.Height = 95
+      DarkModeTurnOnSimple.Top = 15
+      DarkModeTurnOnSimple.Width = 100
+      DarkModeTurnOnSimple.Caption = 'DARK: ON'
+      DarkModeTurnOnSimple.Font.fsBold = true
+      DarkModeTurnOnSimple.Font.fsItalic = true
+      DarkModeTurnOnSimple.OnClick = darkModeTurnOn
+      DarkModeTurnOnSimple.ParentFont = False
+      DarkModeTurnOnSimple.TabOrder = 4
+  
+    SimpleModeTurnOnSimple = createButton(SimplePanel)
+      SimpleModeTurnOnSimple.Left = 105
+      SimpleModeTurnOnSimple.Height = 95
+      SimpleModeTurnOnSimple.Top = 15
+      SimpleModeTurnOnSimple.Width = 100
+      SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
+      SimpleModeTurnOnSimple.Font.fsBold = true
+      SimpleModeTurnOnSimple.Font.fsItalic = true
+      SimpleModeTurnOnSimple.OnClick = simpleModeTurnOn
+      SimpleModeTurnOnSimple.ParentFont = False
+      SimpleModeTurnOnSimple.TabOrder = 4
+  
+
 
     InitPanel = createPanel(UI)
       InitPanel.Left = -2

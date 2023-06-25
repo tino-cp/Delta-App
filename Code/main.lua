@@ -604,6 +604,16 @@ function ShowHideSettings()
   end
 end
 
+function ShowHideSimple()
+  if SimplePanel.Visible == true then
+    SimplePanel.Visible = false
+    SimplePanel.Enable = false
+  else
+    SimplePanel.Visible = true
+    SimplePanel.Enable = true
+  end
+end
+
 function ChangeMetrics()
   if Metrics == 1 then
      Metrics = 0
@@ -771,105 +781,6 @@ function simpleModeTurnOn()
     SaveFLButton.Visible = false
     StartDetect.Visible = false
     SettingButton.Visible = false
-
-  SimplePanel = createPanel(UI)
-    SimplePanel.Left = 10
-    SimplePanel.Height = 130
-    SimplePanel.Top = 50
-    SimplePanel.Width = 110
-    SimplePanel.BevelColor = clBackground
-    SimplePanel.BevelWidth = 2
-    SimplePanel.ClientHeight = 160
-    SimplePanel.ClientWidth = 220
-    SimplePanel.TabOrder = 8
-    SimplePanel.Visible = false
-
-  LogBuildingButtonSimple = createButton(SettingPanel)
-    LogBuildingButtonSimple.Left = 10
-    LogBuildingButtonSimple.Height = 36
-    LogBuildingButtonSimple.Top = 13
-    LogBuildingButtonSimple.Width = 90
-    LogBuildingButtonSimple.Caption = 'LOGS OFF'
-    LogBuildingButtonSimple.Enabled = false
-    LogBuildingButtonSimple.Font.Height = -16
-    LogBuildingButtonSimple.Font.Name = 'Segoe UI'
-    LogBuildingButtonSimple.Font.fsBold = true
-    LogBuildingButtonSimple.Font.fsItalic = true
-    LogBuildingButtonSimple.OnClick = LogsSwitcher
-    LogBuildingButtonSimple.ParentFont = false
-    LogBuildingButtonSimple.TabOrder = 4
-
-  LoadFLButtonSimple = createButton(SettingPanel)
-    LoadFLButtonSimple.Left = 105
-    LoadFLButtonSimple.Height = 36
-    LoadFLButtonSimple.Top = 13
-    LoadFLButtonSimple.Width = 90
-    LoadFLButtonSimple.Caption = 'LOAD LAP'
-    LoadFLButtonSimple.Enabled = false
-    LoadFLButtonSimple.Font.Height = -16
-    LoadFLButtonSimple.Font.Name = 'Segoe UI'
-    LoadFLButtonSimple.Font.fsBold = true
-    LoadFLButtonSimple.Font.fsItalic = true
-    LoadFLButtonSimple.OnClick = LoadFastLap
-    LoadFLButtonSimple.ParentFont = false
-    LoadFLButtonSimple.TabOrder = 5
-
-  SaveFLButtonSimple = createButton(SettingPanel)
-    SaveFLButtonSimple.Left = 200
-    SaveFLButtonSimple.Height = 36
-    SaveFLButtonSimple.Top = 13
-    SaveFLButtonSimple.Width = 90
-    SaveFLButtonSimple.Caption = 'SAVE LAP'
-    SaveFLButtonSimple.Enabled = false
-    SaveFLButtonSimple.Font.Height = -16
-    SaveFLButtonSimple.Font.Name = 'Segoe UI'
-    SaveFLButtonSimple.Font.fsBold = true
-    SaveFLButtonSimple.Font.fsItalic = true
-    SaveFLButtonSimple.OnClick = SaveFastLap
-    SaveFLButtonSimple.OnMouseEnter = ShowTime
-    SaveFLButtonSimple.OnMouseLeave = RevertCaption
-    SaveFLButtonSimple.ParentFont = false
-    SaveFLButtonSimple.TabOrder = 6
-
-  StartDetectSimple = createButton(SettingPanel)
-    StartDetectSimple.Left = 295
-    StartDetectSimple.Height = 36
-    StartDetectSimple.Top = 13
-    StartDetectSimple.Width = 70
-    StartDetectSimple.Caption = 'START'
-    StartDetectSimple.Enabled = false
-    StartDetectSimple.Font.Height = -16
-    StartDetectSimple.Font.Name = 'Segoe UI'
-    StartDetectSimple.FontStyle = 'bold'
-    StartDetectSimple.FontStyle = 'italic'
-    StartDetectSimple.OnClick = UpdateInfo
-    StartDetectSimple.ParentFont = false
-    StartDetectSimple.TabOrder = 0
-
-  DarkModeTurnOn = createButton(SettingPanel)
-    DarkModeTurnOn.Left = 115
-    DarkModeTurnOn.Height = 30
-    DarkModeTurnOn.Top = 5
-    DarkModeTurnOn.Width = 100
-    DarkModeTurnOn.Caption = 'DARK: ON'
-    DarkModeTurnOn.Font.fsBold = true
-    DarkModeTurnOn.Font.fsItalic = true
-    DarkModeTurnOn.OnClick = darkModeTurnOn
-    DarkModeTurnOn.ParentFont = False
-    DarkModeTurnOn.TabOrder = 4
-
-  SimpleModeTurnOn = createButton(SettingPanel)
-    SimpleModeTurnOn.Left = 115
-    SimpleModeTurnOn.Height = 30
-    SimpleModeTurnOn.Top = 35
-    SimpleModeTurnOn.Width = 100
-    SimpleModeTurnOn.Caption = 'SIMPLE: ON'
-    SimpleModeTurnOn.Font.fsBold = true
-    SimpleModeTurnOn.Font.fsItalic = true
-    SimpleModeTurnOn.OnClick = simpleModeTurnOn
-    SimpleModeTurnOn.ParentFont = False
-    SimpleModeTurnOn.TabOrder = 4
-
     UI.Height = 200
     UI.Width = 300
     UI.ClientHeight = 200
