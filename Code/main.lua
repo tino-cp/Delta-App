@@ -803,8 +803,6 @@ function simpleModeTurnOn()
     StartDetect.Visible = true
     SettingButton.Visible = true
     DeltaLabel.Left = 186
-    SpeedLabel.Left = 24
-    SpeedLabel.Top = 166
     UI.Height = 214
     UI.Width = 500
     UI.ClientHeight = 214
@@ -846,9 +844,7 @@ function simpleModeTurnOn()
     DarkModeTurnOnSimple.Visible = true
     SimpleModeTurnOnSimple.Visible = true
     DeltaLabel.Left = 150
-    SpeedLabel.Left = 144
-    SpeedLabel.Top = 22
-    UI.Height = 190
+    UI.Height = 200
     UI.Width = 270
     UI.ClientHeight = 190
     UI.ClientWidth = 270
@@ -1001,7 +997,6 @@ function ReadSpeed()
               if RPM > 0.8 then RPM3.Visible = true
                  if RPM > 0.9 then RPM4.Visible = true
                    if RPM > 0.96 then GearLabel.Font.Color = clRed
-                   elseif darkMode == 0 then GearLabel.Font.Color = clWhite
                    elseif darkMode == 1 then GearLabel.Font.Color = clBlack
                    else GearLabel.Font.Color = clWhite
                    end
@@ -1047,76 +1042,76 @@ function ReadSpeed()
   end
 end
 
-local startTime = 0
-local pitEntry = 0
-local pitExit = 0
-local pitExitTime = 0
-local isPitEntrySet = false
+-- local startTime = 0
+-- local pitEntry = 0
+-- local pitExit = 0
+-- local pitExitTime = 0
+-- local isPitEntrySet = false
 
-function getPitEntry()
-  if isPitEntrySet == false then
-    pitEntry = CurLapMils
-    isPitEntrySet = true
-  end
-end
+-- function getPitEntry()
+--   if isPitEntrySet == false then
+--     pitEntry = CurLapMils
+--     isPitEntrySet = true
+--   end
+-- end
 
-function getPitExit()
-  if isPitEntrySet == true then
-    pitExit = CurLapMils
-    pitExitTime = startTime
-    isPitEntrySet = false
-  end
-end
+-- function getPitExit()
+--   if isPitEntrySet == true then
+--     pitExit = CurLapMils
+--     pitExitTime = startTime
+--     isPitEntrySet = false
+--   end
+-- end
 
-function startPitDelta()
-  startTime = CurLapMils - pitEntry
-  CalcSec = startTime//1000
-  CalcMils = (startTime - (CalcSec*1000))
-  if CalcMils<10 then
-    PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
-  elseif CalcMils<100 then
-    PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
-  else
-    PitDeltaValue.Caption=CalcSec..'.'..CalcMils
-  end
-end
+-- function startPitDelta()
+--   startTime = CurLapMils - pitEntry
+--   CalcSec = startTime//1000
+--   CalcMils = (startTime - (CalcSec*1000))
+--   if CalcMils<10 then
+--     PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
+--   elseif CalcMils<100 then
+--     PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
+--   else
+--     PitDeltaValue.Caption=CalcSec..'.'..CalcMils
+--   end
+-- end
 
-function stopPitDelta()
-    CalcSec = pitExitTime//1000
-    CalcMils = (pitExitTime - (CalcSec*1000))
-    if CalcMils<10 then
-      PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
-    elseif CalcMils<100 then
-      PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
-    else
-      PitDeltaValue.Caption=CalcSec..'.'..CalcMils
-    end
-end
+-- function stopPitDelta()
+--     CalcSec = pitExitTime//1000
+--     CalcMils = (pitExitTime - (CalcSec*1000))
+--     if CalcMils<10 then
+--       PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
+--     elseif CalcMils<100 then
+--       PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
+--     else
+--       PitDeltaValue.Caption=CalcSec..'.'..CalcMils
+--     end
+-- end
 
-function checkPitDeltaValue()
-  local inPit = readInteger("GTA5.exe+2A320D0")
+-- function checkPitDeltaValue()
+--   local inPit = readInteger("GTA5.exe+2A320D0")
   
-  if Enable == true then
-    if inPit == 1 then
-      CurrentLapValue.Visible = false
-      CurrentLapLabel.Caption = 'Pit Delta:'
-      PitDeltaValue.Visible = true
-      getPitEntry()
-      startPitDelta()
-    elseif inPit == 0 then
-      getPitExit()
-      local freezeTime = 2000
-      if (CurLapMils - pitExit) < freezeTime then
-        stopPitDelta()
-      else
-        startTime = 0
-        PitDeltaValue.Visible = false
-        CurrentLapLabel.Caption = 'Current Lap:'
-        CurrentLapValue.Visible = true
-      end
-    end
-  end
-end
+--   if Enable == true then
+--     if inPit == 1 then
+--       CurrentLapValue.Visible = false
+--       CurrentLapLabel.Caption = 'Pit Delta:'
+--       PitDeltaValue.Visible = true
+--       getPitEntry()
+--       startPitDelta()
+--     elseif inPit == 0 then
+--       getPitExit()
+--       local freezeTime = 2000
+--       if (CurLapMils - pitExit) < freezeTime then
+--         stopPitDelta()
+--       else
+--         startTime = 0
+--         PitDeltaValue.Visible = false
+--         CurrentLapLabel.Caption = 'Current Lap:'
+--         CurrentLapValue.Visible = true
+--       end
+--     end
+--   end
+-- end
 
 function ReadValue()
   ReadKers()
