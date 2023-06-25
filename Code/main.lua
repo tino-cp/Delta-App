@@ -759,6 +759,7 @@ function simpleModeTurnOn()
     StartDetectSimple.Visible = false
     DarkModeTurnOnSimple.Visible = false
     SimpleModeTurnOnSimple.Visible = false
+    DeltaLabel.Left = 186
     UI.Height = 214
     UI.Width = 500
     UI.ClientHeight = 214
@@ -799,6 +800,7 @@ function simpleModeTurnOn()
     StartDetectSimple.Visible = true
     DarkModeTurnOnSimple.Visible = true
     SimpleModeTurnOnSimple.Visible = true
+    DeltaLabel.Left = 144
     UI.Height = 200
     UI.Width = 300
     UI.ClientHeight = 200
