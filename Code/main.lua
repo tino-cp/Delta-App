@@ -778,6 +778,7 @@ function simpleModeTurnOn()
     RPM3.Visible = true
     RPM4.Visible = true
     SimpleButton.Visible = false
+    SimplePanel.Visible = false
     LogBuildingButtonSimple.Visible = false
     LoadFLButtonSimple.Visible = false
     SaveFLButtonSimple.Visible = false
