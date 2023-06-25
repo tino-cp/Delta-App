@@ -747,6 +747,20 @@ function simpleModeTurnOn()
     RPM2.Visible = true
     RPM3.Visible = true
     RPM4.Visible = true
+    SettingPanel.Visible = true
+    LogBuildingButton.Visible = true
+    LoadFLButton.Visible = true
+    SaveFLButton.Visible = true
+    StartDetect.Visible = true
+    SettingButton.Visible = true
+    LogBuildingButtonSimple.Visible = false
+    LoadFLButtonSimple.Visible = false
+    SaveFLButtonSimple.Visible = false
+    StartDetectSimple.Visible = false
+    DarkModeTurnOnSimple.Visible = false
+    SimpleModeTurnOnSimple.Visible = false
+
+    Load
     UI.Height = 214
     UI.Width = 500
     UI.ClientHeight = 214
@@ -781,6 +795,12 @@ function simpleModeTurnOn()
     SaveFLButton.Visible = false
     StartDetect.Visible = false
     SettingButton.Visible = false
+    LogBuildingButtonSimple.Visible = true
+    LoadFLButtonSimple.Visible = true
+    SaveFLButtonSimple.Visible = true
+    StartDetectSimple.Visible = true
+    DarkModeTurnOnSimple.Visible = true
+    SimpleModeTurnOnSimple.Visible = true
     UI.Height = 200
     UI.Width = 300
     UI.ClientHeight = 200

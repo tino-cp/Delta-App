@@ -595,7 +595,7 @@ function createUI()
 
     SimpleButton = createButton(UI)
       SimpleButton.Left = 10
-      SimpleButton.Height = 30
+      SimpleButton.Height = 35
       SimpleButton.Top = 10
       SimpleButton.Width = 90
       SimpleButton.Caption = 'EXPAND'
@@ -620,9 +620,9 @@ function createUI()
       SimplePanel.Visible = false
   
     LogBuildingButtonSimple = createButton(SimplePanel)
-      LogBuildingButtonSimple.Left = 10
+      LogBuildingButtonSimple.Left = 5
       LogBuildingButtonSimple.Height = 30
-      LogBuildingButtonSimple.Top = 65
+      LogBuildingButtonSimple.Top = 5
       LogBuildingButtonSimple.Width = 90
       LogBuildingButtonSimple.Caption = 'LOGS OFF'
       LogBuildingButtonSimple.Enabled = false
@@ -633,11 +633,12 @@ function createUI()
       LogBuildingButtonSimple.OnClick = LogsSwitcher
       LogBuildingButtonSimple.ParentFont = false
       LogBuildingButtonSimple.TabOrder = 4
+      LogBuildingButtonSimple.Visible = false
   
     LoadFLButtonSimple = createButton(SimplePanel)
-      LoadFLButtonSimple.Left = 105
+      LoadFLButtonSimple.Left = 5
       LoadFLButtonSimple.Height = 30
-      LoadFLButtonSimple.Top = 15
+      LoadFLButtonSimple.Top = 40
       LoadFLButtonSimple.Width = 90
       LoadFLButtonSimple.Caption = 'LOAD LAP'
       LoadFLButtonSimple.Enabled = false
@@ -648,11 +649,12 @@ function createUI()
       LoadFLButtonSimple.OnClick = LoadFastLap
       LoadFLButtonSimple.ParentFont = false
       LoadFLButtonSimple.TabOrder = 5
+      LoadFLButtonSimple.Visible = false
   
     SaveFLButtonSimple = createButton(SimplePanel)
-      SaveFLButtonSimple.Left = 10
-      SaveFLButtonSimple.Height = 65
-      SaveFLButtonSimple.Top = 15
+      SaveFLButtonSimple.Left = 100
+      SaveFLButtonSimple.Height = 30
+      SaveFLButtonSimple.Top = 5
       SaveFLButtonSimple.Width = 90
       SaveFLButtonSimple.Caption = 'SAVE LAP'
       SaveFLButtonSimple.Enabled = false
@@ -665,11 +667,12 @@ function createUI()
       SaveFLButtonSimple.OnMouseLeave = RevertCaption
       SaveFLButtonSimple.ParentFont = false
       SaveFLButtonSimple.TabOrder = 6
+      SaveFLButtonSimple.Visible = false
   
     StartDetectSimple = createButton(SimplePanel)
-      StartDetectSimple.Left = 105
-      StartDetectSimple.Height = 65
-      StartDetectSimple.Top = 15
+      StartDetectSimple.Left = 100
+      StartDetectSimple.Height = 30
+      StartDetectSimple.Top = 40
       StartDetectSimple.Width = 90
       StartDetectSimple.Caption = 'START'
       StartDetectSimple.Enabled = false
@@ -680,32 +683,33 @@ function createUI()
       StartDetectSimple.OnClick = UpdateInfo
       StartDetectSimple.ParentFont = false
       StartDetectSimple.TabOrder = 0
+      StartDetectSimple.Visible = false
   
     DarkModeTurnOnSimple = createButton(SimplePanel)
-      DarkModeTurnOnSimple.Left = 10
-      DarkModeTurnOnSimple.Height = 95
-      DarkModeTurnOnSimple.Top = 15
-      DarkModeTurnOnSimple.Width = 100
+      DarkModeTurnOnSimple.Left = 5
+      DarkModeTurnOnSimple.Height = 30
+      DarkModeTurnOnSimple.Top = 75
+      DarkModeTurnOnSimple.Width = 90
       DarkModeTurnOnSimple.Caption = 'DARK: ON'
       DarkModeTurnOnSimple.Font.fsBold = true
       DarkModeTurnOnSimple.Font.fsItalic = true
       DarkModeTurnOnSimple.OnClick = darkModeTurnOn
       DarkModeTurnOnSimple.ParentFont = False
       DarkModeTurnOnSimple.TabOrder = 4
+      DarkModeTurnOnSimple.Visible = false
   
     SimpleModeTurnOnSimple = createButton(SimplePanel)
-      SimpleModeTurnOnSimple.Left = 105
-      SimpleModeTurnOnSimple.Height = 95
-      SimpleModeTurnOnSimple.Top = 15
-      SimpleModeTurnOnSimple.Width = 100
+      SimpleModeTurnOnSimple.Left = 100
+      SimpleModeTurnOnSimple.Height = 30
+      SimpleModeTurnOnSimple.Top = 75
+      SimpleModeTurnOnSimple.Width = 90
       SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
       SimpleModeTurnOnSimple.Font.fsBold = true
       SimpleModeTurnOnSimple.Font.fsItalic = true
       SimpleModeTurnOnSimple.OnClick = simpleModeTurnOn
       SimpleModeTurnOnSimple.ParentFont = False
       SimpleModeTurnOnSimple.TabOrder = 4
-  
-
+      SimpleModeTurnOnSimple.Visible = false
 
     InitPanel = createPanel(UI)
       InitPanel.Left = -2
