@@ -231,6 +231,8 @@ function UpdateInfo()
   if Enable == true then
     Enable = false
     StartDetect.Caption='START'
+    -- Simple
+    StartDetectSimple.Caption='START'
     if LogsEnabled ==true then
       PackLogs()
       LogsSwitcher()
@@ -238,17 +240,21 @@ function UpdateInfo()
     LoadedTime = false
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
-    if simpleMode == 0 then
-      StartDetectSimple.Caption='START'
-      LogBuildingButtonSimple.Enabled = false
-      LoadFLButtonSimple.Enabled = false
-    end
+
+    -- Simple
+    LogBuildingButtonSimple.Enabled = false
+    LoadFLButtonSimple.Enabled = false
+
     UI.Caption = "DeltaApp by Vi'o'lence"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
     Enable = true
     StartDetect.Caption='STOP'
+
+    -- Simple
+    StartDetectSimple.Caption='STOP'
+
     ChecksPTR = getAddress('TimesPTR')
     ForLogs_TrackName=readString('adr + E5AF0') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
@@ -263,12 +269,11 @@ function UpdateInfo()
     LogBuildingButton.Enabled = true
     SaveFLButton.Enabled = true
     LoadFLButton.Enabled = true
-    if simpleMode == 0 then
-      StartDetectSimple.Caption='STOP'
-      LogBuildingButtonSimple.Enabled = true
-      SaveFLButtonSimple.Enabled = true
-      LoadFLButtonSimple.Enabled = true
-    end
+
+    -- Simple
+    LogBuildingButtonSimple.Enabled = true
+    SaveFLButtonSimple.Enabled = true
+    LoadFLButtonSimple.Enabled = true
   end
 
   local timer_ps = createTimer()
@@ -757,7 +762,6 @@ function simpleModeTurnOn()
     simpleMode = 0
     SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
     SpeedLabel.Visible = true
-    GearLabel.Visible = true
     KersValue.Visible = true
     KersValueBar.Visible = true
     Gas.Visible = true
@@ -773,10 +777,6 @@ function simpleModeTurnOn()
     LapProgress.Visible = true
     S1ProggressBar.Visible = true
     S1ProggressBar1.Visible = true
-    RPM1.Visible = true
-    RPM2.Visible = true
-    RPM3.Visible = true
-    RPM4.Visible = true
     SimpleButton.Visible = false
     SimplePanel.Visible = false
     LogBuildingButtonSimple.Visible = false
@@ -800,7 +800,6 @@ function simpleModeTurnOn()
     simpleMode = 1
     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
     SpeedLabel.Visible = false
-    GearLabel.Visible = false
     KersValue.Visible = false
     KersValueBar.Visible = false
     Gas.Visible = false
@@ -816,10 +815,6 @@ function simpleModeTurnOn()
     LapProgress.Visible = false
     S1ProggressBar.Visible = false
     S1ProggressBar1.Visible = false
-    RPM1.Visible = false
-    RPM2.Visible = false
-    RPM3.Visible = false
-    RPM4.Visible = false
     SettingPanel.Visible = false
     LogBuildingButton.Visible = false
     LoadFLButton.Visible = false
@@ -836,9 +831,9 @@ function simpleModeTurnOn()
     SimpleModeTurnOnSimple.Visible = true
     DeltaLabel.Left = 144
     UI.Height = 200
-    UI.Width = 300
+    UI.Width = 275
     UI.ClientHeight = 200
-    UI.ClientWidth = 300
+    UI.ClientWidth = 275
   end
 end
 
