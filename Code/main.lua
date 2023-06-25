@@ -831,6 +831,7 @@ function simpleModeTurnOn()
     LoadFLButtonSimple.Visible = true
     SaveFLButtonSimple.Visible = true
     StartDetectSimple.Visible = true
+    StartDetectSimple.Enabled=true
     DarkModeTurnOnSimple.Visible = true
     SimpleModeTurnOnSimple.Visible = true
     DeltaLabel.Left = 144
