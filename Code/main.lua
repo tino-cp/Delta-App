@@ -715,10 +715,14 @@ end
 function simpleModeTurnOn()
   if simpleMode == 1 then
     simpleMode = 0
-    SimpleModeTurnOn.Caption = 'SIMPLE: ON'
+    SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
   elseif simpleMode == 0 then
     simpleMode = 1
-    SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
+    SimpleModeTurnOn.Caption = 'SIMPLE: ON'
+    UI.Height = 200
+    UI.Width = 300
+    UI.ClientHeight = 200
+    UI.ClientWidth = 300
   end
 end
 
