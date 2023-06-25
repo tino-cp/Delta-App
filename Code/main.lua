@@ -773,7 +773,6 @@ function simpleModeTurnOn()
     -- Simple
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: OFF'
 
-    SpeedLabel.Visible = true
     KersValue.Visible = true
     KersValueBar.Visible = true
     Gas.Visible = true
@@ -815,7 +814,6 @@ function simpleModeTurnOn()
     -- Simple
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
 
-    SpeedLabel.Visible = false
     KersValue.Visible = false
     KersValueBar.Visible = false
     Gas.Visible = false
