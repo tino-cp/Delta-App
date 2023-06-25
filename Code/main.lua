@@ -759,8 +759,6 @@ function simpleModeTurnOn()
     StartDetectSimple.Visible = false
     DarkModeTurnOnSimple.Visible = false
     SimpleModeTurnOnSimple.Visible = false
-
-    Load
     UI.Height = 214
     UI.Width = 500
     UI.ClientHeight = 214
