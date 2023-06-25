@@ -803,6 +803,8 @@ function simpleModeTurnOn()
     StartDetect.Visible = true
     SettingButton.Visible = true
     DeltaLabel.Left = 186
+    SpeedLabel.Left = 24
+    SpeedLabel.Top = 166
     UI.Height = 214
     UI.Width = 500
     UI.ClientHeight = 214
@@ -844,6 +846,8 @@ function simpleModeTurnOn()
     DarkModeTurnOnSimple.Visible = true
     SimpleModeTurnOnSimple.Visible = true
     DeltaLabel.Left = 150
+    SpeedLabel.Left = 186
+    SpeedLabel.Top = 22
     UI.Height = 190
     UI.Width = 270
     UI.ClientHeight = 190
