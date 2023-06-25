@@ -586,7 +586,7 @@ function createUI()
       SimpleModeTurnOn.Height = 30
       SimpleModeTurnOn.Top = 35
       SimpleModeTurnOn.Width = 100
-      SimpleModeTurnOn.Caption = 'SIMPLE: ON'
+      SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
       SimpleModeTurnOn.Font.fsBold = true
       SimpleModeTurnOn.Font.fsItalic = true
       SimpleModeTurnOn.OnClick = simpleModeTurnOn
@@ -598,7 +598,7 @@ function createUI()
       SimpleButton.Height = 35
       SimpleButton.Top = 10
       SimpleButton.Width = 90
-      SimpleButton.Caption = 'EXPAND'
+      SimpleButton.Caption = 'EXPAND ▼'
       SimpleButton.Font.Height = -16
       SimpleButton.Font.Name = 'Segoe UI'
       SimpleButton.Font.Style = fsBold
@@ -610,12 +610,12 @@ function createUI()
 
     SimplePanel = createPanel(UI)
       SimplePanel.Left = 10
-      SimplePanel.Height = 105
+      SimplePanel.Height = 110
       SimplePanel.Top = 50
       SimplePanel.Width = 195
       SimplePanel.BevelColor = clBackground
       SimplePanel.BevelWidth = 2
-      SimplePanel.ClientHeight = 105
+      SimplePanel.ClientHeight = 110
       SimplePanel.ClientWidth = 195
       SimplePanel.TabOrder = 8
       SimplePanel.Visible = false

@@ -814,7 +814,7 @@ function simpleModeTurnOn()
 
     -- Simple
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
-    
+
     SpeedLabel.Visible = false
     KersValue.Visible = false
     KersValueBar.Visible = false
@@ -845,7 +845,7 @@ function simpleModeTurnOn()
     StartDetectSimple.Enabled=true
     DarkModeTurnOnSimple.Visible = true
     SimpleModeTurnOnSimple.Visible = true
-    DeltaLabel.Left = 144
+    DeltaLabel.Left = 150
     UI.Height = 190
     UI.Width = 270
     UI.ClientHeight = 190
