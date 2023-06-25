@@ -113,8 +113,8 @@ function createUI()
       SectorsCurrent.Top = 61
       SectorsCurrent.Width = 88
       SectorsCurrent.Caption = 'Current lap:'
-      SectorsCurrent.Font.Color = clMenuBar
-      SectorsCurrent.Font.Height = -16
+      SectorsCurrent.Font.Color = clWhite
+      SectorsCurrent.Font.Height = -19
       SectorsCurrent.Font.Name = 'Segoe UI'
       SectorsCurrent.Font.fsBold = true
       SectorsCurrent.Font.fsItalic = true

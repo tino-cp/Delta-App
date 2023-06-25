@@ -675,6 +675,7 @@ function darkModeTurnOn()
     OnOffButtonLabel.Font.Color = clWhite
     CurrentLapLabel.Font.Color = clWhite
     SpeedLabel.Font.Color = clWhite
+    SectorsCurrent.Font.Color = clWhite
     S3Label.Font.Color = clWhite
     S2Label.Font.Color = clWhite
     S1Label.Font.Color = clWhite
@@ -688,10 +689,11 @@ function darkModeTurnOn()
   elseif darkMode == 0 then
     darkMode = 1
     DarkModeTurnOn.Caption = 'DARK: OFF'
-    UI.Color = clWhite
+    UI.Color = clGray
     OnOffButtonLabel.Font.Color = clBlack
     CurrentLapLabel.Font.Color = clBlack
     SpeedLabel.Font.Color = clBlack
+    SectorsCurrent.Font.Color = clBlack
     S3Label.Font.Color = clBlack
     S2Label.Font.Color = clBlack
     S1Label.Font.Color = clBlack
