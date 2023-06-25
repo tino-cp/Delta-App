@@ -290,7 +290,7 @@ function UpdateInfo()
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
       --Checks
-      checkPitDeltaValue()
+      --checkPitDeltaValue()
       Drive()
       CloseToTheEnd()
       NewLapProcedure()
