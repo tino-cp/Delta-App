@@ -238,6 +238,11 @@ function UpdateInfo()
     LoadedTime = false
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
+    if simpleMode == 0 then
+      StartDetectSimple.Caption='START'
+      LogBuildingButtonSimple.Enabled = false
+      LoadFLButtonSimple.Enabled = false
+    end
     UI.Caption = "DeltaApp by Vi'o'lence"
   elseif Enable == false then
     UpdateCar()
@@ -258,6 +263,12 @@ function UpdateInfo()
     LogBuildingButton.Enabled = true
     SaveFLButton.Enabled = true
     LoadFLButton.Enabled = true
+    if simpleMode == 0 then
+      StartDetectSimple.Caption='STOP'
+      LogBuildingButtonSimple.Enabled = true
+      SaveFLButtonSimple.Enabled = true
+      LoadFLButtonSimple.Enabled = true
+    end
   end
 
   local timer_ps = createTimer()
@@ -490,10 +501,16 @@ function LogsSwitcher()
   if LogsEnabled == false then
     LogsEnabled=true
     LogBuildingButton.Caption = 'LOGS ON'
+    if simpleMode == 0 then
+      LogBuildingButtonSimple.Caption='LOGS ON'
+    end
     LastElement = 100
   else
     LogsEnabled=false
     LogBuildingButton.Caption = 'LOGS OFF'
+    if simpleMode == 0 then
+      LogBuildingButtonSimple.Caption='LOGS OFF'
+    end
   end
 end
 
@@ -525,10 +542,23 @@ function ShowTime()
         else
           SaveFLButton.Caption=FMins..':'..FSec..'.'..FMils
         end
+
+        if simpleMode == 0 then
+          if FMils<10 then
+            SaveFLButtonSimple.Caption=FMins..':'..FSec..'.00'..FMils
+          elseif FMils<100 then
+            SaveFLButtonSimple.Caption=FMins..':'..FSec..'.0'..FMils
+          else
+            SaveFLButtonSimple.Caption=FMins..':'..FSec..'.'..FMils
+          end
+        end
 end
 
 function RevertCaption()
-         SaveFLButton.Caption="SAVE LAP"
+  SaveFLButton.Caption="SAVE LAP"
+  if simpleMode == 0 then
+    SaveFLButtonSimple.Caption='SAVE LAP'
+  end
 end
 
 function SaveFastLap()
