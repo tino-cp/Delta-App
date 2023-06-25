@@ -688,8 +688,8 @@ function darkMode()
     CurrentLapValue.Font.Color = clWhite
   elseif darkMode == 0 then
     darkMode = 1
-    UI.Color = clWhite
     DarkModeTurnOn.Caption = 'DARK: OFF'
+    UI.Color = clWhite
     OnOffButtonLabel.Font.Color = clBlack
     CurrentLapLabel.Font.Color = clBlack
     SpeedLabel.Font.Color = clBlack
