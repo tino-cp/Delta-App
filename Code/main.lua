@@ -852,7 +852,7 @@ function ReadSpeed()
               if RPM > 0.8 then RPM3.Visible = true
                  if RPM > 0.9 then RPM4.Visible = true
                    if RPM > 0.96 then GearLabel.Font.Color = clRed
-                   else GearLabel.Font.Color = clWhite
+                  --  else GearLabel.Font.Color = clWhite
                    end
                  else RPM4.Visible = false
                  end
