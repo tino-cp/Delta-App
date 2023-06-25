@@ -96,7 +96,7 @@ function createUI()
     DeltaLabel = createLabel(UI)
       DeltaLabel.Left = 186
       DeltaLabel.Height = 45
-      DeltaLabel.Top = 134
+      DeltaLabel.Top = 126
       DeltaLabel.Width = 113
       DeltaLabel.Caption = '+ 9.999'
       DeltaLabel.Font.Color = clWindow
@@ -610,13 +610,13 @@ function createUI()
 
     SimplePanel = createPanel(UI)
       SimplePanel.Left = 10
-      SimplePanel.Height = 130
+      SimplePanel.Height = 105
       SimplePanel.Top = 50
-      SimplePanel.Width = 110
+      SimplePanel.Width = 195
       SimplePanel.BevelColor = clBackground
       SimplePanel.BevelWidth = 2
-      SimplePanel.ClientHeight = 130
-      SimplePanel.ClientWidth = 200
+      SimplePanel.ClientHeight = 105
+      SimplePanel.ClientWidth = 195
       SimplePanel.TabOrder = 8
       SimplePanel.Visible = false
   

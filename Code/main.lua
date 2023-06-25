@@ -717,6 +717,10 @@ function darkModeTurnOn()
   if darkMode == 1 then
     darkMode = 0
     DarkModeTurnOn.Caption = 'DARK: ON'
+
+    -- Simple
+    DarkModeTurnOnSimple.Caption = 'DARK: ON'
+    
     UI.Color = clBlack
     SettingButton.Color = clBlack
     SettingButton.Font.Color = clWhite
@@ -737,6 +741,10 @@ function darkModeTurnOn()
   elseif darkMode == 0 then
     darkMode = 1
     DarkModeTurnOn.Caption = 'DARK: OFF'
+
+    -- Simple
+    DarkModeTurnOnSimple.Caption = 'DARK: OFF'
+
     UI.Color = clWhite
     SettingButton.Color = clWhite
     SettingButton.Font.Color = clBlack
@@ -830,10 +838,10 @@ function simpleModeTurnOn()
     DarkModeTurnOnSimple.Visible = true
     SimpleModeTurnOnSimple.Visible = true
     DeltaLabel.Left = 144
-    UI.Height = 200
-    UI.Width = 275
-    UI.ClientHeight = 200
-    UI.ClientWidth = 275
+    UI.Height = 190
+    UI.Width = 270
+    UI.ClientHeight = 190
+    UI.ClientWidth = 270
   end
 end
 
