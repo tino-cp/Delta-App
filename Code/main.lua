@@ -720,7 +720,7 @@ function darkModeTurnOn()
 
     -- Simple
     DarkModeTurnOnSimple.Caption = 'DARK: ON'
-    
+
     UI.Color = clBlack
     SettingButton.Color = clBlack
     SettingButton.Font.Color = clWhite
@@ -769,6 +769,10 @@ function simpleModeTurnOn()
   if simpleMode == 1 then
     simpleMode = 0
     SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
+
+    -- Simple
+    SimpleModeTurnOnSimple.Caption = 'SIMPLE: OFF'
+
     SpeedLabel.Visible = true
     KersValue.Visible = true
     KersValueBar.Visible = true
@@ -807,6 +811,10 @@ function simpleModeTurnOn()
   elseif simpleMode == 0 then
     simpleMode = 1
     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
+
+    -- Simple
+    SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
+    
     SpeedLabel.Visible = false
     KersValue.Visible = false
     KersValueBar.Visible = false
