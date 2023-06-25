@@ -13,6 +13,7 @@ Gears = 1
 Inputs = 1
 KersValues = 1
 darkMode = 1
+simpleMode = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0
@@ -672,6 +673,8 @@ function darkModeTurnOn()
     darkMode = 0
     DarkModeTurnOn.Caption = 'DARK: ON'
     UI.Color = clBlack
+    SettingButton.Color = clBlack
+    SettingButton.Font.Color = clWhite
     OnOffButtonLabel.Font.Color = clWhite
     CurrentLapLabel.Font.Color = clWhite
     SpeedLabel.Font.Color = clWhite
@@ -689,7 +692,9 @@ function darkModeTurnOn()
   elseif darkMode == 0 then
     darkMode = 1
     DarkModeTurnOn.Caption = 'DARK: OFF'
-    UI.Color = clGray
+    UI.Color = clWhite
+    SettingButton.Color = clWhite
+    SettingButton.Font.Color = clBlack
     OnOffButtonLabel.Font.Color = clBlack
     CurrentLapLabel.Font.Color = clBlack
     SpeedLabel.Font.Color = clBlack
@@ -704,6 +709,16 @@ function darkModeTurnOn()
     DeltaLabel.Font.Color = clBlack
     CurrentLapLabel.Font.Color = clBlack
     CurrentLapValue.Font.Color = clBlack
+  end
+end
+
+function simpleModeTurnOn()
+  if simpleMode == 1 then
+    simpleMode = 0
+    SimpleModeTurnOn.Caption = 'SIMPLE: ON'
+  elseif simpleMode == 0 then
+    simpleMode = 1
+    SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
   end
 end
 

@@ -581,6 +581,19 @@ function createUI()
       DarkModeTurnOn.ParentFont = False
       DarkModeTurnOn.TabOrder = 4
 
+    SimpleModeTurnOn = createButton(SettingPanel)
+      SimpleModeTurnOn.Left = 115
+      SimpleModeTurnOn.Height = 30
+      SimpleModeTurnOn.Top = 35
+      SimpleModeTurnOn.Width = 100
+      SimpleModeTurnOn.Caption = 'SIMPLE: ON'
+      SimpleModeTurnOn.Font.fsBold = true
+      SimpleModeTurnOn.Font.fsItalic = true
+      SimpleModeTurnOn.OnClick = simpleModeTurnOn
+      SimpleModeTurnOn.ParentFont = False
+      SimpleModeTurnOn.TabOrder = 4
+
+
     InitPanel = createPanel(UI)
       InitPanel.Left = -2
       InitPanel.Height = 217
