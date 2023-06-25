@@ -808,7 +808,6 @@ function simpleModeTurnOn()
   end
 end
 
--- Not used?
 function GetKers()
   if ADR == 0 then
     Kers = readFloat("GTA5.exe+1D59B60")
