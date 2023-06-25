@@ -606,6 +606,7 @@ function createUI()
       SimpleButton.OnClick = ShowHideSimple
       SimpleButton.ParentFont = false
       SimpleButton.TabOrder = 7
+      SimpleButton.Visible = false
 
     SimplePanel = createPanel(UI)
       SimplePanel.Left = 10
@@ -614,8 +615,8 @@ function createUI()
       SimplePanel.Width = 110
       SimplePanel.BevelColor = clBackground
       SimplePanel.BevelWidth = 2
-      SimplePanel.ClientHeight = 160
-      SimplePanel.ClientWidth = 220
+      SimplePanel.ClientHeight = 130
+      SimplePanel.ClientWidth = 110
       SimplePanel.TabOrder = 8
       SimplePanel.Visible = false
   
