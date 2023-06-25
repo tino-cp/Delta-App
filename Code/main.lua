@@ -1004,7 +1004,6 @@ function ReadSpeed()
                    elseif darkMode == 0 then GearLabel.Font.Color = clWhite
                    elseif darkMode == 1 then GearLabel.Font.Color = clBlack
                    end
-                   end
                  else RPM4.Visible = false
                  end
               else
