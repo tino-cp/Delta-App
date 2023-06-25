@@ -569,17 +569,17 @@ function createUI()
       KersValueTurnOn.ParentFont = False
       KersValueTurnOn.TabOrder = 4
 
-    -- DarkModeTurnOn = createButton(SettingPanel)
-    --   DarkModeTurnOn.Left = 115
-    --   DarkModeTurnOn.Height = 30
-    --   DarkModeTurnOn.Top = 5
-    --   DarkModeTurnOn.Width = 100
-    --   DarkModeTurnOn.Caption = 'DARK: ON'
-    --   DarkModeTurnOn.Font.fsBold = true
-    --   DarkModeTurnOn.Font.fsItalic = true
-    --   DarkModeTurnOn.OnClick = darkModeTurnOn
-    --   DarkModeTurnOn.ParentFont = False
-    --   DarkModeTurnOn.TabOrder = 4
+    DarkModeTurnOn = createButton(SettingPanel)
+      DarkModeTurnOn.Left = 115
+      DarkModeTurnOn.Height = 30
+      DarkModeTurnOn.Top = 5
+      DarkModeTurnOn.Width = 100
+      DarkModeTurnOn.Caption = 'DARK: ON'
+      DarkModeTurnOn.Font.fsBold = true
+      DarkModeTurnOn.Font.fsItalic = true
+      DarkModeTurnOn.OnClick = darkModeTurnOn
+      DarkModeTurnOn.ParentFont = False
+      DarkModeTurnOn.TabOrder = 4
 
     InitPanel = createPanel(UI)
       InitPanel.Left = -2
