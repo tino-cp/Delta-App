@@ -22,8 +22,8 @@ function createUI()
     CurrentLapLabel = createLabel(UI)
       CurrentLapLabel.Left = 10
       CurrentLapLabel.Height = 30
-      CurrentLapLabel.Top = 58
-      CurrentLapLabel.Width = 121
+      CurrentLapLabel.Top = 55
+      CurrentLapLabel.Width = 125
       CurrentLapLabel.Caption = 'Current Lap:'
       CurrentLapLabel.Font.Color = clWhite
       CurrentLapLabel.Font.Height = -21
@@ -36,8 +36,8 @@ function createUI()
     FastestLapLabel = createLabel(UI)
       FastestLapLabel.Left = 10
       FastestLapLabel.Height = 30
-      FastestLapLabel.Top = 94
-      FastestLapLabel.Width = 115
+      FastestLapLabel.Top = 90
+      FastestLapLabel.Width = 125
       FastestLapLabel.Caption = 'Fastest Lap:'
       FastestLapLabel.Font.Color = clFuchsia
       FastestLapLabel.Font.Height = -21
@@ -48,10 +48,10 @@ function createUI()
       FastestLapLabel.ParentFont = false
 
     CurrentLapValue = createLabel(UI)
-      CurrentLapValue.Left = 144
+      CurrentLapValue.Left = 140
       CurrentLapValue.Height = 30
-      CurrentLapValue.Top = 58
-      CurrentLapValue.Width = 84
+      CurrentLapValue.Top = 55
+      CurrentLapValue.Width = 110
       CurrentLapValue.Caption = '0:0.000'
       CurrentLapValue.Font.Color = clWindow
       CurrentLapValue.Font.Height = -21
@@ -62,10 +62,10 @@ function createUI()
       CurrentLapValue.ParentFont = false
 
     FastestLapValue = createLabel(UI)
-      FastestLapValue.Left = 144
+      FastestLapValue.Left = 140
       FastestLapValue.Height = 30
-      FastestLapValue.Top = 94
-      FastestLapValue.Width = 108
+      FastestLapValue.Top = 90
+      FastestLapValue.Width = 110
       FastestLapValue.Caption = '166:40.000'
       FastestLapValue.Font.Color = clFuchsia
       FastestLapValue.Font.Height = -21
@@ -108,7 +108,7 @@ function createUI()
       DeltaLabel.ParentFont = false
 
     SectorsCurrent = createLabel(UI)
-      SectorsCurrent.Left = 386
+      SectorsCurrent.Left = 360
       SectorsCurrent.Height = 21
       SectorsCurrent.Top = 61
       SectorsCurrent.Width = 88
@@ -349,7 +349,7 @@ function createUI()
     Steer = createTrackBar(UI)
       Steer.Left = 240
       Steer.Height = 20
-      Steer.Top = 110
+      Steer.Top = 90
       Steer.Width = 110
       Steer.LineSize = 50
       Steer.Max = 100
