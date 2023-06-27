@@ -416,8 +416,8 @@ function createUI()
 
   LogBuildingButton = createButton(UI)
     LogBuildingButton.Left = 10
-    LogBuildingButton.Height = 36
-    LogBuildingButton.Top = 13
+    LogBuildingButton.Height = 35
+    LogBuildingButton.Top = 10
     LogBuildingButton.Width = 90
     LogBuildingButton.Caption = 'LOGS OFF'
     LogBuildingButton.Enabled = false
@@ -431,8 +431,8 @@ function createUI()
 
   LoadFLButton = createButton(UI)
     LoadFLButton.Left = 105
-    LoadFLButton.Height = 36
-    LoadFLButton.Top = 13
+    LoadFLButton.Height = 35
+    LoadFLButton.Top = 10
     LoadFLButton.Width = 90
     LoadFLButton.Caption = 'LOAD LAP'
     LoadFLButton.Enabled = false
@@ -446,8 +446,8 @@ function createUI()
 
   SaveFLButton = createButton(UI)
     SaveFLButton.Left = 200
-    SaveFLButton.Height = 36
-    SaveFLButton.Top = 13
+    SaveFLButton.Height = 35
+    SaveFLButton.Top = 10
     SaveFLButton.Width = 90
     SaveFLButton.Caption = 'SAVE LAP'
     SaveFLButton.Enabled = false
@@ -463,8 +463,8 @@ function createUI()
 
   StartDetect = createButton(UI)
     StartDetect.Left = 295
-    StartDetect.Height = 36
-    StartDetect.Top = 13
+    StartDetect.Height = 35
+    StartDetect.Top = 10
     StartDetect.Width = 70
     StartDetect.Caption = 'START'
     StartDetect.Enabled = false
@@ -478,8 +478,8 @@ function createUI()
 
   SettingButton = createButton(UI)
     SettingButton.Left = 380
-    SettingButton.Height = 36
-    SettingButton.Top = 13
+    SettingButton.Height = 35
+    SettingButton.Top = 10
     SettingButton.Width = 90
     SettingButton.Caption = 'SETTINGS'
     SettingButton.Font.Height = -16
