@@ -627,7 +627,7 @@ function createUI()
     SimplePanel.BevelColor = clBackground
     SimplePanel.BevelWidth = 2
     SimplePanel.ClientHeight = 140
-    SimplePanel.ClientWidth = 205
+    SimplePanel.ClientWidth = 210
     SimplePanel.TabOrder = 8
     SimplePanel.Visible = false
 
@@ -664,7 +664,7 @@ function createUI()
     LoadFLButtonSimple.Visible = false
 
   SaveFLButtonSimple = createButton(SimplePanel)
-    SaveFLButtonSimple.Left = 100
+    SaveFLButtonSimple.Left = 105
     SaveFLButtonSimple.Height = 30
     SaveFLButtonSimple.Top = 5
     SaveFLButtonSimple.Width = 100
@@ -682,7 +682,7 @@ function createUI()
     SaveFLButtonSimple.Visible = false
 
   StartDetectSimple = createButton(SimplePanel)
-    StartDetectSimple.Left = 100
+    StartDetectSimple.Left = 105
     StartDetectSimple.Height = 30
     StartDetectSimple.Top = 40
     StartDetectSimple.Width = 100
@@ -712,7 +712,7 @@ function createUI()
     DarkModeTurnOnSimple.Visible = false
 
   SimpleModeTurnOnSimple = createButton(SimplePanel)
-    SimpleModeTurnOnSimple.Left = 100
+    SimpleModeTurnOnSimple.Left = 105
     SimpleModeTurnOnSimple.Height = 30
     SimpleModeTurnOnSimple.Top = 75
     SimpleModeTurnOnSimple.Width = 100
@@ -739,7 +739,7 @@ function createUI()
     FullscreenModeTurnOnSimple.Visible = false
 
   MetricsTurnOnSimple = createButton(SimplePanel)
-    MetricsTurnOnSimple.Left = 100
+    MetricsTurnOnSimple.Left = 105
     MetricsTurnOnSimple.Height = 30
     MetricsTurnOnSimple.Top = 110
     MetricsTurnOnSimple.Width = 100
@@ -750,6 +750,7 @@ function createUI()
     MetricsTurnOn.OnClick = ChangeMetrics
     MetricsTurnOn.ParentFont = false
     MetricsTurnOn.TabOrder = 1
+    MetricsTurnOn.Visible = false
 
   InitPanel = createPanel(UI)
     InitPanel.Left = -2

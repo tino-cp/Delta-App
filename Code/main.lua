@@ -803,6 +803,8 @@ function simpleModeTurnOn()
     StartDetectSimple.Visible = false
     DarkModeTurnOnSimple.Visible = false
     SimpleModeTurnOnSimple.Visible = false
+    FullscreenModeTurnOnSimple.Visible = false
+    MetricsTurnOnSimple.Visible = false
     SettingPanel.Visible = true
     LogBuildingButton.Visible = true
     LoadFLButton.Visible = true
@@ -847,6 +849,8 @@ function simpleModeTurnOn()
     StartDetectSimple.Enabled=true
     DarkModeTurnOnSimple.Visible = true
     SimpleModeTurnOnSimple.Visible = true
+    FullscreenModeTurnOnSimple.Visible = true
+    MetricsTurnOnSimple.Visible = true
     UI.Height = 200
     UI.Width = 270
     UI.ClientHeight = 190
