@@ -776,8 +776,6 @@ function simpleModeTurnOn()
     -- Simple
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: OFF'
 
-    KersValue.Visible = true
-    KersValueBar.Visible = true
     Gas.Visible = true
     Brake.Visible = true
     Steer.Visible = true
@@ -817,8 +815,6 @@ function simpleModeTurnOn()
     -- Simple
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
 
-    KersValue.Visible = false
-    KersValueBar.Visible = false
     Gas.Visible = false
     Brake.Visible = false
     Steer.Visible = false
@@ -863,8 +859,8 @@ function fullscreenModeTurnOn()
     FullscreenModeTurnOnSimple.Caption = 'FULL: OFF'
 
     UI.BorderStyle = bsSingle
-    mainForm.AlphaBlend = false
-    mainForm.AlphaBlendValue = 255
+    UI.AlphaBlend = false
+    UI.AlphaBlendValue = 255
 
   elseif fullscreenMode == 0 then
     fullscreenMode = 1
@@ -874,8 +870,8 @@ function fullscreenModeTurnOn()
     FullscreenModeTurnOnSimple.Caption = 'FULL: ON'
 
     UI.BorderStyle = bsNone
-    mainForm.AlphaBlend = true
-    mainForm.AlphaBlendValue = 128
+    UI.AlphaBlend = true
+    UI.AlphaBlendValue = 128
 
   end
 end
