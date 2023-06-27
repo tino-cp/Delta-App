@@ -859,7 +859,7 @@ function fullscreenModeTurnOn()
     UI.BorderStyle = bsSingle
     UI.AlphaBlend = false
     UI.AlphaBlendValue = 255
-
+    UI.FormStyle = fsSystemStayOnTop
   elseif fullscreenMode == 0 then
     fullscreenMode = 1
     FullscreenModeTurnOn.Caption = 'FULL: ON'
@@ -869,8 +869,8 @@ function fullscreenModeTurnOn()
 
     UI.BorderStyle = bsNone
     UI.AlphaBlend = true
-    UI.AlphaBlendValue = 128
-
+    UI.AlphaBlendValue = 160
+    UI.FormStyle = fsSystemStayOnTop
   end
 end
 
