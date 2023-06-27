@@ -8,7 +8,7 @@ function createUI()
     UI.BorderStyle = bsSingle
     UI.Caption = "Delta App Online 1.1.1" 
     UI.ClientHeight = 214
-    UI.ClientWidth = 500
+    UI.ClientWidth = 480
     UI.Color = clBlack
     UI.Font.Color = clWhite
     UI.FormStyle = fsSystemStayOnTop
@@ -209,13 +209,13 @@ function createUI()
     LapProgress.Left = 0
     LapProgress.Height = 12
     LapProgress.Top = 202
-    LapProgress.Width = 500
+    LapProgress.Width = 480
     LapProgress.BorderWidth = 0
     LapProgress.Position = 50
     LapProgress.TabOrder = 1
 
   S1ProggressBar = createLabel(UI)
-    S1ProggressBar.Left = 145
+    S1ProggressBar.Left = 138
     S1ProggressBar.Height = 17
     S1ProggressBar.Top = 183
     S1ProggressBar.Width = 37
@@ -228,7 +228,7 @@ function createUI()
     S1ProggressBar.ParentFont = false
 
   S1ProggressBar1 = createLabel(UI)
-    S1ProggressBar1.Left = 310
+    S1ProggressBar1.Left = 304
     S1ProggressBar1.Height = 17
     S1ProggressBar1.Top = 183
     S1ProggressBar1.Width = 37
@@ -481,7 +481,7 @@ function createUI()
     StartDetect.TabOrder = 0
 
   SettingButton = createButton(UI)
-    SettingButton.Left = 387
+    SettingButton.Left = 380
     SettingButton.Height = 36
     SettingButton.Top = 13
     SettingButton.Width = 90
