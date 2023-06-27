@@ -12,9 +12,9 @@ SpeedStatus = 1
 Gears = 1
 Inputs = 1
 KersValues = 1
-darkMode = 1
-simpleMode = 1
-fullscreenMode = 1
+darkMode = 0
+simpleMode = 0
+fullscreenMode = 0
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0

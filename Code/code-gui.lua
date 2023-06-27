@@ -597,7 +597,7 @@ function createUI()
     FullscreenModeTurnOn.Height = 30
     FullscreenModeTurnOn.Top = 65
     FullscreenModeTurnOn.Width = 100
-    FullscreenModeTurnOn.Caption = 'FULLSCREEN: OFF'
+    FullscreenModeTurnOn.Caption = 'FULL: OFF'
     FullscreenModeTurnOn.Font.fsBold = true
     FullscreenModeTurnOn.Font.fsItalic = true
     FullscreenModeTurnOn.OnClick = fullscreenModeTurnOn
