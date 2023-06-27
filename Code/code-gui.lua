@@ -1,6 +1,6 @@
 function createUI()
   local http = getInternet()
-  local ICO = int.getURL("https://raw.githubusercontent.com/MrTin0/Delta-App/main/.ico/Delta%20App%20Online%20v1_101.ico")
+  local ICO = http.getURL("https://raw.githubusercontent.com/MrTin0/Delta-App/main/.ico/Delta%20App%20Online%20v1_101.ico")
   local IM = createStringStream(ICO)
   http.Destroy()
  
