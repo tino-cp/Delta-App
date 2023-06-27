@@ -262,7 +262,7 @@ function createUI()
     SpeedLabel.Width = 81
     SpeedLabel.Caption = 'Kph: 0.0'
     SpeedLabel.Font.Color = clWindow
-    SpeedLabel.Font.Height = -28
+    SpeedLabel.Font.Height = -23
     SpeedLabel.Font.Name = 'Segoe UI'
     SpeedLabel.Font.fsBold = true
     SpeedLabel.Font.fsItalic = true
@@ -293,7 +293,7 @@ function createUI()
     RPM1.Width = 67
     RPM1.Caption = '∙   ∙'
     RPM1.Font.Color = clLime
-    RPM1.Font.Height = -60
+    RPM1.Font.Height = -52
     RPM1.Font.Name = 'Segoe UI'
     RPM1.Font.fsBold = true
     RPM1.Font.fsItalic = true
@@ -308,7 +308,7 @@ function createUI()
     RPM2.Width = 93
     RPM2.Caption = '∙     ∙'
     RPM2.Font.Color = clYellow
-    RPM2.Font.Height = -60
+    RPM2.Font.Height = -52
     RPM2.Font.Name = 'Segoe UI'
     RPM2.Font.fsBold = true
     RPM2.Font.fsItalic = true
@@ -323,7 +323,7 @@ function createUI()
     RPM3.Width = 119
     RPM3.Caption = '∙       ∙'
     RPM3.Font.Color = clRed
-    RPM3.Font.Height = -60
+    RPM3.Font.Height = -52
     RPM3.Font.Name = 'Segoe UI'
     RPM3.Font.fsBold = true
     RPM3.Font.fsItalic = true
@@ -338,7 +338,7 @@ function createUI()
     RPM4.Width = 145
     RPM4.Caption = '∙         ∙'
     RPM4.Font.Color = clBlue
-    RPM4.Font.Height = -60
+    RPM4.Font.Height = -52
     RPM4.Font.Name = 'Segoe UI'
     RPM4.Font.fsBold = true
     RPM4.Font.fsItalic = true
