@@ -562,7 +562,7 @@ function createUI()
       KersValueTurnOn.Height = 30
       KersValueTurnOn.Top = 125
       KersValueTurnOn.Width = 100
-      KersValueTurnOn.Caption = 'KERS: ON'
+      KersValueTurnOn.Caption = 'KERS: OFF'
       KersValueTurnOn.Font.fsBold = true
       KersValueTurnOn.Font.fsItalic = true
       KersValueTurnOn.OnClick = ChangeKers
