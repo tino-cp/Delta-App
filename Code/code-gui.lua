@@ -621,12 +621,12 @@ function createUI()
 
   SimplePanel = createPanel(UI)
     SimplePanel.Left = 10
-    SimplePanel.Height = 145
+    SimplePanel.Height = 140
     SimplePanel.Top = 50
     SimplePanel.Width = 215
     SimplePanel.BevelColor = clBackground
     SimplePanel.BevelWidth = 2
-    SimplePanel.ClientHeight = 145
+    SimplePanel.ClientHeight = 140
     SimplePanel.ClientWidth = 215
     SimplePanel.TabOrder = 8
     SimplePanel.Visible = false
@@ -722,7 +722,7 @@ function createUI()
   FullscreenModeTurnOnSimple = createButton(SimplePanel)
     FullscreenModeTurnOnSimple.Left = 110
     FullscreenModeTurnOnSimple.Height = 30
-    FullscreenModeTurnOnSimple.Top = 105
+    FullscreenModeTurnOnSimple.Top = 100
     FullscreenModeTurnOnSimple.Width = 100
     FullscreenModeTurnOnSimple.Caption = 'FULL: ON'
     FullscreenModeTurnOnSimple.Font.fsBold = true
@@ -735,7 +735,7 @@ function createUI()
   MetricsTurnOnSimple = createButton(SimplePanel)
     MetricsTurnOnSimple.Left = 5
     MetricsTurnOnSimple.Height = 30
-    MetricsTurnOnSimple.Top = 105
+    MetricsTurnOnSimple.Top = 100
     MetricsTurnOnSimple.Width = 100
     MetricsTurnOnSimple.Caption = 'SPEED: KPH'
     MetricsTurnOnSimple.Font.fsBold = true
