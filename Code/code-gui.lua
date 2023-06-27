@@ -219,7 +219,7 @@ function createUI()
     S1_2ProggressBar.Top = 170
     S1_2ProggressBar.Width = 37
     S1_2ProggressBar.Caption = 'S1 | S2'
-    S1_2ProggressBar.Font.Color = clMenuBar
+    S1_2ProggressBar.Font.Color = clWhite
     S1_2ProggressBar.Font.Height = -13
     S1_2ProggressBar.Font.Name = 'Segoe UI'
     S1_2ProggressBar.Font.fsItalic = true
@@ -232,7 +232,7 @@ function createUI()
     S2_3ProggressBar.Top = 170
     S2_3ProggressBar.Width = 37
     S2_3ProggressBar.Caption = 'S2 | S3'
-    S2_3ProggressBar.Font.Color = clMenuBar
+    S2_3ProggressBar.Font.Color = clWhite
     S2_3ProggressBar.Font.Height = -13
     S2_3ProggressBar.Font.Name = 'Segoe UI'
     S2_3ProggressBar.Font.fsItalic = true
@@ -245,7 +245,7 @@ function createUI()
     BestSectors.Top = 13
     BestSectors.Width = 57
     BestSectors.Caption = 'Best Lap:'
-    BestSectors.Font.Color = clMenuBar
+    BestSectors.Font.Color = clWhite
     BestSectors.Font.Height = -13
     BestSectors.Font.Name = 'Segoe UI'
     BestSectors.Font.fsBold = true
