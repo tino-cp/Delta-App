@@ -11,7 +11,7 @@ Metrics = 1
 SpeedStatus = 1
 Gears = 1
 Inputs = 1
-KersValues = 1
+KersValues = 0
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0
@@ -655,14 +655,14 @@ end
 function ChangeKers()
   if KersValues == 1 then
      KersValues = 0
-     KersValueTurnOn.Caption = "KERS: OFF"
-     KersValue.Visible = false
-     KersValueBar.Visible = false
-  elseif KersValues == 0 then
-    KersValues = 1
      KersValueTurnOn.Caption = "KERS: ON"
      KersValue.Visible = true
      KersValueBar.Visible = true
+  elseif KersValues == 0 then
+    KersValues = 1
+     KersValueTurnOn.Caption = "KERS: OFF"
+     KersValue.Visible = false
+     KersValueBar.Visible = false
   end
 end
 
@@ -689,7 +689,7 @@ function darkMode()
   elseif darkMode == 0 then
     darkMode = 1
     DarkModeTurnOn.Caption = 'DARK: OFF'
-    UI.Color = clWhite
+    UI.Color = clGray
     OnOffButtonLabel.Font.Color = clBlack
     CurrentLapLabel.Font.Color = clBlack
     SpeedLabel.Font.Color = clBlack
