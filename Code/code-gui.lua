@@ -492,7 +492,7 @@ function createUI()
     SettingButton.TabOrder = 7
 
   SettingPanel = createPanel(UI)
-    SettingPanel.Left = 265
+    SettingPanel.Left = 255
     SettingPanel.Height = 130
     SettingPanel.Top = 50
     SettingPanel.Width = 110
@@ -569,7 +569,7 @@ function createUI()
     KersValueTurnOn.TabOrder = 4
 
   DarkModeTurnOn = createButton(SettingPanel)
-    DarkModeTurnOn.Left = 115
+    DarkModeTurnOn.Left = 110
     DarkModeTurnOn.Height = 30
     DarkModeTurnOn.Top = 5
     DarkModeTurnOn.Width = 100
@@ -581,7 +581,7 @@ function createUI()
     DarkModeTurnOn.TabOrder = 4
 
   SimpleModeTurnOn = createButton(SettingPanel)
-    SimpleModeTurnOn.Left = 115
+    SimpleModeTurnOn.Left = 110
     SimpleModeTurnOn.Height = 30
     SimpleModeTurnOn.Top = 35
     SimpleModeTurnOn.Width = 100
@@ -593,7 +593,7 @@ function createUI()
     SimpleModeTurnOn.TabOrder = 4
 
   FullscreenModeTurnOn = createButton(SettingPanel)
-    FullscreenModeTurnOn.Left = 115
+    FullscreenModeTurnOn.Left = 110
     FullscreenModeTurnOn.Height = 30
     FullscreenModeTurnOn.Top = 65
     FullscreenModeTurnOn.Width = 100
@@ -743,14 +743,14 @@ function createUI()
     MetricsTurnOnSimple.Height = 30
     MetricsTurnOnSimple.Top = 110
     MetricsTurnOnSimple.Width = 100
-    MetricsTurnOn.Caption = 'SPEED: KPH'
-    MetricsTurnOn.Font.Name = 'Segoe UI'
-    MetricsTurnOn.Font.fsBold = true
-    MetricsTurnOn.Font.fsItalic = true
-    MetricsTurnOn.OnClick = ChangeMetrics
-    MetricsTurnOn.ParentFont = false
-    MetricsTurnOn.TabOrder = 1
-    MetricsTurnOn.Visible = false
+    MetricsTurnOnSimple.Caption = 'SPEED: KPH'
+    MetricsTurnOnSimple.Font.Name = 'Segoe UI'
+    MetricsTurnOnSimple.Font.fsBold = true
+    MetricsTurnOnSimple.Font.fsItalic = true
+    MetricsTurnOnSimple.OnClick = ChangeMetrics
+    MetricsTurnOnSimple.ParentFont = false
+    MetricsTurnOnSimple.TabOrder = 1
+    MetricsTurnOnSimple.Visible = false
 
   InitPanel = createPanel(UI)
     InitPanel.Left = -2
