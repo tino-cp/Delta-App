@@ -207,7 +207,7 @@ function createUI()
   LapProgress = createProgressBar(UI)
     LapProgress.Left = 0
     LapProgress.Height = 12
-    LapProgress.Top = 202
+    LapProgress.Top = 190
     LapProgress.Width = 480
     LapProgress.BorderStyle = bsNone
     LapProgress.Position = 50
@@ -216,7 +216,7 @@ function createUI()
   S1_2ProggressBar = createLabel(UI)
     S1_2ProggressBar.Left = 138
     S1_2ProggressBar.Height = 17
-    S1_2ProggressBar.Top = 183
+    S1_2ProggressBar.Top = 170
     S1_2ProggressBar.Width = 37
     S1_2ProggressBar.Caption = 'S1 | S2'
     S1_2ProggressBar.Font.Color = clMenuBar
@@ -229,7 +229,7 @@ function createUI()
   S2_3ProggressBar = createLabel(UI)
     S2_3ProggressBar.Left = 304
     S2_3ProggressBar.Height = 17
-    S2_3ProggressBar.Top = 183
+    S2_3ProggressBar.Top = 170
     S2_3ProggressBar.Width = 37
     S2_3ProggressBar.Caption = 'S2 | S3'
     S2_3ProggressBar.Font.Color = clMenuBar
