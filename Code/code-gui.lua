@@ -500,14 +500,14 @@ function createUI()
     SettingButton.TabOrder = 7
 
   SettingPanel = createPanel(UI)
-    SettingPanel.Left = 255
+    SettingPanel.Left = 155
     SettingPanel.Height = 160
     SettingPanel.Top = 45
     SettingPanel.Width = 215
     SettingPanel.BevelColor = clBackground
     SettingPanel.BevelWidth = 2
     SettingPanel.ClientHeight = 160
-    SettingPanel.ClientWidth = 215
+    SettingPanel.ClientWidth = 315
     SettingPanel.TabOrder = 8
     SettingPanel.Visible = false
 
@@ -552,9 +552,9 @@ function createUI()
 
 
   InputsTurnOn = createButton(SettingPanel)
-    InputsTurnOn.Left = 5
+    InputsTurnOn.Left = 110
     InputsTurnOn.Height = 30
-    InputsTurnOn.Top = 95
+    InputsTurnOn.Top = 5
     InputsTurnOn.Width = 100
     InputsTurnOn.Caption = 'INPUT: ON'
     InputsTurnOn.Font.Name = 'Segoe UI'
@@ -565,9 +565,9 @@ function createUI()
     InputsTurnOn.TabOrder = 3
 
   KersValueTurnOn = createButton(SettingPanel)
-    KersValueTurnOn.Left = 5
+    KersValueTurnOn.Left = 110
     KersValueTurnOn.Height = 30
-    KersValueTurnOn.Top = 125
+    KersValueTurnOn.Top = 35
     KersValueTurnOn.Width = 100
     KersValueTurnOn.Caption = 'KERS: OFF'
     KersValueTurnOn.Font.fsBold = true
@@ -577,7 +577,7 @@ function createUI()
     KersValueTurnOn.TabOrder = 4
 
   DarkModeTurnOn = createButton(SettingPanel)
-    DarkModeTurnOn.Left = 110
+    DarkModeTurnOn.Left = 210
     DarkModeTurnOn.Height = 30
     DarkModeTurnOn.Top = 5
     DarkModeTurnOn.Width = 100
@@ -589,7 +589,7 @@ function createUI()
     DarkModeTurnOn.TabOrder = 4
 
   SimpleModeTurnOn = createButton(SettingPanel)
-    SimpleModeTurnOn.Left = 110
+    SimpleModeTurnOn.Left = 210
     SimpleModeTurnOn.Height = 30
     SimpleModeTurnOn.Top = 35
     SimpleModeTurnOn.Width = 100
@@ -601,7 +601,7 @@ function createUI()
     SimpleModeTurnOn.TabOrder = 4
 
   FullscreenModeTurnOn = createButton(SettingPanel)
-    FullscreenModeTurnOn.Left = 110
+    FullscreenModeTurnOn.Left = 210
     FullscreenModeTurnOn.Height = 30
     FullscreenModeTurnOn.Top = 65
     FullscreenModeTurnOn.Width = 100
