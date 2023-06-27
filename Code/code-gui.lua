@@ -7,7 +7,7 @@ function createUI()
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
     UI.Caption = "Delta App Online 1.1.1" 
-    UI.ClientHeight = 214
+    UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
     UI.Font.Color = clWhite
@@ -52,7 +52,7 @@ function createUI()
     CurrentLapValue.Top = 55
     CurrentLapValue.Width = 110
     CurrentLapValue.Caption = '0:0.000'
-    CurrentLapValue.Font.Color = clWindow
+    CurrentLapValue.Font.Color = clWhite
     CurrentLapValue.Font.Height = -21
     CurrentLapValue.Font.Name = 'Segoe UI'
     CurrentLapValue.Font.fsBold = true
@@ -98,7 +98,7 @@ function createUI()
     DeltaLabel.Top = 115
     DeltaLabel.Width = 113
     DeltaLabel.Caption = '+ 9.999'
-    DeltaLabel.Font.Color = clWindow
+    DeltaLabel.Font.Color = clWhite
     DeltaLabel.Font.Height = -32
     DeltaLabel.Font.Name = 'Segoe UI'
     DeltaLabel.Font.fsBold = true
@@ -126,7 +126,7 @@ function createUI()
     CL2.Top = 85
     CL2.Width = 25
     CL2.Caption = 'S1:'
-    CL2.Font.Color = clWindow
+    CL2.Font.Color = clWhite
     CL2.Font.Height = -19
     CL2.Font.Name = 'Segoe UI'
     CL2.Font.fsBold = true
@@ -140,7 +140,7 @@ function createUI()
     CL3.Top = 115
     CL3.Width = 25
     CL3.Caption = 'S2:'
-    CL3.Font.Color = clWindow
+    CL3.Font.Color = clWhite
     CL3.Font.Height = -19
     CL3.Font.Name = 'Segoe UI'
     CL3.Font.fsBold = true
@@ -154,7 +154,7 @@ function createUI()
     CL4.Top = 145
     CL4.Width = 25
     CL4.Caption = 'S3:'
-    CL4.Font.Color = clWindow
+    CL4.Font.Color = clWhite
     CL4.Font.Height = -19
     CL4.Font.Name = 'Segoe UI'
     CL4.Font.fsBold = true
@@ -168,7 +168,7 @@ function createUI()
     S1Label.Top = 85
     S1Label.Width = 38
     S1Label.Caption = '0.00'
-    S1Label.Font.Color = clWindow
+    S1Label.Font.Color = clWhite
     S1Label.Font.Height = -19
     S1Label.Font.Name = 'Segoe UI'
     S1Label.Font.fsBold = true
@@ -182,7 +182,7 @@ function createUI()
     S2Label.Top = 115
     S2Label.Width = 38
     S2Label.Caption = '0.00'
-    S2Label.Font.Color = clWindow
+    S2Label.Font.Color = clWhite
     S2Label.Font.Height = -19
     S2Label.Font.Name = 'Segoe UI'
     S2Label.Font.fsBold = true
@@ -196,7 +196,7 @@ function createUI()
     S3Label.Top = 145
     S3Label.Width = 38
     S3Label.Caption = '0.00'
-    S3Label.Font.Color = clWindow
+    S3Label.Font.Color = clWhite
     S3Label.Font.Height = -19
     S3Label.Font.Name = 'Segoe UI'
     S3Label.Font.fsBold = true
@@ -216,7 +216,7 @@ function createUI()
   S1_2ProggressBar = createLabel(UI)
     S1_2ProggressBar.Left = 138
     S1_2ProggressBar.Height = 17
-    S1_2ProggressBar.Top = 170
+    S1_2ProggressBar.Top = 172
     S1_2ProggressBar.Width = 37
     S1_2ProggressBar.Caption = 'S1 | S2'
     S1_2ProggressBar.Font.Color = clMenuBar
@@ -229,7 +229,7 @@ function createUI()
   S2_3ProggressBar = createLabel(UI)
     S2_3ProggressBar.Left = 304
     S2_3ProggressBar.Height = 17
-    S2_3ProggressBar.Top = 170
+    S2_3ProggressBar.Top = 172
     S2_3ProggressBar.Width = 37
     S2_3ProggressBar.Caption = 'S2 | S3'
     S2_3ProggressBar.Font.Color = clMenuBar
@@ -260,7 +260,7 @@ function createUI()
     SpeedLabel.Top = 155
     SpeedLabel.Width = 81
     SpeedLabel.Caption = 'Kph: 0.0'
-    SpeedLabel.Font.Color = clWindow
+    SpeedLabel.Font.Color = clWhite
     SpeedLabel.Font.Height = -23
     SpeedLabel.Font.Name = 'Segoe UI'
     SpeedLabel.Font.fsBold = true
@@ -745,12 +745,12 @@ function createUI()
     MetricsTurnOnSimple.Visible = false
 
   InitPanel = createPanel(UI)
-    InitPanel.Left = -2
-    InitPanel.Height = 217
-    InitPanel.Top = -2
-    InitPanel.Width = 503
-    InitPanel.ClientHeight = 217
-    InitPanel.ClientWidth = 503
+    InitPanel.Left = -1
+    InitPanel.Height = 200
+    InitPanel.Top = -1
+    InitPanel.Width = 480
+    InitPanel.ClientHeight = 200
+    InitPanel.ClientWidth = 480
     InitPanel.Color = clGrayText
     InitPanel.DoubleBuffered = true
     InitPanel.Font.CharSet = ANSI_CHARSET
@@ -785,7 +785,7 @@ function createUI()
     OnOffButtonLabel.Top = 102
     OnOffButtonLabel.Width = 347
     OnOffButtonLabel.Caption = '-Enable only after u spawned on track \nand crossed the 1st checkpoint\n-Any errors or issues report via Discord PM\n@vi.o.lence or @mrtino.'
-    OnOffButtonLabel.Font.Color = clWindow
+    OnOffButtonLabel.Font.Color = clWhite
     OnOffButtonLabel.Font.Height = -19
     OnOffButtonLabel.Font.Name = 'Segoe UI'
     OnOffButtonLabel.Font.fsItalic = true
