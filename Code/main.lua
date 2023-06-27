@@ -745,7 +745,7 @@ function darkModeTurnOn()
     -- Simple
     DarkModeTurnOnSimple.Caption = 'DARK: OFF'
 
-    UI.Color = clWhite
+    UI.Color = clGray
     SettingButton.Color = clWhite
     SettingButton.Font.Color = clBlack
     OnOffButtonLabel.Font.Color = clBlack

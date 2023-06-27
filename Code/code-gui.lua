@@ -271,7 +271,7 @@ function createUI()
 
 
   GearLabel = createLabel(UI)
-    GearLabel.Left = 70
+    GearLabel.Left = 69
     GearLabel.Height = 42
     GearLabel.Top = 120
     GearLabel.Width = 80
@@ -289,11 +289,11 @@ function createUI()
   RPM1 = createLabel(UI)
     RPM1.Left = 47
     RPM1.Height = 65
-    RPM1.Top = 107
+    RPM1.Top = 105
     RPM1.Width = 67
     RPM1.Caption = '∙   ∙'
     RPM1.Font.Color = clLime
-    RPM1.Font.Height = -52
+    RPM1.Font.Height = -48
     RPM1.Font.Name = 'Segoe UI'
     RPM1.Font.fsBold = true
     RPM1.Font.fsItalic = true
@@ -304,11 +304,11 @@ function createUI()
   RPM2 = createLabel(UI)
     RPM2.Left = 34
     RPM2.Height = 65
-    RPM2.Top = 107
+    RPM2.Top = 105
     RPM2.Width = 93
     RPM2.Caption = '∙     ∙'
     RPM2.Font.Color = clYellow
-    RPM2.Font.Height = -52
+    RPM2.Font.Height = -48
     RPM2.Font.Name = 'Segoe UI'
     RPM2.Font.fsBold = true
     RPM2.Font.fsItalic = true
@@ -319,11 +319,11 @@ function createUI()
   RPM3 = createLabel(UI)
     RPM3.Left = 20
     RPM3.Height = 65
-    RPM3.Top = 107
+    RPM3.Top = 105
     RPM3.Width = 119
     RPM3.Caption = '∙       ∙'
     RPM3.Font.Color = clRed
-    RPM3.Font.Height = -52
+    RPM3.Font.Height = -48
     RPM3.Font.Name = 'Segoe UI'
     RPM3.Font.fsBold = true
     RPM3.Font.fsItalic = true
@@ -334,11 +334,11 @@ function createUI()
   RPM4 = createLabel(UI)
     RPM4.Left = 8
     RPM4.Height = 65
-    RPM4.Top = 107
+    RPM4.Top = 105
     RPM4.Width = 145
     RPM4.Caption = '∙         ∙'
     RPM4.Font.Color = clBlue
-    RPM4.Font.Height = -52
+    RPM4.Font.Height = -48
     RPM4.Font.Name = 'Segoe UI'
     RPM4.Font.fsBold = true
     RPM4.Font.fsItalic = true
@@ -406,6 +406,7 @@ function createUI()
     KersValue.Font.fsItalic = true
     KersValue.ParentColor = false
     KersValue.ParentFont = false
+    KersValue.Visible = false
 
   KersValueBar = createProgressBar(UI)
     KersValueBar.Left = 393
@@ -415,6 +416,7 @@ function createUI()
     KersValueBar.BorderWidth = 0
     KersValueBar.Position = 0
     KersValueBar.TabOrder = 10
+    KersValueBar.Visible = false
 
   LogBuildingButton = createButton(UI)
     LogBuildingButton.Left = 10
