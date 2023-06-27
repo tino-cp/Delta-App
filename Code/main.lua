@@ -782,6 +782,8 @@ function simpleModeTurnOn()
     -- Simple
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: OFF'
 
+    KersValue.Visible = false
+    KersValueBar.Visible = false
     Gas.Visible = true
     Brake.Visible = true
     Steer.Visible = true
@@ -795,6 +797,13 @@ function simpleModeTurnOn()
     LapProgress.Visible = true
     S1_2ProggressBar.Visible = true
     S2_3ProggressBar.Visible = true
+    SettingPanel.Visible = true
+    LogBuildingButton.Visible = true
+    LoadFLButton.Visible = true
+    SaveFLButton.Visible = true
+    StartDetect.Visible = true
+    SettingButton.Visible = true
+
     SimpleButton.Visible = false
     SimplePanel.Visible = false
     LogBuildingButtonSimple.Visible = false
@@ -805,12 +814,6 @@ function simpleModeTurnOn()
     SimpleModeTurnOnSimple.Visible = false
     FullscreenModeTurnOnSimple.Visible = false
     MetricsTurnOnSimple.Visible = false
-    SettingPanel.Visible = true
-    LogBuildingButton.Visible = true
-    LoadFLButton.Visible = true
-    SaveFLButton.Visible = true
-    StartDetect.Visible = true
-    SettingButton.Visible = true
     UI.Height = 214
     UI.Width = 480
     UI.ClientHeight = 214
@@ -822,6 +825,8 @@ function simpleModeTurnOn()
     -- Simple
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
 
+    KersValue.Visible = false
+    KersValueBar.Visible = false
     Gas.Visible = false
     Brake.Visible = false
     Steer.Visible = false
@@ -841,6 +846,7 @@ function simpleModeTurnOn()
     SaveFLButton.Visible = false
     StartDetect.Visible = false
     SettingButton.Visible = false
+
     SimpleButton.Visible = true
     LogBuildingButtonSimple.Visible = true
     LoadFLButtonSimple.Visible = true

@@ -397,7 +397,7 @@ function createUI()
     KersValue.Top = 110
     KersValue.Width = 33
     KersValue.Caption = '0'
-    KersValue.Font.Color = 0xFFB90F
+    KersValue.Font.Color = clYellow
     KersValue.Font.Height = -20
     KersValue.Font.fsBold = true
     KersValue.Font.fsItalic = true
@@ -493,13 +493,13 @@ function createUI()
 
   SettingPanel = createPanel(UI)
     SettingPanel.Left = 255
-    SettingPanel.Height = 130
+    SettingPanel.Height = 160
     SettingPanel.Top = 50
-    SettingPanel.Width = 110
+    SettingPanel.Width = 215
     SettingPanel.BevelColor = clBackground
     SettingPanel.BevelWidth = 2
     SettingPanel.ClientHeight = 160
-    SettingPanel.ClientWidth = 220
+    SettingPanel.ClientWidth = 215
     SettingPanel.TabOrder = 8
     SettingPanel.Visible = false
 
@@ -622,12 +622,12 @@ function createUI()
   SimplePanel = createPanel(UI)
     SimplePanel.Left = 10
     SimplePanel.Height = 145
-    SimplePanel.Top = 45
-    SimplePanel.Width = 210
+    SimplePanel.Top = 50
+    SimplePanel.Width = 215
     SimplePanel.BevelColor = clBackground
     SimplePanel.BevelWidth = 2
     SimplePanel.ClientHeight = 145
-    SimplePanel.ClientWidth = 210
+    SimplePanel.ClientWidth = 215
     SimplePanel.TabOrder = 8
     SimplePanel.Visible = false
 
@@ -649,7 +649,7 @@ function createUI()
   LoadFLButtonSimple = createButton(SimplePanel)
     LoadFLButtonSimple.Left = 5
     LoadFLButtonSimple.Height = 30
-    LoadFLButtonSimple.Top = 40
+    LoadFLButtonSimple.Top = 35
     LoadFLButtonSimple.Width = 100
     LoadFLButtonSimple.Caption = 'LOAD LAP'
     LoadFLButtonSimple.Enabled = false
@@ -662,7 +662,7 @@ function createUI()
     LoadFLButtonSimple.Visible = false
 
   SaveFLButtonSimple = createButton(SimplePanel)
-    SaveFLButtonSimple.Left = 105
+    SaveFLButtonSimple.Left = 110
     SaveFLButtonSimple.Height = 30
     SaveFLButtonSimple.Top = 5
     SaveFLButtonSimple.Width = 100
@@ -679,9 +679,9 @@ function createUI()
     SaveFLButtonSimple.Visible = false
 
   StartDetectSimple = createButton(SimplePanel)
-    StartDetectSimple.Left = 105
+    StartDetectSimple.Left = 110
     StartDetectSimple.Height = 30
-    StartDetectSimple.Top = 40
+    StartDetectSimple.Top = 35
     StartDetectSimple.Width = 100
     StartDetectSimple.Caption = 'START'
     StartDetectSimple.Enabled = false
@@ -696,7 +696,7 @@ function createUI()
   DarkModeTurnOnSimple = createButton(SimplePanel)
     DarkModeTurnOnSimple.Left = 5
     DarkModeTurnOnSimple.Height = 30
-    DarkModeTurnOnSimple.Top = 75
+    DarkModeTurnOnSimple.Top = 70
     DarkModeTurnOnSimple.Width = 100
     DarkModeTurnOnSimple.Caption = 'DARK: ON'
     DarkModeTurnOnSimple.Font.fsBold = true
@@ -707,9 +707,9 @@ function createUI()
     DarkModeTurnOnSimple.Visible = false
 
   SimpleModeTurnOnSimple = createButton(SimplePanel)
-    SimpleModeTurnOnSimple.Left = 105
+    SimpleModeTurnOnSimple.Left = 110
     SimpleModeTurnOnSimple.Height = 30
-    SimpleModeTurnOnSimple.Top = 75
+    SimpleModeTurnOnSimple.Top = 70
     SimpleModeTurnOnSimple.Width = 100
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
     SimpleModeTurnOnSimple.Font.fsBold = true
@@ -720,11 +720,11 @@ function createUI()
     SimpleModeTurnOnSimple.Visible = false
 
   FullscreenModeTurnOnSimple = createButton(SimplePanel)
-    FullscreenModeTurnOnSimple.Left = 5
+    FullscreenModeTurnOnSimple.Left = 110
     FullscreenModeTurnOnSimple.Height = 30
-    FullscreenModeTurnOnSimple.Top = 110
+    FullscreenModeTurnOnSimple.Top = 105
     FullscreenModeTurnOnSimple.Width = 100
-    FullscreenModeTurnOnSimple.Caption = 'FULLSCREEN: ON'
+    FullscreenModeTurnOnSimple.Caption = 'FULL: ON'
     FullscreenModeTurnOnSimple.Font.fsBold = true
     FullscreenModeTurnOnSimple.Font.fsItalic = true
     FullscreenModeTurnOnSimple.OnClick = fullscreenModeTurnOn
@@ -733,9 +733,9 @@ function createUI()
     FullscreenModeTurnOnSimple.Visible = false
 
   MetricsTurnOnSimple = createButton(SimplePanel)
-    MetricsTurnOnSimple.Left = 105
+    MetricsTurnOnSimple.Left = 5
     MetricsTurnOnSimple.Height = 30
-    MetricsTurnOnSimple.Top = 110
+    MetricsTurnOnSimple.Top = 105
     MetricsTurnOnSimple.Width = 100
     MetricsTurnOnSimple.Caption = 'SPEED: KPH'
     MetricsTurnOnSimple.Font.fsBold = true
