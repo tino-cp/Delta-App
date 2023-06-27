@@ -37,7 +37,7 @@ function createUI()
     CurrentLapLabel.Font.Color = clWhite
     CurrentLapLabel.Font.Height = -21
     -- CurrentLapLabel.Font.Style = 'fsBold'
-    -- CurrentLapLabel.Font.Style = 'fsItalic'
+    --  CurrentLapLabel.Font.Style = 'fsItalic'
     CurrentLapLabel.ParentColor = false
     CurrentLapLabel.ParentFont = false
 
