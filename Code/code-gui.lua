@@ -392,13 +392,13 @@ function createUI()
     Brake.ParentFont = false
 
   KersValue = createLabel(UI)
-    KersValue.Left = 220
+    KersValue.Left = 215
     KersValue.Height = 25
     KersValue.Top = 110
     KersValue.Width = 33
     KersValue.Caption = '0'
     KersValue.Font.Color = 0xFFB90F
-    KersValue.Font.Height = -19
+    KersValue.Font.Height = -20
     KersValue.Font.fsBold = true
     KersValue.Font.fsItalic = true
     KersValue.ParentColor = false
@@ -406,10 +406,10 @@ function createUI()
     KersValue.Visible = false
 
   KersValueBar = createProgressBar(UI)
-    KersValueBar.Left = 255
+    KersValueBar.Left = 250
     KersValueBar.Height = 16
     KersValueBar.Top = 115
-    KersValueBar.Width = 75
+    KersValueBar.Width = 100
     KersValueBar.BorderWidth = 0
     KersValueBar.Position = 0
     KersValueBar.TabOrder = 10
@@ -592,6 +592,18 @@ function createUI()
     SimpleModeTurnOn.ParentFont = False
     SimpleModeTurnOn.TabOrder = 4
 
+  FullscreenModeTurnOn = createButton(SettingPanel)
+    FullscreenModeTurnOn.Left = 115
+    FullscreenModeTurnOn.Height = 30
+    FullscreenModeTurnOn.Top = 65
+    FullscreenModeTurnOn.Width = 100
+    FullscreenModeTurnOn.Caption = 'FULLSCREEN: OFF'
+    FullscreenModeTurnOn.Font.fsBold = true
+    FullscreenModeTurnOn.Font.fsItalic = true
+    FullscreenModeTurnOn.OnClick = fullscreenModeTurnOn
+    FullscreenModeTurnOn.ParentFont = False
+    FullscreenModeTurnOn.TabOrder = 4
+
   SimpleButton = createButton(UI)
     SimpleButton.Left = 10
     SimpleButton.Height = 35
@@ -699,9 +711,9 @@ function createUI()
     DarkModeTurnOnSimple.Visible = false
 
   SimpleModeTurnOnSimple = createButton(SimplePanel)
-    SimpleModeTurnOnSimple.Left = 100
+    SimpleModeTurnOnSimple.Left = 5
     SimpleModeTurnOnSimple.Height = 30
-    SimpleModeTurnOnSimple.Top = 75
+    SimpleModeTurnOnSimple.Top = 110
     SimpleModeTurnOnSimple.Width = 90
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
     SimpleModeTurnOnSimple.Font.fsBold = true
@@ -710,6 +722,19 @@ function createUI()
     SimpleModeTurnOnSimple.ParentFont = False
     SimpleModeTurnOnSimple.TabOrder = 4
     SimpleModeTurnOnSimple.Visible = false
+
+  FullscreenModeTurnOnSimple = createButton(SimplePanel)
+    FullscreenModeTurnOnSimple.Left = 5
+    FullscreenModeTurnOnSimple.Height = 30
+    FullscreenModeTurnOnSimple.Top = 75
+    FullscreenModeTurnOnSimple.Width = 90
+    FullscreenModeTurnOnSimple.Caption = 'FULLSCREEN: ON'
+    FullscreenModeTurnOnSimple.Font.fsBold = true
+    FullscreenModeTurnOnSimple.Font.fsItalic = true
+    FullscreenModeTurnOnSimple.OnClick = fullscreenModeTurnOn
+    FullscreenModeTurnOnSimple.ParentFont = False
+    FullscreenModeTurnOnSimple.TabOrder = 4
+    FullscreenModeTurnOnSimple.Visible = false
 
   InitPanel = createPanel(UI)
     InitPanel.Left = -2

@@ -14,6 +14,7 @@ Inputs = 1
 KersValues = 1
 darkMode = 1
 simpleMode = 1
+fullscreenMode = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0
@@ -850,6 +851,32 @@ function simpleModeTurnOn()
     UI.Width = 270
     UI.ClientHeight = 190
     UI.ClientWidth = 270
+  end
+end
+
+function fullscreenModeTurnOn()
+  if fullscreenMode == 1 then
+    fullscreenMode = 0
+    FullscreenModeTurnOn.Caption = 'FULL: OFF'
+
+    -- Simple
+    FullscreenModeTurnOnSimple.Caption = 'FULL: OFF'
+
+    UI.BorderStyle = bsSingle
+    mainForm.AlphaBlend = false
+    mainForm.AlphaBlendValue = 255
+
+  elseif fullscreenMode == 0 then
+    fullscreenMode = 1
+    FullscreenModeTurnOn.Caption = 'FULL: ON'
+
+    -- Simple
+    FullscreenModeTurnOnSimple.Caption = 'FULL: ON'
+
+    UI.BorderStyle = bsNone
+    mainForm.AlphaBlend = true
+    mainForm.AlphaBlendValue = 128
+
   end
 end
 
