@@ -94,7 +94,7 @@ function createUI()
     --   PitDeltaValue.Visible = false
 
     DeltaLabel = createLabel(UI)
-      DeltaLabel.Left = 186
+      DeltaLabel.Left = 150
       DeltaLabel.Height = 45
       DeltaLabel.Top = 126
       DeltaLabel.Width = 113
@@ -347,7 +347,7 @@ function createUI()
       RPM4.Visible = false
 
     Steer = createTrackBar(UI)
-      Steer.Left = 255
+      Steer.Left = 240
       Steer.Height = 20
       Steer.Top = 110
       Steer.Width = 110
@@ -363,9 +363,9 @@ function createUI()
       Steer.TabOrder = 9
 
     Gas = createLabel(UI)
-      Gas.Left = 316
+      Gas.Left = 300
       Gas.Height = 30
-      Gas.Top = 78
+      Gas.Top = 58
       Gas.Width = 13
       Gas.Caption = '0'
       Gas.Font.Color = clLime
@@ -378,9 +378,9 @@ function createUI()
 
 
     Brake = createLabel(UI)
-      Brake.Left = 264
+      Brake.Left = 250
       Brake.Height = 30
-      Brake.Top = 78
+      Brake.Top = 58
       Brake.Width = 13
       Brake.Caption = '0'
       Brake.Font.Color = clRed
