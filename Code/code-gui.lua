@@ -500,7 +500,7 @@ function createUI()
     SettingButton.TabOrder = 7
 
   SettingPanel = createPanel(UI)
-    SettingPanel.Left = 155
+    SettingPanel.Left = 160
     SettingPanel.Height = 100
     SettingPanel.Top = 45
     SettingPanel.Width = 310
@@ -552,7 +552,7 @@ function createUI()
 
 
   InputsTurnOn = createButton(SettingPanel)
-    InputsTurnOn.Left = 110
+    InputsTurnOn.Left = 105
     InputsTurnOn.Height = 30
     InputsTurnOn.Top = 5
     InputsTurnOn.Width = 100
@@ -565,7 +565,7 @@ function createUI()
     InputsTurnOn.TabOrder = 3
 
   KersValueTurnOn = createButton(SettingPanel)
-    KersValueTurnOn.Left = 110
+    KersValueTurnOn.Left = 105
     KersValueTurnOn.Height = 30
     KersValueTurnOn.Top = 35
     KersValueTurnOn.Width = 100
@@ -577,7 +577,7 @@ function createUI()
     KersValueTurnOn.TabOrder = 4
 
   DarkModeTurnOn = createButton(SettingPanel)
-    DarkModeTurnOn.Left = 210
+    DarkModeTurnOn.Left = 205
     DarkModeTurnOn.Height = 30
     DarkModeTurnOn.Top = 5
     DarkModeTurnOn.Width = 100
@@ -589,7 +589,7 @@ function createUI()
     DarkModeTurnOn.TabOrder = 4
 
   SimpleModeTurnOn = createButton(SettingPanel)
-    SimpleModeTurnOn.Left = 210
+    SimpleModeTurnOn.Left = 205
     SimpleModeTurnOn.Height = 30
     SimpleModeTurnOn.Top = 35
     SimpleModeTurnOn.Width = 100
@@ -601,7 +601,7 @@ function createUI()
     SimpleModeTurnOn.TabOrder = 4
 
   FullscreenModeTurnOn = createButton(SettingPanel)
-    FullscreenModeTurnOn.Left = 210
+    FullscreenModeTurnOn.Left = 205
     FullscreenModeTurnOn.Height = 30
     FullscreenModeTurnOn.Top = 65
     FullscreenModeTurnOn.Width = 100
