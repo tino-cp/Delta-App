@@ -396,7 +396,7 @@ function createUI()
     KersValue.Top = 110
     KersValue.Width = 33
     KersValue.Caption = '0'
-    KersValue.Font.Color = clYellow
+    KersValue.Font.Color = 999900
     KersValue.Font.Height = -20
     KersValue.Font.fsBold = true
     KersValue.Font.fsItalic = true
