@@ -216,7 +216,7 @@ function createUI()
   LapProgress = createProgressBar(UI)
     LapProgress.Left = 0
     LapProgress.Height = 12
-    LapProgress.Top = 186
+    LapProgress.Top = 188
     LapProgress.Width = 480
     LapProgress.BorderStyle = bsNone
     LapProgress.Position = 50
