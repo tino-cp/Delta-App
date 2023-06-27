@@ -14,7 +14,7 @@ function createUI()
     UI.Top = 0
     UI.Width = 500
     UI.ActiveControl = Steer
-    UI.BorderStyle = bsSingle
+    UI.BorderStyle = 'bsSingle'
     UI.Caption = "Delta App Online 1.1.2" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
@@ -25,8 +25,7 @@ function createUI()
     UI.OnClose = ex
     UI.OnDestroy = ex
     UI.OnKeyDown = Speed
-    UI.ShowInTaskBar = stAlways
-    UI.ShowInTaskBar = true
+    UI.ShowInTaskBar = 'stAlways'
     UI.Visible = true
 
   CurrentLapLabel = createLabel(UI)
