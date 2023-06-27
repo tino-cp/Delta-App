@@ -627,7 +627,7 @@ function createUI()
     SimplePanel.BevelColor = clBackground
     SimplePanel.BevelWidth = 2
     SimplePanel.ClientHeight = 140
-    SimplePanel.ClientWidth = 195
+    SimplePanel.ClientWidth = 205
     SimplePanel.TabOrder = 8
     SimplePanel.Visible = false
 
@@ -635,7 +635,7 @@ function createUI()
     LogBuildingButtonSimple.Left = 5
     LogBuildingButtonSimple.Height = 30
     LogBuildingButtonSimple.Top = 5
-    LogBuildingButtonSimple.Width = 90
+    LogBuildingButtonSimple.Width = 100
     LogBuildingButtonSimple.Caption = 'LOGS OFF'
     LogBuildingButtonSimple.Enabled = false
     LogBuildingButtonSimple.Font.Height = -16
@@ -651,7 +651,7 @@ function createUI()
     LoadFLButtonSimple.Left = 5
     LoadFLButtonSimple.Height = 30
     LoadFLButtonSimple.Top = 40
-    LoadFLButtonSimple.Width = 90
+    LoadFLButtonSimple.Width = 100
     LoadFLButtonSimple.Caption = 'LOAD LAP'
     LoadFLButtonSimple.Enabled = false
     LoadFLButtonSimple.Font.Height = -16
@@ -667,7 +667,7 @@ function createUI()
     SaveFLButtonSimple.Left = 100
     SaveFLButtonSimple.Height = 30
     SaveFLButtonSimple.Top = 5
-    SaveFLButtonSimple.Width = 90
+    SaveFLButtonSimple.Width = 100
     SaveFLButtonSimple.Caption = 'SAVE LAP'
     SaveFLButtonSimple.Enabled = false
     SaveFLButtonSimple.Font.Height = -16
@@ -685,7 +685,7 @@ function createUI()
     StartDetectSimple.Left = 100
     StartDetectSimple.Height = 30
     StartDetectSimple.Top = 40
-    StartDetectSimple.Width = 90
+    StartDetectSimple.Width = 100
     StartDetectSimple.Caption = 'START'
     StartDetectSimple.Enabled = false
     StartDetectSimple.Font.Height = -16
@@ -701,7 +701,7 @@ function createUI()
     DarkModeTurnOnSimple.Left = 5
     DarkModeTurnOnSimple.Height = 30
     DarkModeTurnOnSimple.Top = 75
-    DarkModeTurnOnSimple.Width = 90
+    DarkModeTurnOnSimple.Width = 100
     DarkModeTurnOnSimple.Font.Height = -16
     DarkModeTurnOnSimple.Caption = 'DARK: ON'
     DarkModeTurnOnSimple.Font.fsBold = true
@@ -715,7 +715,7 @@ function createUI()
     SimpleModeTurnOnSimple.Left = 100
     SimpleModeTurnOnSimple.Height = 30
     SimpleModeTurnOnSimple.Top = 75
-    SimpleModeTurnOnSimple.Width = 90
+    SimpleModeTurnOnSimple.Width = 100
     SimpleModeTurnOnSimple.Font.Height = -16
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
     SimpleModeTurnOnSimple.Font.fsBold = true
@@ -729,7 +729,7 @@ function createUI()
     FullscreenModeTurnOnSimple.Left = 5
     FullscreenModeTurnOnSimple.Height = 30
     FullscreenModeTurnOnSimple.Top = 110
-    FullscreenModeTurnOnSimple.Width = 90
+    FullscreenModeTurnOnSimple.Width = 100
     FullscreenModeTurnOnSimple.Caption = 'FULLSCREEN: ON'
     FullscreenModeTurnOnSimple.Font.fsBold = true
     FullscreenModeTurnOnSimple.Font.fsItalic = true
@@ -737,6 +737,19 @@ function createUI()
     FullscreenModeTurnOnSimple.ParentFont = False
     FullscreenModeTurnOnSimple.TabOrder = 4
     FullscreenModeTurnOnSimple.Visible = false
+
+  MetricsTurnOnSimple = createButton(SimplePanel)
+    MetricsTurnOnSimple.Left = 100
+    MetricsTurnOnSimple.Height = 30
+    MetricsTurnOnSimple.Top = 110
+    MetricsTurnOnSimple.Width = 100
+    MetricsTurnOn.Caption = 'SPEED: KPH'
+    MetricsTurnOn.Font.Name = 'Segoe UI'
+    MetricsTurnOn.Font.fsBold = true
+    MetricsTurnOn.Font.fsItalic = true
+    MetricsTurnOn.OnClick = ChangeMetrics
+    MetricsTurnOn.ParentFont = false
+    MetricsTurnOn.TabOrder = 1
 
   InitPanel = createPanel(UI)
     InitPanel.Left = -2

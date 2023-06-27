@@ -654,9 +654,15 @@ function ChangeMetrics()
   if Metrics == 1 then
      Metrics = 0
      MetricsTurnOn.Caption = "SPEED: MPH"
+
+    --  Simple
+    MetricsTurnOnSimple.Caption = "SPEED: MPH"
   elseif Metrics == 0 then
      Metrics = 1
      MetricsTurnOn.Caption = "SPEED: KPH"
+
+    --  Simple
+    MetricsTurnOnSimple.Caption = "SPEED: KPH"
   end
 end
 
