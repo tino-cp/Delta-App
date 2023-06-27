@@ -392,13 +392,13 @@ function createUI()
     Brake.ParentFont = false
 
   KersValue = createLabel(UI)
-    KersValue.Left = 240
+    KersValue.Left = 220
     KersValue.Height = 25
     KersValue.Top = 110
     KersValue.Width = 33
     KersValue.Caption = '0'
     KersValue.Font.CharSet = ANSI_CHARSET
-    KersValue.Font.Color = 0xFFC300
+    KersValue.Font.Color = 0xFFB90F
     KersValue.Font.Height = -19
     KersValue.Font.Pitch = fpVariable
     KersValue.Font.Quality = fqDraft
@@ -409,10 +409,10 @@ function createUI()
     KersValue.Visible = false
 
   KersValueBar = createProgressBar(UI)
-    KersValueBar.Left = 275
+    KersValueBar.Left = 255
     KersValueBar.Height = 16
     KersValueBar.Top = 115
-    KersValueBar.Width = 100
+    KersValueBar.Width = 75
     KersValueBar.BorderWidth = 0
     KersValueBar.Position = 0
     KersValueBar.TabOrder = 10
