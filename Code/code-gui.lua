@@ -21,8 +21,9 @@ function createUI()
 
   DeltaFont = createFont()
     DeltaFont.Name = 'Segoe UI'
-    DeltaFont.Style =  fsBold
-    DeltaFont.Style =  fsItalic
+    DeltaFont.Style =  'fsBold, fsItalic'
+    DeltaFont.Size = -21
+
 
   CurrentLapLabel = createLabel(UI)
     CurrentLapLabel.Left = 10
