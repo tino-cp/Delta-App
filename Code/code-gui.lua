@@ -36,7 +36,7 @@ function createUI()
   FastestLapLabel = createLabel(UI)
     FastestLapLabel.Left = 10
     FastestLapLabel.Height = 30
-    FastestLapLabel.Top = 90
+    FastestLapLabel.Top = 85
     FastestLapLabel.Width = 125
     FastestLapLabel.Caption = 'Fastest Lap:'
     FastestLapLabel.Font.Color = clFuchsia
@@ -48,7 +48,7 @@ function createUI()
     FastestLapLabel.ParentFont = false
 
   CurrentLapValue = createLabel(UI)
-    CurrentLapValue.Left = 140
+    CurrentLapValue.Left = 135
     CurrentLapValue.Height = 30
     CurrentLapValue.Top = 55
     CurrentLapValue.Width = 110
@@ -62,9 +62,9 @@ function createUI()
     CurrentLapValue.ParentFont = false
 
   FastestLapValue = createLabel(UI)
-    FastestLapValue.Left = 140
+    FastestLapValue.Left = 135
     FastestLapValue.Height = 30
-    FastestLapValue.Top = 90
+    FastestLapValue.Top = 85
     FastestLapValue.Width = 110
     FastestLapValue.Caption = '166:40.000'
     FastestLapValue.Font.Color = clFuchsia
@@ -262,7 +262,7 @@ function createUI()
     SpeedLabel.Width = 81
     SpeedLabel.Caption = 'Kph: 0.0'
     SpeedLabel.Font.Color = clWindow
-    SpeedLabel.Font.Height = -21
+    SpeedLabel.Font.Height = -28
     SpeedLabel.Font.Name = 'Segoe UI'
     SpeedLabel.Font.fsBold = true
     SpeedLabel.Font.fsItalic = true
@@ -273,7 +273,7 @@ function createUI()
   GearLabel = createLabel(UI)
     GearLabel.Left = 70
     GearLabel.Height = 42
-    GearLabel.Top = 126
+    GearLabel.Top = 120
     GearLabel.Width = 80
     GearLabel.Alignment = taCenter
     GearLabel.Caption = '1'
@@ -289,11 +289,11 @@ function createUI()
   RPM1 = createLabel(UI)
     RPM1.Left = 47
     RPM1.Height = 65
-    RPM1.Top = 113
+    RPM1.Top = 107
     RPM1.Width = 67
     RPM1.Caption = '∙   ∙'
     RPM1.Font.Color = clLime
-    RPM1.Font.Height = -48
+    RPM1.Font.Height = -60
     RPM1.Font.Name = 'Segoe UI'
     RPM1.Font.fsBold = true
     RPM1.Font.fsItalic = true
@@ -304,11 +304,11 @@ function createUI()
   RPM2 = createLabel(UI)
     RPM2.Left = 34
     RPM2.Height = 65
-    RPM2.Top = 113
+    RPM2.Top = 107
     RPM2.Width = 93
     RPM2.Caption = '∙     ∙'
     RPM2.Font.Color = clYellow
-    RPM2.Font.Height = -48
+    RPM2.Font.Height = -60
     RPM2.Font.Name = 'Segoe UI'
     RPM2.Font.fsBold = true
     RPM2.Font.fsItalic = true
@@ -319,11 +319,11 @@ function createUI()
   RPM3 = createLabel(UI)
     RPM3.Left = 20
     RPM3.Height = 65
-    RPM3.Top = 113
+    RPM3.Top = 107
     RPM3.Width = 119
     RPM3.Caption = '∙       ∙'
     RPM3.Font.Color = clRed
-    RPM3.Font.Height = -48
+    RPM3.Font.Height = -60
     RPM3.Font.Name = 'Segoe UI'
     RPM3.Font.fsBold = true
     RPM3.Font.fsItalic = true
@@ -334,11 +334,11 @@ function createUI()
   RPM4 = createLabel(UI)
     RPM4.Left = 8
     RPM4.Height = 65
-    RPM4.Top = 113
+    RPM4.Top = 107
     RPM4.Width = 145
     RPM4.Caption = '∙         ∙'
     RPM4.Font.Color = clBlue
-    RPM4.Font.Height = -48
+    RPM4.Font.Height = -60
     RPM4.Font.Name = 'Segoe UI'
     RPM4.Font.fsBold = true
     RPM4.Font.fsItalic = true
@@ -349,7 +349,7 @@ function createUI()
   Steer = createTrackBar(UI)
     Steer.Left = 240
     Steer.Height = 20
-    Steer.Top = 90
+    Steer.Top = 85
     Steer.Width = 110
     Steer.LineSize = 50
     Steer.Max = 100
