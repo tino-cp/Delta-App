@@ -803,11 +803,10 @@ function simpleModeTurnOn()
     SaveFLButton.Visible = true
     StartDetect.Visible = true
     SettingButton.Visible = true
-    DeltaLabel.Left = 186
     UI.Height = 214
-    UI.Width = 500
+    UI.Width = 480
     UI.ClientHeight = 214
-    UI.ClientWidth = 500
+    UI.ClientWidth = 480
   elseif simpleMode == 0 then
     simpleMode = 1
     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
@@ -842,7 +841,6 @@ function simpleModeTurnOn()
     StartDetectSimple.Enabled=true
     DarkModeTurnOnSimple.Visible = true
     SimpleModeTurnOnSimple.Visible = true
-    DeltaLabel.Left = 150
     UI.Height = 200
     UI.Width = 270
     UI.ClientHeight = 190
