@@ -655,14 +655,14 @@ function ChangeMetrics()
      Metrics = 0
      MetricsTurnOn.Caption = "SPEED: MPH"
 
-    --  Simple
-    MetricsTurnOnSimple.Caption = "SPEED: MPH"
+     --  Simple
+     MetricsTurnOnSimple.Caption = "SPEED: MPH"
   elseif Metrics == 0 then
      Metrics = 1
      MetricsTurnOn.Caption = "SPEED: KPH"
 
-    --  Simple
-    MetricsTurnOnSimple.Caption = "SPEED: KPH"
+     --  Simple
+     MetricsTurnOnSimple.Caption = "SPEED: KPH"
   end
 end
 
@@ -794,7 +794,7 @@ function simpleModeTurnOn()
     CL2.Visible = true
     LapProgress.Visible = true
     S1_2ProggressBar.Visible = true
-    S23ProggressBar.Visible = true
+    S2_3ProggressBar.Visible = true
     SimpleButton.Visible = false
     SimplePanel.Visible = false
     LogBuildingButtonSimple.Visible = false

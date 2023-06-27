@@ -289,7 +289,7 @@ function createUI()
   RPM1 = createLabel(UI)
     RPM1.Left = 47
     RPM1.Height = 65
-    RPM1.Top = 100
+    RPM1.Top = 102
     RPM1.Width = 67
     RPM1.Caption = '∙   ∙'
     RPM1.Font.Color = clLime
@@ -304,7 +304,7 @@ function createUI()
   RPM2 = createLabel(UI)
     RPM2.Left = 34
     RPM2.Height = 65
-    RPM2.Top = 100
+    RPM2.Top = 102
     RPM2.Width = 93
     RPM2.Caption = '∙     ∙'
     RPM2.Font.Color = clYellow
@@ -319,7 +319,7 @@ function createUI()
   RPM3 = createLabel(UI)
     RPM3.Left = 20
     RPM3.Height = 65
-    RPM3.Top = 100
+    RPM3.Top = 102
     RPM3.Width = 119
     RPM3.Caption = '∙       ∙'
     RPM3.Font.Color = clRed
@@ -334,7 +334,7 @@ function createUI()
   RPM4 = createLabel(UI)
     RPM4.Left = 8
     RPM4.Height = 65
-    RPM4.Top = 100
+    RPM4.Top = 102
     RPM4.Width = 145
     RPM4.Caption = '∙         ∙'
     RPM4.Font.Color = clBlue
@@ -621,12 +621,12 @@ function createUI()
 
   SimplePanel = createPanel(UI)
     SimplePanel.Left = 10
-    SimplePanel.Height = 110
+    SimplePanel.Height = 145
     SimplePanel.Top = 45
-    SimplePanel.Width = 195
+    SimplePanel.Width = 210
     SimplePanel.BevelColor = clBackground
     SimplePanel.BevelWidth = 2
-    SimplePanel.ClientHeight = 140
+    SimplePanel.ClientHeight = 145
     SimplePanel.ClientWidth = 210
     SimplePanel.TabOrder = 8
     SimplePanel.Visible = false
@@ -638,7 +638,6 @@ function createUI()
     LogBuildingButtonSimple.Width = 100
     LogBuildingButtonSimple.Caption = 'LOGS OFF'
     LogBuildingButtonSimple.Enabled = false
-    LogBuildingButtonSimple.Font.Height = -16
     LogBuildingButtonSimple.Font.Name = 'Segoe UI'
     LogBuildingButtonSimple.Font.fsBold = true
     LogBuildingButtonSimple.Font.fsItalic = true
@@ -654,7 +653,6 @@ function createUI()
     LoadFLButtonSimple.Width = 100
     LoadFLButtonSimple.Caption = 'LOAD LAP'
     LoadFLButtonSimple.Enabled = false
-    LoadFLButtonSimple.Font.Height = -16
     LoadFLButtonSimple.Font.Name = 'Segoe UI'
     LoadFLButtonSimple.Font.fsBold = true
     LoadFLButtonSimple.Font.fsItalic = true
@@ -670,7 +668,6 @@ function createUI()
     SaveFLButtonSimple.Width = 100
     SaveFLButtonSimple.Caption = 'SAVE LAP'
     SaveFLButtonSimple.Enabled = false
-    SaveFLButtonSimple.Font.Height = -16
     SaveFLButtonSimple.Font.Name = 'Segoe UI'
     SaveFLButtonSimple.Font.fsBold = true
     SaveFLButtonSimple.Font.fsItalic = true
@@ -688,7 +685,6 @@ function createUI()
     StartDetectSimple.Width = 100
     StartDetectSimple.Caption = 'START'
     StartDetectSimple.Enabled = false
-    StartDetectSimple.Font.Height = -16
     StartDetectSimple.Font.Name = 'Segoe UI'
     StartDetectSimple.FontStyle = 'bold'
     StartDetectSimple.FontStyle = 'italic'
@@ -702,12 +698,11 @@ function createUI()
     DarkModeTurnOnSimple.Height = 30
     DarkModeTurnOnSimple.Top = 75
     DarkModeTurnOnSimple.Width = 100
-    DarkModeTurnOnSimple.Font.Height = -16
     DarkModeTurnOnSimple.Caption = 'DARK: ON'
     DarkModeTurnOnSimple.Font.fsBold = true
     DarkModeTurnOnSimple.Font.fsItalic = true
     DarkModeTurnOnSimple.OnClick = darkModeTurnOn
-    DarkModeTurnOnSimple.ParentFont = False
+    DarkModeTurnOnSimple.ParentFont = false
     DarkModeTurnOnSimple.TabOrder = 4
     DarkModeTurnOnSimple.Visible = false
 
@@ -716,12 +711,11 @@ function createUI()
     SimpleModeTurnOnSimple.Height = 30
     SimpleModeTurnOnSimple.Top = 75
     SimpleModeTurnOnSimple.Width = 100
-    SimpleModeTurnOnSimple.Font.Height = -16
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
     SimpleModeTurnOnSimple.Font.fsBold = true
     SimpleModeTurnOnSimple.Font.fsItalic = true
     SimpleModeTurnOnSimple.OnClick = simpleModeTurnOn
-    SimpleModeTurnOnSimple.ParentFont = False
+    SimpleModeTurnOnSimple.ParentFont = false
     SimpleModeTurnOnSimple.TabOrder = 4
     SimpleModeTurnOnSimple.Visible = false
 
@@ -734,7 +728,7 @@ function createUI()
     FullscreenModeTurnOnSimple.Font.fsBold = true
     FullscreenModeTurnOnSimple.Font.fsItalic = true
     FullscreenModeTurnOnSimple.OnClick = fullscreenModeTurnOn
-    FullscreenModeTurnOnSimple.ParentFont = False
+    FullscreenModeTurnOnSimple.ParentFont = false
     FullscreenModeTurnOnSimple.TabOrder = 4
     FullscreenModeTurnOnSimple.Visible = false
 
@@ -744,7 +738,6 @@ function createUI()
     MetricsTurnOnSimple.Top = 110
     MetricsTurnOnSimple.Width = 100
     MetricsTurnOnSimple.Caption = 'SPEED: KPH'
-    MetricsTurnOnSimple.Font.Name = 'Segoe UI'
     MetricsTurnOnSimple.Font.fsBold = true
     MetricsTurnOnSimple.Font.fsItalic = true
     MetricsTurnOnSimple.OnClick = ChangeMetrics
