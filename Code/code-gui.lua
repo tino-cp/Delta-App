@@ -622,11 +622,11 @@ function createUI()
   SimplePanel = createPanel(UI)
     SimplePanel.Left = 10
     SimplePanel.Height = 110
-    SimplePanel.Top = 50
+    SimplePanel.Top = 45
     SimplePanel.Width = 195
     SimplePanel.BevelColor = clBackground
     SimplePanel.BevelWidth = 2
-    SimplePanel.ClientHeight = 110
+    SimplePanel.ClientHeight = 140
     SimplePanel.ClientWidth = 195
     SimplePanel.TabOrder = 8
     SimplePanel.Visible = false
@@ -702,6 +702,7 @@ function createUI()
     DarkModeTurnOnSimple.Height = 30
     DarkModeTurnOnSimple.Top = 75
     DarkModeTurnOnSimple.Width = 90
+    DarkModeTurnOnSimple.Font.Height = -16
     DarkModeTurnOnSimple.Caption = 'DARK: ON'
     DarkModeTurnOnSimple.Font.fsBold = true
     DarkModeTurnOnSimple.Font.fsItalic = true
@@ -711,10 +712,11 @@ function createUI()
     DarkModeTurnOnSimple.Visible = false
 
   SimpleModeTurnOnSimple = createButton(SimplePanel)
-    SimpleModeTurnOnSimple.Left = 5
+    SimpleModeTurnOnSimple.Left = 100
     SimpleModeTurnOnSimple.Height = 30
-    SimpleModeTurnOnSimple.Top = 110
+    SimpleModeTurnOnSimple.Top = 75
     SimpleModeTurnOnSimple.Width = 90
+    SimpleModeTurnOnSimple.Font.Height = -16
     SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
     SimpleModeTurnOnSimple.Font.fsBold = true
     SimpleModeTurnOnSimple.Font.fsItalic = true
@@ -726,7 +728,7 @@ function createUI()
   FullscreenModeTurnOnSimple = createButton(SimplePanel)
     FullscreenModeTurnOnSimple.Left = 5
     FullscreenModeTurnOnSimple.Height = 30
-    FullscreenModeTurnOnSimple.Top = 75
+    FullscreenModeTurnOnSimple.Top = 110
     FullscreenModeTurnOnSimple.Width = 90
     FullscreenModeTurnOnSimple.Caption = 'FULLSCREEN: ON'
     FullscreenModeTurnOnSimple.Font.fsBold = true
