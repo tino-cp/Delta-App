@@ -502,7 +502,7 @@ function createUI()
   SettingPanel = createPanel(UI)
     SettingPanel.Left = 255
     SettingPanel.Height = 160
-    SettingPanel.Top = 50
+    SettingPanel.Top = 45
     SettingPanel.Width = 215
     SettingPanel.BevelColor = clBackground
     SettingPanel.BevelWidth = 2
