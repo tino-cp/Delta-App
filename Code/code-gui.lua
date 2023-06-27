@@ -19,12 +19,6 @@ function createUI()
     UI.ShowInTaskBar = stAlways
     UI.Visible = true
 
-  DeltaFont = createFont()
-    DeltaFont.Name = 'Segoe UI'
-    DeltaFont.Style =  'fsBold, fsItalic'
-    DeltaFont.Size = -21
-
-
   CurrentLapLabel = createLabel(UI)
     CurrentLapLabel.Left = 10
     CurrentLapLabel.Height = 30
@@ -33,7 +27,7 @@ function createUI()
     CurrentLapLabel.Caption = 'Current Lap:'
     CurrentLapLabel.Font.Color = clWhite
     CurrentLapLabel.Font.Height = -21
-    CurrentLapLabel.Font = DeltaFont
+    -- CurrentLapLabel.Font = DeltaFont
     CurrentLapLabel.ParentColor = false
     CurrentLapLabel.ParentFont = false
 
