@@ -1,6 +1,6 @@
 function createUI()
   local http = getInternet()
-  local ICO = http.getURL("https://raw.githubusercontent.com/MrTin0/Delta-App/main/.ico/Delta%20App%20Online%20v1_101.ico")
+  local ICO = http.getURL("https://raw.githubusercontent.com/MrTin0/Delta-App/main/.ico/delta-app.png")
   local IM = createStringStream(ICO)
   http.Destroy()
  
@@ -26,6 +26,7 @@ function createUI()
     UI.OnDestroy = ex
     UI.OnKeyDown = Speed
     UI.ShowInTaskBar = stAlways
+    UI.ShowInTaskBar = true
     UI.Visible = true
 
   CurrentLapLabel = createLabel(UI)
