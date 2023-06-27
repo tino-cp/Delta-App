@@ -6,7 +6,7 @@ function createUI()
     UI.Width = 500
     UI.ActiveControl = Steer
     UI.BorderStyle = bsSingle
-    UI.Caption = "Delta App Online 1.1.1" 
+    UI.Caption = "Delta App Online 1.1.2" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
@@ -207,7 +207,7 @@ function createUI()
   LapProgress = createProgressBar(UI)
     LapProgress.Left = 0
     LapProgress.Height = 12
-    LapProgress.Top = 185
+    LapProgress.Top = 186
     LapProgress.Width = 480
     LapProgress.BorderStyle = bsNone
     LapProgress.Position = 50

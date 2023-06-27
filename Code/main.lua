@@ -134,7 +134,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('adr + D3618') --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('adr + E5AF0')
-  Caption = Track_Name.." Delta App Online 1.1.1"
+  Caption = Track_Name.." Delta App Online 1.1.2"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -246,7 +246,7 @@ function UpdateInfo()
     LogBuildingButtonSimple.Enabled = false
     LoadFLButtonSimple.Enabled = false
 
-    UI.Caption = "Delta App Online 1.1.1"
+    UI.Caption = "Delta App Online 1.1.2"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
@@ -724,7 +724,7 @@ function darkModeTurnOn()
   if darkMode == 1 then
     darkMode = 0
     DarkModeTurnOn.Caption = 'DARK: ON'
-    
+
     -- Simple
     DarkModeTurnOnSimple.Caption = 'DARK: ON'
 
