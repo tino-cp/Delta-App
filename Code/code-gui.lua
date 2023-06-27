@@ -22,7 +22,7 @@ function createUI()
   CurrentLapLabel = createLabel(UI)
     CurrentLapLabel.Left = 10
     CurrentLapLabel.Height = 30
-    CurrentLapLabel.Top = 55
+    CurrentLapLabel.Top = 50
     CurrentLapLabel.Width = 125
     CurrentLapLabel.Caption = 'Current Lap:'
     CurrentLapLabel.Font.Color = clWhite
@@ -35,7 +35,7 @@ function createUI()
   FastestLapLabel = createLabel(UI)
     FastestLapLabel.Left = 10
     FastestLapLabel.Height = 30
-    FastestLapLabel.Top = 85
+    FastestLapLabel.Top = 80
     FastestLapLabel.Width = 125
     FastestLapLabel.Caption = 'Fastest Lap:'
     FastestLapLabel.Font.Color = clFuchsia
@@ -49,7 +49,7 @@ function createUI()
   CurrentLapValue = createLabel(UI)
     CurrentLapValue.Left = 135
     CurrentLapValue.Height = 30
-    CurrentLapValue.Top = 55
+    CurrentLapValue.Top = 50
     CurrentLapValue.Width = 110
     CurrentLapValue.Caption = '0:0.000'
     CurrentLapValue.Font.Color = clWhite
@@ -63,7 +63,7 @@ function createUI()
   FastestLapValue = createLabel(UI)
     FastestLapValue.Left = 135
     FastestLapValue.Height = 30
-    FastestLapValue.Top = 85
+    FastestLapValue.Top = 80
     FastestLapValue.Width = 110
     FastestLapValue.Caption = '166:40.000'
     FastestLapValue.Font.Color = clFuchsia
@@ -95,7 +95,7 @@ function createUI()
   DeltaLabel = createLabel(UI)
     DeltaLabel.Left = 150
     DeltaLabel.Height = 45
-    DeltaLabel.Top = 115
+    DeltaLabel.Top = 110
     DeltaLabel.Width = 113
     DeltaLabel.Caption = '+ 9.999'
     DeltaLabel.Font.Color = clWhite
@@ -109,7 +109,7 @@ function createUI()
   SectorsCurrent = createLabel(UI)
     SectorsCurrent.Left = 360
     SectorsCurrent.Height = 21
-    SectorsCurrent.Top = 55
+    SectorsCurrent.Top = 50
     SectorsCurrent.Width = 88
     SectorsCurrent.Caption = 'Current lap:'
     SectorsCurrent.Font.Color = clWhite
@@ -123,7 +123,7 @@ function createUI()
   CL2 = createLabel(UI)
     CL2.Left = 360
     CL2.Height = 25
-    CL2.Top = 85
+    CL2.Top = 80
     CL2.Width = 25
     CL2.Caption = 'S1:'
     CL2.Font.Color = clWhite
@@ -137,7 +137,7 @@ function createUI()
   CL3 = createLabel(UI)
     CL3.Left = 360
     CL3.Height = 25
-    CL3.Top = 115
+    CL3.Top = 110
     CL3.Width = 25
     CL3.Caption = 'S2:'
     CL3.Font.Color = clWhite
@@ -151,7 +151,7 @@ function createUI()
   CL4 = createLabel(UI)
     CL4.Left = 360
     CL4.Height = 25
-    CL4.Top = 145
+    CL4.Top = 140
     CL4.Width = 25
     CL4.Caption = 'S3:'
     CL4.Font.Color = clWhite
@@ -165,7 +165,7 @@ function createUI()
   S1Label = createLabel(UI)
     S1Label.Left = 395
     S1Label.Height = 25
-    S1Label.Top = 85
+    S1Label.Top = 80
     S1Label.Width = 38
     S1Label.Caption = '0.00'
     S1Label.Font.Color = clWhite
@@ -179,7 +179,7 @@ function createUI()
   S2Label = createLabel(UI)
     S2Label.Left = 395
     S2Label.Height = 25
-    S2Label.Top = 115
+    S2Label.Top = 110
     S2Label.Width = 38
     S2Label.Caption = '0.00'
     S2Label.Font.Color = clWhite
@@ -193,7 +193,7 @@ function createUI()
   S3Label = createLabel(UI)
     S3Label.Left = 395
     S3Label.Height = 25
-    S3Label.Top = 145
+    S3Label.Top = 140
     S3Label.Width = 38
     S3Label.Caption = '0.00'
     S3Label.Font.Color = clWhite
@@ -207,7 +207,7 @@ function createUI()
   LapProgress = createProgressBar(UI)
     LapProgress.Left = 0
     LapProgress.Height = 12
-    LapProgress.Top = 190
+    LapProgress.Top = 183
     LapProgress.Width = 480
     LapProgress.BorderStyle = bsNone
     LapProgress.Position = 50
@@ -216,7 +216,7 @@ function createUI()
   S1_2ProggressBar = createLabel(UI)
     S1_2ProggressBar.Left = 138
     S1_2ProggressBar.Height = 17
-    S1_2ProggressBar.Top = 172
+    S1_2ProggressBar.Top = 170
     S1_2ProggressBar.Width = 37
     S1_2ProggressBar.Caption = 'S1 | S2'
     S1_2ProggressBar.Font.Color = clMenuBar
@@ -229,7 +229,7 @@ function createUI()
   S2_3ProggressBar = createLabel(UI)
     S2_3ProggressBar.Left = 304
     S2_3ProggressBar.Height = 17
-    S2_3ProggressBar.Top = 172
+    S2_3ProggressBar.Top = 170
     S2_3ProggressBar.Width = 37
     S2_3ProggressBar.Caption = 'S2 | S3'
     S2_3ProggressBar.Font.Color = clMenuBar
@@ -257,7 +257,7 @@ function createUI()
   SpeedLabel = createLabel(UI)
     SpeedLabel.Left = 24
     SpeedLabel.Height = 30
-    SpeedLabel.Top = 155
+    SpeedLabel.Top = 150
     SpeedLabel.Width = 81
     SpeedLabel.Caption = 'Kph: 0.0'
     SpeedLabel.Font.Color = clWhite
@@ -272,7 +272,7 @@ function createUI()
   GearLabel = createLabel(UI)
     GearLabel.Left = 69
     GearLabel.Height = 42
-    GearLabel.Top = 115
+    GearLabel.Top = 110
     GearLabel.Width = 80
     GearLabel.Alignment = taCenter
     GearLabel.Caption = '1'
@@ -288,7 +288,7 @@ function createUI()
   RPM1 = createLabel(UI)
     RPM1.Left = 47
     RPM1.Height = 65
-    RPM1.Top = 102
+    RPM1.Top = 97
     RPM1.Width = 67
     RPM1.Caption = '∙   ∙'
     RPM1.Font.Color = clLime
@@ -303,7 +303,7 @@ function createUI()
   RPM2 = createLabel(UI)
     RPM2.Left = 34
     RPM2.Height = 65
-    RPM2.Top = 102
+    RPM2.Top = 97
     RPM2.Width = 93
     RPM2.Caption = '∙     ∙'
     RPM2.Font.Color = clYellow
@@ -318,7 +318,7 @@ function createUI()
   RPM3 = createLabel(UI)
     RPM3.Left = 20
     RPM3.Height = 65
-    RPM3.Top = 102
+    RPM3.Top = 97
     RPM3.Width = 119
     RPM3.Caption = '∙       ∙'
     RPM3.Font.Color = clRed
@@ -333,7 +333,7 @@ function createUI()
   RPM4 = createLabel(UI)
     RPM4.Left = 8
     RPM4.Height = 65
-    RPM4.Top = 102
+    RPM4.Top = 97
     RPM4.Width = 145
     RPM4.Caption = '∙         ∙'
     RPM4.Font.Color = clBlue
@@ -348,7 +348,7 @@ function createUI()
   Steer = createTrackBar(UI)
     Steer.Left = 240
     Steer.Height = 20
-    Steer.Top = 85
+    Steer.Top = 80
     Steer.Width = 110
     Steer.LineSize = 50
     Steer.Max = 100
@@ -364,7 +364,7 @@ function createUI()
   Gas = createLabel(UI)
     Gas.Left = 300
     Gas.Height = 30
-    Gas.Top = 55
+    Gas.Top = 50
     Gas.Width = 13
     Gas.Caption = '0'
     Gas.Font.Color = clLime
@@ -379,7 +379,7 @@ function createUI()
   Brake = createLabel(UI)
     Brake.Left = 250
     Brake.Height = 30
-    Brake.Top = 55
+    Brake.Top = 50
     Brake.Width = 13
     Brake.Caption = '0'
     Brake.Font.Color = clRed
@@ -393,7 +393,7 @@ function createUI()
   KersValue = createLabel(UI)
     KersValue.Left = 215
     KersValue.Height = 25
-    KersValue.Top = 110
+    KersValue.Top = 105
     KersValue.Width = 33
     KersValue.Caption = '0'
     KersValue.Font.Color = 999900
@@ -407,7 +407,7 @@ function createUI()
   KersValueBar = createProgressBar(UI)
     KersValueBar.Left = 250
     KersValueBar.Height = 16
-    KersValueBar.Top = 115
+    KersValueBar.Top = 110
     KersValueBar.Width = 100
     KersValueBar.BorderWidth = 0
     KersValueBar.Position = 0
