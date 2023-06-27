@@ -95,7 +95,7 @@ function createUI()
   DeltaLabel = createLabel(UI)
     DeltaLabel.Left = 150
     DeltaLabel.Height = 45
-    DeltaLabel.Top = 126
+    DeltaLabel.Top = 115
     DeltaLabel.Width = 113
     DeltaLabel.Caption = '+ 9.999'
     DeltaLabel.Font.Color = clWindow
@@ -257,7 +257,7 @@ function createUI()
   SpeedLabel = createLabel(UI)
     SpeedLabel.Left = 24
     SpeedLabel.Height = 30
-    SpeedLabel.Top = 166
+    SpeedLabel.Top = 155
     SpeedLabel.Width = 81
     SpeedLabel.Caption = 'Kph: 0.0'
     SpeedLabel.Font.Color = clWindow
