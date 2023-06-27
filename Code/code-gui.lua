@@ -273,7 +273,7 @@ function createUI()
   GearLabel = createLabel(UI)
     GearLabel.Left = 69
     GearLabel.Height = 42
-    GearLabel.Top = 120
+    GearLabel.Top = 115
     GearLabel.Width = 80
     GearLabel.Alignment = taCenter
     GearLabel.Caption = '1'
@@ -392,13 +392,13 @@ function createUI()
     Brake.ParentFont = false
 
   KersValue = createLabel(UI)
-    KersValue.Left = 357
+    KersValue.Left = 240
     KersValue.Height = 25
-    KersValue.Top = 174
+    KersValue.Top = 100
     KersValue.Width = 33
     KersValue.Caption = '0'
     KersValue.Font.CharSet = ANSI_CHARSET
-    KersValue.Font.Color = clYellow
+    KersValue.Font.Color = 0x8B8000
     KersValue.Font.Height = -19
     KersValue.Font.Pitch = fpVariable
     KersValue.Font.Quality = fqDraft
@@ -409,9 +409,9 @@ function createUI()
     KersValue.Visible = false
 
   KersValueBar = createProgressBar(UI)
-    KersValueBar.Left = 393
+    KersValueBar.Left = 275
     KersValueBar.Height = 16
-    KersValueBar.Top = 179
+    KersValueBar.Top = 100
     KersValueBar.Width = 100
     KersValueBar.BorderWidth = 0
     KersValueBar.Position = 0
