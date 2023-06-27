@@ -766,7 +766,7 @@ function createUI()
   Enable = createButton(InitPanel)
     Enable.Left = 150
     Enable.Height = 40
-    Enable.Top = 51
+    Enable.Top = 40
     Enable.Width = 200
     Enable.Caption = 'Enable'
     Enable.Font.CharSet = ANSI_CHARSET
@@ -782,7 +782,7 @@ function createUI()
   OnOffButtonLabel = createLabel(InitPanel)
     OnOffButtonLabel.Left = 76
     OnOffButtonLabel.Height = 100
-    OnOffButtonLabel.Top = 102
+    OnOffButtonLabel.Top = 90
     OnOffButtonLabel.Width = 347
     OnOffButtonLabel.Caption = '-Enable only after u spawned on track \nand crossed the 1st checkpoint\n-Any errors or issues report via Discord PM\n@vi.o.lence or @mrtino.'
     OnOffButtonLabel.Font.Color = clWhite
