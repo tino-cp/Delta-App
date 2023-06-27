@@ -394,11 +394,11 @@ function createUI()
   KersValue = createLabel(UI)
     KersValue.Left = 240
     KersValue.Height = 25
-    KersValue.Top = 100
+    KersValue.Top = 110
     KersValue.Width = 33
     KersValue.Caption = '0'
     KersValue.Font.CharSet = ANSI_CHARSET
-    KersValue.Font.Color = 0x8B8000
+    KersValue.Font.Color = 0xFFC300
     KersValue.Font.Height = -19
     KersValue.Font.Pitch = fpVariable
     KersValue.Font.Quality = fqDraft
@@ -411,7 +411,7 @@ function createUI()
   KersValueBar = createProgressBar(UI)
     KersValueBar.Left = 275
     KersValueBar.Height = 16
-    KersValueBar.Top = 100
+    KersValueBar.Top = 115
     KersValueBar.Width = 100
     KersValueBar.BorderWidth = 0
     KersValueBar.Position = 0
