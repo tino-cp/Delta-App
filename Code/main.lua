@@ -745,7 +745,7 @@ function darkModeTurnOn()
     CurrentLapLabel.Font.Color = clWhite
     CurrentLapValue.Font.Color = clWhite
     S12ProggressBar.Font.Color = clWhite
-    S23ProggressBar.Font.Color = clWhite
+    S2_3ProggressBar.Font.Color = clWhite
   elseif darkMode == 0 then
     darkMode = 1
     DarkModeTurnOn.Caption = 'DARK: OFF'
@@ -769,8 +769,8 @@ function darkModeTurnOn()
     DeltaLabel.Font.Color = clBlack
     CurrentLapLabel.Font.Color = clBlack
     CurrentLapValue.Font.Color = clBlack
-    S12ProggressBar.Font.Color = clBlack
-    S23ProggressBar.Font.Color = clBlack
+    S1_2ProggressBar.Font.Color = clBlack
+    S2_3ProggressBar.Font.Color = clBlack
   end
 end
 
@@ -793,7 +793,7 @@ function simpleModeTurnOn()
     CL3.Visible = true
     CL2.Visible = true
     LapProgress.Visible = true
-    S12ProggressBar.Visible = true
+    S1_2ProggressBar.Visible = true
     S23ProggressBar.Visible = true
     SimpleButton.Visible = false
     SimplePanel.Visible = false
@@ -833,8 +833,8 @@ function simpleModeTurnOn()
     CL3.Visible = false
     CL2.Visible = false
     LapProgress.Visible = false
-    S12ProggressBar.Visible = false
-    S23ProggressBar.Visible = false
+    S1_2ProggressBar.Visible = false
+    S2_3ProggressBar.Visible = false
     SettingPanel.Visible = false
     LogBuildingButton.Visible = false
     LoadFLButton.Visible = false
@@ -853,7 +853,7 @@ function simpleModeTurnOn()
     MetricsTurnOnSimple.Visible = true
     UI.Height = 200
     UI.Width = 270
-    UI.ClientHeight = 190
+    UI.ClientHeight = 200
     UI.ClientWidth = 270
   end
 end
