@@ -207,7 +207,7 @@ function createUI()
   LapProgress = createProgressBar(UI)
     LapProgress.Left = 0
     LapProgress.Height = 12
-    LapProgress.Top = 183
+    LapProgress.Top = 185
     LapProgress.Width = 480
     LapProgress.BorderStyle = bsNone
     LapProgress.Position = 50
@@ -746,11 +746,11 @@ function createUI()
 
   InitPanel = createPanel(UI)
     InitPanel.Left = -1
-    InitPanel.Height = 200
+    InitPanel.Height = 205
     InitPanel.Top = -1
-    InitPanel.Width = 480
-    InitPanel.ClientHeight = 200
-    InitPanel.ClientWidth = 480
+    InitPanel.Width = 485
+    InitPanel.ClientHeight = 205
+    InitPanel.ClientWidth = 485
     InitPanel.Color = clGrayText
     InitPanel.DoubleBuffered = true
     InitPanel.Font.CharSet = ANSI_CHARSET
