@@ -19,6 +19,11 @@ function createUI()
     UI.ShowInTaskBar = stAlways
     UI.Visible = true
 
+  DeltaFont = createFont()
+    DeltaFont.Name = 'Segoe UI'
+    DeltaFont.Style =  fsBold
+    DeltaFont.Style =  fsItalic
+
   CurrentLapLabel = createLabel(UI)
     CurrentLapLabel.Left = 10
     CurrentLapLabel.Height = 30
@@ -27,9 +32,7 @@ function createUI()
     CurrentLapLabel.Caption = 'Current Lap:'
     CurrentLapLabel.Font.Color = clWhite
     CurrentLapLabel.Font.Height = -21
-    CurrentLapLabel.Font.Name = 'Segoe UI'
-    CurrentLapLabel.Font.Style =  fsBold
-    CurrentLapLabel.Font.Style =  fsItalic
+    CurrentLapLabel.Font = DeltaFont
     CurrentLapLabel.ParentColor = false
     CurrentLapLabel.ParentFont = false
 
@@ -621,12 +624,12 @@ function createUI()
 
   SimplePanel = createPanel(UI)
     SimplePanel.Left = 10
-    SimplePanel.Height = 140
+    SimplePanel.Height = 135
     SimplePanel.Top = 50
     SimplePanel.Width = 215
     SimplePanel.BevelColor = clBackground
     SimplePanel.BevelWidth = 2
-    SimplePanel.ClientHeight = 140
+    SimplePanel.ClientHeight = 135
     SimplePanel.ClientWidth = 215
     SimplePanel.TabOrder = 8
     SimplePanel.Visible = false
