@@ -209,7 +209,7 @@ function createUI()
     LapProgress.Height = 12
     LapProgress.Top = 202
     LapProgress.Width = 480
-    LapProgress.BorderWidth = 0
+    LapProgress.BorderStyle = bsNone
     LapProgress.Position = 50
     LapProgress.TabOrder = 1
 
