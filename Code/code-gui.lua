@@ -218,7 +218,7 @@ function createUI()
     LapProgress.Height = 12
     LapProgress.Top = 188
     LapProgress.Width = 480
-    LapProgress.BorderStyle = bsNone
+    LapProgress.BorderStyle = 'bsNone'
     LapProgress.Position = 50
     LapProgress.TabOrder = 1
 
@@ -283,7 +283,7 @@ function createUI()
     GearLabel.Height = 42
     GearLabel.Top = 110
     GearLabel.Width = 80
-    GearLabel.Alignment = taCenter
+    GearLabel.Alignment = 'taCenter'
     GearLabel.Caption = '1'
     GearLabel.Font.Color = clWhite
     GearLabel.Font.Height = -32
@@ -301,7 +301,7 @@ function createUI()
     RPM1.Width = 67
     RPM1.Caption = '∙   ∙'
     RPM1.Font.Color = clLime
-    RPM1.Font.Height = -48
+    RPM1.Font.Height = -46
     RPM1.Font.Name = 'Segoe UI'
     RPM1.Font.Style = 'fsBold, fsItalic'
     RPM1.Font.fsItalic = true
@@ -316,7 +316,7 @@ function createUI()
     RPM2.Width = 93
     RPM2.Caption = '∙     ∙'
     RPM2.Font.Color = clYellow
-    RPM2.Font.Height = -48
+    RPM2.Font.Height = -46
     RPM2.Font.Name = 'Segoe UI'
     RPM2.Font.Style = 'fsBold'
     RPM2.Font.fsItalic = true
@@ -331,7 +331,7 @@ function createUI()
     RPM3.Width = 119
     RPM3.Caption = '∙       ∙'
     RPM3.Font.Color = clRed
-    RPM3.Font.Height = -48
+    RPM3.Font.Height = -46
     RPM3.Font.Name = 'Segoe UI'
     RPM3.Font.Style = 'fsBold'
     RPM3.Font.fsItalic = true
@@ -346,7 +346,7 @@ function createUI()
     RPM4.Width = 145
     RPM4.Caption = '∙         ∙'
     RPM4.Font.Color = clBlue
-    RPM4.Font.Height = -48
+    RPM4.Font.Height = -46
     RPM4.Font.Name = 'Segoe UI'
     RPM4.Font.Style = 'fsBold'
     RPM4.Font.fsItalic = true
@@ -363,9 +363,9 @@ function createUI()
     Steer.Max = 100
     Steer.PageSize = 0
     Steer.Position = 50
-    Steer.ScalePos = trBottom
+    Steer.ScalePos = 'trBottom'
     Steer.ShowSelRange = false
-    Steer.DragMode = dmAutomatic
+    Steer.DragMode = 'dmAutomatic'
     Steer.Font.Color = clNone
     Steer.ParentFont = false
     Steer.TabOrder = 9
@@ -405,7 +405,7 @@ function createUI()
     KersValue.Top = 105
     KersValue.Width = 33
     KersValue.Caption = '0'
-    KersValue.Font.Color = 999900
+    KersValue.Font.Color = 16766720
     KersValue.Font.Height = -20
     KersValue.Font.fsBold = true
     KersValue.Font.fsItalic = true
