@@ -780,9 +780,9 @@ function simpleModeTurnOn()
     SimpleModeTurnOnSimple.Visible = false
     FullscreenModeTurnOnSimple.Visible = false
     MetricsTurnOnSimple.Visible = false
-    UI.Height = 214
+    UI.Height = 200
     UI.Width = 480
-    UI.ClientHeight = 214
+    UI.ClientHeight = 200
     UI.ClientWidth = 480
   elseif simpleMode == 0 then
     simpleMode = 1

@@ -303,6 +303,7 @@ function createUI()
     RPM1.Font.Color = clLime
     RPM1.Font.Height = -48
     RPM1.Font.Name = 'Segoe UI'
+    RPM1.Font.Style = 'fsBold'
     RPM1.Font.fsBold = true
     RPM1.Font.fsItalic = true
     RPM1.ParentColor = false
