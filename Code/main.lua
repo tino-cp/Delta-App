@@ -859,14 +859,12 @@ function fullscreenModeTurnOn()
     -- Disable mouse events
     UI.Enabled = false
 
+    if isKeyPressed(VK_DOWN) then
+      fullscreenMode = 0
+    end
   end
 end
 
--- UI.OnKeyPress = function(sender, key) 
---   if isKeyPressed(VK_UP) then
---     fullscreenModeTurnOn()
---   end
--- end
 
 function GetKers()
   if ADR == 0 then
