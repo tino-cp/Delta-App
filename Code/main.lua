@@ -391,9 +391,9 @@ function UpdateInfo()
           CurrentLapValue.Caption=CalculateMins..':'..CalculateSec..'.'..CalculateMils
         end
 
-        FCalculateMins = CurLapLastCheckpointTime//60000
-        FCalculateSec = (CurLapLastCheckpointTime - (60000*FCalculateMins))//1000
-        FCalculateMils = (CurLapLastCheckpointTime - 60000*FCalculateMins - 1000*FCalculateSec)
+        FCalculateMins = TimeStamp//60000
+        FCalculateSec = (TimeStamp - (60000*FCalculateMins))//1000
+        FCalculateMils = (TimeStamp - 60000*FCalculateMins - 1000*FCalculateSec)
         if FCalculateMils<10 then
           FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.00'..FCalculateMils
         elseif FCalculateMils<100 then
