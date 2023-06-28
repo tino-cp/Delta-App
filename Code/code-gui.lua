@@ -20,7 +20,7 @@ function createUI()
     UI.ClientWidth = 480
     UI.Color = clBlack
     UI.Font.Color = clWhite
-    UI.FormStyle = fsSystemStayOnTop
+    UI.FormStyle = 'fsSystemStayOnTop'
     UI.Icon = Bit
     UI.OnClose = ex
     UI.OnDestroy = ex

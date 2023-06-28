@@ -838,10 +838,14 @@ function fullscreenModeTurnOn()
     -- Simple
     FullscreenModeTurnOnSimple.Caption = 'FULL: OFF'
 
-    UI.BorderStyle = bsSingle
+    UI.BorderStyle = 'bsSingle'
     UI.AlphaBlend = false
     UI.AlphaBlendValue = 255
-    UI.FormStyle = fsSystemStayOnTop
+
+    -- Disable mouse events
+    UI.OnMouseDown = nil
+    UI.OnMouseMove = nil
+    UI.OnMouseUp = nil
   elseif fullscreenMode == 0 then
     fullscreenMode = 1
     FullscreenModeTurnOn.Caption = 'FULL: ON'
@@ -849,10 +853,20 @@ function fullscreenModeTurnOn()
     -- Simple
     FullscreenModeTurnOnSimple.Caption = 'FULL: ON'
 
-    UI.BorderStyle = bsNone
+    UI.BorderStyle = 'bsNone'
     UI.AlphaBlend = true
-    UI.AlphaBlendValue = 160
-    UI.FormStyle = fsSystemStayOnTop
+    UI.AlphaBlendValue = 180
+
+    -- Disable mouse events
+    UI.OnMouseDown = function() end
+    UI.OnMouseMove = function() end
+    UI.OnMouseUp = function() end
+  end
+end
+
+UI.OnKeyPress = function(sender, key) 
+  if key == VK_UP then
+    fullscreenModeTurnOn()
   end
 end
 
