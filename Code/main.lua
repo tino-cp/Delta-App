@@ -860,6 +860,7 @@ function setUIPosition()
   local screenWidth = getScreenWidth()
   local screenHeight = getScreenHeight()
   local deltaWidth = UI.Width
+  local deltaHeight = UI.Height
 
   if setPosition == 1 then
     setPosition =  setPosition + 1
@@ -879,7 +880,7 @@ function setUIPosition()
   elseif setPosition == 4 then
     setPosition = 1
     UI.Left = (screenWidth - windowWidth) / 2
-    UI.Top = screenHeight - windowHeight
+    UI.Top = screenHeight - deltaHeight
     SetDeltaPosition.Caption = 'POS: BM'
   end
 end

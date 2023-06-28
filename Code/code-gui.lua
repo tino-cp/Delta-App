@@ -583,7 +583,7 @@ function createUI()
     SetDeltaPosition.Top = 65
     SetDeltaPosition.Width = 100
     SetDeltaPosition.Caption = 'POS: FREE'
-    SetDeltaPosition.OnClick = setPosition
+    SetDeltaPosition.OnClick = setUIPosition
     SetDeltaPosition.ParentFont = False
     SetDeltaPosition.TabOrder = 5
 
