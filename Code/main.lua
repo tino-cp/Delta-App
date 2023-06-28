@@ -843,9 +843,8 @@ function fullscreenModeTurnOn()
     UI.AlphaBlendValue = 255
 
     -- Disable mouse events
-    UI.OnMouseDown = nil
-    UI.OnMouseMove = nil
-    UI.OnMouseUp = nil
+    UI.Enabled = true
+
   elseif fullscreenMode == 0 then
     fullscreenMode = 1
     FullscreenModeTurnOn.Caption = 'FULL: ON'
@@ -858,9 +857,8 @@ function fullscreenModeTurnOn()
     UI.AlphaBlendValue = 180
 
     -- Disable mouse events
-    UI.OnMouseDown = function() end
-    UI.OnMouseMove = function() end
-    UI.OnMouseUp = function() end
+    UI.Enabled = false
+
   end
 end
 
