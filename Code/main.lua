@@ -401,6 +401,7 @@ function UpdateInfo()
         else
           FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.'..FCalculateMils
         end
+        
       end
 
       --Detect Sector's marks
