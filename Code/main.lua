@@ -881,6 +881,7 @@ function setUIPosition()
     UI.Left = (screenWidth - windowWidth) / 2
     UI.Top = screenHeight - windowHeight
     SetDeltaPosition.Caption = 'POS: BM'
+  end
 end
 
 
