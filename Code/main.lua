@@ -862,11 +862,11 @@ function fullscreenModeTurnOn()
   end
 end
 
-UI.OnKeyPress = function(sender, key) 
-  if key == VK_UP then
-    fullscreenModeTurnOn()
-  end
-end
+-- UI.OnKeyPress = function(sender, key) 
+--   if isKeyPressed(VK_UP) then
+--     fullscreenModeTurnOn()
+--   end
+-- end
 
 function GetKers()
   if ADR == 0 then
