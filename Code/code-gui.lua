@@ -303,7 +303,7 @@ function createUI()
     RPM1.Font.Color = clLime
     RPM1.Font.Height = -48
     RPM1.Font.Name = 'Segoe UI'
-    RPM1.Font.Style = 'fsBold'
+    RPM1.Font.Style = 'fsBold, fsItalic'
     RPM1.Font.fsItalic = true
     RPM1.ParentColor = false
     RPM1.ParentFont = false
@@ -318,7 +318,7 @@ function createUI()
     RPM2.Font.Color = clYellow
     RPM2.Font.Height = -48
     RPM2.Font.Name = 'Segoe UI'
-    RPM1.Font.Style.fsBold = True
+    RPM2.Font.Style = 'fsBold'
     RPM2.Font.fsItalic = true
     RPM2.ParentColor = false
     RPM2.ParentFont = false
@@ -333,7 +333,7 @@ function createUI()
     RPM3.Font.Color = clRed
     RPM3.Font.Height = -48
     RPM3.Font.Name = 'Segoe UI'
-    RPM1.Font.Style = 'fsBold'
+    RPM3.Font.Style = 'fsBold'
     RPM3.Font.fsItalic = true
     RPM3.ParentColor = false
     RPM3.ParentFont = false
@@ -348,7 +348,7 @@ function createUI()
     RPM4.Font.Color = clBlue
     RPM4.Font.Height = -48
     RPM4.Font.Name = 'Segoe UI'
-    RPM1.Font.Style = 'fsBold'
+    RPM4.Font.Style = 'fsBold'
     RPM4.Font.fsItalic = true
     RPM4.ParentColor = false
     RPM4.ParentFont = false
