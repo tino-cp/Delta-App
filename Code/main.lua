@@ -15,6 +15,7 @@ KersValues = 1
 darkMode = 0
 simpleMode = 0
 fullscreenMode = 0
+setPosition = 1
 
 function InitOffsets()
   pCNetPlayerInfo = 0xA0
@@ -842,9 +843,6 @@ function fullscreenModeTurnOn()
     UI.AlphaBlend = false
     UI.AlphaBlendValue = 255
 
-    -- Disable mouse events
-    UI.Enabled = true
-
   elseif fullscreenMode == 0 then
     fullscreenMode = 1
     FullscreenModeTurnOn.Caption = 'FULL: ON'
@@ -855,14 +853,34 @@ function fullscreenModeTurnOn()
     UI.BorderStyle = 'bsNone'
     UI.AlphaBlend = true
     UI.AlphaBlendValue = 180
-
-    -- Disable mouse events
-    UI.Enabled = false
-
-    if isKeyPressed(VK_DOWN) then
-      fullscreenMode = 0
-    end
   end
+end
+
+function setUIPosition()
+  local screenWidth = getScreenWidth()
+  local screenHeight = getScreenHeight()
+  local deltaWidth = UI.Width
+
+  if setPosition == 1 then
+    setPosition =  setPosition + 1
+    UI.Left = 0
+    UI.Top = 0
+    SetDeltaPosition.Caption = 'POS: TL'
+  elseif setPosition == 2 then
+    setPosition =  setPosition + 1
+    UI.Left = (screenWidth - deltaWidth) / 2
+    UI.Top = 0
+    SetDeltaPosition.Caption = 'POS: TM'
+  elseif setPosition == 3 then
+    setPosition =  setPosition + 1
+    UI.Left = screenWidth - deltaWidth
+    UI.Top = 0
+    SetDeltaPosition.Caption = 'POS: TR'
+  elseif setPosition == 4 then
+    setPosition = 1
+    UI.Left = (screenWidth - windowWidth) / 2
+    UI.Top = screenHeight - windowHeight
+    SetDeltaPosition.Caption = 'POS: BM'
 end
 
 

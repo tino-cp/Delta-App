@@ -10,9 +10,9 @@ function createUI()
  
   UI = createForm()
     UI.Left = 0
-    UI.Height = 214
+    UI.Height = 200
     UI.Top = 0
-    UI.Width = 500
+    UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
     UI.Caption = "Delta App Online 1.1.2" 
@@ -576,6 +576,16 @@ function createUI()
     KersValueTurnOn.OnClick = ChangeKers
     KersValueTurnOn.ParentFont = False
     KersValueTurnOn.TabOrder = 4
+
+  SetDeltaPosition = createButton(SettingPanel)
+    SetDeltaPosition.Left = 105
+    SetDeltaPosition.Height = 30
+    SetDeltaPosition.Top = 65
+    SetDeltaPosition.Width = 100
+    SetDeltaPosition.Caption = 'POS: FREE'
+    SetDeltaPosition.OnClick = setPosition
+    SetDeltaPosition.ParentFont = False
+    SetDeltaPosition.TabOrder = 5
 
   DarkModeTurnOn = createButton(SettingPanel)
     DarkModeTurnOn.Left = 205
