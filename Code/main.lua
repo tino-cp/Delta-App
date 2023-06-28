@@ -365,9 +365,9 @@ function UpdateInfo()
           CurrentLapValue.Caption=CalcMins..':'..CalcSec..'.'..CalcMils
         end
 
-        FCalcMins = TimeStamp//60000
-        FCalcSec = (TimeStamp - (60000*FCalcMins))//1000
-        FCalcMils = (TimeStamp - 60000*FCalcMins - 1000*FCalcSec)
+        FCalcMins = LogsLaptime//60000
+        FCalcSec = (LogsLaptime - (60000*FCalcMins))//1000
+        FCalcMils = (LogsLaptime - 60000*FCalcMins - 1000*FCalcSec)
         if FCalcMils<10 then
           FastestLapValue.Caption=FCalcMins..':'..FCalcSec..'.00'..FCalcMils
         elseif FCalcMils<100 then
@@ -391,9 +391,9 @@ function UpdateInfo()
           CurrentLapValue.Caption=CalculateMins..':'..CalculateSec..'.'..CalculateMils
         end
 
-        FCalculateMins = TimeStamp//60000
-        FCalculateSec = (TimeStamp - (60000*FCalculateMins))//1000
-        FCalculateMils = (TimeStamp - 60000*FCalculateMins - 1000*FCalculateSec)
+        FCalculateMins = LogsLaptime//60000
+        FCalculateSec = (LogsLaptime - (60000*FCalculateMins))//1000
+        FCalculateMils = (LogsLaptime - 60000*FCalculateMins - 1000*FCalculateSec)
         if FCalculateMils<10 then
           FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.00'..FCalculateMils
         elseif FCalculateMils<100 then
@@ -401,7 +401,6 @@ function UpdateInfo()
         else
           FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.'..FCalculateMils
         end
-
       end
 
       --Detect Sector's marks
