@@ -9,13 +9,16 @@ function createUI()
   local Bit = Pic.getBitmap()
  
   UI = createForm()
+    -- Hide the UI so the user cant see the creating of the UI
+    UI.Visible = false
+
     UI.Left = 0
     UI.Height = 200
     UI.Top = 0
     UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.1.test" 
+    UI.Caption = "Delta App Online 1.1.2" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
@@ -26,7 +29,6 @@ function createUI()
     UI.OnDestroy = ex
     UI.OnKeyDown = Speed
     UI.ShowInTaskBar = 'stAlways'
-    UI.Visible = false
 
   CurrentLapLabel = createLabel(UI)
     CurrentLapLabel.Left = 10
@@ -812,5 +814,6 @@ function createUI()
     OnOffButtonLabel.ParentColor = false
     OnOffButtonLabel.ParentFont = false
 
+    -- Show the UI again
     UI.Visible = true
 end
