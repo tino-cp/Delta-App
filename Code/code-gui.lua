@@ -26,7 +26,7 @@ function createUI()
     UI.OnDestroy = ex
     UI.OnKeyDown = Speed
     UI.ShowInTaskBar = 'stAlways'
-    UI.Visible = true
+    UI.Visible = false
 
   CurrentLapLabel = createLabel(UI)
     CurrentLapLabel.Left = 10
@@ -811,4 +811,6 @@ function createUI()
     OnOffButtonLabel.Font.fsUnderline = true
     OnOffButtonLabel.ParentColor = false
     OnOffButtonLabel.ParentFont = false
+
+    UI.Visible = true
 end
