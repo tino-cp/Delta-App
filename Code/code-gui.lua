@@ -18,7 +18,7 @@ function createUI()
     UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.1.2" 
+    UI.Caption = "Delta App Online 1.1.2t" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
