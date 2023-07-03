@@ -966,7 +966,7 @@ function setFontStyle()
   elseif setFont == 1 then
     setFont = 0
     SetFontStyle.Caption = 'FONT: OFF'
-    CurrentLapLabel.Font.Style = 0
+    CurrentLapLabel.Font.Style = false
 
     -- CurrentLapLabel.Font.Style = 'fsBold'
     -- FastestLapLabel.Font.Style = 'fsBold'
