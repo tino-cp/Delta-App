@@ -809,8 +809,9 @@ function simpleModeTurnOn()
     S1_2ProggressBar.Visible = false
     S2_3ProggressBar.Visible = false
     SettingPanel.Visible = false
-
+    
     SimpleButton.Visible = true
+
     LogBuildingButton.Parent = SimplePanel
     LogBuildingButton.Left = 5
     LogBuildingButton.Height = 30
