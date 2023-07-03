@@ -774,7 +774,60 @@ function simpleModeTurnOn()
 
     SimpleButton.Visible = false
     SimplePanel.Visible = false
+
     LogBuildingButton.Parent = UI
+    LogBuildingButton.Left = 10
+    LogBuildingButton.Height = 35
+    LogBuildingButton.Top = 10
+    LogBuildingButton.Width = 90
+
+    LoadFLButton.Parent = UI
+    LoadFLButton.Left = 105
+    LoadFLButton.Height = 35
+    LoadFLButton.Top = 10
+    LoadFLButton.Width = 90
+
+    SaveFLButton.Parent = UI
+    SaveFLButton.Left = 200
+    SaveFLButton.Height = 35
+    SaveFLButton.Top = 10
+    SaveFLButton.Width = 90
+
+    StartDetect.Parent = UI
+    StartDetect.Left = 295
+    StartDetect.Height = 35
+    StartDetect.Top = 10
+    StartDetect.Width = 70
+
+    SettingButton.Parent = UI
+    SettingButton.Left = 380
+    SettingButton.Height = 35
+    SettingButton.Top = 10
+    SettingButton.Width = 90
+
+    DarkModeTurnOn.Parent = SettingPanel
+    DarkModeTurnOn.Left = 205
+    DarkModeTurnOn.Height = 30
+    DarkModeTurnOn.Top = 5
+    DarkModeTurnOn.Width = 100
+
+    SimpleModeTurnOn.Parent = SettingPanel
+    SimpleModeTurnOn.Left = 205
+    SimpleModeTurnOn.Height = 30
+    SimpleModeTurnOn.Top = 35
+    SimpleModeTurnOn.Width = 100
+
+    FullscreenModeTurnOn.Parent = SettingPanel
+    FullscreenModeTurnOn.Left = 205
+    FullscreenModeTurnOn.Height = 30
+    FullscreenModeTurnOn.Top = 65
+    FullscreenModeTurnOn.Width = 100
+
+    MetricsTurnOn.Parent = SettingPanel
+    MetricsTurnOn.Left = 5
+    MetricsTurnOn.Height = 30
+    MetricsTurnOn.Top = 35
+    MetricsTurnOn.Width = 100
 
     -- LogBuildingButtonSimple.Visible = false
     LoadFLButtonSimple.Visible = false
@@ -811,12 +864,13 @@ function simpleModeTurnOn()
     S1_2ProggressBar.Visible = false
     S2_3ProggressBar.Visible = false
     SettingPanel.Visible = false
+
     --LogBuildingButton.Visible = false
-    LoadFLButton.Visible = false
-    SaveFLButton.Visible = false
-    StartDetect.Visible = false
-    SettingButton.Visible = false
-    SimpleModeTurnOn.Visible = false
+    -- LoadFLButton.Visible = false
+    -- SaveFLButton.Visible = false
+    -- StartDetect.Visible = false
+    -- SettingButton.Visible = false
+    -- SimpleModeTurnOn.Visible = false
 
     SimpleButton.Visible = true
     LogBuildingButton.Parent = SimplePanel
@@ -824,15 +878,49 @@ function simpleModeTurnOn()
     LogBuildingButton.Height = 30
     LogBuildingButton.Top = 5
     LogBuildingButton.Width = 100
-    --LogBuildingButtonSimple.Visible = true
-    LoadFLButtonSimple.Visible = true
-    SaveFLButtonSimple.Visible = true
-    StartDetectSimple.Visible = true
-    StartDetectSimple.Enabled=true
-    DarkModeTurnOnSimple.Visible = true
-    SimpleModeTurnOnSimple.Visible = true
-    FullscreenModeTurnOnSimple.Visible = true
-    MetricsTurnOnSimple.Visible = true
+
+    LoadFLButton.Parent = SimplePanel
+    LoadFLButton.Left = 5
+    LoadFLButton.Height = 30
+    LoadFLButton.Top = 35
+    LoadFLButton.Width = 100
+
+    SaveFLButton.Parent = SimplePanel
+    SaveFLButton.Left = 110
+    SaveFLButton.Height = 30
+    SaveFLButton.Top = 5
+    SaveFLButton.Width = 100
+    
+    StartDetect.Parent = SimplePanel
+    StartDetect.Left = 110
+    StartDetect.Height = 30
+    StartDetect.Top = 35
+    StartDetect.Width = 100
+
+    DarkModeTurnOn.Parent = SimplePanel
+    DarkModeTurnOn.Left = 5
+    DarkModeTurnOn.Height = 30
+    DarkModeTurnOn.Top = 70
+    DarkModeTurnOn.Width = 100
+    
+    SimpleModeTurnOn.Parent = SimplePanel
+    SimpleModeTurnOn.Left = 110
+    SimpleModeTurnOn.Height = 30
+    SimpleModeTurnOn.Top = 70
+    SimpleModeTurnOn.Width = 100
+
+    FullscreenModeTurnOn.Parent = SimplePanel
+    FullscreenModeTurnOn.Left = 110
+    FullscreenModeTurnOn.Height = 30
+    FullscreenModeTurnOn.Top = 100
+    FullscreenModeTurnOn.Width = 100
+
+    MetricsTurnOn.Parent = SimplePanel
+    MetricsTurnOn.Left = 5
+    MetricsTurnOn.Height = 30
+    MetricsTurnOn.Top = 100
+    MetricsTurnOn.Width = 100
+    
     UI.Height = 200
     UI.Width = 270
     UI.ClientHeight = 200
