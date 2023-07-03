@@ -842,6 +842,7 @@ function fullscreenModeTurnOn()
     UI.BorderStyle = 'bsSingle'
     UI.AlphaBlend = false
     UI.AlphaBlendValue = 255
+    UI.Enabled = true
 
   elseif fullscreenMode == 0 then
     fullscreenMode = 1
@@ -853,6 +854,8 @@ function fullscreenModeTurnOn()
     UI.BorderStyle = 'bsNone'
     UI.AlphaBlend = true
     UI.AlphaBlendValue = 180
+    UI.setActive(false)
+    --UI.Enabled = false
   end
 end
 
