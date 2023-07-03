@@ -915,11 +915,55 @@ function setUIPosition()
 end
 
 function setFontStyle()
-  if setFont == 1 then
-    setFont = 0
+  if setFont == 0 then
+    setFont = 1
     SetFontStyle.Caption = 'FONT: ON'
 
     CurrentLapLabel.Font.Style = 'fsBold, fsItalic'
+    FastestLapLabel.Font.Style = 'fsBold, fsItalic'
+    CurrentLapValue.Font.Style = 'fsBold, fsItalic'
+    FastestLapValue.Font.Style = 'fsBold, fsItalic'
+    DeltaLabel.Font.Style = 'fsBold, fsItalic'
+    SectorsCurrent.Font.Style = 'fsBold, fsItalic'
+    CL2.Font.Style = 'fsBold, fsItalic'
+    CL3.Font.Style = 'fsBold, fsItalic'
+    CL4.Font.Style = 'fsBold, fsItalic'
+    S1Label.Font.Style = 'fsBold, fsItalic'
+    S2Label.Font.Style = 'fsBold, fsItalic'
+    S3Label.Font.Style = 'fsBold, fsItalic'
+    LapProgress.Font.Style = 'fsBold, fsItalic'
+    S1_2ProggressBar.Font.Style = 'fsBold, fsItalic'
+    S2_3ProggressBar.Font.Style = 'fsBold, fsItalic'
+    BestSectors.Font.Style = 'fsBold, fsItalic'
+    SpeedLabel.Font.Style = 'fsBold, fsItalic'
+    GearLabel.Font.Style = 'fsBold, fsItalic'
+    RPM1.Font.Style = 'fsBold, fsItalic'
+    RPM2.Font.Style = 'fsBold, fsItalic'
+    RPM3.Font.Style = 'fsBold, fsItalic'
+    RPM4.Font.Style = 'fsBold, fsItalic'
+    Steer.Font.Style = 'fsBold, fsItalic'
+    Gas.Font.Style = 'fsBold, fsItalic'
+    Brake.Font.Style = 'fsBold, fsItalic'
+    KersValue.Font.Style = 'fsBold, fsItalic'
+    LogBuildingButton.Font.Style = 'fsBold, fsItalic'
+    LoadFLButton.Font.Style = 'fsBold, fsItalic'
+    SaveFLButton.Font.Style = 'fsBold, fsItalic'
+    StartDetect.Font.Style = 'fsBold, fsItalic'
+    SettingButton.Font.Style = 'fsBold, fsItalic'
+    SpeedTurnOn.Font.Style = 'fsBold, fsItalic'
+    GearsTurnOn.Font.Style = 'fsBold, fsItalic'
+    InputsTurnOn.Font.Style = 'fsBold, fsItalic'
+    KersValueTurnOn.Font.Style = 'fsBold, fsItalic'
+    SetDeltaPosition.Font.Style = 'fsBold, fsItalic'
+    DarkModeTurnOn.Font.Style = 'fsBold, fsItalic'
+    SimpleModeTurnOn.Font.Style = 'fsBold, fsItalic'
+    FullscreenModeTurnOn.Font.Style = 'fsBold, fsItalic'
+    SetFontStyle.Font.Style = 'fsBold, fsItalic'
+    SimpleButton.Font.Style = 'fsBold, fsItalic'
+    Enable.Font.Style = 'fsBold, fsItalic'
+    OnOffButtonLabel.Font.Style = 'fsBold, fsItalic'
+
+
     --CurrentLapLabel.Font.Style = 'fsItalic'
     -- FastestLapLabel.Font.Style = 'fsBold'
     -- FastestLapLabel.Font.Style = 'fsItalic'
@@ -1005,8 +1049,8 @@ function setFontStyle()
     -- Enable.Font.Style = 'fsItalic'
     -- OnOffButtonLabel.Font.Style = 'fsBold'
     -- OnOffButtonLabel.Font.Style = 'fsItalic'
-  elseif setFont == 0 then
-    setFont = 1
+  elseif setFont == 1 then
+    setFont = 0
     SetFontStyle.Caption = 'FONT: OFF'
     CurrentLapLabel.Font.Style = 0
 
