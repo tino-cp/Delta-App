@@ -495,16 +495,10 @@ function LogsSwitcher()
   if LogsEnabled == false then
     LogsEnabled=true
     LogBuildingButton.Caption = 'LOGS ON'
-    if simpleMode == 0 then
-      LogBuildingButtonSimple.Caption='LOGS ON'
-    end
     LastElement = 100
   else
     LogsEnabled=false
     LogBuildingButton.Caption = 'LOGS OFF'
-    if simpleMode == 0 then
-      LogBuildingButtonSimple.Caption='LOGS OFF'
-    end
   end
 end
 
@@ -536,23 +530,10 @@ function ShowTime()
         else
           SaveFLButton.Caption=FMins..':'..FSec..'.'..FMils
         end
-
-        if simpleMode == 0 then
-          if FMils<10 then
-            SaveFLButtonSimple.Caption=FMins..':'..FSec..'.00'..FMils
-          elseif FMils<100 then
-            SaveFLButtonSimple.Caption=FMins..':'..FSec..'.0'..FMils
-          else
-            SaveFLButtonSimple.Caption=FMins..':'..FSec..'.'..FMils
-          end
-        end
 end
 
 function RevertCaption()
   SaveFLButton.Caption="SAVE LAP"
-  if simpleMode == 0 then
-    SaveFLButtonSimple.Caption='SAVE LAP'
-  end
 end
 
 function SaveFastLap()
@@ -643,14 +624,10 @@ function ChangeMetrics()
      Metrics = 0
      MetricsTurnOn.Caption = "SPEED: MPH"
 
-     --  Simple
-     MetricsTurnOnSimple.Caption = "SPEED: MPH"
   elseif Metrics == 0 then
      Metrics = 1
      MetricsTurnOn.Caption = "SPEED: KPH"
 
-     --  Simple
-     MetricsTurnOnSimple.Caption = "SPEED: KPH"
   end
 end
 
