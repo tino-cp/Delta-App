@@ -16,7 +16,7 @@ darkMode = 0
 simpleMode = 0
 fullscreenMode = 0
 setPosition = 1
-
+setFont = 0
 function InitOffsets()
   pCNetPlayerInfo = 0xA0
   pCNetPed = 0x240
@@ -785,15 +785,6 @@ function simpleModeTurnOn()
     MetricsTurnOn.Top = 35
     MetricsTurnOn.Width = 100
 
-    -- LogBuildingButtonSimple.Visible = false
-    -- LoadFLButtonSimple.Visible = false
-    -- SaveFLButtonSimple.Visible = false
-    -- StartDetectSimple.Visible = false
-    -- DarkModeTurnOnSimple.Visible = false
-    -- SimpleModeTurnOnSimple.Visible = false
-    -- FullscreenModeTurnOnSimple.Visible = false
-    -- MetricsTurnOnSimple.Visible = false
-
     UI.Height = 200
     UI.Width = 480
     UI.ClientHeight = 200
@@ -818,13 +809,6 @@ function simpleModeTurnOn()
     S1_2ProggressBar.Visible = false
     S2_3ProggressBar.Visible = false
     SettingPanel.Visible = false
-
-    --LogBuildingButton.Visible = false
-    -- LoadFLButton.Visible = false
-    -- SaveFLButton.Visible = false
-    -- StartDetect.Visible = false
-    -- SettingButton.Visible = false
-    -- SimpleModeTurnOn.Visible = false
 
     SimpleButton.Visible = true
     LogBuildingButton.Parent = SimplePanel
@@ -930,6 +914,142 @@ function setUIPosition()
   end
 end
 
+function setFontStyle()
+  if setFont == 1 then
+    setFont = 0
+    CurrentLapLabel.Font.Style = 'fsBold, fsItalic'
+    --CurrentLapLabel.Font.Style = 'fsItalic'
+    -- FastestLapLabel.Font.Style = 'fsBold'
+    -- FastestLapLabel.Font.Style = 'fsItalic'
+    -- CurrentLapValue.Font.Style = 'fsBold'
+    -- CurrentLapValue.Font.Style = 'fsItalic'
+    -- FastestLapValue.Font.Style = 'fsBold'
+    -- FastestLapValue.Font.Style = 'fsItalic'
+    -- DeltaLabel.Font.Style = 'fsBold'
+    -- DeltaLabel.Font.Style = 'fsItalic'
+    -- SectorsCurrent.Font.Style = 'fsBold'
+    -- SectorsCurrent.Font.Style = 'fsItalic'
+    -- CL2.Font.Style = 'fsBold'
+    -- CL2.Font.Style = 'fsItalic'
+    -- CL3.Font.Style = 'fsBold'
+    -- CL3.Font.Style = 'fsItalic'
+    -- CL4.Font.Style = 'fsBold'
+    -- CL4.Font.Style = 'fsItalic'
+    -- S1Label.Font.Style = 'fsBold'
+    -- S1Label.Font.Style = 'fsItalic'
+    -- S2Label.Font.Style = 'fsBold'
+    -- S2Label.Font.Style = 'fsItalic'
+    -- S3Label.Font.Style = 'fsBold'
+    -- S3Label.Font.Style = 'fsItalic'
+    -- LapProgress.Font.Style = 'fsBold'
+    -- LapProgress.Font.Style = 'fsItalic'
+    -- S1_2ProggressBar.Font.Style = 'fsBold'
+    -- S1_2ProggressBar.Font.Style = 'fsItalic'
+    -- S2_3ProggressBar.Font.Style = 'fsBold'
+    -- S2_3ProggressBar.Font.Style = 'fsItalic'
+    -- BestSectors.Font.Style = 'fsBold'
+    -- BestSectors.Font.Style = 'fsItalic'
+    -- SpeedLabel.Font.Style = 'fsBold'
+    -- SpeedLabel.Font.Style = 'fsItalic'
+    -- GearLabel.Font.Style = 'fsBold'
+    -- GearLabel.Font.Style = 'fsItalic'
+    -- RPM1.Font.Style = 'fsBold'
+    -- RPM1.Font.Style = 'fsItalic'
+    -- RPM2.Font.Style = 'fsBold'
+    -- RPM2.Font.Style = 'fsItalic'
+    -- RPM3.Font.Style = 'fsBold'
+    -- RPM3.Font.Style = 'fsItalic'
+    -- RPM4.Font.Style = 'fsBold'
+    -- RPM4.Font.Style = 'fsItalic'
+    -- Steer.Font.Style = 'fsBold'
+    -- Steer.Font.Style = 'fsItalic'
+    -- Gas.Font.Style = 'fsBold'
+    -- Gas.Font.Style = 'fsItalic'
+    -- Brake.Font.Style = 'fsBold'
+    -- Brake.Font.Style = 'fsItalic'
+    -- KersValue.Font.Style = 'fsBold'
+    -- KersValue.Font.Style = 'fsItalic'
+    -- LogBuildingButton.Font.Style = 'fsBold'
+    -- LogBuildingButton.Font.Style = 'fsItalic'
+    -- LoadFLButton.Font.Style = 'fsBold'
+    -- LoadFLButton.Font.Style = 'fsItalic'
+    -- SaveFLButton.Font.Style = 'fsBold'
+    -- SaveFLButton.Font.Style = 'fsItalic'
+    -- StartDetect.Font.Style = 'fsBold'
+    -- StartDetect.Font.Style = 'fsItalic'
+    -- SettingButton.Font.Style = 'fsBold'
+    -- SettingButton.Font.Style = 'fsItalic'
+    -- SpeedTurnOn.Font.Style = 'fsBold'
+    -- SpeedTurnOn.Font.Style = 'fsItalic'
+    -- MetricsTurnOn.Font.Style = 'fsBold'
+    -- MetricsTurnOn.Font.Style = 'fsItalic'
+    -- GearsTurnOn.Font.Style = 'fsBold'
+    -- GearsTurnOn.Font.Style = 'fsItalic'
+    -- InputsTurnOn.Font.Style = 'fsBold'
+    -- InputsTurnOn.Font.Style = 'fsItalic'
+    -- KersValueTurnOn.Font.Style = 'fsBold'
+    -- KersValueTurnOn.Font.Style = 'fsItalic'
+    -- SetDeltaPosition.Font.Style = 'fsBold'
+    -- SetDeltaPosition.Font.Style = 'fsItalic'
+    -- DarkModeTurnOn.Font.Style = 'fsBold'
+    -- DarkModeTurnOn.Font.Style = 'fsItalic'
+    -- SimpleModeTurnOn.Font.Style = 'fsBold'
+    -- SimpleModeTurnOn.Font.Style = 'fsItalic'
+    -- FullscreenModeTurnOn.Font.Style = 'fsBold'
+    -- FullscreenModeTurnOn.Font.Style = 'fsItalic'
+    -- SimpleButton.Font.Style = 'fsBold'
+    -- SimpleButton.Font.Style = 'fsItalic'
+    -- Enable.Font.Style = 'fsBold'
+    -- Enable.Font.Style = 'fsItalic'
+    -- OnOffButtonLabel.Font.Style = 'fsBold'
+    -- OnOffButtonLabel.Font.Style = 'fsItalic'
+  elseif setFont == 0 then
+    setFont = 1
+    -- CurrentLapLabel.Font.Style = 'fsBold'
+    -- FastestLapLabel.Font.Style = 'fsBold'
+    -- CurrentLapValue.Font.Style = 'fsBold'
+    -- FastestLapValue.Font.Style = 'fsBold'
+    -- DeltaLabel.Font.Style = 'fsBold'
+    -- SectorsCurrent.Font.Style = 'fsBold'
+    -- CL2.Font.Style = 'fsBold'
+    -- CL3.Font.Style = 'fsBold'
+    -- CL4.Font.Style = 'fsBold'
+    -- S1Label.Font.Style = 'fsBold'
+    -- S2Label.Font.Style = 'fsBold'
+    -- S3Label.Font.Style = 'fsBold'
+    -- LapProgress.Font.Style = 'fsBold'
+    -- S1_2ProggressBar.Font.Style = 'fsBold'
+    -- S2_3ProggressBar.Font.Style = 'fsBold'
+    -- BestSectors.Font.Style = 'fsBold'
+    -- SpeedLabel.Font.Style = 'fsBold'
+    -- GearLabel.Font.Style = 'fsBold'
+    -- RPM1.Font.Style = 'fsBold'
+    -- RPM2.Font.Style = 'fsBold'
+    -- RPM3.Font.Style = 'fsBold'
+    -- RPM4.Font.Style = 'fsBold'
+    -- Steer.Font.Style = 'fsBold'
+    -- Gas.Font.Style = 'fsBold'
+    -- Brake.Font.Style = 'fsBold'
+    -- KersValue.Font.Style = 'fsBold'
+    -- LogBuildingButton.Font.Style = 'fsBold'
+    -- LoadFLButton.Font.Style = 'fsBold'
+    -- SaveFLButton.Font.Style = 'fsBold'
+    -- StartDetect.Font.Style = 'fsBold'
+    -- SettingButton.Font.Style = 'fsBold'
+    -- SpeedTurnOn.Font.Style = 'fsBold'
+    -- MetricsTurnOn.Font.Style = 'fsBold'
+    -- GearsTurnOn.Font.Style = 'fsBold'
+    -- InputsTurnOn.Font.Style = 'fsBold'
+    -- KersValueTurnOn.Font.Style = 'fsBold'
+    -- SetDeltaPosition.Font.Style = 'fsBold'
+    -- DarkModeTurnOn.Font.Style = 'fsBold'
+    -- SimpleModeTurnOn.Font.Style = 'fsBold'
+    -- FullscreenModeTurnOn.Font.Style = 'fsBold'
+    -- SimpleButton.Font.Style = 'fsBold'
+    -- Enable.Font.Style = 'fsBold'
+    -- OnOffButtonLabel.Font.Style = 'fsBold'
+  end 
+end
 
 function GetKers()
   if ADR == 0 then
