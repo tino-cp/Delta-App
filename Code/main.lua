@@ -770,10 +770,13 @@ function simpleModeTurnOn()
     SaveFLButton.Visible = true
     StartDetect.Visible = true
     SettingButton.Visible = true
+    SimpleModeTurnOn.Visible = true
 
     SimpleButton.Visible = false
     SimplePanel.Visible = false
-    LogBuildingButtonSimple.Visible = false
+    LogBuildingButton.Parent = UI
+
+    -- LogBuildingButtonSimple.Visible = false
     LoadFLButtonSimple.Visible = false
     SaveFLButtonSimple.Visible = false
     StartDetectSimple.Visible = false
@@ -813,9 +816,11 @@ function simpleModeTurnOn()
     SaveFLButton.Visible = false
     StartDetect.Visible = false
     SettingButton.Visible = false
+    SimpleModeTurnOn.Visible = false
 
     SimpleButton.Visible = true
-    LogBuildingButtonSimple.Visible = true
+    LogBuildingButton.Parent = SimplePanel
+    --LogBuildingButtonSimple.Visible = true
     LoadFLButtonSimple.Visible = true
     SaveFLButtonSimple.Visible = true
     StartDetectSimple.Visible = true
@@ -842,7 +847,6 @@ function fullscreenModeTurnOn()
     UI.BorderStyle = 'bsSingle'
     UI.AlphaBlend = false
     UI.AlphaBlendValue = 255
-    UI.Enabled = true
 
   elseif fullscreenMode == 0 then
     fullscreenMode = 1
@@ -854,8 +858,6 @@ function fullscreenModeTurnOn()
     UI.BorderStyle = 'bsNone'
     UI.AlphaBlend = true
     UI.AlphaBlendValue = 180
-    UI.Enabled = false
-    SettingPanel.Visible = false
   end
 end
 

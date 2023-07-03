@@ -18,7 +18,7 @@ function createUI()
     UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.1.test" 
+    UI.Caption = "Delta App Online 1.1.2" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
@@ -651,20 +651,20 @@ function createUI()
     SimplePanel.TabOrder = 8
     SimplePanel.Visible = false
 
-  LogBuildingButtonSimple = createButton(SimplePanel)
-    LogBuildingButtonSimple.Left = 5
-    LogBuildingButtonSimple.Height = 30
-    LogBuildingButtonSimple.Top = 5
-    LogBuildingButtonSimple.Width = 100
-    LogBuildingButtonSimple.Caption = 'LOGS OFF'
-    LogBuildingButtonSimple.Enabled = false
-    LogBuildingButtonSimple.Font.Name = 'Segoe UI'
-    LogBuildingButtonSimple.Font.fsBold = true
-    LogBuildingButtonSimple.Font.fsItalic = true
-    LogBuildingButtonSimple.OnClick = LogsSwitcher
-    LogBuildingButtonSimple.ParentFont = false
-    LogBuildingButtonSimple.TabOrder = 4
-    LogBuildingButtonSimple.Visible = false
+  -- LogBuildingButtonSimple = createButton(SimplePanel)
+  --   LogBuildingButtonSimple.Left = 5
+  --   LogBuildingButtonSimple.Height = 30
+  --   LogBuildingButtonSimple.Top = 5
+  --   LogBuildingButtonSimple.Width = 100
+  --   LogBuildingButtonSimple.Caption = 'LOGS OFF'
+  --   LogBuildingButtonSimple.Enabled = false
+  --   LogBuildingButtonSimple.Font.Name = 'Segoe UI'
+  --   LogBuildingButtonSimple.Font.fsBold = true
+  --   LogBuildingButtonSimple.Font.fsItalic = true
+  --   LogBuildingButtonSimple.OnClick = LogsSwitcher
+  --   LogBuildingButtonSimple.ParentFont = false
+  --   LogBuildingButtonSimple.TabOrder = 4
+  --   LogBuildingButtonSimple.Visible = false
 
   LoadFLButtonSimple = createButton(SimplePanel)
     LoadFLButtonSimple.Left = 5
