@@ -854,8 +854,7 @@ function fullscreenModeTurnOn()
     UI.BorderStyle = 'bsNone'
     UI.AlphaBlend = true
     UI.AlphaBlendValue = 180
-    UI.setActive(false)
-    --UI.Enabled = false
+    UI.Enabled = false
   end
 end
 
