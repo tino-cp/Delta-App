@@ -855,6 +855,7 @@ function fullscreenModeTurnOn()
     UI.AlphaBlend = true
     UI.AlphaBlendValue = 180
     UI.Enabled = false
+    SettingPanel.Visible = false
   end
 end
 
