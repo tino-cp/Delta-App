@@ -233,8 +233,7 @@ function UpdateInfo()
   if Enable == true then
     Enable = false
     StartDetect.Caption='START'
-    -- Simple
-    StartDetectSimple.Caption='START'
+
     if LogsEnabled ==true then
       PackLogs()
       LogsSwitcher()
@@ -243,19 +242,12 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    -- Simple
-    LogBuildingButtonSimple.Enabled = false
-    LoadFLButtonSimple.Enabled = false
-
     UI.Caption = "Delta App Online 1.1.2"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
     Enable = true
     StartDetect.Caption='STOP'
-
-    -- Simple
-    StartDetectSimple.Caption='STOP'
 
     ChecksPTR = getAddress('TimesPTR')
     ForLogs_TrackName=readString('adr + E5AF0') --new E3998 del 3A388 prev A9610
@@ -271,11 +263,6 @@ function UpdateInfo()
     LogBuildingButton.Enabled = true
     SaveFLButton.Enabled = true
     LoadFLButton.Enabled = true
-
-    -- Simple
-    LogBuildingButtonSimple.Enabled = true
-    SaveFLButtonSimple.Enabled = true
-    LoadFLButtonSimple.Enabled = true
   end
 
   local timer_ps = createTimer()
@@ -726,16 +713,10 @@ function darkModeTurnOn()
     darkMode = 0
     DarkModeTurnOn.Caption = 'DARK: ON'
 
-    -- Simple
-    DarkModeTurnOnSimple.Caption = 'DARK: ON'
-
     UI.Color = clBlack
   elseif darkMode == 0 then
     darkMode = 1
     DarkModeTurnOn.Caption = 'DARK: OFF'
-
-    -- Simple
-    DarkModeTurnOnSimple.Caption = 'DARK: OFF'
 
     UI.Color = clGray
   end
@@ -745,9 +726,6 @@ function simpleModeTurnOn()
   if simpleMode == 1 then
     simpleMode = 0
     SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
-
-    -- Simple
-    SimpleModeTurnOnSimple.Caption = 'SIMPLE: OFF'
 
     KersValue.Visible = false
     KersValueBar.Visible = false
@@ -765,12 +743,13 @@ function simpleModeTurnOn()
     S1_2ProggressBar.Visible = true
     S2_3ProggressBar.Visible = true
     SettingPanel.Visible = true
-    LogBuildingButton.Visible = true
-    LoadFLButton.Visible = true
-    SaveFLButton.Visible = true
-    StartDetect.Visible = true
-    SettingButton.Visible = true
-    SimpleModeTurnOn.Visible = true
+
+    -- LogBuildingButton.Visible = true
+    -- LoadFLButton.Visible = true
+    -- SaveFLButton.Visible = true
+    -- StartDetect.Visible = true
+    -- SettingButton.Visible = true
+    -- SimpleModeTurnOn.Visible = true
 
     SimpleButton.Visible = false
     SimplePanel.Visible = false
@@ -830,13 +809,14 @@ function simpleModeTurnOn()
     MetricsTurnOn.Width = 100
 
     -- LogBuildingButtonSimple.Visible = false
-    LoadFLButtonSimple.Visible = false
-    SaveFLButtonSimple.Visible = false
-    StartDetectSimple.Visible = false
-    DarkModeTurnOnSimple.Visible = false
-    SimpleModeTurnOnSimple.Visible = false
-    FullscreenModeTurnOnSimple.Visible = false
-    MetricsTurnOnSimple.Visible = false
+    -- LoadFLButtonSimple.Visible = false
+    -- SaveFLButtonSimple.Visible = false
+    -- StartDetectSimple.Visible = false
+    -- DarkModeTurnOnSimple.Visible = false
+    -- SimpleModeTurnOnSimple.Visible = false
+    -- FullscreenModeTurnOnSimple.Visible = false
+    -- MetricsTurnOnSimple.Visible = false
+
     UI.Height = 200
     UI.Width = 480
     UI.ClientHeight = 200
@@ -844,9 +824,6 @@ function simpleModeTurnOn()
   elseif simpleMode == 0 then
     simpleMode = 1
     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
-
-    -- Simple
-    SimpleModeTurnOnSimple.Caption = 'SIMPLE: ON'
 
     KersValue.Visible = false
     KersValueBar.Visible = false
@@ -920,7 +897,7 @@ function simpleModeTurnOn()
     MetricsTurnOn.Height = 30
     MetricsTurnOn.Top = 100
     MetricsTurnOn.Width = 100
-    
+
     UI.Height = 200
     UI.Width = 270
     UI.ClientHeight = 200
@@ -933,9 +910,6 @@ function fullscreenModeTurnOn()
     fullscreenMode = 0
     FullscreenModeTurnOn.Caption = 'FULL: OFF'
 
-    -- Simple
-    FullscreenModeTurnOnSimple.Caption = 'FULL: OFF'
-
     UI.BorderStyle = 'bsSingle'
     UI.AlphaBlend = false
     UI.AlphaBlendValue = 255
@@ -943,9 +917,6 @@ function fullscreenModeTurnOn()
   elseif fullscreenMode == 0 then
     fullscreenMode = 1
     FullscreenModeTurnOn.Caption = 'FULL: ON'
-
-    -- Simple
-    FullscreenModeTurnOnSimple.Caption = 'FULL: ON'
 
     UI.BorderStyle = 'bsNone'
     UI.AlphaBlend = true
