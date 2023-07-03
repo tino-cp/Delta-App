@@ -917,6 +917,8 @@ end
 function setFontStyle()
   if setFont == 1 then
     setFont = 0
+    SetFontStyle.Caption = 'FONT: ON'
+
     CurrentLapLabel.Font.Style = 'fsBold, fsItalic'
     --CurrentLapLabel.Font.Style = 'fsItalic'
     -- FastestLapLabel.Font.Style = 'fsBold'
@@ -1005,6 +1007,9 @@ function setFontStyle()
     -- OnOffButtonLabel.Font.Style = 'fsItalic'
   elseif setFont == 0 then
     setFont = 1
+    SetFontStyle.Caption = 'FONT: OFF'
+    CurrentLapLabel.Font.Style = 0
+
     -- CurrentLapLabel.Font.Style = 'fsBold'
     -- FastestLapLabel.Font.Style = 'fsBold'
     -- CurrentLapValue.Font.Style = 'fsBold'

@@ -503,12 +503,12 @@ function createUI()
 
   SettingPanel = createPanel(UI)
     SettingPanel.Left = 160
-    SettingPanel.Height = 100
+    SettingPanel.Height = 130
     SettingPanel.Top = 45
     SettingPanel.Width = 310
     SettingPanel.BevelColor = clBackground
     SettingPanel.BevelWidth = 2
-    SettingPanel.ClientHeight = 100
+    SettingPanel.ClientHeight = 130
     SettingPanel.ClientWidth = 310
     SettingPanel.TabOrder = 8
     SettingPanel.Visible = false
@@ -624,6 +624,16 @@ function createUI()
     FullscreenModeTurnOn.ParentFont = False
     FullscreenModeTurnOn.TabOrder = 4
 
+  SetFontStyle = createButton(SettingPanel)
+    SetFontStyle.Left = 5
+    SetFontStyle.Height = 30
+    SetFontStyle.Top = 95
+    SetFontStyle.Width = 100
+    SetFontStyle.Caption = 'FONT: OFF'
+    SetFontStyle.OnClick = setFontStyle
+    SetFontStyle.ParentFont = False
+    SetFontStyle.TabOrder = 4
+
   SimpleButton = createButton(UI)
     SimpleButton.Left = 10
     SimpleButton.Height = 35
@@ -637,7 +647,7 @@ function createUI()
     SimpleButton.OnClick = ShowHideSimple
     SimpleButton.ParentFont = false
     SimpleButton.TabOrder = 7
-    SimpleButton.Visible = false
+    SimpleButton.Visible = false    
 
   SimplePanel = createPanel(UI)
     SimplePanel.Left = 10
