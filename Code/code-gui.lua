@@ -357,7 +357,7 @@ function createUI()
     RPM4.Visible = false
 
   Steer = createTrackBar(UI)
-    Steer.Left = 240
+    Steer.Left = 245
     Steer.Height = 20
     Steer.Top = 80
     Steer.Width = 110
@@ -373,7 +373,7 @@ function createUI()
     Steer.TabOrder = 9
 
   Gas = createLabel(UI)
-    Gas.Left = 300
+    Gas.Left = 305
     Gas.Height = 30
     Gas.Top = 50
     Gas.Width = 13
@@ -388,7 +388,7 @@ function createUI()
 
 
   Brake = createLabel(UI)
-    Brake.Left = 250
+    Brake.Left = 255
     Brake.Height = 30
     Brake.Top = 50
     Brake.Width = 13

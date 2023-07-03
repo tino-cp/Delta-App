@@ -951,6 +951,7 @@ function setFontStyle()
     StartDetect.Font.Style = 'fsBold, fsItalic'
     SettingButton.Font.Style = 'fsBold, fsItalic'
     SpeedTurnOn.Font.Style = 'fsBold, fsItalic'
+    MetricsTurnOn.Font.Style = 'fsBold, fsItalic'
     GearsTurnOn.Font.Style = 'fsBold, fsItalic'
     InputsTurnOn.Font.Style = 'fsBold, fsItalic'
     KersValueTurnOn.Font.Style = 'fsBold, fsItalic'
