@@ -120,6 +120,8 @@ function ActivateApp()
   previousKersValue = nil
   kersGainedOnLap = 0
   kersUsedOnLap = 0
+  TrackName = readString('adr + E5AF0')
+  nameaddr = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
 
   Value = createTimer(nil, false)
   timer_onTimer(Value, ReadValue)
@@ -198,8 +200,9 @@ function NewLapProcedure()
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
 
-    if Enable == true then
+    if CanWrite == true then
       RequireIncomingTransaction()
+      CanWrite = false
     end
 
     if LogsEnabled == true and CanWrite==true then
@@ -1289,10 +1292,7 @@ json = require("json")
 function RequireIncomingTransaction()
   local https = GetInternet()
   local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818&Track=1&S1=1&S2=2&S3=3'
-  local TrackName = readString('adr + E5AF0')
-  local nameaddr = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
   local Username = readString(nameaddr)
-  local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
   https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw)
   https.destroy()
 end
