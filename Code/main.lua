@@ -196,14 +196,14 @@ function Drive()
 end
 
 function NewLapProcedure()
+  if CanWrite == true then
+    RequireIncomingTransaction()
+    CanWrite = false
+  end
+
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
-
-    if CanWrite == true then
-      RequireIncomingTransaction()
-      CanWrite = false
-    end
 
     if LogsEnabled == true and CanWrite==true then
       --Record laptime
@@ -1294,7 +1294,7 @@ function RequireIncomingTransaction()
   local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818&Track=&S1=&S2=&S3='
   local Username = readString(nameaddr)
   local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
-  
+
   https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw)
   https.destroy()
 end
