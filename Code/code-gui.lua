@@ -8,7 +8,7 @@ function createUI()
   Pic.loadFromStream(IM)
   local Bit = Pic.getBitmap()
 
-  
+
  
   UI = createForm()
     -- Hide the UI so the user cant see the creating of the UI
@@ -20,7 +20,7 @@ function createUI()
     UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.1.2" 
+    UI.Caption = "Delta App Online 1.2.0" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
