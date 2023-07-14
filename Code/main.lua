@@ -167,6 +167,7 @@ function CloseToTheEnd()
       CanWrite=true
     end
     CurLapLastCheckpointTime=CurLapMils
+    RequireIncomingTransaction(CurLapLastCheckpointTime, "Laptime")
   end
 end
 
@@ -242,7 +243,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.1.2"
+    UI.Caption = "Delta App Online 1.2.0"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
@@ -1274,6 +1275,58 @@ end
 function ReadValue()
   ReadKers()
   ReadSpeed()
+end
+
+-- Delta Lap Times Google Sheet
+function SetURLs()
+  Bank_url = CodeBankUrl()
+end
+
+function getInfoByID(ID)
+  HWID_Array={}
+  HWID_Array[1] = {}
+  HWID_Array[1]["ID"] = (playersTable.values[ID][1]) --ID
+  HWID_Array[1]["NAME"] = (playersTable.values[ID][2]) --NAME
+  HWID_Array[1]["CASH"] = (playersTable.values[ID][3]) --CASH
+  HWID_Array[1]["LVL"] = (playersTable.values[ID][4]) --LVL
+  HWID_Array[1]["HWID"] = (playersTable.values[ID][5]) --HWID
+  Name = HWID_Array[1]["NAME"]
+  DBID = ID + 1
+  Username ="User: "..HWID_Array[1]["NAME"]
+end
+
+function CodeBankUrl()
+  local Encode = {}
+  Encode[1] = "://"
+  Encode[2] = "script"
+  Encode[3] = ".google"
+  Encode[4] = ".com/"
+  Encode[5] = "macros"
+  Encode[6] = "/s/"
+  Encode[7] = "/AKfycbzcW8Qb0ByoajCEguRIV"
+  Encode[8] = "-fgxHRghl9cgHftV3s81"
+  Encode[9] = "-pWLgfEQVtW1lhyjR34q8NMs"
+  Encode[10] = "-iI"
+  Encode[11] = "/exec"
+  Encode[12] = "?gid"
+  Encode[13] = "=0"
+  local Coder = "https"..Encode[1]..Encode[2]..Encode[3]..Encode[4]..Encode[5]..Encode[6]..Encode[7]..Encode[8]..Encode[9]..Encode[10]..Encode[11]..Encode[12]..Encode[13]
+end
+
+function RequireIncomingTransaction(Amount, Reason)
+  local https = GetInternet()
+  local TransactionURL = Bank_url
+  details = {
+    content= "Incoming transaction",
+    embeds= {
+            {title= Name,
+            description= Amount,
+            color= 4718336}
+            },
+    }
+  local data = json.encode(details)
+  https.postURL(TransactionURL,"payload_json="..data.."&Content-Type=".."application/json")
+  https.destroy()
 end
 
 function ex()

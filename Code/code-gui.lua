@@ -7,6 +7,8 @@ function createUI()
   local Pic = createPicture()
   Pic.loadFromStream(IM)
   local Bit = Pic.getBitmap()
+
+  
  
   UI = createForm()
     -- Hide the UI so the user cant see the creating of the UI
