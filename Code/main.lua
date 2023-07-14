@@ -1318,7 +1318,7 @@ end
 
 function RequireIncomingTransaction(Amount, Reason)
   local https = GetInternet()
-  local TransactionURL = Bank_url
+  local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=0'
   details = {
     content= "Incoming transaction",
     embeds= {
