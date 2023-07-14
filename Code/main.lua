@@ -200,8 +200,8 @@ function NewLapProcedure()
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
     if Enable == true and lapTimeSent == false then
-      RequireIncomingTransaction(CurLapLastCheckpointTime, "Lap Time")
       lapTimeSent = true
+      RequireIncomingTransaction(CurLapLastCheckpointTime, "Lap Time")
     end
 
     if LogsEnabled == true and CanWrite==true then
