@@ -24,6 +24,7 @@ function InitOffsets()
   oRid = 0xE8
   pCPed = 0x8
   pCPlayerInfo = 0x10A8
+  oName = 0xFC
   oCurCheck = 0x11578
   oCurLap = 0x11570
 end
@@ -196,7 +197,7 @@ function NewLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
-    RequireIncomingTransaction(CurLapLastCheckpointTime, "Laptime")
+    RequireIncomingTransaction(CurLapLastCheckpointTime, "Lap Time")
 
     if LogsEnabled == true and CanWrite==true then
       --Record laptime
@@ -1281,54 +1282,15 @@ end
 -- Delta Lap Times Google Sheet
 json = require("json")
 
-function SetURLs()
-  Bank_url = CodeBankUrl()
-end
-
-function getInfoByID(ID)
-  HWID_Array={}
-  HWID_Array[1] = {}
-  HWID_Array[1]["ID"] = (playersTable.values[ID][1]) --ID
-  HWID_Array[1]["NAME"] = (playersTable.values[ID][2]) --NAME
-  HWID_Array[1]["CASH"] = (playersTable.values[ID][3]) --CASH
-  HWID_Array[1]["LVL"] = (playersTable.values[ID][4]) --LVL
-  HWID_Array[1]["HWID"] = (playersTable.values[ID][5]) --HWID
-  Name = HWID_Array[1]["NAME"]
-  DBID = ID + 1
-  Username ="User: "..HWID_Array[1]["NAME"]
-end
-
-function CodeBankUrl()
-  local Encode = {}
-  Encode[1] = "://"
-  Encode[2] = "script"
-  Encode[3] = ".google"
-  Encode[4] = ".com/"
-  Encode[5] = "macros"
-  Encode[6] = "/s/"
-  Encode[7] = "/AKfycbzcW8Qb0ByoajCEguRIV"
-  Encode[8] = "-fgxHRghl9cgHftV3s81"
-  Encode[9] = "-pWLgfEQVtW1lhyjR34q8NMs"
-  Encode[10] = "-iI"
-  Encode[11] = "/exec"
-  Encode[12] = "?gid"
-  Encode[13] = "=0"
-  local Coder = "https"..Encode[1]..Encode[2]..Encode[3]..Encode[4]..Encode[5]..Encode[6]..Encode[7]..Encode[8]..Encode[9]..Encode[10]..Encode[11]..Encode[12]..Encode[13]
-end
 
 function RequireIncomingTransaction(Amount, Reason)
   local https = GetInternet()
-  local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=0'
-  details = {
-    content= "Incoming transaction",
-    embeds= {
-            {title= Name,
-            description= Amount,
-            color= 4718336}
-            },
-    }
+  local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818&Track=1&S1=1&S2=2&S3=3'
+  local TrackName = readString('adr + E5AF0')
   local data = json.encode(details)
-  https.postURL(TransactionURL,"payload_json="..data.."&Content-Type=".."application/json")
+  local Username = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
+
+  https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&S1="..S1.."&S2="..S2.."&S3="..S3)
   https.destroy()
 end
 
