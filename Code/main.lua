@@ -1291,12 +1291,12 @@ function RequireIncomingTransaction(Amount, Reason)
   local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
   details = {
     embeds = {
-    "Track" = TrackName,
+    {"Track" = TrackName,
     "Player" = Username,
     "S1" = S1_raw,
     "S2" = S2_raw,
-    "S3" = S3_raw
-    }
+    "S3" = S3_raw}
+    },
   }
   local data = json.encode(details)
   https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw)
