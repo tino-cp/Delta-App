@@ -167,7 +167,6 @@ function CloseToTheEnd()
       CanWrite=true
     end
     CurLapLastCheckpointTime=CurLapMils
-    RequireIncomingTransaction(CurLapLastCheckpointTime, "Laptime")
   end
 end
 
@@ -197,6 +196,8 @@ function NewLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
+    RequireIncomingTransaction(CurLapLastCheckpointTime, "Laptime")
+
     if LogsEnabled == true and CanWrite==true then
       --Record laptime
       LogsLaptime = CurLapLastCheckpointTime
