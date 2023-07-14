@@ -197,7 +197,9 @@ function NewLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
-    RequireIncomingTransaction(CurLapLastCheckpointTime, "Lap Time")
+    if Enable = true then
+      RequireIncomingTransaction(CurLapLastCheckpointTime, "Lap Time")
+    end
 
     if LogsEnabled == true and CanWrite==true then
       --Record laptime
@@ -1289,15 +1291,15 @@ function RequireIncomingTransaction(Amount, Reason)
   local TrackName = readString('adr + E5AF0')
   local Username = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
   local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
-  details = {
-    embeds = {
-    {Track = TrackName,
-    Player = Username,
-    S1 = S1_raw,
-    S2 = S2_raw,
-    S3 = S3_raw}
-    },
-  }
+  -- details = {
+  --   embeds = {
+  --   {Track = TrackName,
+  --   Player = Username,
+  --   S1 = S1_raw,
+  --   S2 = S2_raw,
+  --   S3 = S3_raw}
+  --   },
+  -- }
   local data = json.encode(details)
   https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw)
   https.destroy()
