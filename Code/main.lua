@@ -1279,6 +1279,8 @@ function ReadValue()
 end
 
 -- Delta Lap Times Google Sheet
+json = require("json")
+
 function SetURLs()
   Bank_url = CodeBankUrl()
 end
