@@ -197,7 +197,7 @@ function NewLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
-    if Enable = true then
+    if Enable == true then
       RequireIncomingTransaction(CurLapLastCheckpointTime, "Lap Time")
     end
 
