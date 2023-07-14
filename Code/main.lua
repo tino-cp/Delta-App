@@ -1291,7 +1291,7 @@ json = require("json")
 
 function RequireIncomingTransaction()
   local https = GetInternet()
-  local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818&Track=1&S1=1&S2=2&S3=3'
+  local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818&Track=&S1=&S2=&S3='
   local Username = readString(nameaddr)
   https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw)
   https.destroy()
