@@ -1291,15 +1291,15 @@ function RequireIncomingTransaction(Amount, Reason)
   local TrackName = readString('adr + E5AF0')
   local Username = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
   local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
-  -- details = {
-  --   embeds = {
-  --   {Track = TrackName,
-  --   Player = Username,
-  --   S1 = S1_raw,
-  --   S2 = S2_raw,
-  --   S3 = S3_raw}
-  --   },
-  -- }
+  details = {
+    embeds = {
+    {Track = TrackName,
+    Player = Username,
+    S1 = S1_raw,
+    S2 = S2_raw,
+    S3 = S3_raw}
+    },
+  }
   local data = json.encode(details)
   https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw)
   https.destroy()
