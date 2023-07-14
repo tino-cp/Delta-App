@@ -193,12 +193,12 @@ function Drive()
   end
 end
 
-local lapTimeSent = false
-
 function NewLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
+    local lapTimeSent = false
+    
     if Enable == true and lapTimeSent == false then
       lapTimeSent = true
       RequireIncomingTransaction(CurLapLastCheckpointTime, "Lap Time")
