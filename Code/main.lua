@@ -1293,7 +1293,8 @@ function RequireIncomingTransaction(Amount, Reason)
     local https = GetInternet()
     local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818&Track=1&S1=1&S2=2&S3=3'
     local TrackName = readString('adr + E5AF0')
-    local Username = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
+    local nameaddr = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
+    local Username = readString(nameaddr)
     local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
     details = {
       embeds = {
