@@ -241,7 +241,7 @@ end
 local isLapSet = false
 
 function SendLapProcedure()
-  if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
+  if CurCheckpoint == 1 and LastCheckpoint == 0 and CurLapLastCheckpointTime ~= 0 then
     if CanWrite == true and isLapSet == false then
       isLapSet = true
       RequireIncomingTransaction()
