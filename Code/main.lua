@@ -196,18 +196,6 @@ function Drive()
   end
 end
 
-local isLapSet = false
-
-function SendLapProcedure()
-  if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
-    if CanWrite == true and isLapSet == false then
-      isLapSet = true
-      RequireIncomingTransaction()
-      CanWrite = false
-    end
-  end
-end
-
 function NewLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
     CurrentLapSectors[0] = CurLapLastCheckpointTime
@@ -246,6 +234,18 @@ function NewLapProcedure()
       for i=0,MaxCheckpoints-1 do
         FastLapSectors[i] = CurrentLapSectors[i]
       end
+    end
+  end
+end
+
+local isLapSet = false
+
+function SendLapProcedure()
+  if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
+    if CanWrite == true and isLapSet == false then
+      isLapSet = true
+      RequireIncomingTransaction()
+      CanWrite = false
     end
   end
 end
