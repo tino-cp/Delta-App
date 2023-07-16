@@ -207,7 +207,7 @@ function NewLapProcedure()
       RequireIncomingTransaction()
       CanWrite = false
     end
-    -- Logs not working since canwrite false here
+
     if LogsEnabled == true and CanWrite==true then
       --Record laptime
       LogsLaptime = CurLapLastCheckpointTime
@@ -1290,7 +1290,6 @@ end
 
 -- Delta Lap Times Google Sheet
 json = require("json")
-
 
 function RequireIncomingTransaction()
   if isLapSet == true then
