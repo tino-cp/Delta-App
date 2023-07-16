@@ -17,6 +17,7 @@ simpleMode = 0
 fullscreenMode = 0
 setPosition = 1
 setFont = 0
+
 function InitOffsets()
   pCNetPlayerInfo = 0xA0
   pCNetPed = 0x240
@@ -197,16 +198,26 @@ end
 
 local isLapSet = false
 
-function NewLapProcedure()
+function SendLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
-    CurrentLapSectors[0] = CurLapLastCheckpointTime
-    --LOGS
     if CanWrite == true and isLapSet == false then
       isLapSet = true
       RequireIncomingTransaction()
       CanWrite = false
     end
+  end
+end
 
+function NewLapProcedure()
+  if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
+    CurrentLapSectors[0] = CurLapLastCheckpointTime
+    --LOGS
+    -- if CanWrite == true and isLapSet == false then
+    --   isLapSet = true
+    --   RequireIncomingTransaction()
+    --   CanWrite = false
+    -- end
+    -- Logs not working since canwrite false here
     if LogsEnabled == true and CanWrite==true then
       --Record laptime
       LogsLaptime = CurLapLastCheckpointTime
@@ -294,7 +305,7 @@ function UpdateInfo()
       Drive()
       CloseToTheEnd()
       NewLapProcedure()
-
+      SendLapProcedure()
       --Display
       if FirstLap==false then
 
