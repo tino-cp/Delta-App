@@ -295,7 +295,6 @@ function UpdateInfo()
       --checkPitDeltaValue()
       Drive()
       CloseToTheEnd()
-      NewLapProcedure()
 
       --Display
       if FirstLap==false then
@@ -459,6 +458,8 @@ function UpdateInfo()
       else
         S3Label.Caption=S3_sec..'.'..S3_mil
       end
+      
+      NewLapProcedure()
 
     end
   end
