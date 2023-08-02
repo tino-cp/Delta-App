@@ -203,12 +203,10 @@ function NewLapProcedure()
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
         --LOGS ONLINE
-        if CanWrite == true and isLapSet == false then
+        if CanWrite == true and isLapSet == false and S1_raw > 0 then
           isLapSet = true
-          if S1_raw > 0 then
-            RequireIncomingTransaction()
-            CanWrite = false
-          end
+          RequireIncomingTransaction()
+          CanWrite = false
         end
     if LogsEnabled == true and CanWrite==true then
       --Record laptime
