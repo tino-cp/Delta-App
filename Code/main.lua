@@ -295,6 +295,7 @@ function UpdateInfo()
       --checkPitDeltaValue()
       Drive()
       CloseToTheEnd()
+      NewLapProcedure()
 
       --Display
       if FirstLap==false then
@@ -400,9 +401,6 @@ function UpdateInfo()
         else
           FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.'..FCalculateMils
         end
-
-        NewLapProcedure()
-
       end
       --Detect Sector's marks
       local TimeSectors=CurLapMils
