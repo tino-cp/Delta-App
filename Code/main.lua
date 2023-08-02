@@ -202,6 +202,14 @@ function NewLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
     CurrentLapSectors[0] = CurLapLastCheckpointTime
     --LOGS
+        --LOGS ONLINE
+        if CanWrite == true and isLapSet == false then
+          isLapSet = true
+          if S1_raw > 0 then
+            RequireIncomingTransaction()
+            CanWrite = false
+          end
+        end
     if LogsEnabled == true and CanWrite==true then
       --Record laptime
       LogsLaptime = CurLapLastCheckpointTime
@@ -229,15 +237,6 @@ function NewLapProcedure()
       LatestFastLapSectors = FastLapSectors[0]
       for i=0,MaxCheckpoints-1 do
         FastLapSectors[i] = CurrentLapSectors[i]
-      end
-    end
-
-    --LOGS ONLINE
-    if CanWrite == true and isLapSet == false then
-      isLapSet = true
-      if S1_raw > 0 and S2_raw > 0 and S3_raw > 0 then
-        RequireIncomingTransaction()
-        CanWrite = false
       end
     end
   end
