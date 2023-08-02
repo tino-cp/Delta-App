@@ -403,6 +403,8 @@ function UpdateInfo()
         
       end
 
+      NewLapProcedure()
+
       --Detect Sector's marks
       local TimeSectors=CurLapMils
       if CurCheckpoint == S1 and NewSector==true then
@@ -458,9 +460,6 @@ function UpdateInfo()
       else
         S3Label.Caption=S3_sec..'.'..S3_mil
       end
-      
-      NewLapProcedure()
-
     end
   end
 end
