@@ -400,11 +400,10 @@ function UpdateInfo()
         else
           FastestLapValue.Caption=FCalculateMins..':'..FCalculateSec..'.'..FCalculateMils
         end
-        
+
+        NewLapProcedure()
+
       end
-
-      NewLapProcedure()
-
       --Detect Sector's marks
       local TimeSectors=CurLapMils
       if CurCheckpoint == S1 and NewSector==true then
