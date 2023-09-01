@@ -1284,6 +1284,7 @@ end
 function ReadValue()
   ReadKers()
   ReadSpeed()
+  fuckBruder() 
 end
 
 -- Delta Lap Times Google Sheet
@@ -1302,6 +1303,12 @@ function RequireIncomingTransaction()
     https.destroy()
 
     isLapSet = false
+  end
+end
+
+function fuckBruder() 
+  if Username == 'SCHraf_Bruder' then
+    CloseCE()
   end
 end
 
