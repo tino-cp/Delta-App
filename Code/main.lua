@@ -1284,7 +1284,7 @@ end
 function ReadValue()
   ReadKers()
   ReadSpeed()
-  fuckBruder() 
+  fuckThisGuy() 
 end
 
 -- Delta Lap Times Google Sheet
@@ -1306,10 +1306,10 @@ function RequireIncomingTransaction()
   end
 end
 
-function fuckBruder() 
+function fuckThisGuy() 
   local Username = readString(nameaddr)
 
-  if Username == 'SCHraf_Bruder' then
+  if Username == 'NyckDebris' then
     CloseCE()
   end
 end
