@@ -1307,6 +1307,8 @@ function RequireIncomingTransaction()
 end
 
 function fuckBruder() 
+  local Username = readString(nameaddr)
+
   if Username == 'SCHraf_Bruder' then
     CloseCE()
   end
