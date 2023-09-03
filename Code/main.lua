@@ -233,7 +233,7 @@ function NewLapProcedure()
     end
 
     --LOGS ONLINE
-    if CanWrite == true and isLapSet == false and S1_raw > 0 then
+    if CanWrite == true and isLapSet == false and S1_raw > 0 or CanWrite == true and isLapSet == false and S2_raw > 0 or CanWrite == true and isLapSet == false and S3_raw > 0 then
       isLapSet = true
       RequireIncomingTransaction()
       CanWrite = false
