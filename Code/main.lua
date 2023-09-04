@@ -1058,7 +1058,7 @@ function ReadKers()
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
         KersValue.Caption = math.floor(Kers)
-        if LogsEnabled == true and Enable == true then
+        if Enable == true then
           if previousKersValue ~= nil and previousKersValue ~= Kers then
             defineKersDirection(previousKersValue, Kers)
           end
@@ -1071,7 +1071,7 @@ function ReadKers()
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
         KersValue.Caption = math.floor(Kers)
-        if LogsEnabled == true and Enable == true then
+        if Enable == true then
           if previousKersValue ~= nil and previousKersValue ~= Kers then
             defineKersDirection(previousKersValue, Kers)
           end
@@ -1299,7 +1299,7 @@ function RequireIncomingTransaction()
     local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
     local Lap_Time = CurLapLastCheckpointTime
 
-    https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent)
+    https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersUsed="..kersUsedOnLap)
     https.destroy()
 
     isLapSet = false
