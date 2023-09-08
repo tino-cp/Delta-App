@@ -218,9 +218,9 @@ function NewLapProcedure()
       LogArray = LogArray..LogsLap..", "..LogsLaptime..", "..SpeedTrap..", "..((SpeedTrap/1.6)*10//1/10)..", "..TopSpeed..", "..((TopSpeed/1.6)*10//1/10)..", "..AvgSpeed..", "..((AvgSpeed/1.6)*10//1/10)..", "..LogsSector1..", "..LogsSector2..", "..LogsSector3..", "..kersGainedOnLap..", "..kersUsedOnLap.."\n"
       TopSpeed = 0
       AvgSpeed = nil
-      previousKersValue = nil
-      kersGainedOnLap = 0
-      kersUsedOnLap = 0
+      -- previousKersValue = nil
+      -- kersGainedOnLap = 0
+      -- kersUsedOnLap = 0
       CanWrite = false
     end
       --LOGS
@@ -235,6 +235,9 @@ function NewLapProcedure()
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 then
       isLapSet = true
+      previousKersValue = nil
+      kersGainedOnLap = 0
+      kersUsedOnLap = 0
       RequireIncomingTransaction()
       CanWrite = false
     end
@@ -1299,7 +1302,7 @@ function RequireIncomingTransaction()
     local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
     local Lap_Time = CurLapLastCheckpointTime
 
-    https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent) --.."&KersGained="..kersGainedOnLap)
+    https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
     https.destroy()
 
     isLapSet = false
