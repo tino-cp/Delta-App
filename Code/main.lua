@@ -806,8 +806,6 @@ function simpleModeTurnOn()
     simpleMode = 1
     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
 
-    Gas.Visible = false
-    Brake.Visible = false
     Steer.Visible = false
     SectorsCurrent.Visible = false
     S3Label.Visible = false
@@ -836,13 +834,13 @@ function simpleModeTurnOn()
     KersValue.Width = 20
 
     Gas.Parent = UI
-    Gas.Left = 150
+    Gas.Left = 160
     Gas.Height = 30
     Gas.Top = 150
     Gas.Width = 20
 
     Brake.Parent = UI
-    Brake.Left = 175
+    Brake.Left = 210
     Brake.Height = 30
     Brake.Top = 150
     Brake.Width = 20
@@ -1053,7 +1051,7 @@ function GetKers()
       return Kers
     end
   elseif ADR == 1 then
-    Kers = readFloat("GTA5.exe+1D59B60")
+    Kers = readFloat("GTA5.exe+1D59B60") --GTA5.exe+1D59BF8
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
@@ -1079,7 +1077,7 @@ function ReadKers()
   local Kers = 0
   if KersValues == 1 then
     if ADR == 0 then
-      Kers = readFloat("GTA5.exe+1D59B60")
+      Kers = readFloat("GTA5.exe+1D59BF8")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1092,7 +1090,7 @@ function ReadKers()
         previousKersValue = Kers
       end
     elseif ADR == 1 then
-      Kers = readFloat("GTA5.exe+1D59B60")
+      Kers = readFloat("GTA5.exe+1D59BF8")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
