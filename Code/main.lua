@@ -1094,6 +1094,7 @@ function ReadKers()
       Kers = readFloat("GTA5.exe+1D59BF8")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
+        print(Kers)
         KersValueBar.Position = Kers
         KersValue.Caption = math.floor(Kers)
         if Enable == true then
