@@ -235,7 +235,7 @@ function NewLapProcedure()
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 then
       isLapSet = true
-      coroutine.wrap(RequireIncomingTransaction)()
+      RequireIncomingTransaction()
       previousKersValue = nil
       kersGainedOnLap = 0
       kersUsedOnLap = 0
@@ -1293,7 +1293,7 @@ end
 -- Delta Lap Times Google Sheet
 json = require("json")
 
-function RequireIncomingTransaction(callback)
+function RequireIncomingTransaction()
   if isLapSet == true then
     local https = GetInternet()
     -- Season 8: local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
@@ -1304,13 +1304,45 @@ function RequireIncomingTransaction(callback)
 
     https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
     https.destroy()
-
-    isLapSet = false
-    if callback then
-      callback()
-    end
   end
 end
+
+-- Function to set the Cheat Engine window to always stay on top
+function alwaysOnTop()
+  local hwnd = getHWNDFromTitle("Cheat Engine")
+
+  if hwnd ~= 0 then
+      local HWND_TOPMOST = -1
+      local SWP_NOMOVE = 0x0002
+      local SWP_NOSIZE = 0x0001
+      local SWP_NOACTIVATE = 0x0010
+
+      local user32 = package.loadlib("user32.dll", "stdcall")
+
+      if user32 then
+          user32("SetWindowPos", hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE)
+      else
+          print("Error loading user32.dll")
+      end
+  else
+      print("Cheat Engine window not found")
+  end
+end
+
+-- Function to get a window handle (HWND) by its title
+function getHWNDFromTitle(windowTitle)
+  local user32 = package.loadlib("user32.dll", "stdcall")
+  if user32 then
+      return user32("FindWindowW", 0, windowTitle)
+  else
+      print("Error loading user32.dll")
+      return 0
+  end
+end
+
+-- Call the alwaysOnTop function to set Cheat Engine to always stay on top
+alwaysOnTop()
+
 
 function fuckThisGuy() 
   local Username = readString(nameaddr)
