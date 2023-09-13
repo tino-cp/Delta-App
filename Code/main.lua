@@ -1307,10 +1307,9 @@ function RequireIncomingTransaction()
   end
 end
 
--- Function to set the Cheat Engine window to always stay on top
-function alwaysOnTop()
-  local hwnd = getHWNDFromTitle("Cheat Engine")
-
+-- Function to set a window to always stay on top
+function alwaysOnTop(windowTitle)
+  local hwnd = getHWNDFromTitle(windowTitle)
   if hwnd ~= 0 then
       local HWND_TOPMOST = -1
       local SWP_NOMOVE = 0x0002
@@ -1325,7 +1324,7 @@ function alwaysOnTop()
           print("Error loading user32.dll")
       end
   else
-      print("Cheat Engine window not found")
+      print("Window not found")
   end
 end
 
