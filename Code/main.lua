@@ -235,7 +235,7 @@ function NewLapProcedure()
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 then
       isLapSet = true
-      RequireIncomingTransaction()
+      coroutine.wrap(RequireIncomingTransaction)()
       previousKersValue = nil
       kersGainedOnLap = 0
       kersUsedOnLap = 0
@@ -1293,7 +1293,7 @@ end
 -- Delta Lap Times Google Sheet
 json = require("json")
 
-function RequireIncomingTransaction()
+function RequireIncomingTransaction(callback)
   if isLapSet == true then
     local https = GetInternet()
     -- Season 8: local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
@@ -1306,6 +1306,9 @@ function RequireIncomingTransaction()
     https.destroy()
 
     isLapSet = false
+    if callback then
+      callback()
+    end
   end
 end
 
