@@ -668,21 +668,21 @@ function ChangeGears()
   end
 end
 
-function ChangeInputs()
-  if Inputs == 1 then
-     Inputs = 0
-     InputsTurnOn.Caption = "INPUT: OFF"
-     Gas.Visible = false
-     Brake.Visible = false
-     Steer.Visible = false
-  elseif Inputs == 0 then
-     Inputs = 1
-     InputsTurnOn.Caption = "INPUT: ON"
-     Gas.Visible = true
-     Brake.Visible = true
-     Steer.Visible = true
-  end
-end
+-- function ChangeInputs()
+--   if Inputs == 1 then
+--      Inputs = 0
+--      InputsTurnOn.Caption = "INPUT: OFF"
+--      Gas.Visible = false
+--      Brake.Visible = false
+--      Steer.Visible = false
+--   elseif Inputs == 0 then
+--      Inputs = 1
+--      InputsTurnOn.Caption = "INPUT: ON"
+--      Gas.Visible = true
+--      Brake.Visible = true
+--      Steer.Visible = true
+--   end
+-- end
 
 function ChangeKers()
   if KersValues == 1 then
@@ -967,7 +967,7 @@ function setFontStyle()
     SpeedTurnOn.Font.Style = 'fsBold, fsItalic'
     MetricsTurnOn.Font.Style = 'fsBold, fsItalic'
     GearsTurnOn.Font.Style = 'fsBold, fsItalic'
-    InputsTurnOn.Font.Style = 'fsBold, fsItalic'
+    --InputsTurnOn.Font.Style = 'fsBold, fsItalic'
     KersValueTurnOn.Font.Style = 'fsBold, fsItalic'
     SetDeltaPosition.Font.Style = 'fsBold, fsItalic'
     DarkModeTurnOn.Font.Style = 'fsBold, fsItalic'
@@ -975,6 +975,7 @@ function setFontStyle()
     FullscreenModeTurnOn.Font.Style = 'fsBold, fsItalic'
     SetFontStyle.Font.Style = 'fsBold, fsItalic'
     SimpleButton.Font.Style = 'fsBold, fsItalic'
+    FontStyle.Font.Style = 'fsBold, fsItalic'
   elseif setFont == 1 then
     setFont = 0
     SetFontStyle.Caption = 'FONT: OFF'
@@ -1012,13 +1013,14 @@ function setFontStyle()
     SpeedTurnOn.Font.Style = false
     MetricsTurnOn.Font.Style = false
     GearsTurnOn.Font.Style = false
-    InputsTurnOn.Font.Style = false
+    --InputsTurnOn.Font.Style = false
     KersValueTurnOn.Font.Style = false
     SetDeltaPosition.Font.Style = false
     DarkModeTurnOn.Font.Style = false
     SimpleModeTurnOn.Font.Style = false
     FullscreenModeTurnOn.Font.Style = false
     SimpleButton.Font.Style = false
+    FontStyle.Font.Style = false
   end 
 end
 
@@ -1306,42 +1308,6 @@ function RequireIncomingTransaction()
     https.destroy()
   end
 end
-
--- Function to set a window to always stay on top
-function alwaysOnTop(windowTitle)
-  local hwnd = getHWNDFromTitle(windowTitle)
-  if hwnd ~= 0 then
-      local HWND_TOPMOST = -1
-      local SWP_NOMOVE = 0x0002
-      local SWP_NOSIZE = 0x0001
-      local SWP_NOACTIVATE = 0x0010
-
-      local user32 = package.loadlib("user32.dll", "stdcall")
-
-      if user32 then
-          user32("SetWindowPos", hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE)
-      else
-          print("Error loading user32.dll")
-      end
-  else
-      print("Window not found")
-  end
-end
-
--- Function to get a window handle (HWND) by its title
-function getHWNDFromTitle(windowTitle)
-  local user32 = package.loadlib("user32.dll", "stdcall")
-  if user32 then
-      return user32("FindWindowW", 0, windowTitle)
-  else
-      print("Error loading user32.dll")
-      return 0
-  end
-end
-
--- Call the alwaysOnTop function to set Cheat Engine to always stay on top
-local targetWindowTitle = "Delta App Online 1.2.3" -- Specify the title of your Cheat Engine window here
-alwaysOnTop(targetWindowTitle)
 
 function fuckThisGuy() 
   local Username = readString(nameaddr)

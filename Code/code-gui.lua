@@ -505,7 +505,7 @@ function createUI()
 
   SettingPanel = createPanel(UI)
     SettingPanel.Left = 160
-    SettingPanel.Height = 130
+    SettingPanel.Height = 100
     SettingPanel.Top = 45
     SettingPanel.Width = 310
     SettingPanel.BevelColor = clBackground
@@ -555,18 +555,18 @@ function createUI()
     GearsTurnOn.TabOrder = 2
 
 
-  InputsTurnOn = createButton(SettingPanel)
-    InputsTurnOn.Left = 105
-    InputsTurnOn.Height = 30
-    InputsTurnOn.Top = 5
-    InputsTurnOn.Width = 100
-    InputsTurnOn.Caption = 'INPUT: ON'
-    InputsTurnOn.Font.Name = 'Segoe UI'
-    InputsTurnOn.Font.fsBold = true
-    InputsTurnOn.Font.fsItalic = true
-    InputsTurnOn.OnClick = ChangeInputs
-    InputsTurnOn.ParentFont = false
-    InputsTurnOn.TabOrder = 3
+  -- InputsTurnOn = createButton(SettingPanel)
+  --   InputsTurnOn.Left = 105
+  --   InputsTurnOn.Height = 30
+  --   InputsTurnOn.Top = 5
+  --   InputsTurnOn.Width = 100
+  --   InputsTurnOn.Caption = 'INPUT: ON'
+  --   InputsTurnOn.Font.Name = 'Segoe UI'
+  --   InputsTurnOn.Font.fsBold = true
+  --   InputsTurnOn.Font.fsItalic = true
+  --   InputsTurnOn.OnClick = ChangeInputs
+  --   InputsTurnOn.ParentFont = false
+  --   InputsTurnOn.TabOrder = 3
 
   KersValueTurnOn = createButton(SettingPanel)
     KersValueTurnOn.Left = 105
@@ -627,9 +627,9 @@ function createUI()
     FullscreenModeTurnOn.TabOrder = 4
 
   SetFontStyle = createButton(SettingPanel)
-    SetFontStyle.Left = 5
+    SetFontStyle.Left = 105
     SetFontStyle.Height = 30
-    SetFontStyle.Top = 95
+    SetFontStyle.Top = 5
     SetFontStyle.Width = 100
     SetFontStyle.Caption = 'FONT: OFF'
     SetFontStyle.OnClick = setFontStyle
