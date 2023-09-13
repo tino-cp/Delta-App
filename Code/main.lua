@@ -825,6 +825,18 @@ function simpleModeTurnOn()
     
     SimpleButton.Visible = true
 
+    KersValueBar.Parent = UI
+    KersValueBar.Left = 0
+    KersValueBar.Height = 20
+    KersValueBar.Top = 180
+    KersValueBar.Width = 270
+
+    KersValue.Parent = UI
+    KersValue.Left = 135
+    KersValue.Height = 35
+    KersValue.Top = 170
+    KersValue.Width = 20
+
     LogBuildingButton.Parent = SimplePanel
     LogBuildingButton.Left = 5
     LogBuildingButton.Height = 30
@@ -872,12 +884,6 @@ function simpleModeTurnOn()
     MetricsTurnOn.Height = 30
     MetricsTurnOn.Top = 100
     MetricsTurnOn.Width = 100
-    
-    LapProgress.Parent = SimplePanel
-    LapProgress.Left = 0
-    LapProgress.Height = 12
-    LapProgress.Top = 122
-    LapProgress.Width = 215
 
     UI.Height = 200
     UI.Width = 270
