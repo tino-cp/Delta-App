@@ -20,7 +20,7 @@ function createUI()
     UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.2.3a" 
+    UI.Caption = "Delta App Online 1.2.3" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
@@ -614,9 +614,9 @@ function createUI()
     SimpleModeTurnOn.TabOrder = 4
 
   FullscreenModeTurnOn = createButton(SettingPanel)
-    FullscreenModeTurnOn.Left = 205
+    FullscreenModeTurnOn.Left = 105
     FullscreenModeTurnOn.Height = 30
-    FullscreenModeTurnOn.Top = 65
+    FullscreenModeTurnOn.Top = 35
     FullscreenModeTurnOn.Width = 100
     FullscreenModeTurnOn.Caption = 'FULL: OFF'
     FullscreenModeTurnOn.Font.fsBold = true

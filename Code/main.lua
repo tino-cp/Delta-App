@@ -717,6 +717,8 @@ function simpleModeTurnOn()
     simpleMode = 0
     SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
 
+    KersValue.Visible = true
+    KersValueBar.Visible = true
     Steer.Visible = true
     SectorsCurrent.Visible = true
     S3Label.Visible = true
@@ -770,18 +772,6 @@ function simpleModeTurnOn()
     SettingButton.Top = 10
     SettingButton.Width = 90
 
-    KersValueBar.Parent = UI
-    KersValueBar.Left = 250
-    KersValueBar.Height = 16
-    KersValueBar.Top = 110
-    KersValueBar.Width = 100
-
-    KersValue.Parent = UI
-    KersValue.Left = 215
-    KersValue.Height = 25
-    KersValue.Top = 105
-    KersValue.Width = 33
-
     Gas.Parent = UI
     Gas.Left = 305
     Gas.Height = 30
@@ -826,6 +816,8 @@ function simpleModeTurnOn()
     simpleMode = 1
     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
 
+    KersValue.Visible = false
+    KersValueBar.Visible = false
     Steer.Visible = false
     SectorsCurrent.Visible = false
     S3Label.Visible = false
@@ -840,18 +832,6 @@ function simpleModeTurnOn()
     SettingPanel.Visible = false
     
     SimpleButton.Visible = true
-
-    KersValueBar.Parent = UI
-    KersValueBar.Left = 0
-    KersValueBar.Height = 15
-    KersValueBar.Top = 180
-    KersValueBar.Width = 270
-
-    KersValue.Parent = UI
-    KersValue.Left = 135
-    KersValue.Height = 15
-    KersValue.Top = 150
-    KersValue.Width = 20
 
     Gas.Parent = UI
     Gas.Left = 160
@@ -1008,7 +988,7 @@ function setFontStyle()
     MetricsTurnOn.Font.Style = 'fsBold, fsItalic'
     GearsTurnOn.Font.Style = 'fsBold, fsItalic'
     --InputsTurnOn.Font.Style = 'fsBold, fsItalic'
-    KersValueTurnOn.Font.Style = 'fsBold, fsItalic'
+    --KersValueTurnOn.Font.Style = 'fsBold, fsItalic'
     SetDeltaPosition.Font.Style = 'fsBold, fsItalic'
     DarkModeTurnOn.Font.Style = 'fsBold, fsItalic'
     SimpleModeTurnOn.Font.Style = 'fsBold, fsItalic'
@@ -1053,7 +1033,7 @@ function setFontStyle()
     MetricsTurnOn.Font.Style = false
     GearsTurnOn.Font.Style = false
     --InputsTurnOn.Font.Style = false
-    KersValueTurnOn.Font.Style = false
+    --KersValueTurnOn.Font.Style = false
     SetDeltaPosition.Font.Style = false
     DarkModeTurnOn.Font.Style = false
     SimpleModeTurnOn.Font.Style = false
