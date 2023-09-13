@@ -684,19 +684,19 @@ end
 --   end
 -- end
 
-function ChangeKers()
-  if KersValues == 1 then
-     KersValues = 0
-     KersValueTurnOn.Caption = "KERS: ON"
-     KersValue.Visible = true
-     KersValueBar.Visible = true
-  elseif KersValues == 0 then
-    KersValues = 1
-     KersValueTurnOn.Caption = "KERS: OFF"
-     KersValue.Visible = false
-     KersValueBar.Visible = false
-  end
-end
+-- function ChangeKers()
+--   if KersValues == 1 then
+--      KersValues = 0
+--      KersValueTurnOn.Caption = "KERS: ON"
+--      KersValue.Visible = true
+--      KersValueBar.Visible = true
+--   elseif KersValues == 0 then
+--     KersValues = 1
+--      KersValueTurnOn.Caption = "KERS: OFF"
+--      KersValue.Visible = false
+--      KersValueBar.Visible = false
+--   end
+-- end
 
 function darkModeTurnOn()
   if darkMode == 1 then

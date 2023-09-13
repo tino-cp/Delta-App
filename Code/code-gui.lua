@@ -20,7 +20,7 @@ function createUI()
     UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.2.3a" 
+    UI.Caption = "Delta App Online 1.2.3" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
@@ -411,7 +411,6 @@ function createUI()
     KersValueBar.BorderWidth = 0
     KersValueBar.Position = 0
     KersValueBar.TabOrder = 10
-    KersValueBar.Visible = false
 
     
   KersValue = createLabel(UI)
@@ -426,7 +425,6 @@ function createUI()
     KersValue.Font.fsItalic = true
     KersValue.ParentColor = false
     KersValue.ParentFont = false
-    KersValue.Visible = false
 
   LogBuildingButton = createButton(UI)
     LogBuildingButton.Left = 10
@@ -569,17 +567,17 @@ function createUI()
   --   InputsTurnOn.ParentFont = false
   --   InputsTurnOn.TabOrder = 3
 
-  KersValueTurnOn = createButton(SettingPanel)
-    KersValueTurnOn.Left = 105
-    KersValueTurnOn.Height = 30
-    KersValueTurnOn.Top = 35
-    KersValueTurnOn.Width = 100
-    KersValueTurnOn.Caption = 'KERS: OFF'
-    KersValueTurnOn.Font.fsBold = true
-    KersValueTurnOn.Font.fsItalic = true
-    KersValueTurnOn.OnClick = ChangeKers
-    KersValueTurnOn.ParentFont = False
-    KersValueTurnOn.TabOrder = 4
+  -- KersValueTurnOn = createButton(SettingPanel)
+  --   KersValueTurnOn.Left = 105
+  --   KersValueTurnOn.Height = 30
+  --   KersValueTurnOn.Top = 35
+  --   KersValueTurnOn.Width = 100
+  --   KersValueTurnOn.Caption = 'KERS: OFF'
+  --   KersValueTurnOn.Font.fsBold = true
+  --   KersValueTurnOn.Font.fsItalic = true
+  --   KersValueTurnOn.OnClick = ChangeKers
+  --   KersValueTurnOn.ParentFont = False
+  --   KersValueTurnOn.TabOrder = 4
 
   SetDeltaPosition = createButton(SettingPanel)
     SetDeltaPosition.Left = 105
