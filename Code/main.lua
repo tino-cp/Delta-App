@@ -806,8 +806,6 @@ function simpleModeTurnOn()
     simpleMode = 1
     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
 
-    KersValue.Visible = false
-    KersValueBar.Visible = false
     Gas.Visible = false
     Brake.Visible = false
     Steer.Visible = false
@@ -836,6 +834,18 @@ function simpleModeTurnOn()
     KersValue.Height = 35
     KersValue.Top = 170
     KersValue.Width = 20
+
+    Gas.Parent = UI
+    Gas.Left = 135
+    Gas.Height = 35
+    Gas.Top = 160
+    Gas.Width = 20
+
+    Brake.Parent = UI
+    Brake.Left = 165
+    Brake.Height = 35
+    Brake.Top = 160
+    Brake.Width = 20
 
     LogBuildingButton.Parent = SimplePanel
     LogBuildingButton.Left = 5
@@ -987,7 +997,6 @@ function setFontStyle()
     FullscreenModeTurnOn.Font.Style = 'fsBold, fsItalic'
     SetFontStyle.Font.Style = 'fsBold, fsItalic'
     SimpleButton.Font.Style = 'fsBold, fsItalic'
-    FontStyle.Font.Style = 'fsBold, fsItalic'
   elseif setFont == 1 then
     setFont = 0
     SetFontStyle.Caption = 'FONT: OFF'
@@ -1032,7 +1041,7 @@ function setFontStyle()
     SimpleModeTurnOn.Font.Style = false
     FullscreenModeTurnOn.Font.Style = false
     SimpleButton.Font.Style = false
-    FontStyle.Font.Style = false
+    SetFontStyle.Font.Style = false
   end 
 end
 
