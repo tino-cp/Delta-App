@@ -20,7 +20,7 @@ function createUI()
     UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.2.3a" 
+    UI.Caption = "Delta App Online 1.2.3" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
@@ -403,6 +403,17 @@ function createUI()
     Brake.ParentColor = false
     Brake.ParentFont = false
 
+  KersValueBar = createProgressBar(UI)
+    KersValueBar.Left = 250
+    KersValueBar.Height = 16
+    KersValueBar.Top = 110
+    KersValueBar.Width = 100
+    KersValueBar.BorderWidth = 0
+    KersValueBar.Position = 0
+    KersValueBar.TabOrder = 10
+    KersValueBar.Visible = false
+
+    
   KersValue = createLabel(UI)
     KersValue.Left = 215
     KersValue.Height = 25
@@ -416,16 +427,6 @@ function createUI()
     KersValue.ParentColor = false
     KersValue.ParentFont = false
     KersValue.Visible = false
-
-  KersValueBar = createProgressBar(UI)
-    KersValueBar.Left = 250
-    KersValueBar.Height = 16
-    KersValueBar.Top = 110
-    KersValueBar.Width = 100
-    KersValueBar.BorderWidth = 0
-    KersValueBar.Position = 0
-    KersValueBar.TabOrder = 10
-    KersValueBar.Visible = false
 
   LogBuildingButton = createButton(UI)
     LogBuildingButton.Left = 10

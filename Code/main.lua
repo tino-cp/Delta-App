@@ -831,20 +831,20 @@ function simpleModeTurnOn()
 
     KersValue.Parent = UI
     KersValue.Left = 135
-    KersValue.Height = 35
+    KersValue.Height = 15
     KersValue.Top = 170
     KersValue.Width = 20
 
     Gas.Parent = UI
-    Gas.Left = 135
-    Gas.Height = 35
-    Gas.Top = 160
+    Gas.Left = 150
+    Gas.Height = 30
+    Gas.Top = 150
     Gas.Width = 20
 
     Brake.Parent = UI
-    Brake.Left = 165
-    Brake.Height = 35
-    Brake.Top = 160
+    Brake.Left = 175
+    Brake.Height = 30
+    Brake.Top = 150
     Brake.Width = 20
 
     LogBuildingButton.Parent = SimplePanel
