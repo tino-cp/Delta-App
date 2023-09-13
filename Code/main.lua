@@ -717,10 +717,6 @@ function simpleModeTurnOn()
     simpleMode = 0
     SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
 
-    KersValue.Visible = false
-    KersValueBar.Visible = false
-    Gas.Visible = true
-    Brake.Visible = true
     Steer.Visible = true
     SectorsCurrent.Visible = true
     S3Label.Visible = true
@@ -773,6 +769,30 @@ function simpleModeTurnOn()
     SettingButton.Height = 35
     SettingButton.Top = 10
     SettingButton.Width = 90
+
+    KersValueBar.Parent = UI
+    KersValueBar.Left = 250
+    KersValueBar.Height = 16
+    KersValueBar.Top = 110
+    KersValueBar.Width = 100
+
+    KersValue.Parent = UI
+    KersValue.Left = 215
+    KersValue.Height = 25
+    KersValue.Top = 105
+    KersValue.Width = 33
+
+    Gas.Parent = UI
+    Gas.Left = 305
+    Gas.Height = 30
+    Gas.Top = 50
+    Gas.Width = 13
+
+    Brake.Parent = UI
+    Brake.Left = 255
+    Brake.Height = 30
+    Brake.Top = 50
+    Brake.Width = 13
 
     DarkModeTurnOn.Parent = SettingPanel
     DarkModeTurnOn.Left = 205
