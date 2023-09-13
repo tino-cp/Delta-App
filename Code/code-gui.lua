@@ -20,7 +20,7 @@ function createUI()
     UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.2.3a" 
+    UI.Caption = "Delta App Online 1.2.3" 
     UI.ClientHeight = 200
     UI.ClientWidth = 480
     UI.Color = clBlack
@@ -506,11 +506,11 @@ function createUI()
   SettingPanel = createPanel(UI)
     SettingPanel.Left = 160
     SettingPanel.Height = 100
-    SettingPanel.Top = 45
+    SettingPanel.Top = 50
     SettingPanel.Width = 310
     SettingPanel.BevelColor = clBackground
     SettingPanel.BevelWidth = 2
-    SettingPanel.ClientHeight = 130
+    SettingPanel.ClientHeight = 100
     SettingPanel.ClientWidth = 310
     SettingPanel.TabOrder = 8
     SettingPanel.Visible = false

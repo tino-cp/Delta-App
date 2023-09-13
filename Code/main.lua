@@ -872,6 +872,12 @@ function simpleModeTurnOn()
     MetricsTurnOn.Height = 30
     MetricsTurnOn.Top = 100
     MetricsTurnOn.Width = 100
+    
+    LapProgress.Parent = SimplePanel
+    LapProgress.Left = 0
+    LapProgress.Height = 12
+    LapProgress.Top = 122
+    LapProgress.Width = 215
 
     UI.Height = 200
     UI.Width = 270
