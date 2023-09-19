@@ -414,13 +414,13 @@ function createUI()
 
     
   KersValue = createLabel(UI)
-    KersValue.Left = 215
+    KersValue.Left = 300
     KersValue.Height = 25
-    KersValue.Top = 105
+    KersValue.Top = 125
     KersValue.Width = 33
     KersValue.Caption = '0'
     --KersValue.Font.Color = 16766720
-    KersValue.Font.Height = -20
+    KersValue.Font.Height = -25
     KersValue.Font.fsBold = true
     KersValue.Font.fsItalic = true
     KersValue.ParentColor = false
