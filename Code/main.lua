@@ -1328,6 +1328,8 @@ function RequireIncomingTransaction()
 
     https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
     https.destroy()
+
+    isLapSet = false
   end
 end
 
