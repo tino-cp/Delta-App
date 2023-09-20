@@ -414,7 +414,7 @@ function createUI()
 
     
   KersValue = createLabel(UI)
-    KersValue.Left = 300
+    KersValue.Left = 280
     KersValue.Height = 25
     KersValue.Top = 125
     KersValue.Width = 33
