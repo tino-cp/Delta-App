@@ -196,7 +196,7 @@ function Drive()
   end
 end
 
-local isLapSet = false
+--local isLapSet = false
 
 function NewLapProcedure()
   if CurCheckpoint == 0 and LastCheckpoint ~= 0 and CurLapLastCheckpointTime ~= 0 then
@@ -233,8 +233,8 @@ function NewLapProcedure()
     end
 
     --LOGS ONLINE
-    if CanWrite == true and isLapSet == false and S1_raw > 0 then
-      isLapSet = true
+    if CanWrite == true and S1_raw > 0 then
+      --isLapSet = true
       local Username = readString(nameaddr)
       local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
       local Lap_Time = CurLapLastCheckpointTime
@@ -1322,7 +1322,7 @@ end
 json = require("json")
 
 function RequireIncomingTransaction(LogData)
-  if isLapSet == true then
+  --if isLapSet == true then
     local https = GetInternet()
     -- Season 8: local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
     local TransactionURL = 'https://script.google.com/macros/s/AKfycbwUlfRw7Ubqu0Alo6Ed0-r_R71_XM-RIWMDiwyHSSfU-6m_aTlXSD7TQa3jWgu-MkAh/exec?gid=0'
@@ -1333,7 +1333,7 @@ function RequireIncomingTransaction(LogData)
     https.postURL(TransactionURL,LogData)
     https.destroy()
 
-    isLapSet = false
+    --isLapSet = false
   end
 end
 
