@@ -238,7 +238,7 @@ function NewLapProcedure()
       local Username = readString(nameaddr)
       local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
       local Lap_Time = CurLapLastCheckpointTime
-      LogArray = LogArray.."Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap.."\n"
+      LogArray = LogArray.."Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap
       --RequireIncomingTransaction(LogArray)
       previousKersValue = nil
       kersGainedOnLap = 0
