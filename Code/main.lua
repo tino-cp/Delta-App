@@ -139,7 +139,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('adr + D3618') --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('adr + E5AF0')
-  Caption = Track_Name.." Delta App Online 1.2.3"
+  Caption = Track_Name.." Delta App Online 1.2.4"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -259,7 +259,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.2.3"
+    UI.Caption = "Delta App Online 1.2.4"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
@@ -1338,11 +1338,11 @@ function fuckThisGuy()
   CloseCE()
 end
 
-function CloseCE() {
+function CloseCE()
   if LogArray then
     RequireIncomingTransaction(LogArray)
   end
-}
+end
 
 function ex()
   CloseCE()
