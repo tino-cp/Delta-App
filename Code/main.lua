@@ -233,7 +233,7 @@ function NewLapProcedure()
     end
 
     --LOGS ONLINE
-    if CanWrite == true and isLapSet = false and S1_raw > 0 then
+    if CanWrite == true and isLapSet == false and S1_raw > 0 then
       isLapSet = true
       local Username = readString(nameaddr)
       local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
