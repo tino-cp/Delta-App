@@ -235,11 +235,7 @@ function NewLapProcedure()
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 then
       isLapSet = true
-      local Username = readString(nameaddr)
-      local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
-      local Lap_Time = CurLapLastCheckpointTime
-      LogArray = LogArray.."Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap
-      --RequireIncomingTransaction(LogArray)
+      RequireIncomingTransaction()
       previousKersValue = nil
       kersGainedOnLap = 0
       kersUsedOnLap = 0
@@ -1321,16 +1317,16 @@ end
 -- Delta Lap Times Google Sheet
 json = require("json")
 
-function RequireIncomingTransaction(LogData)
+function RequireIncomingTransaction()
   if isLapSet == true then
     local https = GetInternet()
     -- Season 8: local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
     local TransactionURL = 'https://script.google.com/macros/s/AKfycbwUlfRw7Ubqu0Alo6Ed0-r_R71_XM-RIWMDiwyHSSfU-6m_aTlXSD7TQa3jWgu-MkAh/exec?gid=0'
-    -- local Username = readString(nameaddr)
-    -- local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
-    -- local Lap_Time = CurLapLastCheckpointTime
+    local Username = readString(nameaddr)
+    local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
+    local Lap_Time = CurLapLastCheckpointTime
 
-    https.postURL(TransactionURL,LogData)
+    https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
     https.destroy()
   end
 end
@@ -1340,9 +1336,5 @@ function fuckThisGuy()
 end
 
 function ex()
-  if LogArray and isLapSet == true then
-    RequireIncomingTransaction(LogArray)
-    isLapSet = false
-  end
   CloseCE()
 end
