@@ -1341,12 +1341,9 @@ function fuckThisGuy()
   CloseCE()
 end
 
-function CloseCE()
+function ex()
   if LogArray then
     RequireIncomingTransaction(LogArray)
   end
-end
-
-function ex()
   CloseCE()
 end
