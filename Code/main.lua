@@ -1332,8 +1332,6 @@ function RequireIncomingTransaction(LogData)
 
     https.postURL(TransactionURL,LogData)
     https.destroy()
-
-    isLapSet = false
   end
 end
 
