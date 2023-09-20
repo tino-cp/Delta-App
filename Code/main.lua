@@ -1334,7 +1334,7 @@ function RequireIncomingTransaction(LogData)
     https.destroy()
 
     --isLapSet = false
-  end
+  --end
 end
 
 function fuckThisGuy() 
