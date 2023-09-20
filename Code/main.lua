@@ -1341,9 +1341,12 @@ function fuckThisGuy()
   CloseCE()
 end
 
+local LapDataSent = true
+
 function ex()
-  if LogArray then
+  if LogArray and LapDataSent == true then
     RequireIncomingTransaction(LogArray)
+    LapDataSent = false
   end
   CloseCE()
 end
