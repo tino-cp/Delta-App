@@ -1309,7 +1309,7 @@ function ReadValue()
   ReadKers()
   ReadSpeed()
   local Username = readString(nameaddr)
-  if Username == 'NyckDebris' then
+  if Username == 'SCHraf_Bruder' then
     fuckThisGuy() 
   end
 end
