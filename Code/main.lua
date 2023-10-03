@@ -139,7 +139,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('adr + D3618') --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('adr + E5AF0')
-  Caption = Track_Name.." Delta App Online 1.2.3"
+  Caption = Track_Name.." Delta App Online 1.2.4"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -235,7 +235,7 @@ function NewLapProcedure()
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 then
       isLapSet = true
-      --RequireIncomingTransaction()
+      RequireIncomingTransaction()
       previousKersValue = nil
       kersGainedOnLap = 0
       kersUsedOnLap = 0
@@ -258,7 +258,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.2.3"
+    UI.Caption = "Delta App Online 1.2.4"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
