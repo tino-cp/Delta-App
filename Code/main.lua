@@ -1236,7 +1236,7 @@ end
 
 function ReadTrackName()
   TrackNameNew = readString('adr + E5AF0')
-  if not TrackName == TrackNameNew
+  if not TrackName == TrackNameNew then
     Enable = false
     Enable = true
   end
