@@ -1234,10 +1234,13 @@ function ReadSpeed()
   end
 end
 
+local runOnce = false
+
 function ReadTrackName()
   local TrackNameNew = readString('adr + E5AF0')
-  if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
+  if not runOnce and TrackNameNew ~= '' and TrackNameNew ~= TrackName then
     UpdateInfo()
+    runOnce = true
   end
 end
 
