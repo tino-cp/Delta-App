@@ -1236,11 +1236,12 @@ end
 
 function ReadTrackName()
   local TrackNameNew = readString('adr + E5AF0')
-  if TrackNameNew ~= TrackName then
+  if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
     print('Success')
-
     Enable = false
+    print(Enable)
     Enable = true
+    print(Enable)
   end
 end
 
