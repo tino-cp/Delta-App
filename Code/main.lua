@@ -1238,9 +1238,11 @@ function ReadTrackName()
   local TrackNameNew = readString('adr + E5AF0')
   print('TrackNameNew: '..TrackNameNew)
   print('TrackName: '..TrackName)
-
-  if not Track_Name == TrackNameNew then
-    UpdateInfo()
+  if not TrackNameNew = '' then
+    if not TrackNameNew == TrackName then
+      TrackName = TrackNameNew
+      UpdateInfo()
+    end
   end
 end
 
