@@ -139,7 +139,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('adr + D3618') --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('adr + E5AF0')
-  Caption = Track_Name.." Delta App Online 1.2.4"
+  Caption = Track_Name.." Delta App Online 1.2.5"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -233,7 +233,7 @@ function NewLapProcedure()
     end
 
     --LOGS ONLINE
-    if CanWrite == true and isLapSet == false and S1_raw > 0 then
+    if CanWrite == true and isLapSet == false and S1_raw > 0 and S2_raw > 0 and S3_raw > 0 then
       isLapSet = true
       RequireIncomingTransaction()
       previousKersValue = nil
@@ -258,7 +258,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.2.4"
+    UI.Caption = "Delta App Online 1.2.5"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
@@ -1234,7 +1234,7 @@ function ReadSpeed()
   end
 end
 
-function readTrackName()
+function ReadTrackName()
   TrackNameNew = readString('adr + E5AF0')
   if not TrackName == TrackNameNew
     Enable = false
@@ -1316,7 +1316,7 @@ end
 function ReadValue()
   ReadKers()
   ReadSpeed()
-  readTrackName()
+  ReadTrackName()
   local Username = readString(nameaddr)
   if Username == '' then
     fuckThisGuy() 
