@@ -1235,8 +1235,9 @@ function ReadSpeed()
 end
 
 function ReadTrackName()
+  local TrackNameNew = readString('adr + E5AF0')
   print('TrackName: '..TrackNameNew)
-  TrackNameNew = readString('adr + E5AF0')
+
   if not Track_Name == TrackNameNew then
     UpdateInfo()
   end
