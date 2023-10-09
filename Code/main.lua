@@ -1239,9 +1239,6 @@ function ReadTrackName()
   if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
     print('Success')
     Enable = false
-    print(Enable)
-    Enable = true
-    print(Enable)
   end
 end
 
