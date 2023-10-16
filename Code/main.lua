@@ -1338,8 +1338,9 @@ function RequireIncomingTransaction()
     -- Season 8:        local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
     -- Season 9 R1-R2:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbwUlfRw7Ubqu0Alo6Ed0-r_R71_XM-RIWMDiwyHSSfU-6m_aTlXSD7TQa3jWgu-MkAh/exec?gid=0'
     -- Season 9 R3:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbznp9NRHdUusS0oJqRZFMze8EAbEXx4N-Qj5gaJPDjVeHoyLs-gr7RNR_sqFUELVkyw/exec?gid=0'
-
-    local TransactionURL = 'https://script.google.com/macros/s/AKfycbymqG-HBngXYnOAYmV9652_iErVk_y8N93-5_bBCDno6eMrHkbZPpS_D5pKs6CdQXt1/exec?gid=855734058'
+    -- Season 9 R4:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbymqG-HBngXYnOAYmV9652_iErVk_y8N93-5_bBCDno6eMrHkbZPpS_D5pKs6CdQXt1/exec?gid=855734058'
+    
+    local TransactionURL = 'https://script.google.com/macros/s/AKfycbyTvDM-6ZmbnhhjuE_N__8ubDnEb-BXG7-VpI1n6VLc_PGn74ESZR-tOiQ5ouIeW_kI/exec?gid=1958594772'
     local Username = readString(nameaddr)
     local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
     local Lap_Time = CurLapLastCheckpointTime
