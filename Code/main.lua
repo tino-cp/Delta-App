@@ -1237,20 +1237,24 @@ function ReadSpeed()
 
 
   -- Mousesteer detection
-  local SteerPos2 = readFloat("UNK+CA8")
+  -- local SteerPos2 = readFloat("UNK+CA8")
 
-  if previousSteerPos == nil then
-    previousSteerPos = SteerPos2
-  end
+  -- if previousSteerPos == nil then
+  --   previousSteerPos = SteerPos2
+  -- end
 
-  if SteerPos2 ~= nil then
-      local steerChange = SteerPos2 - previousSteerPos
-      previousSteerPos = SteerPos2
+  -- if SteerPos2 ~= nil then
+  --     local steerChange = SteerPos2 - previousSteerPos
+  --     previousSteerPos = SteerPos2
 
-      if steerChange > 0.25 or steerChange < -0.25 then
-        playSound("mousesterring.mp3")
-      end
-  end
+  --     if steerChange > 0.25 or steerChange < -0.25 then
+  --       local https = GetInternet()
+  --       local sound = getURL("https://github.com/MrTin0/Delta-App/blob/main/Sounds/mousesterring.mp3")
+  --       playSound(sound)
+  --       https.destroy()
+  --       print("sound")
+  --     end
+  -- end
 end
 
 local runOnce = false
