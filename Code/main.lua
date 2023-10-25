@@ -1240,13 +1240,14 @@ function ReadSpeed()
   local SteerPos2 = readFloat("GTA5.exe+25E9718")
 
   if previousSteerPos == nil then
-      previousSteerPos = SteerPos2
-  else
-      local steerChange = SteerPos2 - previousSteerPos
-      previousSteerPos = SteerPos2
+    previousSteerPos = SteerPos2
   end
 
-  print("Steering Angle Change: " .. tostring(steerChange))
+  if SteerPos2 ~= nil then
+      local steerChange = SteerPos2 - previousSteerPos
+      previousSteerPos = SteerPos2
+      print("Steering Angle Change: " .. tostring(steerChange))
+  end
 end
 
 local runOnce = false
