@@ -1246,7 +1246,10 @@ function ReadSpeed()
   if SteerPos2 ~= nil then
       local steerChange = SteerPos2 - previousSteerPos
       previousSteerPos = SteerPos2
-      print("Steering Angle Change: " .. steerChange)
+
+      if steerChange > 0.25 or steerChange < -0.25 then
+        playSound("mousesterring.mp3")
+      end
   end
 end
 
