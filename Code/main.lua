@@ -1244,8 +1244,6 @@ function ReadSpeed()
     else
         local steerChange = SteerPos - previousSteerPos
         previousSteerPos = SteerPos
-        
-        return steerChange
     end
   end
 
