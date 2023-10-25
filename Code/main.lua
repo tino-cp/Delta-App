@@ -1237,14 +1237,13 @@ function ReadSpeed()
 
 
   -- Mousesteer detection
+  local SteerPos2 = readFloat("UNK+CA8")
 
-  if SteerPos ~= nil then
-    if previousSteerPos == nil then
-        previousSteerPos = SteerPos
-    else
-        local steerChange = SteerPos - previousSteerPos
-        previousSteerPos = SteerPos
-    end
+  if previousSteerPos == nil then
+      previousSteerPos = SteerPos2
+  else
+      local steerChange = SteerPos2 - previousSteerPos
+      previousSteerPos = SteerPos2
   end
 
   print("Steering Angle Change: " .. steerChange)
