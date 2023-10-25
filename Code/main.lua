@@ -1237,7 +1237,7 @@ function ReadSpeed()
 
 
   -- Mousesteer detection
-  local SteerPos2 = readFloat("GTA5.exe+25E9718")
+  local SteerPos2 = readFloat("UNK+CA8")
 
   if previousSteerPos == nil then
     previousSteerPos = SteerPos2
