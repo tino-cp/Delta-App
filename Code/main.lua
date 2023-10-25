@@ -1246,7 +1246,7 @@ function ReadSpeed()
       previousSteerPos = SteerPos2
   end
 
-  print("Steering Angle Change: " .. steerChange)
+  print("Steering Angle Change: " .. tostring(steerChange))
 end
 
 local runOnce = false
