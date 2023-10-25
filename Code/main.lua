@@ -1232,6 +1232,48 @@ function ReadSpeed()
      Brake.Caption = math.floor(BrakePos * 100)
      Gas.Caption = math.floor(ThrottlePos * 100)
   end
+
+
+  -- Mousesteer detection
+  local previousSteerPos = nil
+
+  if SteerPos ~= nil then
+    if previousSteerPos == nil then
+        previousSteerPos = SteerPos
+    else
+        local steerChange = SteerPos - previousSteerPos
+        previousSteerPos = SteerPos
+        
+        return steerChange
+    end
+  end
+
+  print("Steering Angle Change: " .. steerChange)
+end
+
+local previousSteerPos = nil
+
+function GetSteeringChange()
+    local SteerPos = readFloat("UNK+CA8")
+    
+    if SteerPos ~= nil then
+        if previousSteerPos == nil then
+            previousSteerPos = SteerPos
+        else
+            local steerChange = SteerPos - previousSteerPos
+            previousSteerPos = SteerPos
+            
+            return steerChange
+        end
+    end
+    
+    return 0
+end
+
+-- Function to display the change in the steering angle
+function DisplaySteeringChange()
+    local steerChange = GetSteeringChange()
+    print("Steering Angle Change: " .. steerChange)
 end
 
 local runOnce = false
