@@ -1134,6 +1134,8 @@ function GetSpeed()
     end
 end
 
+local previousSteerPos = nil
+
 function ReadSpeed()
   local Speed = 0
   if SpeedStatus == 1 then
@@ -1235,7 +1237,6 @@ function ReadSpeed()
 
 
   -- Mousesteer detection
-  local previousSteerPos = nil
 
   if SteerPos ~= nil then
     if previousSteerPos == nil then
@@ -1249,31 +1250,6 @@ function ReadSpeed()
   end
 
   print("Steering Angle Change: " .. steerChange)
-end
-
-local previousSteerPos = nil
-
-function GetSteeringChange()
-    local SteerPos = readFloat("UNK+CA8")
-    
-    if SteerPos ~= nil then
-        if previousSteerPos == nil then
-            previousSteerPos = SteerPos
-        else
-            local steerChange = SteerPos - previousSteerPos
-            previousSteerPos = SteerPos
-            
-            return steerChange
-        end
-    end
-    
-    return 0
-end
-
--- Function to display the change in the steering angle
-function DisplaySteeringChange()
-    local steerChange = GetSteeringChange()
-    print("Steering Angle Change: " .. steerChange)
 end
 
 local runOnce = false
