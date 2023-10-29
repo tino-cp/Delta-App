@@ -235,7 +235,7 @@ function NewLapProcedure()
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 and S2_raw > 0 and S3_raw > 0 then
       isLapSet = true
-      RequireIncomingTransaction()
+      --RequireIncomingTransaction()
       previousKersValue = nil
       kersGainedOnLap = 0
       kersUsedOnLap = 0
