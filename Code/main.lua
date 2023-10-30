@@ -1261,13 +1261,16 @@ local runOnce = false
 
 function ReadTrackName()
   local TrackNameNew = readString('adr + E5AF0')
-  if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
-    if not runOnce then
-      UpdateInfo()
+  if Enable == true then
+    if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
+      if not runOnce then
+        UpdateInfo()
+        TrackName = TrackNameNew
+      end
+      runOnce = true
+    else
+      runOnce = false
     end
-    runOnce = true
-  else
-    runOnce = false
   end
 end
 
