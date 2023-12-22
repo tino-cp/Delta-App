@@ -478,8 +478,8 @@ end
 function FindTimes()
   Enable.Caption = "Scanning memory 2/3"
   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
-  print('2')
   print(results)
+  print('2')
   assert(results, 'aobscan failed')
   print('2a')
   local addr = results[0]
