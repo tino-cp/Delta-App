@@ -593,8 +593,9 @@ end
 function Startup()
   Enable.Enabled = false
   FindAdr()
-  FindCar()
   FindTimes()
+  FindCar()
+
   ActivateApp()
   -- if SteamVersion.Checked == true then ADR = 0 end
   -- if NonSteamVersion.Checked == true then ADR = 1 end
