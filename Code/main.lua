@@ -593,7 +593,7 @@ end
 function Startup()
   Enable.Enabled = false
   FindAdr()
-  --FindTimes()
+  FindTimes()
   FindCar()
 
   ActivateApp()
