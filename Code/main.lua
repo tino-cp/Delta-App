@@ -478,9 +478,11 @@ end
 function FindTimes()
   Enable.Caption = "Scanning memory 2/3"
   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
-  print(results[0][1])
+  print(results[0])
+  print(results[1])
   assert(results, 'aobscan failed')
-  print(results[0][1] + "2")
+  print(results[0] + "2")
+  print(results[1] + "2")
   local addr = results[0]
   results.destroy()  
   registerSymbol('TimesPTR',addr)
