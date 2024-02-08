@@ -486,20 +486,21 @@ function FindTimes()
   --print("Checkpoint 4/6")
 
   -- Since the results are in an array, loop through them to print and process each one
-  for i, result in ipairs(results) do
-    print("Result " .. i .. ": " .. result)
-    -- Do whatever processing you need with the results here
-  end
-  print("Checkpoint 4/6")
+  -- for i, result in ipairs(results) do
+  --   print("Result " .. i .. ": " .. result)
+  --   -- Do whatever processing you need with the results here
+  -- end
+  -- print("Checkpoint 4/6")
 
 
   --assert(results, 'aobscan failed')
 
   local addr = results[1]
-  print("Checkpoint 5/6")
+  print("Checkpoint 4/6")
   results.destroy()  
-  print("Checkpoint 6/6")
+  print("Checkpoint 5/6")
   registerSymbol('TimesPTR',addr)
+  print("Checkpoint 6/6")
 end
 
 function FindCar()
