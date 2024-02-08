@@ -479,7 +479,9 @@ function FindTimes()
   print("Checkpoint 1/6")
   Enable.Caption = "Scanning memory 2/3"
   print("Checkpoint 2/6")
+  local startTime = os.clock()
   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
+  print("AOBScan execution time: " .. endTime - startTime .. " seconds")
   print("Checkpoint 3/6")
 
   --assert(#results > 0, 'aobscan failed') -- Checking if any results were found
@@ -495,7 +497,7 @@ function FindTimes()
 
   --assert(results, 'aobscan failed')
 
-  local addr = results[1]
+  local addr = results[0]
   print("Checkpoint 4/6")
   results.destroy()  
   print("Checkpoint 5/6")
