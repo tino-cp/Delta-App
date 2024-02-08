@@ -478,11 +478,17 @@ end
 function FindTimes()
   Enable.Caption = "Scanning memory 2/3"
   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
-  print(results[0])
-  print(results[1])
-  assert(results, 'aobscan failed')
-  print(results[0] + "2")
-  print(results[1] + "2")
+  assert(#results > 0, 'aobscan failed') -- Checking if any results were found
+
+  -- Since the results are in an array, loop through them to print and process each one
+  for i, result in ipairs(results) do
+    print("Result " .. i .. ": " .. result)
+    -- Do whatever processing you need with the results here
+  end
+
+
+  --assert(results, 'aobscan failed')
+
   local addr = results[0]
   results.destroy()  
   registerSymbol('TimesPTR',addr)
