@@ -476,15 +476,16 @@ function FindAdr()
 end
 
 function FindTimes()
+  print("Scanning memory 2/3")
   Enable.Caption = "Scanning memory 2/3"
   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
-  -- assert(#results > 0, 'aobscan failed') -- Checking if any results were found
+  assert(#results > 0, 'aobscan failed') -- Checking if any results were found
 
-  -- -- Since the results are in an array, loop through them to print and process each one
-  -- for i, result in ipairs(results) do
-  --   print("Result " .. i .. ": " .. result)
-  --   -- Do whatever processing you need with the results here
-  -- end
+  -- Since the results are in an array, loop through them to print and process each one
+  for i, result in ipairs(results) do
+    print("Result " .. i .. ": " .. result)
+    -- Do whatever processing you need with the results here
+  end
 
 
   --assert(results, 'aobscan failed')
@@ -603,9 +604,7 @@ end
 function Startup()
   Enable.Enabled = false
   FindAdr()
-  print('1')
   FindTimes()
-  print('3')
   FindCar()
 
   ActivateApp()
