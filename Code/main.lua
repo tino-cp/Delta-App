@@ -476,33 +476,16 @@ function FindAdr()
 end
 
 function FindTimes()
-  print("Checkpoint 1/6")
   Enable.Caption = "Scanning memory 2/3"
-  print("Checkpoint 2/6")
-  local startTime = os.clock()
-  local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
-  print("AOBScan execution time: " .. endTime - startTime .. " seconds")
-  print("Checkpoint 3/6")
-
+  local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W')
   --assert(#results > 0, 'aobscan failed') -- Checking if any results were found
-  --print("Checkpoint 4/6")
-
-  -- Since the results are in an array, loop through them to print and process each one
-  -- for i, result in ipairs(results) do
-  --   print("Result " .. i .. ": " .. result)
-  --   -- Do whatever processing you need with the results here
-  -- end
-  -- print("Checkpoint 4/6")
-
 
   --assert(results, 'aobscan failed')
 
   local addr = results[0]
-  print("Checkpoint 4/6")
+  print(addr)
   results.destroy()  
-  print("Checkpoint 5/6")
   registerSymbol('TimesPTR',addr)
-  print("Checkpoint 6/6")
 end
 
 function FindCar()
