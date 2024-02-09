@@ -1113,7 +1113,7 @@ end
 
 function GetSpeed()
    if ADR == 0 then
-       Speed = readFloat("GTA5.exe+2698D6C")
+       Speed = readFloat("GTA5.exe+26B03C0")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1125,7 +1125,7 @@ function GetSpeed()
          end
        end
     elseif ADR == 1 then
-       Speed = readFloat("GTA5.exe+2698D6C")
+       Speed = readFloat("GTA5.exe+26B03C0")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1145,7 +1145,7 @@ function ReadSpeed()
   local Speed = 0
   if SpeedStatus == 1 then
     if ADR == 0 then
-       Speed = readFloat("GTA5.exe+269BBF8")
+       Speed = readFloat("GTA5.exe+26B03C0")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1163,7 +1163,7 @@ function ReadSpeed()
          end
        end
     elseif ADR == 1 then
-       Speed = readFloat("GTA5.exe+269BBF8")
+       Speed = readFloat("GTA5.exe+26B03C0")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
