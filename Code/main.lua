@@ -841,14 +841,13 @@ function simpleModeTurnOn()
 
     KersValue.Parent = UI
     KersValue.Left = 10
-    KersValue.Top = 55
+    KersValue.Top = 90
     KersValue.Width = 250
 
     KersValueBar.Parent = UI
-    KersValueBar.Left = 135
-    KersValueBar.Height = 150
-    KersValueBar.Top = 150
-    KersValueBar.Width = 100
+    KersValueBar.Left = 10
+    KersValueBar.Top = 55
+    KersValueBar.Width = 250
 
     Gas.Parent = UI
     Gas.Left = 160
