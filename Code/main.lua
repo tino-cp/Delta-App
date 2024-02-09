@@ -840,12 +840,13 @@ function simpleModeTurnOn()
     SimpleButton.Visible = true
 
     KersValue.Parent = UI
-    KersValue.Left = 10
+    KersValue.Left = 125
     KersValue.Top = 90
     KersValue.Width = 250
 
     KersValueBar.Parent = UI
     KersValueBar.Left = 10
+    KersValueBar.Height = 32
     KersValueBar.Top = 55
     KersValueBar.Width = 250
 
