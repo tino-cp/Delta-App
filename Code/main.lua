@@ -13,7 +13,7 @@ Gears = 1
 Inputs = 1
 KersValues = 1
 darkMode = 0
-simpleMode = 1
+simpleMode = 0
 fullscreenMode = 0
 setPosition = 1
 setFont = 0
@@ -840,13 +840,13 @@ function simpleModeTurnOn()
 
     KersValue.Parent = UI
     KersValue.Left = 135
-    KersValue.Height = 50
+    KersValue.Height = 120
     KersValue.Top = 150
     KersValue.Width = 100
 
     KersValueBar.Parent = UI
     KersValueBar.Left = 135
-    KersValueBar.Height = 30
+    KersValueBar.Height = 150
     KersValueBar.Top = 150
     KersValueBar.Width = 100
 
