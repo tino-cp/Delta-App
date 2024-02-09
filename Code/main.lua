@@ -823,6 +823,7 @@ function simpleModeTurnOn()
     FastestLapLabel.Visible = false
     CurrentLapValue.Visible = false
     FastestLapValue.Visible = false
+    DeltaLabel.Visible = false
     Steer.Visible = false
     SectorsCurrent.Visible = false
     S3Label.Visible = false
@@ -839,10 +840,9 @@ function simpleModeTurnOn()
     SimpleButton.Visible = true
 
     KersValue.Parent = UI
-    KersValue.Left = 135
-    KersValue.Height = 120
-    KersValue.Top = 150
-    KersValue.Width = 100
+    KersValue.Left = 10
+    KersValue.Top = 55
+    KersValue.Width = 250
 
     KersValueBar.Parent = UI
     KersValueBar.Left = 135
