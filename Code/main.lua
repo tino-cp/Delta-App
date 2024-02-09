@@ -722,8 +722,6 @@ function simpleModeTurnOn()
     simpleMode = 0
     SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
 
-    KersValue.Visible = true
-    KersValueBar.Visible = true
     Steer.Visible = true
     SectorsCurrent.Visible = true
     S3Label.Visible = true
@@ -821,8 +819,8 @@ function simpleModeTurnOn()
     simpleMode = 1
     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
 
-    KersValue.Visible = false
-    KersValueBar.Visible = false
+    CurrentLapLabel.Visible = false
+    FastestLapLabel.Visible = false
     Steer.Visible = false
     SectorsCurrent.Visible = false
     S3Label.Visible = false
@@ -837,6 +835,18 @@ function simpleModeTurnOn()
     SettingPanel.Visible = false
     
     SimpleButton.Visible = true
+
+    KersValue.Parent = UI
+    KersValue.Left = 120
+    KersValue.Height = 70
+    KersValue.Top = 150
+    KersValue.Width = 100
+
+    KersValueBar.Parent = UI
+    KersValueBar.Left = 120
+    KersValueBar.Height = 30
+    KersValueBar.Top = 150
+    KersValueBar.Width = 100
 
     Gas.Parent = UI
     Gas.Left = 160
@@ -1227,7 +1237,7 @@ function ReadSpeed()
   end
 
   if Inputs == 1 then
-     local SteerPos = readFloat("GTA5.exe+25FFD84") --UNK+CA8
+     local SteerPos = readFloat("GTA5.exe+25FEB84") --UNK+CA8
      local BrakePos = readFloat("GTA5.exe+25FEF2C")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
      local ThrottlePos = readFloat("GTA5.exe+25FEEE4")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
      if SteerPos ~= nil then
