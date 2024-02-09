@@ -1082,7 +1082,7 @@ function ReadKers()
   local Kers = 0
   if KersValues == 1 then
     if ADR == 0 then
-      Kers = readFloat("GTA5.exe+1D5CB50")
+      Kers = readFloat("GTA5.exe+1D70200") --GTA5.exe+1D70140
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1095,7 +1095,7 @@ function ReadKers()
         previousKersValue = Kers
       end
     elseif ADR == 1 then
-      Kers = readFloat("GTA5.exe+1D5CB50")
+      Kers = readFloat("GTA5.exe+1D70200") --GTA5.exe+1D70140
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1226,7 +1226,7 @@ function ReadSpeed()
   if Inputs == 1 then
      local SteerPos = readFloat("UNK+CA8")
      local BrakePos = readFloat("GTA5.exe+25EA8D0")
-     local ThrottlePos = readFloat("GTA5.exe+25EA884")
+     local ThrottlePos = readFloat("GTA5.exe+25FEEE4")
      if SteerPos ~= nil then
        if SteerPos < 0 then
           Steer.Position = (((SteerPos * (-1) *50) + 50) // 1)
