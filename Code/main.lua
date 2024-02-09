@@ -1227,7 +1227,7 @@ function ReadSpeed()
   end
 
   if Inputs == 1 then
-     local SteerPos = readFloat("GTA5.exe+25FDD74") --UNK+CA8
+     local SteerPos = readFloat("GTA5.exe+25FFD84") --UNK+CA8
      local BrakePos = readFloat("GTA5.exe+25FEF2C")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
      local ThrottlePos = readFloat("GTA5.exe+25FEEE4")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
      if SteerPos ~= nil then
