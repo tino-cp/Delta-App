@@ -13,7 +13,7 @@ Gears = 1
 Inputs = 1
 KersValues = 1
 darkMode = 0
-simpleMode = 0
+simpleMode = 1
 fullscreenMode = 0
 setPosition = 1
 setFont = 0
@@ -821,6 +821,8 @@ function simpleModeTurnOn()
 
     CurrentLapLabel.Visible = false
     FastestLapLabel.Visible = false
+    CurrentLapValue.Visible = false
+    FastestLapValue.Visible = false
     Steer.Visible = false
     SectorsCurrent.Visible = false
     S3Label.Visible = false
@@ -837,13 +839,13 @@ function simpleModeTurnOn()
     SimpleButton.Visible = true
 
     KersValue.Parent = UI
-    KersValue.Left = 120
-    KersValue.Height = 70
+    KersValue.Left = 135
+    KersValue.Height = 50
     KersValue.Top = 150
     KersValue.Width = 100
 
     KersValueBar.Parent = UI
-    KersValueBar.Left = 120
+    KersValueBar.Left = 135
     KersValueBar.Height = 30
     KersValueBar.Top = 150
     KersValueBar.Width = 100
