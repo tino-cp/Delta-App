@@ -19,11 +19,11 @@ setPosition = 1
 setFont = 0
 
 function InitOffsets()
-  pCNetPlayerInfo = 0xA0
+  pCNetPlayerInfo = 0xA8 --0xA0
   pCNetPed = 0x240
   oNumPlayers = 0x188
   oRid = 0xE8
-  pCPed = 0x8
+  pCPed = 0x1964 --0x8
   pCPlayerInfo = 0x10A8
   oName = 0xFC
   oCurCheck = 0x11578
@@ -475,18 +475,18 @@ function FindAdr()
   registerSymbol('adr',addr)
 end
 
-function FindTimes()
-  Enable.Caption = "Scanning memory 2/3"
-  local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W')
-  --assert(#results > 0, 'aobscan failed') -- Checking if any results were found
+-- function FindTimes()
+--   Enable.Caption = "Scanning memory 2/3"
+--   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
+--   --assert(#results > 0, 'aobscan failed') -- Checking if any results were found
 
-  --assert(results, 'aobscan failed')
+--   --assert(results, 'aobscan failed')
 
-  local addr = results[0]
-  print(addr)
-  results.destroy()  
-  registerSymbol('TimesPTR',addr)
-end
+--   local addr = results[0]
+--   print(addr)
+--   results.destroy()  
+--   registerSymbol('TimesPTR',addr)
+-- end
 
 function FindCar()
   Enable.Caption = "Scanning memory 3/3"
@@ -597,7 +597,7 @@ end
 function Startup()
   Enable.Enabled = false
   FindAdr()
-  FindTimes()
+  --FindTimes()
   FindCar()
 
   ActivateApp()
