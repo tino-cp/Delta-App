@@ -288,7 +288,8 @@ function UpdateInfo()
 
     if Enable == true then
       --Take values
-      CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
+      --CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
+      CurLapMils = readInteger("21E88876AF0")
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
       CurCheckpoint = readInteger(ChecksPTR + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
