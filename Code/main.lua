@@ -288,8 +288,7 @@ function UpdateInfo()
 
     if Enable == true then
       --Take values
-      --CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
-      CurLapMils = readInteger("21E88876AF0")
+      CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
       CurCheckpoint = readInteger(ChecksPTR + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
@@ -488,6 +487,20 @@ end
 --   results.destroy()  
 --   registerSymbol('TimesPTR',addr)
 -- end
+
+
+function FindTimes()
+  Enable.Caption = "Scanning memory 2/3"
+  local results = AOBScan('?? ?? ?? 00 1F 02 00 00 00 00 00 00 00 00 00 00 ?? ?? 2C 00 00 00 00 00')
+  --assert(#results > 0, 'aobscan failed') -- Checking if any results were found
+
+  --assert(results, 'aobscan failed')
+
+  local addr = results[0]
+  print(addr)
+  results.destroy()  
+  registerSymbol('TimesPTR',addr)
+end
 
 function FindCar()
   Enable.Caption = "Scanning memory 3/3"
