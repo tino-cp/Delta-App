@@ -23,11 +23,11 @@ function InitOffsets()
   pCNetPed = 0x240
   oNumPlayers = 0x188
   oRid = 0xE8
-  pCPed = 0x1964 --0x8
-  pCPlayerInfo = 0x10A8
+  pCPed = 0x1964 --0x0240 --0x1964 --0x8
+  pCPlayerInfo = 0x0D80 --0x10A8
   oName = 0xFC
-  oCurCheck = 0x11578
-  oCurLap = 0x11570
+  oCurCheck = 0x17668 --0x11578
+  oCurLap = 0x17660--0x11570
 end
 
 InitOffsets()
@@ -126,7 +126,7 @@ function ActivateApp()
 
   Value = createTimer(nil, false)
   timer_onTimer(Value, ReadValue)
-  timer_setInterval(Value, 50)
+  timer_setInterval(Value, 10)
   timer_setEnabled(Value, true)
   
 end
@@ -139,7 +139,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('adr + D3618') --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('adr + E5AF0')
-  UI.Caption = Track_Name.." Delta App Online 1.2.5"
+  UI.Caption = Track_Name.." Delta App Online 1.2.6"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -210,7 +210,7 @@ function NewLapProcedure()
       LogsSector2 = S2_raw
       LogsSector3 = CurLapLastCheckpointTime-S1_raw-S2_raw
       --RecordLap
-      CurrentLap = readInteger(ChecksPTR + oCurLap + (MyIDNumber*0x670))
+      CurrentLap = readInteger(CurLapMils + oCurLap + (MyIDNumber*0x670))
       LogsLap = CurrentLap - 1
       local SpeedTrap = GetSpeed()
       -- same for sectors here
@@ -258,7 +258,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.2.5"
+    UI.Caption = "Delta App Online 1.2.6"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
@@ -289,10 +289,10 @@ function UpdateInfo()
     if Enable == true then
       --Take values
       -- CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
-      CurLapMils = readInteger('TimesPTR') --3D0 basic
+      CurLapMils = readInteger(ChecksPTR + 0xC8) --3D0 basic
 
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
-      CurCheckpoint = readInteger(ChecksPTR + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
+      CurCheckpoint = readInteger(CurLapMils + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
@@ -477,29 +477,13 @@ function FindAdr()
   registerSymbol('adr',addr)
 end
 
--- function FindTimes()
---   Enable.Caption = "Scanning memory 2/3"
---   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
---   --assert(#results > 0, 'aobscan failed') -- Checking if any results were found
-
---   --assert(results, 'aobscan failed')
-
---   local addr = results[0]
---   print(addr)
---   results.destroy()  
---   registerSymbol('TimesPTR',addr)
--- end
-
 
 function FindTimes()
   Enable.Caption = "Scanning memory 2/3"
-  local results = AOBScan('?? ?? ?? 00 1F 02 00 00 00 00 00 00 00 00 00 00 ?? ?? 2C 00 00 00 00 00')
-  --assert(#results > 0, 'aobscan failed') -- Checking if any results were found
-
-  --assert(results, 'aobscan failed')
-
+--   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
+  local results = AOBScan('?? ?? ?? 04 00 00 00 00 01 00 00 00 00 00 00 00 ?? ?? ?? 04 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? 00 ?? ?? 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? 00 00 ?? ?? ?? 45 00 00 00 00 ?? ?? ?? 42 00 00 00 00 ?? ?? ?? ?? ?? ?? 00 00 ?? 00 ?? 0? ?? ?? 00 00 ?? 0? 00 00 ?? 0?')
+  assert(results, 'aobscan failed')
   local addr = results[0]
-  print(addr)
   results.destroy()  
   registerSymbol('TimesPTR',addr)
 end
@@ -1255,7 +1239,7 @@ function ReadSpeed()
   end
 
   if Inputs == 1 then
-     local SteerPos = readFloat("GTA5.exe+25FEB84") --UNK+CA8
+     local SteerPos = readFloat("GTA5.exe+25FDD74") --UNK+CA8
      local BrakePos = readFloat("GTA5.exe+25FEF2C")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
      local ThrottlePos = readFloat("GTA5.exe+25FEEE4")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
      if SteerPos ~= nil then
