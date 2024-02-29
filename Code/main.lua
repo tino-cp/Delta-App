@@ -210,7 +210,7 @@ function NewLapProcedure()
       LogsSector2 = S2_raw
       LogsSector3 = CurLapLastCheckpointTime-S1_raw-S2_raw
       --RecordLap
-      CurrentLap = readInteger(CurLapMils + oCurLap + (MyIDNumber*0x670))
+      CurrentLap = readInteger(CurLapMils + oCurLap) --+ (MyIDNumber*0x670))
       LogsLap = CurrentLap - 1
       local SpeedTrap = GetSpeed()
       -- same for sectors here
