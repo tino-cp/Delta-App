@@ -292,7 +292,7 @@ function UpdateInfo()
       CurLapMils = readInteger(ChecksPTR + 0xC8) --3D0 basic
 
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
-      CurCheckpoint = readInteger(CurLapMils + oCurCheck + (MyIDNumber*0x670)) --7598 74E8
+      CurCheckpoint = readInteger(CurLapMils + oCurCheck) --+ (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
