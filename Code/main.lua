@@ -121,7 +121,7 @@ function ActivateApp()
   previousKersValue = nil
   kersGainedOnLap = 0
   kersUsedOnLap = 0
-  TrackName = readString('adr + 4140BAD8')
+  TrackName = readString('adr + 6051E150')
   nameaddr = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
 
   Value = createTimer(nil, false)
@@ -138,7 +138,7 @@ function InitTrackInfo()
   S2_raw=0
   S3_raw=0
   MaxCheckpoints = readInteger('adr + 10') + 1 --old CBF40 new D 16C0 del prev 97C60 928
-  local Track_Name = readString('adr + 4140BAD8')
+  local Track_Name = readString('adr + 6051E150')
   UI.Caption = Track_Name.." Delta App Online 1.2.7"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
@@ -266,7 +266,7 @@ function UpdateInfo()
     StartDetect.Caption='STOP'
 
     ChecksPTR = getAddress('TimesPTR')
-    ForLogs_TrackName=readString('adr + 4140BAD8') --new E3998 del 3A388 prev A9610
+    ForLogs_TrackName=readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
       CanWrite=false
     end
@@ -522,7 +522,7 @@ function LogsSwitcher()
 end
 
 function PackLogs()
-  local ForLogs_TrackName = readString('adr + 4140BAD8')
+  local ForLogs_TrackName = readString('adr + 6051E150')
   local save_dialog = createSaveDialog(self)
   save_dialog.InitalDir = os.getenv('%USERPROFILE%')
   if save_dialog.execute() then
@@ -560,7 +560,7 @@ function SaveFastLap()
   for i=0,MaxCheckpoints-1 do
       FLdata = FLdata..FastLapSectors[i].."\n"
   end
-  local TrackName = readString('adr + 4140BAD8')
+  local TrackName = readString('adr + 6051E150')
   local save_dialog = createSaveDialog(self)
   save_dialog.InitalDir = os.getenv('%USERPROFILE%')
   if save_dialog.execute() then
@@ -587,7 +587,7 @@ function LoadFastLap()
      if load_dialog.execute() then
      file = io.open(load_dialog.FileName, "r")
      local Track = tostring(file:read())
-     if Track == readString('adr + 4140BAD8') then
+     if Track == readString('adr + 6051E150') then
         for i=0,MaxCheckpoints-1 do
             FastLapSectors[i] = tonumber(file:read())
         end
@@ -1282,7 +1282,7 @@ end
 local runOnce = false
 
 function ReadTrackName()
-  local TrackNameNew = readString('adr + 4140BAD8')
+  local TrackNameNew = readString('adr + 6051E150')
   if Enable == true then
     if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
       if not runOnce then
