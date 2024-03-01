@@ -137,7 +137,8 @@ function InitTrackInfo()
   S1_raw=0
   S2_raw=0
   S3_raw=0
-  MaxCheckpoints = readInteger('adr + 10') --old CBF40 new D 16C0 del prev 97C60 928
+  MaxCheckpoints = readInteger('adr + 10' + 1) --old CBF40 new D 16C0 del prev 97C60 928
+  print(MaxCheckpoints)
   local Track_Name = readString('adr + 4140BAD8')
   UI.Caption = Track_Name.." Delta App Online 1.2.7"
   CurLapLastCheckpointTime = 0
