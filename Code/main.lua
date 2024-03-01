@@ -164,9 +164,9 @@ function InitTrackInfo()
 end
 
 function CloseToTheEnd()
-  if CurCheckpoint==MaxCheckpoints-1 and CurLapMils>1000 then
+  if CurCheckpoint==MaxCheckpoints and CurLapMils>1000 then
     if NewCheckpoint==true then
-      CurrentLapSectors[MaxCheckpoints-1]=CurLapMils
+      CurrentLapSectors[MaxCheckpoints]=CurLapMils
       NewCheckpoint=false
       CanWrite=true
     end
@@ -177,7 +177,7 @@ end
 --CloseToTheEnd
 function NewC()
   if NewCheckpoint==true and CurCheckpoint>0 then
-    if CurCheckpoint ~= MaxCheckpoints-1 then
+    if CurCheckpoint ~= MaxCheckpoints then
       CurrentLapSectors[CurCheckpoint]=CurLapMils
       NewCheckpoint=false
     else
@@ -308,8 +308,6 @@ function UpdateInfo()
         if CurCheckpoint==0 then
           DeltaMils=CurrentLapSectors[0]-LatestFastLapSectors
         else
-          print(FastLapSectors[CurCheckpoint])
-          print(CurrentLapSectors[CurCheckpoint])
           DeltaMils=CurrentLapSectors[CurCheckpoint]-FastLapSectors[CurCheckpoint]
         end
 
