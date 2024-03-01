@@ -607,17 +607,17 @@ function Startup()
   -- if NonSteamVersion.Checked == true then ADR = 1 end
 end
 
-function RescanUNK()
-    if UNK ~= readQword("UnkPTR") then
-      autoAssemble([[
-        aobscanmodule(UnkPTR,GTA5.exe,48 39 3D ? ? ? ? 75 2D)
-        registerSymbol(UnkPTR)
-      ]])
-      UnkPTR=getAddress('UnkPTR') UnkPTR=UnkPTR+readInteger(UnkPTR+3)+7
-      unregisterSymbol('UnkPTR') registerSymbol('UnkPTR',UnkPTR,true)
-      UNK = readQword("UnkPTR")
-    end
-end
+-- function RescanUNK()
+--     if UNK ~= readQword("UnkPTR") then
+--       autoAssemble([[
+--         aobscanmodule(UnkPTR,GTA5.exe,48 39 3D ? ? ? ? 75 2D)
+--         registerSymbol(UnkPTR)
+--       ]])
+--       UnkPTR=getAddress('UnkPTR') UnkPTR=UnkPTR+readInteger(UnkPTR+3)+7
+--       unregisterSymbol('UnkPTR') registerSymbol('UnkPTR',UnkPTR,true)
+--       UNK = readQword("UnkPTR")
+--     end
+-- end
 
 function ShowHideSettings()
   if SettingPanel.Visible == true then
@@ -1198,8 +1198,8 @@ function ReadSpeed()
   end
 
   if Gears == 1 then
-     RescanUNK()
-     local RPM = readFloat("GTA5.exe+2ABD214") --
+     --RescanUNK()
+     local RPM = readFloat("GTA5.exe+2ABD234") --
 
     --  local RPM = readFloat("UNK+E50") --
      local Gear = readFloat("GTA5.exe+25758F8")
