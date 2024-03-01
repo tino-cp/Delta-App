@@ -484,7 +484,7 @@ function createUI()
     StartDetect.Font.Name = 'Segoe UI'
     StartDetect.FontStyle = 'bold'
     StartDetect.FontStyle = 'italic'
-    StartDetect.OnClick = UpdateInfo
+    --StartDetect.OnClick = UpdateInfo
     StartDetect.ParentFont = false
     StartDetect.TabOrder = 0
 

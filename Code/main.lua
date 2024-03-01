@@ -137,7 +137,6 @@ function InitTrackInfo()
   S1_raw=0
   S2_raw=0
   S3_raw=0
-  -- To Do: Fix ADR
   MaxCheckpoints = readInteger('adr') --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('adr + 71D5DBF8')
   UI.Caption = Track_Name.." Delta App Online 1.2.7"
@@ -599,8 +598,8 @@ end
 
 function Startup()
   Enable.Enabled = false
-  FindAdr()
-  FindTimes()
+  --FindAdr()
+  --FindTimes()
   FindCar()
 
   ActivateApp()
@@ -1283,7 +1282,7 @@ end
 local runOnce = false
 
 function ReadTrackName()
-  local TrackNameNew = readString('adr + E5AF0')
+  local TrackNameNew = readString('adr + 71D5DBF8')
   if Enable == true then
     if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
       if not runOnce then
