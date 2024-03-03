@@ -1010,7 +1010,7 @@ function setFontStyle()
     --KersValueTurnOn.Font.Style = 'fsBold, fsItalic'
     SetDeltaPosition.Font.Style = 'fsBold, fsItalic'
     DarkModeTurnOn.Font.Style = 'fsBold, fsItalic'
-    SimpleModeTurnOn.Font.Style = 'fsBold, fsItalic'
+    --SimpleModeTurnOn.Font.Style = 'fsBold, fsItalic'
     FullscreenModeTurnOn.Font.Style = 'fsBold, fsItalic'
     SetFontStyle.Font.Style = 'fsBold, fsItalic'
     SimpleButton.Font.Style = 'fsBold, fsItalic'
@@ -1055,7 +1055,7 @@ function setFontStyle()
     --KersValueTurnOn.Font.Style = false
     SetDeltaPosition.Font.Style = false
     DarkModeTurnOn.Font.Style = false
-    SimpleModeTurnOn.Font.Style = false
+    --SimpleModeTurnOn.Font.Style = false
     FullscreenModeTurnOn.Font.Style = false
     SimpleButton.Font.Style = false
     SetFontStyle.Font.Style = false
