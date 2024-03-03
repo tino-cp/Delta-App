@@ -258,7 +258,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.2.6"
+    UI.Caption = "Delta App Online 1.2.7"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
@@ -629,15 +629,15 @@ function ShowHideSettings()
   end
 end
 
-function ShowHideSimple()
-  if SimplePanel.Visible == true then
-    SimplePanel.Visible = false
-    SimplePanel.Enable = false
-  else
-    SimplePanel.Visible = true
-    SimplePanel.Enable = true
-  end
-end
+-- function ShowHideSimple()
+--   if SimplePanel.Visible == true then
+--     SimplePanel.Visible = false
+--     SimplePanel.Enable = false
+--   else
+--     SimplePanel.Visible = true
+--     SimplePanel.Enable = true
+--   end
+-- end
 
 function ChangeMetrics()
   if Metrics == 1 then
@@ -719,205 +719,205 @@ function darkModeTurnOn()
   end
 end
 
-function simpleModeTurnOn()
-  if simpleMode == 1 then
-    simpleMode = 0
-    SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
+-- function simpleModeTurnOn()
+--   if simpleMode == 1 then
+--     simpleMode = 0
+--     SimpleModeTurnOn.Caption = 'SIMPLE: OFF'
 
-    Steer.Visible = true
-    SectorsCurrent.Visible = true
-    S3Label.Visible = true
-    S2Label.Visible = true
-    S1Label.Visible = true
-    CL4.Visible = true
-    CL3.Visible = true
-    CL2.Visible = true
-    LapProgress.Visible = true
-    S1_2ProggressBar.Visible = true
-    S2_3ProggressBar.Visible = true
-    SettingPanel.Visible = true
+--     Steer.Visible = true
+--     SectorsCurrent.Visible = true
+--     S3Label.Visible = true
+--     S2Label.Visible = true
+--     S1Label.Visible = true
+--     CL4.Visible = true
+--     CL3.Visible = true
+--     CL2.Visible = true
+--     LapProgress.Visible = true
+--     S1_2ProggressBar.Visible = true
+--     S2_3ProggressBar.Visible = true
+--     SettingPanel.Visible = true
 
-    -- LogBuildingButton.Visible = true
-    -- LoadFLButton.Visible = true
-    -- SaveFLButton.Visible = true
-    -- StartDetect.Visible = true
-    -- SettingButton.Visible = true
-    -- SimpleModeTurnOn.Visible = true
+--     -- LogBuildingButton.Visible = true
+--     -- LoadFLButton.Visible = true
+--     -- SaveFLButton.Visible = true
+--     -- StartDetect.Visible = true
+--     -- SettingButton.Visible = true
+--     -- SimpleModeTurnOn.Visible = true
 
-    SimpleButton.Visible = false
-    SimplePanel.Visible = false
+--     SimpleButton.Visible = false
+--     SimplePanel.Visible = false
 
-    LogBuildingButton.Parent = UI
-    LogBuildingButton.Left = 10
-    LogBuildingButton.Height = 35
-    LogBuildingButton.Top = 10
-    LogBuildingButton.Width = 90
+--     LogBuildingButton.Parent = UI
+--     LogBuildingButton.Left = 10
+--     LogBuildingButton.Height = 35
+--     LogBuildingButton.Top = 10
+--     LogBuildingButton.Width = 90
 
-    LoadFLButton.Parent = UI
-    LoadFLButton.Left = 105
-    LoadFLButton.Height = 35
-    LoadFLButton.Top = 10
-    LoadFLButton.Width = 90
+--     LoadFLButton.Parent = UI
+--     LoadFLButton.Left = 105
+--     LoadFLButton.Height = 35
+--     LoadFLButton.Top = 10
+--     LoadFLButton.Width = 90
 
-    SaveFLButton.Parent = UI
-    SaveFLButton.Left = 200
-    SaveFLButton.Height = 35
-    SaveFLButton.Top = 10
-    SaveFLButton.Width = 90
+--     SaveFLButton.Parent = UI
+--     SaveFLButton.Left = 200
+--     SaveFLButton.Height = 35
+--     SaveFLButton.Top = 10
+--     SaveFLButton.Width = 90
 
-    StartDetect.Parent = UI
-    StartDetect.Left = 295
-    StartDetect.Height = 35
-    StartDetect.Top = 10
-    StartDetect.Width = 70
+--     StartDetect.Parent = UI
+--     StartDetect.Left = 295
+--     StartDetect.Height = 35
+--     StartDetect.Top = 10
+--     StartDetect.Width = 70
 
-    SettingButton.Parent = UI
-    SettingButton.Left = 380
-    SettingButton.Height = 35
-    SettingButton.Top = 10
-    SettingButton.Width = 90
+--     SettingButton.Parent = UI
+--     SettingButton.Left = 380
+--     SettingButton.Height = 35
+--     SettingButton.Top = 10
+--     SettingButton.Width = 90
 
-    Gas.Parent = UI
-    Gas.Left = 305
-    Gas.Height = 30
-    Gas.Top = 50
-    Gas.Width = 13
+--     Gas.Parent = UI
+--     Gas.Left = 305
+--     Gas.Height = 30
+--     Gas.Top = 50
+--     Gas.Width = 13
 
-    Brake.Parent = UI
-    Brake.Left = 255
-    Brake.Height = 30
-    Brake.Top = 50
-    Brake.Width = 13
+--     Brake.Parent = UI
+--     Brake.Left = 255
+--     Brake.Height = 30
+--     Brake.Top = 50
+--     Brake.Width = 13
 
-    DarkModeTurnOn.Parent = SettingPanel
-    DarkModeTurnOn.Left = 205
-    DarkModeTurnOn.Height = 30
-    DarkModeTurnOn.Top = 5
-    DarkModeTurnOn.Width = 100
+--     DarkModeTurnOn.Parent = SettingPanel
+--     DarkModeTurnOn.Left = 205
+--     DarkModeTurnOn.Height = 30
+--     DarkModeTurnOn.Top = 5
+--     DarkModeTurnOn.Width = 100
 
-    SimpleModeTurnOn.Parent = SettingPanel
-    SimpleModeTurnOn.Left = 205
-    SimpleModeTurnOn.Height = 30
-    SimpleModeTurnOn.Top = 35
-    SimpleModeTurnOn.Width = 100
+--     SimpleModeTurnOn.Parent = SettingPanel
+--     SimpleModeTurnOn.Left = 205
+--     SimpleModeTurnOn.Height = 30
+--     SimpleModeTurnOn.Top = 35
+--     SimpleModeTurnOn.Width = 100
 
-    FullscreenModeTurnOn.Parent = SettingPanel
-    FullscreenModeTurnOn.Left = 205
-    FullscreenModeTurnOn.Height = 30
-    FullscreenModeTurnOn.Top = 65
-    FullscreenModeTurnOn.Width = 100
+--     FullscreenModeTurnOn.Parent = SettingPanel
+--     FullscreenModeTurnOn.Left = 205
+--     FullscreenModeTurnOn.Height = 30
+--     FullscreenModeTurnOn.Top = 65
+--     FullscreenModeTurnOn.Width = 100
 
-    MetricsTurnOn.Parent = SettingPanel
-    MetricsTurnOn.Left = 5
-    MetricsTurnOn.Height = 30
-    MetricsTurnOn.Top = 35
-    MetricsTurnOn.Width = 100
+--     MetricsTurnOn.Parent = SettingPanel
+--     MetricsTurnOn.Left = 5
+--     MetricsTurnOn.Height = 30
+--     MetricsTurnOn.Top = 35
+--     MetricsTurnOn.Width = 100
 
-    UI.Height = 200
-    UI.Width = 480
-    UI.ClientHeight = 200
-    UI.ClientWidth = 480
-  elseif simpleMode == 0 then
-    simpleMode = 1
-    SimpleModeTurnOn.Caption = 'SIMPLE: ON'
+--     UI.Height = 200
+--     UI.Width = 480
+--     UI.ClientHeight = 200
+--     UI.ClientWidth = 480
+--   elseif simpleMode == 0 then
+--     simpleMode = 1
+--     SimpleModeTurnOn.Caption = 'SIMPLE: ON'
 
-    CurrentLapLabel.Visible = false
-    FastestLapLabel.Visible = false
-    CurrentLapValue.Visible = false
-    FastestLapValue.Visible = false
-    DeltaLabel.Visible = false
-    Steer.Visible = false
-    SectorsCurrent.Visible = false
-    S3Label.Visible = false
-    S2Label.Visible = false
-    S1Label.Visible = false
-    CL4.Visible = false
-    CL3.Visible = false
-    CL2.Visible = false
-    LapProgress.Visible = false
-    S1_2ProggressBar.Visible = false
-    S2_3ProggressBar.Visible = false
-    SettingPanel.Visible = false
+--     CurrentLapLabel.Visible = false
+--     FastestLapLabel.Visible = false
+--     CurrentLapValue.Visible = false
+--     FastestLapValue.Visible = false
+--     DeltaLabel.Visible = false
+--     Steer.Visible = false
+--     SectorsCurrent.Visible = false
+--     S3Label.Visible = false
+--     S2Label.Visible = false
+--     S1Label.Visible = false
+--     CL4.Visible = false
+--     CL3.Visible = false
+--     CL2.Visible = false
+--     LapProgress.Visible = false
+--     S1_2ProggressBar.Visible = false
+--     S2_3ProggressBar.Visible = false
+--     SettingPanel.Visible = false
     
-    SimpleButton.Visible = true
+--     SimpleButton.Visible = true
 
-    KersValue.Parent = UI
-    KersValue.Left = 125
-    KersValue.Top = 90
-    KersValue.Width = 250
+--     KersValue.Parent = UI
+--     KersValue.Left = 125
+--     KersValue.Top = 90
+--     KersValue.Width = 250
 
-    KersValueBar.Parent = UI
-    KersValueBar.Left = 10
-    KersValueBar.Height = 32
-    KersValueBar.Top = 55
-    KersValueBar.Width = 250
+--     KersValueBar.Parent = UI
+--     KersValueBar.Left = 10
+--     KersValueBar.Height = 32
+--     KersValueBar.Top = 55
+--     KersValueBar.Width = 250
 
-    Gas.Parent = UI
-    Gas.Left = 160
-    Gas.Height = 30
-    Gas.Top = 150
-    Gas.Width = 20
+--     Gas.Parent = UI
+--     Gas.Left = 160
+--     Gas.Height = 30
+--     Gas.Top = 150
+--     Gas.Width = 20
 
-    Brake.Parent = UI
-    Brake.Left = 210
-    Brake.Height = 30
-    Brake.Top = 150
-    Brake.Width = 20
+--     Brake.Parent = UI
+--     Brake.Left = 210
+--     Brake.Height = 30
+--     Brake.Top = 150
+--     Brake.Width = 20
 
-    LogBuildingButton.Parent = SimplePanel
-    LogBuildingButton.Left = 5
-    LogBuildingButton.Height = 30
-    LogBuildingButton.Top = 5
-    LogBuildingButton.Width = 100
+--     LogBuildingButton.Parent = SimplePanel
+--     LogBuildingButton.Left = 5
+--     LogBuildingButton.Height = 30
+--     LogBuildingButton.Top = 5
+--     LogBuildingButton.Width = 100
 
-    LoadFLButton.Parent = SimplePanel
-    LoadFLButton.Left = 5
-    LoadFLButton.Height = 30
-    LoadFLButton.Top = 35
-    LoadFLButton.Width = 100
+--     LoadFLButton.Parent = SimplePanel
+--     LoadFLButton.Left = 5
+--     LoadFLButton.Height = 30
+--     LoadFLButton.Top = 35
+--     LoadFLButton.Width = 100
 
-    SaveFLButton.Parent = SimplePanel
-    SaveFLButton.Left = 110
-    SaveFLButton.Height = 30
-    SaveFLButton.Top = 5
-    SaveFLButton.Width = 100
+--     SaveFLButton.Parent = SimplePanel
+--     SaveFLButton.Left = 110
+--     SaveFLButton.Height = 30
+--     SaveFLButton.Top = 5
+--     SaveFLButton.Width = 100
     
-    StartDetect.Parent = SimplePanel
-    StartDetect.Left = 110
-    StartDetect.Height = 30
-    StartDetect.Top = 35
-    StartDetect.Width = 100
+--     StartDetect.Parent = SimplePanel
+--     StartDetect.Left = 110
+--     StartDetect.Height = 30
+--     StartDetect.Top = 35
+--     StartDetect.Width = 100
 
-    DarkModeTurnOn.Parent = SimplePanel
-    DarkModeTurnOn.Left = 5
-    DarkModeTurnOn.Height = 30
-    DarkModeTurnOn.Top = 70
-    DarkModeTurnOn.Width = 100
+--     DarkModeTurnOn.Parent = SimplePanel
+--     DarkModeTurnOn.Left = 5
+--     DarkModeTurnOn.Height = 30
+--     DarkModeTurnOn.Top = 70
+--     DarkModeTurnOn.Width = 100
     
-    SimpleModeTurnOn.Parent = SimplePanel
-    SimpleModeTurnOn.Left = 110
-    SimpleModeTurnOn.Height = 30
-    SimpleModeTurnOn.Top = 70
-    SimpleModeTurnOn.Width = 100
+--     SimpleModeTurnOn.Parent = SimplePanel
+--     SimpleModeTurnOn.Left = 110
+--     SimpleModeTurnOn.Height = 30
+--     SimpleModeTurnOn.Top = 70
+--     SimpleModeTurnOn.Width = 100
 
-    FullscreenModeTurnOn.Parent = SimplePanel
-    FullscreenModeTurnOn.Left = 110
-    FullscreenModeTurnOn.Height = 30
-    FullscreenModeTurnOn.Top = 100
-    FullscreenModeTurnOn.Width = 100
+--     FullscreenModeTurnOn.Parent = SimplePanel
+--     FullscreenModeTurnOn.Left = 110
+--     FullscreenModeTurnOn.Height = 30
+--     FullscreenModeTurnOn.Top = 100
+--     FullscreenModeTurnOn.Width = 100
 
-    MetricsTurnOn.Parent = SimplePanel
-    MetricsTurnOn.Left = 5
-    MetricsTurnOn.Height = 30
-    MetricsTurnOn.Top = 100
-    MetricsTurnOn.Width = 100
+--     MetricsTurnOn.Parent = SimplePanel
+--     MetricsTurnOn.Left = 5
+--     MetricsTurnOn.Height = 30
+--     MetricsTurnOn.Top = 100
+--     MetricsTurnOn.Width = 100
 
-    UI.Height = 200
-    UI.Width = 270
-    UI.ClientHeight = 200
-    UI.ClientWidth = 270
-  end
-end
+--     UI.Height = 200
+--     UI.Width = 270
+--     UI.ClientHeight = 200
+--     UI.ClientWidth = 270
+--   end
+-- end
 
 function fullscreenModeTurnOn()
   if fullscreenMode == 1 then
@@ -1371,39 +1371,39 @@ function ReadValue()
   ReadKers()
   ReadSpeed()
   ReadTrackName()
-  local Username = readString(nameaddr)
-  if Username == '' then
-    fuckThisGuy() 
-  end
+  -- local Username = readString(nameaddr)
+  -- if Username == '' then
+  --   fuckThisGuy() 
+  -- end
 end
 
 -- Delta Lap Times Google Sheet
 json = require("json")
 
-function RequireIncomingTransaction()
-  if isLapSet == true then
-    local https = GetInternet()
-    -- Season 8:        local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
-    -- Season 9 R1-R2:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbwUlfRw7Ubqu0Alo6Ed0-r_R71_XM-RIWMDiwyHSSfU-6m_aTlXSD7TQa3jWgu-MkAh/exec?gid=0'
-    -- Season 9 R3:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbznp9NRHdUusS0oJqRZFMze8EAbEXx4N-Qj5gaJPDjVeHoyLs-gr7RNR_sqFUELVkyw/exec?gid=0'
-    -- Season 9 R4:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbymqG-HBngXYnOAYmV9652_iErVk_y8N93-5_bBCDno6eMrHkbZPpS_D5pKs6CdQXt1/exec?gid=855734058'
-    -- Season 9 R5-R6:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbyTvDM-6ZmbnhhjuE_N__8ubDnEb-BXG7-VpI1n6VLc_PGn74ESZR-tOiQ5ouIeW_kI/exec?gid=1958594772'
+-- function RequireIncomingTransaction()
+--   if isLapSet == true then
+--     local https = GetInternet()
+--     -- Season 8:        local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
+--     -- Season 9 R1-R2:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbwUlfRw7Ubqu0Alo6Ed0-r_R71_XM-RIWMDiwyHSSfU-6m_aTlXSD7TQa3jWgu-MkAh/exec?gid=0'
+--     -- Season 9 R3:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbznp9NRHdUusS0oJqRZFMze8EAbEXx4N-Qj5gaJPDjVeHoyLs-gr7RNR_sqFUELVkyw/exec?gid=0'
+--     -- Season 9 R4:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbymqG-HBngXYnOAYmV9652_iErVk_y8N93-5_bBCDno6eMrHkbZPpS_D5pKs6CdQXt1/exec?gid=855734058'
+--     -- Season 9 R5-R6:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbyTvDM-6ZmbnhhjuE_N__8ubDnEb-BXG7-VpI1n6VLc_PGn74ESZR-tOiQ5ouIeW_kI/exec?gid=1958594772'
 
-    local TransactionURL = 'https://script.google.com/macros/s/AKfycbwN8QxbMF-Y-7ypbfQngLRIw2R36EnVhmhFk4W7VhWDJifnL20Yb3sF4iTbdIGTlB3_cg/exec?gid=1958594772'
-    local Username = readString(nameaddr)
-    local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
-    local Lap_Time = CurLapLastCheckpointTime
+--     local TransactionURL = 'https://script.google.com/macros/s/AKfycbwN8QxbMF-Y-7ypbfQngLRIw2R36EnVhmhFk4W7VhWDJifnL20Yb3sF4iTbdIGTlB3_cg/exec?gid=1958594772'
+--     local Username = readString(nameaddr)
+--     local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
+--     local Lap_Time = CurLapLastCheckpointTime
 
-    https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
-    https.destroy()
+--     https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
+--     https.destroy()
 
-    isLapSet = false
-  end
-end
+--     isLapSet = false
+--   end
+-- end
 
-function fuckThisGuy() 
-  CloseCE()
-end
+-- function fuckThisGuy() 
+--   CloseCE()
+-- end
 
 function ex()
   CloseCE()
