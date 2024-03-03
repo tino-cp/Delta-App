@@ -1013,7 +1013,7 @@ function setFontStyle()
     --SimpleModeTurnOn.Font.Style = 'fsBold, fsItalic'
     FullscreenModeTurnOn.Font.Style = 'fsBold, fsItalic'
     SetFontStyle.Font.Style = 'fsBold, fsItalic'
-    SimpleButton.Font.Style = 'fsBold, fsItalic'
+    --SimpleButton.Font.Style = 'fsBold, fsItalic'
   elseif setFont == 1 then
     setFont = 0
     SetFontStyle.Caption = 'FONT: OFF'
@@ -1057,7 +1057,7 @@ function setFontStyle()
     DarkModeTurnOn.Font.Style = false
     --SimpleModeTurnOn.Font.Style = false
     FullscreenModeTurnOn.Font.Style = false
-    SimpleButton.Font.Style = false
+    --SimpleButton.Font.Style = false
     SetFontStyle.Font.Style = false
   end 
 end
