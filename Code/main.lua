@@ -308,7 +308,7 @@ function UpdateInfo()
         if CurCheckpoint==0 then
           DeltaMils=CurrentLapSectors[0]-LatestFastLapSectors
         else
-          DeltaMils=CurrentLapSectors[CurCheckpoint]-FastLapSectors[CurCheckpoint-1]
+          DeltaMils=CurrentLapSectors[CurCheckpoint]-FastLapSectors[CurCheckpoint] ---1]
         end
 
         if DeltaMils>9999 then
