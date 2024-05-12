@@ -1064,13 +1064,13 @@ end
 
 function GetKers()
   if ADR == 0 then
-    Kers = readFloat("GTA5.exe+1D59B60")
+    Kers = readFloat("GTA5.exe+1D75150")
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
     end
   elseif ADR == 1 then
-    Kers = readFloat("GTA5.exe+1D59B60") --GTA5.exe+1D59BF8
+    Kers = readFloat("GTA5.exe+1D75150") --GTA5.exe+1D59BF8
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
@@ -1096,7 +1096,7 @@ function ReadKers()
   local Kers = 0
   if KersValues == 1 then
     if ADR == 0 then
-      Kers = readFloat("GTA5.exe+1D70200") --GTA5.exe+1D70140
+      Kers = readFloat("GTA5.exe+1D75150")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1109,7 +1109,7 @@ function ReadKers()
         previousKersValue = Kers
       end
     elseif ADR == 1 then
-      Kers = readFloat("GTA5.exe+1D70200") --GTA5.exe+1D70140
+      Kers = readFloat("GTA5.exe+1D75150")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1127,7 +1127,7 @@ end
 
 function GetSpeed()
    if ADR == 0 then
-       Speed = readFloat("GTA5.exe+26B03C0")
+       Speed = readFloat("GTA5.exe+26B5558")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1139,7 +1139,7 @@ function GetSpeed()
          end
        end
     elseif ADR == 1 then
-       Speed = readFloat("GTA5.exe+26B03C0")
+       Speed = readFloat("GTA5.exe+26B5558")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1159,7 +1159,7 @@ function ReadSpeed()
   local Speed = 0
   if SpeedStatus == 1 then
     if ADR == 0 then
-       Speed = readFloat("GTA5.exe+26B03C0")
+       Speed = readFloat("GTA5.exe+26B5558")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1177,7 +1177,7 @@ function ReadSpeed()
          end
        end
     elseif ADR == 1 then
-       Speed = readFloat("GTA5.exe+26B03C0")
+       Speed = readFloat("GTA5.exe+26B5558")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1199,10 +1199,10 @@ function ReadSpeed()
 
   if Gears == 1 then
      --RescanUNK()
-     local RPM = readFloat("GTA5.exe+2ABD234") --
+     local RPM = readFloat("GTA5.exe+2AC2194") --
 
     --  local RPM = readFloat("UNK+E50") --
-     local Gear = readFloat("GTA5.exe+25758F8")
+     local Gear = readFloat("GTA5.exe+257AAA8")
      --local Gear = readInteger("UNK+FD4")
      if Gear and RPM then
         if Gear == 0 then GearLabel.Caption = "N" end
@@ -1241,9 +1241,9 @@ function ReadSpeed()
   end
 
   if Inputs == 1 then
-     local SteerPos = readFloat("GTA5.exe+25FDD74") --UNK+CA8
-     local BrakePos = readFloat("GTA5.exe+25FEF2C")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
-     local ThrottlePos = readFloat("GTA5.exe+25FEEE4")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
+     local SteerPos = readFloat("GTA5.exe+2602ED4") --UNK+CA8
+     local BrakePos = readFloat("GTA5.exe+26050DC")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
+     local ThrottlePos = readFloat("GTA5.exe+2605094")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
      if SteerPos ~= nil then
        if SteerPos < 0 then
           Steer.Position = (((SteerPos * (-1) *50) + 50) // 1)
@@ -1256,27 +1256,6 @@ function ReadSpeed()
      Brake.Caption = math.floor(BrakePos * 100)
      Gas.Caption = math.floor(ThrottlePos * 100)
   end
-
-
-  -- Mousesteer detection
-  -- local SteerPos2 = readFloat("UNK+CA8")
-
-  -- if previousSteerPos == nil then
-  --   previousSteerPos = SteerPos2
-  -- end
-
-  -- if SteerPos2 ~= nil then
-  --     local steerChange = SteerPos2 - previousSteerPos
-  --     previousSteerPos = SteerPos2
-
-  --     if steerChange > 0.25 or steerChange < -0.25 then
-  --       local https = GetInternet()
-  --       local sound = getURL("https://github.com/MrTin0/Delta-App/blob/main/Sounds/mousesterring.mp3")
-  --       playSound(sound)
-  --       https.destroy()
-  --       print("sound")
-  --     end
-  -- end
 end
 
 local runOnce = false
@@ -1295,77 +1274,6 @@ function ReadTrackName()
     end
   end
 end
-
--- local startTime = 0
--- local pitEntry = 0
--- local pitExit = 0
--- local pitExitTime = 0
--- local isPitEntrySet = false
-
--- function getPitEntry()
---   if isPitEntrySet == false then
---     pitEntry = CurLapMils
---     isPitEntrySet = true
---   end
--- end
-
--- function getPitExit()
---   if isPitEntrySet == true then
---     pitExit = CurLapMils
---     pitExitTime = startTime
---     isPitEntrySet = false
---   end
--- end
-
--- function startPitDelta()
---   startTime = CurLapMils - pitEntry
---   CalcSec = startTime//1000
---   CalcMils = (startTime - (CalcSec*1000))
---   if CalcMils<10 then
---     PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
---   elseif CalcMils<100 then
---     PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
---   else
---     PitDeltaValue.Caption=CalcSec..'.'..CalcMils
---   end
--- end
-
--- function stopPitDelta()
---     CalcSec = pitExitTime//1000
---     CalcMils = (pitExitTime - (CalcSec*1000))
---     if CalcMils<10 then
---       PitDeltaValue.Caption=CalcSec..'.00'..CalcMils
---     elseif CalcMils<100 then
---       PitDeltaValue.Caption=CalcSec..'.0'..CalcMils
---     else
---       PitDeltaValue.Caption=CalcSec..'.'..CalcMils
---     end
--- end
-
--- function checkPitDeltaValue()
---   local inPit = readInteger("GTA5.exe+2A320D0")
-  
---   if Enable == true then
---     if inPit == 1 then
---       CurrentLapValue.Visible = false
---       CurrentLapLabel.Caption = 'Pit Delta:'
---       PitDeltaValue.Visible = true
---       getPitEntry()
---       startPitDelta()
---     elseif inPit == 0 then
---       getPitExit()
---       local freezeTime = 2000
---       if (CurLapMils - pitExit) < freezeTime then
---         stopPitDelta()
---       else
---         startTime = 0
---         PitDeltaValue.Visible = false
---         CurrentLapLabel.Caption = 'Current Lap:'
---         CurrentLapValue.Visible = true
---       end
---     end
---   end
--- end
 
 function ReadValue()
   ReadKers()
