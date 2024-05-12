@@ -1153,8 +1153,6 @@ function GetSpeed()
     end
 end
 
-local previousSteerPos = nil
-
 function ReadSpeed()
   local Speed = 0
   if SpeedStatus == 1 then
@@ -1246,11 +1244,11 @@ function ReadSpeed()
      local ThrottlePos = readFloat("GTA5.exe+2605094")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
      if SteerPos ~= nil then
        if SteerPos < 0 then
-          Steer.Position = (((SteerPos * (-1) *50) + 50) // 1)
+          Steer.Position = ((50 - (SteerPos *50)) // 1)
        elseif SteerPos > 0 then
-              Steer.Position = ((50 - (SteerPos *50)) // 1)
+          Steer.Position = (((SteerPos * (-1) *50) + 50) // 1)
        else
-           Steer.Position = 50
+          Steer.Position = 50
        end
      end
      Brake.Caption = math.floor(BrakePos * 100)
