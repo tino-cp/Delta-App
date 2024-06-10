@@ -1197,7 +1197,7 @@ function ReadSpeed()
 
   if Gears == 1 then
      --RescanUNK()
-     local RPM = readFloat("GTA5.exe+2AC2194") --
+     local RPM = readFloat("GTA5.exe+2AC2194")
 
     --  local RPM = readFloat("UNK+E50") --
      local Gear = readFloat("GTA5.exe+257AAA8")
@@ -1243,9 +1243,9 @@ function ReadSpeed()
      local BrakePos = readFloat("GTA5.exe+26050DC")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
      local ThrottlePos = readFloat("GTA5.exe+2605094")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
      if SteerPos ~= nil then
-       if SteerPos < 0 then
+       if SteerPos > 0 then
           Steer.Position = ((50 - (SteerPos *50)) // 1)
-       elseif SteerPos > 0 then
+       elseif SteerPos < 0 then
           Steer.Position = (((SteerPos * (-1) *50) + 50) // 1)
        else
           Steer.Position = 50
