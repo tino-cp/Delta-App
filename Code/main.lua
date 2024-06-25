@@ -139,7 +139,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('GTA5.exe+201B9BC') - 1  --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('GTA5.exe+26DDDC0')--readString('adr + 6051E150')
-  UI.Caption = Track_Name.." Delta App Online 1.2.7"
+  UI.Caption = Track_Name.." Delta App Online 1.2.8"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -258,7 +258,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.2.7"
+    UI.Caption = "Delta App Online 1.2.8"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
@@ -1064,13 +1064,13 @@ end
 
 function GetKers()
   if ADR == 0 then
-    Kers = readFloat("GTA5.exe+1D75150")
+    Kers = readFloat("GTA5.exe+1D8C0B0")
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
     end
   elseif ADR == 1 then
-    Kers = readFloat("GTA5.exe+1D75150") --GTA5.exe+1D59BF8
+    Kers = readFloat("GTA5.exe+1D8C0B0") --GTA5.exe+1D59BF8
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
@@ -1096,7 +1096,7 @@ function ReadKers()
   local Kers = 0
   if KersValues == 1 then
     if ADR == 0 then
-      Kers = readFloat("GTA5.exe+1D75150")
+      Kers = readFloat("GTA5.exe+1D8C0B0")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1109,7 +1109,7 @@ function ReadKers()
         previousKersValue = Kers
       end
     elseif ADR == 1 then
-      Kers = readFloat("GTA5.exe+1D75150")
+      Kers = readFloat("GTA5.exe+1D8C0B0")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1127,7 +1127,7 @@ end
 
 function GetSpeed()
    if ADR == 0 then
-       Speed = readFloat("GTA5.exe+26B5558")
+       Speed = readFloat("GTA5.exe+26CE980")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1139,7 +1139,7 @@ function GetSpeed()
          end
        end
     elseif ADR == 1 then
-       Speed = readFloat("GTA5.exe+26B5558")
+       Speed = readFloat("GTA5.exe+26CE980")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1157,7 +1157,7 @@ function ReadSpeed()
   local Speed = 0
   if SpeedStatus == 1 then
     if ADR == 0 then
-       Speed = readFloat("GTA5.exe+26B5558")
+       Speed = readFloat("GTA5.exe+26CE980")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1175,7 +1175,7 @@ function ReadSpeed()
          end
        end
     elseif ADR == 1 then
-       Speed = readFloat("GTA5.exe+26B5558")
+       Speed = readFloat("GTA5.exe+26CE980")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1197,10 +1197,10 @@ function ReadSpeed()
 
   if Gears == 1 then
      --RescanUNK()
-     local RPM = readFloat("GTA5.exe+2AC2194")
+     local RPM = readFloat("GTA5.exe+2AE8334")
 
     --  local RPM = readFloat("UNK+E50") --
-     local Gear = readFloat("GTA5.exe+257AAA8")
+     local Gear = readFloat("GTA5.exe+2591F98")
      --local Gear = readInteger("UNK+FD4")
      if Gear and RPM then
         if Gear == 0 then GearLabel.Caption = "N" end
@@ -1239,9 +1239,9 @@ function ReadSpeed()
   end
 
   if Inputs == 1 then
-     local SteerPos = readFloat("GTA5.exe+2602ED4") --UNK+CA8
-     local BrakePos = readFloat("GTA5.exe+26050DC")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
-     local ThrottlePos = readFloat("GTA5.exe+2605094")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
+     local SteerPos = readFloat("GTA5.exe+261C0C4") --UNK+CA8
+     local BrakePos = readFloat("GTA5.exe+261D27C")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
+     local ThrottlePos = readFloat("GTA5.exe+261D234")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
      if SteerPos ~= nil then
        if SteerPos > 0 then
           Steer.Position = ((50 - (SteerPos *50)) // 1)
