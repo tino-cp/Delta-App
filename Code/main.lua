@@ -26,8 +26,8 @@ function InitOffsets()
   pCPed = 0x1964 --0x0240 --0x1964 --0x8
   pCPlayerInfo = 0x0D80 --0x10A8
   oName = 0xFC
-  oCurCheck = 0x17668 --0x11578
-  oCurLap = 0x17660--0x11570
+  oCurCheck = 0x196C8 --0xAB630 --0x17668 --0x11578
+  oCurLap = 0x196C0 --0x11570
 end
 
 InitOffsets()
@@ -121,7 +121,7 @@ function ActivateApp()
   previousKersValue = nil
   kersGainedOnLap = 0
   kersUsedOnLap = 0
-  TrackName = readString('GTA5.exe+26DDDC0') --readString('adr + 6051E150')
+  TrackName = readString('GTA5.exe+260F450') --readString('adr + 6051E150')
   nameaddr = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
 
   Value = createTimer(nil, false)
@@ -137,8 +137,8 @@ function InitTrackInfo()
   S1_raw=0
   S2_raw=0
   S3_raw=0
-  MaxCheckpoints = readInteger('GTA5.exe+201B9BC') - 1  --old CBF40 new D 16C0 del prev 97C60 928
-  local Track_Name = readString('GTA5.exe+26DDDC0')--readString('adr + 6051E150')
+  MaxCheckpoints = readInteger('GTA5.exe+26A32DC') - 1  --old CBF40 new D 16C0 del prev 97C60 928
+  local Track_Name = readString('GTA5.exe+260F450')--readString('adr + 6051E150')
   UI.Caption = Track_Name.." Delta App Online 1.2.8"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
@@ -266,7 +266,7 @@ function UpdateInfo()
     StartDetect.Caption='STOP'
 
     ChecksPTR = getAddress('TimesPTR')
-    ForLogs_TrackName= readString('GTA5.exe+26DDDC0') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
+    ForLogs_TrackName= readString('GTA5.exe+2016E40') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
       CanWrite=false
     end
@@ -289,10 +289,10 @@ function UpdateInfo()
     if Enable == true then
       --Take values
       -- CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
-      CurLapMils = readInteger(ChecksPTR + 0xC8) --3D0 basic
+      CurLapMils = readInteger(ChecksPTR + 0x350) --3D0 basic
 
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
-      CurCheckpoint = readInteger(ChecksPTR + 0xC8 + oCurCheck) --+ (MyIDNumber*0x670)) --7598 74E8
+      CurCheckpoint = readInteger(ChecksPTR + 0x350 + oCurCheck) --+ (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
@@ -483,7 +483,8 @@ end
 function FindTimes()
   Enable.Caption = "Scanning memory 1/2"
 --   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
-  local results = AOBScan('?? ?? ?? 0? 00 00 00 00 01 00 00 00 00 00 00 00 ?? ?? ?? 0? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? 00 ?? ?? 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? 00 00 ?? ?? ?? 45 00 00 00 00 ?? ?? ?? 42 00 00 00 00 ?? ?? ?? ?? ?? ?? 00 00 ?? 0? ?? ?? ?? ?? 00 00 ?? 0? 00 00 ?? 0?', '-X-C+W', 2, '8')
+  -- local results = AOBScan('?? ?? ?? 0? 00 00 00 00 01 00 00 00 00 00 00 00 ?? ?? ?? 0? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? 00 ?? ?? 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? 00 00 ?? ?? ?? 45 00 00 00 00 ?? ?? ?? 42 00 00 00 00 ?? ?? ?? ?? ?? ?? 00 00 ?? 0? ?? ?? ?? ?? 00 00 ?? 0? 00 00 ?? 0?', '-X-C+W', 2, '8')
+  local results = AOBScan('E6 17 1F 9D 00 00 00 00 E8 26 00 00 ?? 0? 00 00 1A 00 00 00 00 00 00 00 03 00 00 00 ?? 0? 00 00 FF FF FF FF ?? 0?', '-X-C+W', 1, '8')
   assert(results, 'aobscan failed')
   local addr = results[0]
   results.destroy()  
@@ -522,7 +523,7 @@ function LogsSwitcher()
 end
 
 function PackLogs()
-  local ForLogs_TrackName = readString('GTA5.exe+26DDDC0') --readString('adr + 6051E150')
+  local ForLogs_TrackName = readString('GTA5.exe+2016E40') --readString('adr + 6051E150')
   local save_dialog = createSaveDialog(self)
   save_dialog.InitalDir = os.getenv('%USERPROFILE%')
   if save_dialog.execute() then
@@ -560,7 +561,7 @@ function SaveFastLap()
   for i=0,MaxCheckpoints-1 do
       FLdata = FLdata..FastLapSectors[i].."\n"
   end
-  local TrackName = readString('GTA5.exe+26DDDC0') --readString('adr + 6051E150')
+  local TrackName = readString('GTA5.exe+2016E40') --readString('adr + 6051E150')
   local save_dialog = createSaveDialog(self)
   save_dialog.InitalDir = os.getenv('%USERPROFILE%')
   if save_dialog.execute() then
@@ -587,7 +588,7 @@ function LoadFastLap()
      if load_dialog.execute() then
      file = io.open(load_dialog.FileName, "r")
      local Track = tostring(file:read())
-     if Track == readString('GTA5.exe+26DDDC0') then --readString('adr + 6051E150') then
+     if Track == readString('GTA5.exe+2016E40') then --readString('adr + 6051E150') then
         for i=0,MaxCheckpoints-1 do
             FastLapSectors[i] = tonumber(file:read())
         end
@@ -599,7 +600,7 @@ end
 function Startup()
   Enable.Enabled = false
   --FindAdr()
-  --FindTimes()
+  FindTimes()
   FindCar()
 
   ActivateApp()
@@ -1259,7 +1260,7 @@ end
 local runOnce = false
 
 function ReadTrackName()
-  local TrackNameNew = readString('GTA5.exe+26DDDC0') --readString('adr + 6051E150')
+  local TrackNameNew = readString('GTA5.exe+2016E40') --readString('adr + 6051E150')
   if Enable == true then
     if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
       if not runOnce then
