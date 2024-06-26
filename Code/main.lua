@@ -121,7 +121,7 @@ function ActivateApp()
   previousKersValue = nil
   kersGainedOnLap = 0
   kersUsedOnLap = 0
-  TrackName = readString('GTA5.exe+260F450') --readString('adr + 6051E150')
+  TrackName = readString('GTA5.exe+2016E40') --readString('adr + 6051E150')
   nameaddr = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
 
   Value = createTimer(nil, false)
@@ -137,8 +137,8 @@ function InitTrackInfo()
   S1_raw=0
   S2_raw=0
   S3_raw=0
-  MaxCheckpoints = readInteger('GTA5.exe+26A32DC') - 1  --old CBF40 new D 16C0 del prev 97C60 928
-  local Track_Name = readString('GTA5.exe+260F450')--readString('adr + 6051E150')
+  MaxCheckpoints = readInteger('GTA5.exe+26A32DC') -- 1  --old CBF40 new D 16C0 del prev 97C60 928
+  local Track_Name = readString('GTA5.exe+2016E40')--readString('adr + 6051E150')
   UI.Caption = Track_Name.." Delta App Online 1.2.8"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
