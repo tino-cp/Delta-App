@@ -1198,7 +1198,7 @@ function ReadSpeed()
 
   if Gears == 1 then
      --RescanUNK()
-     local RPM = readFloat("GTA5.exe+2AE8334")
+     local RPM = readFloat("GTA5.exe+2AE8314")
 
     --  local RPM = readFloat("UNK+E50") --
      local Gear = readFloat("GTA5.exe+2591F98")
