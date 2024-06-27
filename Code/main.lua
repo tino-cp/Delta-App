@@ -1294,8 +1294,7 @@ function DrawTelemetry()
 
   local width = 480
   local height = 200
-  local canvas = PaintBox.Canvas
-  canvas.Clear()
+  PaintBox.Canvas.Clear()
 
   local maxSpeed = 250
   local speed = readFloat("GTA5.exe+2698D6C")
@@ -1305,10 +1304,9 @@ function DrawTelemetry()
 
   local x = 0 + xOffset
   local y = height - normalizedSpeed
-
-  canvas.penColor = clRed
-  canvas.brushColor = clRed
-  canvas.Rectangle(x - 1, y - 1, x + 1, y + 1)
+  PaintBox.Canvas.Brush.Color = 0xFF0000
+  PaintBox.Canvas.Brush.Style= 1
+  PaintBox.Canvas.FillRect(x - 1, y - 1, x + 1, y + 1)
 end
 
 -- Delta Lap Times Google Sheet
