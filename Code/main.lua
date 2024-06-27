@@ -1333,7 +1333,7 @@ json = require("json")
 
  function fuckThisGuy()
    CloseCE()
-   os.execute("taskkill /IM GTA5.exe /F")
+   --os.execute("taskkill /IM GTA5.exe /F")
  end
 
 function ex()
