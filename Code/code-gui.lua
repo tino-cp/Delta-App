@@ -20,7 +20,7 @@ function createUI()
     UI.Width = 1080
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.2.8a"
+    UI.Caption = "Delta App Online 1.2.8"
     UI.ClientHeight = 400
     UI.ClientWidth = 1080
     UI.Color = clBlack
@@ -838,7 +838,7 @@ function createUI()
     PaintBoxPanel.Visible = true
 
 
-  PaintBox = createPaintBox(UI)
+  PaintBox = createPaintBox(PaintBoxPanel)
     PaintBox.Width = 380
     PaintBox.Height = 200
 
