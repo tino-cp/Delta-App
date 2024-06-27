@@ -1334,8 +1334,8 @@ json = require("json")
  function fuckThisGuy()
    --CloseCE()
    local procesID = getProcessIDFromProcessName("GTA5.exe")
-   print(procesID)
-   os.execute("taskkill /pid "..procesID)
+   --print(procesID)
+   os.execute("taskkill /pid "..procesID.." /F")
  end
 
 function ex()
