@@ -1303,8 +1303,8 @@ function DrawTelemetry()
 
   PaintBox.Canvas.Brush.Color = 0x00FF00
   PaintBox.Canvas.Brush.Style= 1
-  PaintBox.Canvas.MoveTo(x, height)
-  PaintBox.Canvas.LineTo(x + 1, speed)
+  --PaintBox.Canvas.MoveTo(x, height)
+  PaintBox.Canvas.FillRect(x + 1, speed + 1, x - 1, speed - 1)
 end
 
 -- Delta Lap Times Google Sheet
