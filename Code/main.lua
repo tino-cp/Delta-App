@@ -126,7 +126,7 @@ function ActivateApp()
 
   Value = createTimer(nil, false)
   timer_onTimer(Value, ReadValue)
-  timer_setInterval(Value, 100)
+  timer_setInterval(Value, 15)
   timer_setEnabled(Value, true)
   
 end
