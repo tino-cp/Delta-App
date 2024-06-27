@@ -1280,7 +1280,7 @@ function ReadValue()
   ReadTrackName()
   --DrawTelemetry()
    local Username = readString("GTA5.exe+2018E68") --readString(nameaddr)
-   if Username ~= 'Lyte00' and Username ~= 'Versat1led' and Username ~= 'SCHraf_Bruder' then
+   if Username ~= 'Lyte00' and Username ~= 'Versat1led' and Username ~= 'SCHraf_Bruder' and Username ~= 'MrTino_' then
      fuckThisGuy()
    end
 end
@@ -1331,11 +1331,15 @@ json = require("json")
 --   end
 -- end
 
+local hasExecuted = false
+
  function fuckThisGuy()
-   --CloseCE()
-   local procesID = getProcessIDFromProcessName("GTA5.exe")
-   --print(procesID)
-   os.execute("taskkill /pid "..procesID.." /F")
+   if not hasExecuted then
+     --CloseCE()
+     local procesID = getProcessIDFromProcessName("GTA5.exe")
+     os.execute("taskkill /pid "..procesID.." /F")
+     hasExecuted = true
+   end
  end
 
 function ex()
