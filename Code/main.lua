@@ -139,7 +139,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('GTA5.exe+26A32DC') -- 1  --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('GTA5.exe+2016E40')--readString('adr + 6051E150')
-  UI.Caption = Track_Name.." Delta App Online 1.2.8"
+  UI.Caption = Track_Name.." Delta App Online 1.2.9"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -258,7 +258,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.2.8"
+    UI.Caption = "Delta App Online 1.2.9"
   elseif Enable == false then
     UpdateCar()
     InitTrackInfo()
@@ -1333,7 +1333,7 @@ json = require("json")
 
  function fuckThisGuy()
    CloseCE()
-   TerminateProcess("GTA5.exe")
+   os.execute("taskkill /IM GTA5.exe /F")
  end
 
 function ex()
