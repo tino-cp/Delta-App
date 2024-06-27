@@ -20,7 +20,7 @@ function createUI()
     UI.Width = 880
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.2.8a"
+    UI.Caption = "Delta App Online 1.2.8"
     UI.ClientHeight = 200
     UI.ClientWidth = 880
     UI.Color = clBlack
@@ -826,8 +826,8 @@ function createUI()
     OnOffButtonLabel.ParentFont = false
 
   PaintBoxPanel = createPanel(UI)
-    PaintBoxPanel.Left = 500
-    PaintBoxPanel.Height = 50
+    PaintBoxPanel.Left = 480
+    PaintBoxPanel.Height = 0
     PaintBoxPanel.Top = 50
     PaintBoxPanel.Width = 380
     PaintBoxPanel.BevelColor = clBackground

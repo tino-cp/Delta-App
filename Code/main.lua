@@ -1300,8 +1300,8 @@ function DrawTelemetry()
 
   local x = 0 + xOffset
   local y = height - normalizedSpeed
-  PaintBox.Canvas.Brush.Color = 0xFF0000
-  PaintBox.Canvas.Brush.Style= 1
+  PaintBox.Canvas.Brush.Color = clRed
+  --PaintBox.Canvas.Brush.Style= 1
   PaintBox.Canvas.FillRect(x - 1, y - 1, x + 1, y + 1)
 end
 
