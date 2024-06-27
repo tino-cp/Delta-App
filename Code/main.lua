@@ -1288,10 +1288,6 @@ end
 xOffset = 0
 
 function DrawTelemetry()
-  PaintBox = createPaintBox(UI)
-  PaintBox.Width = 480
-  PaintBox.Height = 200
-
   local width = 480
   local height = 200
   PaintBox.Canvas.Clear()
