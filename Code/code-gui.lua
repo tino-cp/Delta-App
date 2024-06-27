@@ -15,14 +15,14 @@ function createUI()
     UI.Visible = false
 
     UI.Left = 0
-    UI.Height = 400
+    UI.Height = 200
     UI.Top = 0
-    UI.Width = 1080
+    UI.Width = 480
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
-    UI.Caption = "Delta App Online 1.2.8a"
-    UI.ClientHeight = 400
-    UI.ClientWidth = 1080
+    UI.Caption = "Delta App Online 1.2.8"
+    UI.ClientHeight = 200
+    UI.ClientWidth = 480
     UI.Color = clBlack
     UI.Font.Color = clWhite
     UI.FormStyle = 'fsSystemStayOnTop'
@@ -825,22 +825,22 @@ function createUI()
     OnOffButtonLabel.ParentColor = false
     OnOffButtonLabel.ParentFont = false
 
-  PaintBoxPanel = createPanel(UI)
-    PaintBoxPanel.Left = 485
-    PaintBoxPanel.Height = 200
-    PaintBoxPanel.Top = 5
-    PaintBoxPanel.Width = 380
-    PaintBoxPanel.BevelColor = clBackground
-    PaintBoxPanel.BevelWidth = 2
-    PaintBoxPanel.ClientHeight = 200
-    PaintBoxPanel.ClientWidth = 480
-    PaintBoxPanel.TabOrder = 9
-    PaintBoxPanel.Visible = true
-
-
-  PaintBox = createPaintBox(PaintBoxPanel)
-    PaintBox.Width = 380
-    PaintBox.Height = 200
+  --PaintBoxPanel = createPanel(UI)
+  --  PaintBoxPanel.Left = 485
+  --  PaintBoxPanel.Height = 200
+  --  PaintBoxPanel.Top = 5
+  --  PaintBoxPanel.Width = 380
+  --  PaintBoxPanel.BevelColor = clBackground
+  --  PaintBoxPanel.BevelWidth = 2
+  --  PaintBoxPanel.ClientHeight = 200
+  --  PaintBoxPanel.ClientWidth = 480
+  --  PaintBoxPanel.TabOrder = 9
+  --  PaintBoxPanel.Visible = true
+  --
+  --
+  --PaintBox = createPaintBox(PaintBoxPanel)
+  --  PaintBox.Width = 380
+  --  PaintBox.Height = 200
 
   -- Show the UI again
   UI.Visible = true

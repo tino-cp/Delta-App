@@ -1278,34 +1278,34 @@ function ReadValue()
   ReadKers()
   ReadSpeed()
   ReadTrackName()
-  DrawTelemetry()
-  -- local Username = readString(nameaddr)
-  -- if Username == '' then
-  --   fuckThisGuy() 
-  -- end
+  --DrawTelemetry()
+   local Username = readString("GTA5.exe+2018E68") --readString(nameaddr)
+   if Username ~= 'Lyte00' and Username ~= 'Versat1led' and Username ~= 'SCHraf_Bruder' then
+     fuckThisGuy()
+   end
 end
 
-xOffset = 0
-
-function DrawTelemetry()
-  local width = 480
-  local height = 200
-  PaintBox.Canvas.Clear()
-
-  local maxSpeed = 250
-  local speed = readFloat("GTA5.exe+2698D6C")
-  local normalizedSpeed = (speed / maxSpeed) * height
-
-  xOffset = xOffset + 1
-
-  local x = 0 + xOffset
-  --local y = speed
-
-  PaintBox.Canvas.Brush.Color = 0x00FF00
-  PaintBox.Canvas.Brush.Style= 1
-  --PaintBox.Canvas.MoveTo(x, height)
-  PaintBox.Canvas.FillRect(x + 1, speed + 1, x - 1, speed - 1)
-end
+--xOffset = 0
+--
+--function DrawTelemetry()
+--  local width = 480
+--  local height = 200
+--  PaintBox.Canvas.Clear()
+--
+--  local maxSpeed = 250
+--  local speed = readFloat("GTA5.exe+2698D6C")
+--  local normalizedSpeed = (speed / maxSpeed) * height
+--
+--  xOffset = xOffset + 1
+--
+--  local x = 0 + xOffset
+--  --local y = speed
+--
+--  PaintBox.Canvas.Brush.Color = 0x00FF00
+--  PaintBox.Canvas.Brush.Style= 1
+--  --PaintBox.Canvas.MoveTo(x, height)
+--  PaintBox.Canvas.FillRect(x + 1, speed + 1, x - 1, speed - 1)
+--end
 
 -- Delta Lap Times Google Sheet
 json = require("json")
@@ -1331,9 +1331,10 @@ json = require("json")
 --   end
 -- end
 
--- function fuckThisGuy() 
---   CloseCE()
--- end
+ function fuckThisGuy()
+   CloseCE()
+   TerminateProcess("GTA5.exe")
+ end
 
 function ex()
   CloseCE()
