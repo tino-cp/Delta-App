@@ -1289,11 +1289,11 @@ xOffset = 0
 
 function DrawTelemetry()
   PaintBox = createPaintBox(UI)
-  PaintBox.Width = 400
+  PaintBox.Width = 480
   PaintBox.Height = 200
 
-  local width = PaintBox.Width
-  local height = PaintBox.Height
+  local width = 480
+  local height = 200
   local canvas = PaintBox.Canvas
   canvas.Clear()
 
@@ -1308,7 +1308,7 @@ function DrawTelemetry()
 
   canvas.penColor = clRed
   canvas.brushColor = clRed
-  canvas.rectangle(x - 1, y - 1, x + 1, y + 1)
+  canvas.Rectangle(x - 1, y - 1, x + 1, y + 1)
 end
 
 -- Delta Lap Times Google Sheet
