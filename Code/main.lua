@@ -1301,9 +1301,9 @@ function DrawTelemetry()
   local x = 0 + xOffset
   local y = height - normalizedSpeed
   PaintBox.Canvas.Brush.Color = 0x00FF00
-  PaintBox.Canvas.MoveTo(0, height)
+  PaintBox.Canvas.MoveTo(x, height)
   --PaintBox.Canvas.Brush.Style= 1
-  PaintBox.Canvas.FillRect(x - 1, y - 1, x + 1, y + 1)
+  PaintBox.Canvas.LineTo(x + 1, y + 1)
 end
 
 -- Delta Lap Times Google Sheet

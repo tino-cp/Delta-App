@@ -15,13 +15,13 @@ function createUI()
     UI.Visible = false
 
     UI.Left = 0
-    UI.Height = 200
+    UI.Height = 400
     UI.Top = 0
     UI.Width = 1080
     UI.ActiveControl = Steer
     UI.BorderStyle = 'bsSingle'
     UI.Caption = "Delta App Online 1.2.8a"
-    UI.ClientHeight = 200
+    UI.ClientHeight = 400
     UI.ClientWidth = 1080
     UI.Color = clBlack
     UI.Font.Color = clWhite
