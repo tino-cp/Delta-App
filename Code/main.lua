@@ -1278,10 +1278,37 @@ function ReadValue()
   ReadKers()
   ReadSpeed()
   ReadTrackName()
+  DrawTelemetry()
   -- local Username = readString(nameaddr)
   -- if Username == '' then
   --   fuckThisGuy() 
   -- end
+end
+
+xOffset = 0
+
+function DrawTelemetry()
+  PaintBox = createPaintBox(UI)
+  PaintBox.Width = 400
+  PaintBox.Height = 200
+
+  local width = PaintBox.Width
+  local height = PaintBox.Height
+  local canvas = PaintBox.Canvas
+  canvas.Clear()
+
+  local maxSpeed = 250
+  local speed = readFloat("GTA5.exe+2698D6C")
+  local normalizedSpeed = (speed / maxSpeed) * height
+
+  xOffset = xOffset + 1
+
+  local x = 0 + xOffset
+  local y = height - normalizedSpeed
+
+  canvas.penColor = clRed
+  canvas.brushColor = clRed
+  canvas.rectangle(x - 1, y - 1, x + 1, y + 1)
 end
 
 -- Delta Lap Times Google Sheet
