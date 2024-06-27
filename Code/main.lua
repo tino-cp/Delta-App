@@ -126,7 +126,7 @@ function ActivateApp()
 
   Value = createTimer(nil, false)
   timer_onTimer(Value, ReadValue)
-  timer_setInterval(Value, 10)
+  timer_setInterval(Value, 100)
   timer_setEnabled(Value, true)
   
 end
@@ -1300,9 +1300,10 @@ function DrawTelemetry()
 
   local x = 0 + xOffset
   local y = height - normalizedSpeed
+
   PaintBox.Canvas.Brush.Color = 0x00FF00
+  PaintBox.Canvas.Brush.Style= 1
   PaintBox.Canvas.MoveTo(x, height)
-  --PaintBox.Canvas.Brush.Style= 1
   PaintBox.Canvas.LineTo(x + 1, y + 1)
 end
 
