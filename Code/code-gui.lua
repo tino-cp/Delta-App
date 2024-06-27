@@ -826,8 +826,8 @@ function createUI()
     OnOffButtonLabel.ParentFont = false
 
   PaintBoxPanel = createPanel(UI)
-    PaintBoxPanel.Left = 160
-    PaintBoxPanel.Height = 200
+    PaintBoxPanel.Left = 0
+    PaintBoxPanel.Height = 50
     PaintBoxPanel.Top = 50
     PaintBoxPanel.Width = 480
     PaintBoxPanel.BevelColor = clBackground
