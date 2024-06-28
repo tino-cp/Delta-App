@@ -289,10 +289,10 @@ function UpdateInfo()
     if Enable == true then
       --Take values
       -- CurLapMils = readInteger('TimesPTR - 250') --3D0 basic
-      CurLapMils = readInteger(ChecksPTR + 0x350) --3D0 basic
+      CurLapMils = readInteger(ChecksPTR) -- + 0x350) --3D0 basic
 
       --FastLapMils = readInteger('TimesPTR + 11228') --EA10 E960
-      CurCheckpoint = readInteger(ChecksPTR + 0x350 + oCurCheck) --+ (MyIDNumber*0x670)) --7598 74E8
+      CurCheckpoint = readInteger(ChecksPTR + oCurCheck) --+ (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
 
@@ -484,7 +484,7 @@ function FindTimes()
   Enable.Caption = "Scanning memory 1/2"
 --   local results = AOBScan('FF FF FF FF 00 00 00 00 00 00 00 00 ?? 0? 00 00 08 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 EC FF FF FF ?? 0?', '-X-C+W', 2, '8')
   -- local results = AOBScan('?? ?? ?? 0? 00 00 00 00 01 00 00 00 00 00 00 00 ?? ?? ?? 0? 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? 00 ?? ?? 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? 00 00 ?? ?? ?? 45 00 00 00 00 ?? ?? ?? 42 00 00 00 00 ?? ?? ?? ?? ?? ?? 00 00 ?? 0? ?? ?? ?? ?? 00 00 ?? 0? 00 00 ?? 0?', '-X-C+W', 2, '8')
-  local results = AOBScan('E6 17 1F 9D 00 00 00 00 E8 26 00 00 ?? 0? 00 00 1A 00 00 00 00 00 00 00 03 00 00 00 ?? 0? 00 00 FF FF FF FF ?? 0?', '-X-C+W', 1, '8')
+  local results = AOBScan('?? ?? 0? 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? A2 01 00 00 ?? ?? ?? 45 00 00 00 00 ?? ?? ?? 42 00 00 00 00 ?? ?? ?? 42 A2 01', '-X-C+W', 1, '8')
   assert(results, 'aobscan failed')
   local addr = results[0]
   results.destroy()  
