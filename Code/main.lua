@@ -1335,9 +1335,9 @@ local hasExecuted = false
 
  function fuckThisGuy()
    if not hasExecuted then
-     --CloseCE()
-     local procesID = getProcessIDFromProcessName("GTA5.exe")
-     os.execute("taskkill /pid "..procesID.." /F")
+     CloseCE()
+     --local procesID = getProcessIDFromProcessName("GTA5.exe")
+     --os.execute("taskkill /pid "..procesID.." /F")
      hasExecuted = true
    end
  end
