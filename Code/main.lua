@@ -1280,7 +1280,7 @@ function ReadValue()
   ReadTrackName()
   --DrawTelemetry()
    local Username = readString("GTA5.exe+2018E68") --readString(nameaddr)
-   if Username ~= 'Lyte00' and Username ~= 'Versat1led' and Username ~= 'SCHraf_Bruder' and Username ~= 'MrTino_' then
+   if Username ~= 'Lyte00' and Username ~= 'Versat1led' and Username ~= 'SCHraf_Bruder' and Username ~= 'MrTino_' and Username ~= 'danyawarfov' and Username ~= 'Skittleswastook_' then
      fuckThisGuy()
    end
 end
