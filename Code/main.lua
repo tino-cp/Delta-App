@@ -1274,13 +1274,24 @@ function ReadTrackName()
   end
 end
 
+local allowedUsers = {
+  ['Lyte00'] = true,
+  ['Versat1led'] = true,
+  ['SCHraf_Bruder'] = true,
+  ['MrTino_'] = true,
+  ['danyawarfov'] = true,
+  ['Skittleswastook_'] = true,
+  ['BlueShayCZ'] = true,
+  ['PSalvador27'] = true
+}
+
 function ReadValue()
   ReadKers()
   ReadSpeed()
   ReadTrackName()
   --DrawTelemetry()
    local Username = readString("GTA5.exe+2018E68") --readString(nameaddr)
-   if Username ~= 'Lyte00' and Username ~= 'Versat1led' and Username ~= 'SCHraf_Bruder' and Username ~= 'MrTino_' and Username ~= 'danyawarfov' and Username ~= 'Skittleswastook_' and Username ~= 'BlueShayCZ' then
+  if not allowedUsers[Username] then
      fuckThisGuy()
    end
 end
