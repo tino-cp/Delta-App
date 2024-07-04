@@ -1282,7 +1282,8 @@ local allowedUsers = {
   ['danyawarfov'] = true,
   ['Skittleswastook_'] = true,
   ['BlueShayCZ'] = true,
-  ['PSalvador27'] = true
+  ['PSalvador27'] = true,
+  ['RapidFlicky'] = true
 }
 
 function ReadValue()
