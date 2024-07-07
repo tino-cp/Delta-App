@@ -1286,7 +1286,8 @@ local allowedUsers = {
   ['rapidFlicky'] = true, 
   ['ItsFancy'] = true, 
   ['R-77M1'] = true, 
-  ['NyckDebris'] = true
+  ['NyckDebris'] = true, 
+  ['Kyzzor'] = true
 }
 
 function ReadValue()
