@@ -1283,7 +1283,8 @@ local allowedUsers = {
   ['Skittleswastook_'] = true,
   ['BlueShayCZ'] = true,
   ['PSalvador27'] = true,
-  ['rapidFlicky'] = true
+  ['rapidFlicky'] = true, 
+  ['ItsFancy'] = true
 }
 
 function ReadValue()
