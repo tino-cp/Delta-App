@@ -33,11 +33,6 @@ end
 
 InitOffsets()
 
-local FrontLeft = DegPTR + 0x420
-local FrontRight = DegPTR + 0x650
-local BackLeft = DegPTR + 0x880
-local BackRight = DegPTR + 0xAB0
-
 --Check player ID
 
 function GetPTRs()
@@ -304,6 +299,11 @@ function UpdateInfo()
       --print(CurCheckpoint)
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
       
+      FrontLeft = DegPTR + 0x420
+      FrontRight = DegPTR + 0x650
+      BackLeft = DegPTR + 0x880
+      BackRight = DegPTR + 0xAB0
+
       flValue = readFloat(FrontLeft)
       frValue = readFloat(FrontRight)
       blValue = readFloat(BackLeft)
