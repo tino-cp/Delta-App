@@ -1296,11 +1296,6 @@ function ReadTrackName()
 end
 
 function ReadDeg()
-  local 
-  if Deg ~= nil then
-    Deg = Deg * 10 //1 /10
-    return Deg
-  end
 end
 
 local allowedUsers = {
