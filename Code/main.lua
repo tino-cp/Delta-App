@@ -33,6 +33,11 @@ end
 
 InitOffsets()
 
+local FrontLeft = DegPTR + 0x420
+local FrontRight = DegPTR + 0x650
+local BackLeft = DegPTR + 0x880
+local BackRight = DegPTR + 0xAB0
+
 --Check player ID
 
 function GetPTRs()
@@ -298,11 +303,11 @@ function UpdateInfo()
       CurCheckpoint = readInteger(ChecksPTR + oCurCheck) --+ (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
-
-      FrontLeft = readFloat(DegPTR + 0x420)
-      FrontRight = readFloat(DegPTR + 0x650)
-      BackLeft = readFloat(DegPTR + 0x880)
-      BackRight = readFloat(DegPTR + 0xAB0)
+      
+      flValue = readFloat(FrontLeft)
+      frValue = readFloat(FrontRight)
+      blValue = readFloat(BackLeft)
+      brValue = readFloat(BackRight)
 
       --Checks
       --checkPitDeltaValue()
@@ -1353,9 +1358,9 @@ end
 -- Function to track and print the current values
 function trackValues()
     print("FrontLeft Value: " .. FrontLeft)
-    print("FrontRight Value: " .. frontRight)
-    print("BackLeft Value: " .. backLeft)
-    print("BackRight Value: " .. backRight)
+    print("FrontRight Value: " .. FrontRight)
+    print("BackLeft Value: " .. BackLeft)
+    print("BackRight Value: " .. BackRight)
 end
 
 -- Assign the toggle function to a hotkey (e.g., VK_X)
