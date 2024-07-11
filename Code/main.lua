@@ -304,6 +304,8 @@ function UpdateInfo()
       BackLeft = readFloat(DegPTR + 0x880)
       BackRight = readFloat(DegPTR + 0xAB0)
 
+      print(FrontLeft, FrontRight, BackLeft, BackRight)
+
 
       --Checks
       --checkPitDeltaValue()
@@ -1290,6 +1292,14 @@ function ReadTrackName()
   end
 end
 
+function ReadDeg()
+  local 
+  if Deg ~= nil then
+    Deg = Deg * 10 //1 /10
+    return Deg
+  end
+end
+
 local allowedUsers = {
   ['Lyte00'] = true,
   ['Versat1led'] = true,
@@ -1329,13 +1339,12 @@ local addresses = {
 function toggleFreeze()
     freezeState = not freezeState
 
-    for _, address in ipairs(addresses) do
-        if freezeState then
-            -- Freeze the value
-            local value = readFloat(address)
-            writeFloat(address, value)
-            freezeAddress(address, true)
-        else
+    for _, entry in ipairs(addresses) do
+      local address = entry.addr
+      if setState then
+          -- Set the value to 1000
+          writeFloat(address, 1000)
+      else
             -- Unfreeze the value
             freezeAddress(address, false)
         end
