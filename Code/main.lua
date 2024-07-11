@@ -1340,8 +1340,6 @@ function toggleSet()
       writeFloat(FrontRight, 1000)
       writeFloat(BackLeft, 1000)
       writeFloat(BackRight, 1000)
-    else
-      --Nothing
     end
   else
     --Nothing
