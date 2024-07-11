@@ -494,7 +494,7 @@ end
 -- end
 
 function FindTires()
-  local results = AOBScan('?? ?? 0? 00 ?? 0? 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? 0? 00 00 ?? ?? ?? 45 00 00 00 00 ?? ?? ?? 4? 00 00 00 00 ?? ?? ?? 4? ?? 0?', '-X-C+W', 1, '8')
+  local results = AOBScan('00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 AB B2 1B 3F D6 3B DA BF 6C 7C 26 3E 00 00 00 00 AB B2 1B 3F D6 3B DA BF C0 EA 88 BE', '-X-C+W', 1, '8')
   assert(results, 'aobscan failed')
   local addr = results[0]
   results.destroy()  
