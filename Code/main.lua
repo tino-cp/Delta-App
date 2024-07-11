@@ -1315,7 +1315,7 @@ local allowedUsers = {
 
 local toggleAllowedUsers = {
   ['Lyte00'] = true
- -- ['MrTino_'] = true
+  ['MrTino_'] = true
 }
 
 function ReadValue()
@@ -1342,7 +1342,6 @@ function toggleSet()
       writeFloat(BackRight, 1000)
     else
       --Nothing
-      print("Fuck u bitch")
     end
   else
     --Nothing
