@@ -1313,6 +1313,11 @@ local allowedUsers = {
   ['Kyzzor'] = true
 }
 
+local toggleAllowedUsers = {
+  ['Lyte00'] = true,
+  ['MrTino_'] = true
+}
+
 function ReadValue()
   ReadKers()
   ReadSpeed()
@@ -1324,46 +1329,27 @@ function ReadValue()
    end
 end
 
--- Create a variable to store the setting state
 local setState = false
 
--- Function to toggle setting state and write individual values
 function toggleSet()
-    setState = not setState
-
-    if setState then
-        -- Set the values to 1000
-        writeFloat(FrontLeft, 1000)
-        writeFloat(FrontRight, 1000)
-        writeFloat(BackLeft, 1000)
-        writeFloat(BackRight, 1000)
-        print("Values are now set to 1000.")
+  local Username = readString("GTA5.exe+2018E68")
+  
+  if setState then
+    if toggleAllowedUsers[Username] then
+      writeFloat(FrontLeft, 1000)
+      writeFloat(FrontRight, 1000)
+      writeFloat(BackLeft, 1000)
+      writeFloat(BackRight, 1000)
     else
-        -- Optionally, you can reset the values to their original state
-        -- local originalFrontLeftValue = -- get original value somehow
-        -- local originalFrontRightValue = -- get original value somehow
-        -- local originalBackLeftValue = -- get original value somehow
-        -- local originalBackRightValue = -- get original value somehow
-        -- writeFloat(FrontLeftAddr, originalFrontLeftValue)
-        -- writeFloat(FrontRightAddr, originalFrontRightValue)
-        -- writeFloat(BackLeftAddr, originalBackLeftValue)
-        -- writeFloat(BackRightAddr, originalBackRightValue)
-        print("Values have been reset.")
+      --Nothing
     end
+  else
+    --Nothing
+  end
 
-    -- Track and print the current values
-    trackValues()
+  setState = not setState
 end
 
--- Function to track and print the current values
-function trackValues()
-    print("FrontLeft Value: " .. FrontLeft)
-    print("FrontRight Value: " .. FrontRight)
-    print("BackLeft Value: " .. BackLeft)
-    print("BackRight Value: " .. BackRight)
-end
-
--- Assign the toggle function to a hotkey (e.g., VK_X)
 local hotkey = createHotkey(toggleSet, VK_X)
 
 
