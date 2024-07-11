@@ -3,7 +3,8 @@ Build_Version = 'v1.0.1'
 openProcess'GTA5.exe'
 autoAssemble([[
 unregistersymbol(adr)
-unregistersymbol(TimesPTR)]])
+unregistersymbol(TimesPTR)
+unregistersymbol(TirePTR)]])
 markMyRid = -1
 LoadedTime = false
 ADR = 0
@@ -266,6 +267,8 @@ function UpdateInfo()
     StartDetect.Caption='STOP'
 
     ChecksPTR = getAddress('TimesPTR')
+    DegPTR = getAddress('TirePTR')
+
     ForLogs_TrackName= readString('GTA5.exe+2016E40') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
       CanWrite=false
@@ -295,6 +298,12 @@ function UpdateInfo()
       CurCheckpoint = readInteger(ChecksPTR + oCurCheck) --+ (MyIDNumber*0x670)) --7598 74E8
       --print(CurCheckpoint)
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
+
+      FrontLeft = readFloat(DegPTR + 0x420)
+      FrontRight = readFloat(DegPTR + 0x650)
+      BackLeft = readFloat(DegPTR + 0x880)
+      BackRight = readFloat(DegPTR + 0xAB0)
+
 
       --Checks
       --checkPitDeltaValue()
@@ -479,6 +488,13 @@ end
 --   registerSymbol('adr',addr)
 -- end
 
+function FindTires()
+  local results = AOBScan('?? ?? 0? 00 ?? 0? 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? 0? 00 00 ?? ?? ?? 45 00 00 00 00 ?? ?? ?? 4? 00 00 00 00 ?? ?? ?? 4? ?? 0?', '-X-C+W', 1, '8')
+  assert(results, 'aobscan failed')
+  local addr = results[0]
+  results.destroy()  
+  registerSymbol('TirePTR',addr)
+end
 
 function FindTimes()
   Enable.Caption = "Scanning memory 1/2"
@@ -602,7 +618,7 @@ function Startup()
   --FindAdr()
   FindTimes()
   FindCar()
-
+  FindTires()
   ActivateApp()
   -- if SteamVersion.Checked == true then ADR = 0 end
   -- if NonSteamVersion.Checked == true then ADR = 1 end
@@ -1300,6 +1316,41 @@ function ReadValue()
      fuckThisGuy()
    end
 end
+
+local freezeState = false
+local addresses = {
+    FrontLeftAddr,
+    FrontRightAddr,
+    BackLeftAddr,
+    BackRightAddr
+}
+
+-- Function to toggle freezing state
+function toggleFreeze()
+    freezeState = not freezeState
+
+    for _, address in ipairs(addresses) do
+        if freezeState then
+            -- Freeze the value
+            local value = readFloat(address)
+            writeFloat(address, value)
+            freezeAddress(address, true)
+        else
+            -- Unfreeze the value
+            freezeAddress(address, false)
+        end
+    end
+
+    if freezeState then
+        print("Values are now frozen.")
+    else
+        print("Values are now unfrozen.")
+    end
+end
+
+-- Assign the toggle function to a hotkey (The key X)
+local hotkey = createHotkey(toggleFreeze, VK_X)
+
 
 --xOffset = 0
 --
