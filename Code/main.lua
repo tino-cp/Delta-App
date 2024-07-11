@@ -1314,7 +1314,7 @@ local allowedUsers = {
 }
 
 local toggleAllowedUsers = {
-  ['Lyte00'] = true
+  ['Lyte00'] = true,
   ['MrTino_'] = true
 }
 
