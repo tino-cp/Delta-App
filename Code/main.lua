@@ -1319,38 +1319,47 @@ function ReadValue()
    end
 end
 
-local freezeState = false
-local addresses = {
-    FrontLeftAddr,
-    FrontRightAddr,
-    BackLeftAddr,
-    BackRightAddr
-}
+-- Create a variable to store the setting state
+local setState = false
 
--- Function to toggle freezing state
-function toggleFreeze()
-    freezeState = not freezeState
+-- Function to toggle setting state and write individual values
+function toggleSet()
+    setState = not setState
 
-    for _, entry in ipairs(addresses) do
-      local address = entry.addr
-      if setState then
-          -- Set the value to 1000
-          writeFloat(address, 1000)
-      else
-            -- Unfreeze the value
-          --freezeAddress(address, false)
-      end
-    end
-
-    if freezeState then
-        print("Values are now frozen.")
+    if setState then
+        -- Set the values to 1000
+        writeFloat(FrontLeft, 1000)
+        writeFloat(FrontRight, 1000)
+        writeFloat(BackLeft, 1000)
+        writeFloat(BackRight, 1000)
+        print("Values are now set to 1000.")
     else
-        print("Values are now unfrozen.")
+        -- Optionally, you can reset the values to their original state
+        -- local originalFrontLeftValue = -- get original value somehow
+        -- local originalFrontRightValue = -- get original value somehow
+        -- local originalBackLeftValue = -- get original value somehow
+        -- local originalBackRightValue = -- get original value somehow
+        -- writeFloat(FrontLeftAddr, originalFrontLeftValue)
+        -- writeFloat(FrontRightAddr, originalFrontRightValue)
+        -- writeFloat(BackLeftAddr, originalBackLeftValue)
+        -- writeFloat(BackRightAddr, originalBackRightValue)
+        print("Values have been reset.")
     end
+
+    -- Track and print the current values
+    trackValues()
 end
 
--- Assign the toggle function to a hotkey (The key X)
-local hotkey = createHotkey(toggleFreeze, VK_X)
+-- Function to track and print the current values
+function trackValues()
+    print("FrontLeft Value: " .. FrontLeft)
+    print("FrontRight Value: " .. frontRight)
+    print("BackLeft Value: " .. backLeft)
+    print("BackRight Value: " .. backRight)
+end
+
+-- Assign the toggle function to a hotkey (e.g., VK_X)
+local hotkey = createHotkey(toggleSet, VK_X)
 
 
 --xOffset = 0
