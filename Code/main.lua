@@ -304,7 +304,10 @@ function UpdateInfo()
       BackLeft = readFloat(DegPTR + 0x880)
       BackRight = readFloat(DegPTR + 0xAB0)
 
-      print(FrontLeft, FrontRight, BackLeft, BackRight)
+      print(FrontLeft)
+      print(FrontRight)
+      print(BackLeft)
+      print(BackRight)
 
 
       --Checks
@@ -1346,8 +1349,8 @@ function toggleFreeze()
           writeFloat(address, 1000)
       else
             -- Unfreeze the value
-            freezeAddress(address, false)
-        end
+          --freezeAddress(address, false)
+      end
     end
 
     if freezeState then
