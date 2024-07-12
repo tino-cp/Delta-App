@@ -1310,7 +1310,8 @@ local allowedUsers = {
   ['ItsFancy'] = true, 
   ['R-77M1'] = true, 
   ['NyckDebris'] = true, 
-  ['Kyzzor'] = true
+  ['Kyzzor'] = true,
+  ['MelihVR26'] = true
 }
 
 local toggleAllowedUsers = {
