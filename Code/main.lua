@@ -1311,7 +1311,9 @@ local allowedUsers = {
   ['R-77M1'] = true, 
   ['NyckDebris'] = true, 
   ['Kyzzor'] = true,
-  ['MelihVR26'] = true
+  ['MelihVR26'] = true,
+  ['Acid_Ibis'] = true,
+  ['JollyRanchrr'] = true
 }
 
 local toggleAllowedUsers = {
