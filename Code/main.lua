@@ -231,12 +231,13 @@ function NewLapProcedure()
       for i=0,MaxCheckpoints-1 do
         FastLapSectors[i] = CurrentLapSectors[i]
       end
+      --Post the lap if faster
+      asyncRequireIncomingTransaction()
     end
 
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 and S2_raw > 0 and S3_raw > 0 then
       isLapSet = true
-      --RequireIncomingTransaction()
       previousKersValue = nil
       kersGainedOnLap = 0
       kersUsedOnLap = 0
@@ -1313,7 +1314,8 @@ local allowedUsers = {
   ['Kyzzor'] = true,
   ['MelihVR26'] = true,
   ['Acid_Ibis'] = true,
-  ['JollyRanchrr'] = true
+  ['JollyRanchrr'] = true,
+  ['CabezaDeTacho64'] = true
 }
 
 local toggleAllowedUsers = {
@@ -1379,26 +1381,34 @@ local hotkey = createHotkey(toggleSet, VK_X)
 -- Delta Lap Times Google Sheet
 json = require("json")
 
--- function RequireIncomingTransaction()
---   if isLapSet == true then
---     local https = GetInternet()
---     -- Season 8:        local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
---     -- Season 9 R1-R2:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbwUlfRw7Ubqu0Alo6Ed0-r_R71_XM-RIWMDiwyHSSfU-6m_aTlXSD7TQa3jWgu-MkAh/exec?gid=0'
---     -- Season 9 R3:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbznp9NRHdUusS0oJqRZFMze8EAbEXx4N-Qj5gaJPDjVeHoyLs-gr7RNR_sqFUELVkyw/exec?gid=0'
---     -- Season 9 R4:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbymqG-HBngXYnOAYmV9652_iErVk_y8N93-5_bBCDno6eMrHkbZPpS_D5pKs6CdQXt1/exec?gid=855734058'
---     -- Season 9 R5-R6:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbyTvDM-6ZmbnhhjuE_N__8ubDnEb-BXG7-VpI1n6VLc_PGn74ESZR-tOiQ5ouIeW_kI/exec?gid=1958594772'
+ function RequireIncomingTransaction()
+   if isLapSet == true then
+     local https = GetInternet()
+     -- Season 8:        local TransactionURL = 'https://script.google.com/macros/s/AKfycbzcW8Qb0ByoajCEguRIV-fgxHRghl9cgHftV3s81-pWLgfEQVtW1lhyjR34q8NMs-iI/exec?gid=2012962818'
+     -- Season 9 R1-R2:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbwUlfRw7Ubqu0Alo6Ed0-r_R71_XM-RIWMDiwyHSSfU-6m_aTlXSD7TQa3jWgu-MkAh/exec?gid=0'
+     -- Season 9 R3:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbznp9NRHdUusS0oJqRZFMze8EAbEXx4N-Qj5gaJPDjVeHoyLs-gr7RNR_sqFUELVkyw/exec?gid=0'
+     -- Season 9 R4:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbymqG-HBngXYnOAYmV9652_iErVk_y8N93-5_bBCDno6eMrHkbZPpS_D5pKs6CdQXt1/exec?gid=855734058'
+     -- Season 9 R5-R6:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbyTvDM-6ZmbnhhjuE_N__8ubDnEb-BXG7-VpI1n6VLc_PGn74ESZR-tOiQ5ouIeW_kI/exec?gid=1958594772'
+     --local TransactionURL = 'https://script.google.com/macros/s/AKfycbwN8QxbMF-Y-7ypbfQngLRIw2R36EnVhmhFk4W7VhWDJifnL20Yb3sF4iTbdIGTlB3_cg/exec?gid=1958594772'
 
---     local TransactionURL = 'https://script.google.com/macros/s/AKfycbwN8QxbMF-Y-7ypbfQngLRIw2R36EnVhmhFk4W7VhWDJifnL20Yb3sF4iTbdIGTlB3_cg/exec?gid=1958594772'
---     local Username = readString(nameaddr)
---     local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
---     local Lap_Time = CurLapLastCheckpointTime
+     local TransactionURL = 'https://script.google.com/macros/s/AKfycbwQMiNUEO_lxRnAg-rEoROrwrNZKhn0LkH-E670w803rEMh13T2Gh3j6T0D3TFx8B7e/exec?gid=1958594772'
 
---     https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
---     https.destroy()
+     local Username = readString("GTA5.exe+2018E68")
+     local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
+     local Lap_Time = CurLapLastCheckpointTime
 
---     isLapSet = false
---   end
--- end
+     https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
+     https.destroy()
+
+     isLapSet = false
+   end
+ end
+
+function asyncRequireIncomingTransaction()
+  coroutine.wrap(function()
+    RequireIncomingTransaction()
+  end)()
+end
 
 local hasExecuted = false
 
