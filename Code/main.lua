@@ -232,7 +232,7 @@ function NewLapProcedure()
         FastLapSectors[i] = CurrentLapSectors[i]
       end
       --Post the lap if faster
-      asyncRequireIncomingTransaction()
+      RunTransactionInThread()
     end
 
     --LOGS ONLINE
@@ -1402,10 +1402,10 @@ json = require("json")
    end
  end
 
-function asyncRequireIncomingTransaction()
-  coroutine.wrap(function()
+function RunTransactionInThread()
+  createNativeThread(function()
     RequireIncomingTransaction()
-  end)()
+  end)
 end
 
 local hasExecuted = false
