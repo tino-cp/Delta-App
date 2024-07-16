@@ -20,13 +20,16 @@ setPosition = 1
 setFont = 0
 
 function InitOffsets()
-  pCNetPlayerInfo = 0xA8 --0xA0
+  pCPed = 0x8
+  pCPlayerInfo = 0x10A8
+  pCNavigation = 0x30
+  pCNetPlayerInfo = 0xA0
   pCNetPed = 0x240
   oNumPlayers = 0x188
-  oRid = 0xE8
-  pCPed = 0x1964 --0x0240 --0x1964 --0x8
-  pCPlayerInfo = 0x0D80 --0x10A8
+  -- CPlayerInfo Offsets
   oName = 0xFC
+  oRid =0xE8
+
   oCurCheck = 0x196C8 --0xAB630 --0x17668 --0x11578
   oCurLap = 0x196C0 --0x11570
 end
@@ -140,7 +143,7 @@ function InitTrackInfo()
   S3_raw=0
   MaxCheckpoints = readInteger('GTA5.exe+26A32DC') -- 1  --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('GTA5.exe+2016E40')--readString('adr + 6051E150')
-  UI.Caption = Track_Name.." Delta App Online 1.2.9"
+  UI.Caption = Track_Name.." - Delta App Online 1.2.10"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
   CurrentLapSectors = {}
@@ -233,11 +236,10 @@ function NewLapProcedure()
       end
     end
 
-    RunTransactionInThread()
-
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 and S2_raw > 0 and S3_raw > 0 then
       isLapSet = true
+      RunTransactionInThread()
       previousKersValue = nil
       kersGainedOnLap = 0
       kersUsedOnLap = 0
@@ -260,7 +262,7 @@ function UpdateInfo()
     LoadFLButton.Enabled = false
     LogBuildingButton.Enabled = false
 
-    UI.Caption = "Delta App Online 1.2.9"
+    UI.Caption = "Delta App Online 1.2.10"
   elseif Enable == false then
     getAdr()
     UpdateCar()
