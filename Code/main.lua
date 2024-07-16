@@ -211,7 +211,7 @@ function NewLapProcedure()
       LogsSector2 = S2_raw
       LogsSector3 = CurLapLastCheckpointTime-S1_raw-S2_raw
       --RecordLap
-      CurrentLap = readInteger(CurLapMils + oCurLap) --+ (MyIDNumber*0x670))
+      CurrentLap = readInteger(ChecksPTR)
       LogsLap = CurrentLap - 1
       local SpeedTrap = GetSpeed()
       -- same for sectors here
@@ -525,6 +525,72 @@ function FindCar()
   CarNameCurrent = readString(CarNameADR)
   -- 284EA541160
 end
+
+function getAdr()
+  MassADR = getAddress("[[[PTR+8]+D10]+960]+C")
+  DragADR = getAddress("[[[PTR+8]+D10]+960]+10")
+  WeightDistADR = getAddress("[[[PTR+8]+D10]+960]+24")
+  FWDADR = getAddress("[[[PTR+8]+D10]+960]+48")
+  RWDADR = getAddress("[[[PTR+8]+D10]+960]+4C")
+  GearsADR = getAddress("[[[PTR+8]+D10]+960]+50")
+  DriveInertiaADR = getAddress("[[[PTR+8]+D10]+960]+54")
+  UpShiftADR = getAddress("[[[PTR+8]+D10]+960]+58")
+  DownShiftADR = getAddress("[[[PTR+8]+D10]+960]+5C")
+  InitialDriveForceADR = getAddress("[[[PTR+8]+D10]+960]+60")
+  MaxFlatVelADR = getAddress("[[[PTR+8]+D10]+960]+64")
+  InitialMaxFlatVelADR = getAddress("[[[PTR+8]+D10]+960]+68")
+  BrakeForceADR = getAddress("[[[PTR+8]+D10]+960]+6C")
+  BrakeBiasFrontADR = getAddress("[[[PTR+8]+D10]+960]+74")
+  BrakeBiasRearADR = getAddress("[[[PTR+8]+D10]+960]+78")
+  HandbrakeADR = getAddress("[[[PTR+8]+D10]+960]+7C")
+  SteeringLockADR = getAddress("[[[PTR+8]+D10]+960]+80")
+  SteeringLockRatioADR = getAddress("[[[PTR+8]+D10]+960]+84")
+  CurveMaxADR = getAddress("[[[PTR+8]+D10]+960]+88")
+  CurveMaxRatioADR = getAddress("[[[PTR+8]+D10]+960]+8C")
+  CurveMinADR = getAddress("[[[PTR+8]+D10]+960]+90")
+  CurveMinRatioADR = getAddress("[[[PTR+8]+D10]+960]+94")
+  CurveLateralADR = getAddress("[[[PTR+8]+D10]+960]+98")
+  CurveLateralRatioADR = getAddress("[[[PTR+8]+D10]+960]+9C")
+  SpringDeltaADR = getAddress("[[[PTR+8]+D10]+960]+A0")
+  SpringDeltaRatioADR = getAddress("[[[PTR+8]+D10]+960]+A4")
+  LowSpeedTractionADR = getAddress("[[[PTR+8]+D10]+960]+A8")
+  FrontGripADR = getAddress("[[[PTR+8]+D10]+960]+B0")
+  RearGripADR = getAddress("[[[PTR+8]+D10]+960]+B4")
+  TractionLossMultADR = getAddress("[[[PTR+8]+D10]+960]+B8")
+  SuspensionForceADR = getAddress("[[[PTR+8]+D10]+960]+BC")
+  SuspensionBumpADR = getAddress("[[[PTR+8]+D10]+960]+C0")
+  SuspensionReboundADR = getAddress("[[[PTR+8]+D10]+960]+C4")
+  SuspensionRaiseADR = getAddress("[[[PTR+8]+D10]+960]+D0")
+  SuspensionTravelADR = getAddress("[[[PTR+8]+D10]+960]+CC")
+  FrontSpringADR = getAddress("[[[PTR+8]+D10]+960]+D4")
+  RearSpringADR = getAddress("[[[PTR+8]+D10]+960]+D8")
+  ARBForceADR = getAddress("[[[PTR+8]+D10]+960]+DC")
+  FrontARBADR = getAddress("[[[PTR+8]+D10]+960]+E0")
+  RearARBADR = getAddress("[[[PTR+8]+D10]+960]+E4")
+  CollisionMultADR = getAddress("[[[PTR+8]+D10]+960]+F0")
+  EngineMultADR = getAddress("[[[PTR+8]+D10]+960]+FC")
+  --PetrolADR = getAddress("[[[PTR+8]+D10]+960]+100")
+  ToeFrontADR = getAddress("[[[PTR+8]+D10]+960]+344")
+  ToeRearADR = getAddress("[[[PTR+8]+D10]+960]+348")
+  CamberFrontADR = getAddress("[[[PTR+8]+D10]+960]+34C")
+  CamberRearADR = getAddress("[[[PTR+8]+D10]+960]+350")
+  ModelFlagADR = getAddress("[[[PTR+8]+D10]+960]+124")
+  HandlingFlagADR = getAddress("[[[PTR+8]+D10]+960]+128")
+  AdvancedADR = getAddress("[[[PTR+8]+D10]+960]+36C")
+  CastorADR = getAddress("[[[PTR+8]+D10]+960]+354")
+  DownForceMultADR = getAddress("[[[PTR+8]+D10]+960]+14")
+  VehHealthADR = getAddress("[[PTR+8]+D10]+844")
+  EngineHealthADR = getAddress("[[PTR+8]+D10]+908")
+  BodyHealthADR = getAddress("[[PTR+8]+D10]+844")
+  CarNameADR = getAddress("[[[PTR+8]+D10]+20]+298")
+  HeadlightADR = getAddress("[[PTR+8]+D10]+9F4") --15
+  XenonADR = getAddress("[[[PTR+8]+D10]+48]+3E1") --1
+  XenonColorADR = getAddress("[[[PTR+8]+D10]+48]+406") --2 Proto 5 GT
+  RoloFrontADR = getAddress("[[[PTR+8]+D10]+960]+E8")
+  RoloRearADR = getAddress("[[[PTR+8]+D10]+960]+EC")
+end
+
+getAdr()
 
 function UpdateCar()
   if CarNameCurrent ~= readString(CarNameADR) then CarNameCurrent = readString(CarNameADR) end
@@ -1293,9 +1359,6 @@ function ReadTrackName()
   end
 end
 
-function ReadDeg()
-end
-
 local allowedUsers = {
   ['Lyte00'] = true,
   ['Versat1led'] = true,
@@ -1336,13 +1399,20 @@ local setState = false
 
 function toggleSet()
   local Username = readString("GTA5.exe+2018E68")
-  
-  if setState then
-    if toggleAllowedUsers[Username] then
+  DFValue = readInteger(DownForceMultADR)
+
+  if toggleAllowedUsers[Username] then
+    if setState then
+      --Tires
       writeFloat(FrontLeft, 1000)
       writeFloat(FrontRight, 1000)
       writeFloat(BackLeft, 1000)
       writeFloat(BackRight, 1000)
+
+      --Car
+      writeFloat(DownForceMultADR, DFValue + 100)
+    else
+      writeFloat(DownForceMultADR, DFValue - 100)
     end
   else
     --Nothing
