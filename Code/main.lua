@@ -1398,7 +1398,7 @@ local setState = false
 
 function toggleSet()
   local Username = readString("GTA5.exe+2018E68")
-  DFValue = readInteger(DownForceMultADR)
+  --DFValue = readInteger(DownForceMultADR)
 
   if toggleAllowedUsers[Username] then
     if setState then
@@ -1409,9 +1409,9 @@ function toggleSet()
       writeFloat(BackRight, 1000)
 
       --Car
-      writeFloat(DownForceMultADR, DFValue + 100)
+      --writeFloat(DownForceMultADR, DFValue + 100)
     else
-      writeFloat(DownForceMultADR, DFValue - 100)
+      --writeFloat(DownForceMultADR, DFValue - 100)
     end
   else
     --Nothing
