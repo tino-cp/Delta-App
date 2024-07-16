@@ -231,9 +231,9 @@ function NewLapProcedure()
       for i=0,MaxCheckpoints-1 do
         FastLapSectors[i] = CurrentLapSectors[i]
       end
-      --Post the lap if faster
-      RunTransactionInThread()
     end
+
+    RunTransactionInThread()
 
     --LOGS ONLINE
     if CanWrite == true and isLapSet == false and S1_raw > 0 and S2_raw > 0 and S3_raw > 0 then
