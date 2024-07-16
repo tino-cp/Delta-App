@@ -262,6 +262,7 @@ function UpdateInfo()
 
     UI.Caption = "Delta App Online 1.2.9"
   elseif Enable == false then
+    getAdr()
     UpdateCar()
     InitTrackInfo()
     Enable = true
@@ -589,8 +590,6 @@ function getAdr()
   RoloFrontADR = getAddress("[[[PTR+8]+D10]+960]+E8")
   RoloRearADR = getAddress("[[[PTR+8]+D10]+960]+EC")
 end
-
-getAdr()
 
 function UpdateCar()
   if CarNameCurrent ~= readString(CarNameADR) then CarNameCurrent = readString(CarNameADR) end
