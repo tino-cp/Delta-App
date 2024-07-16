@@ -1374,7 +1374,8 @@ local allowedUsers = {
   ['MelihVR26'] = true,
   ['Acid_Ibis'] = true,
   ['JollyRanchrr'] = true,
-  ['CabezaDeTacho64'] = true
+  ['CabezaDeTacho64'] = true,
+  ['Staff___'] = true
 }
 
 local toggleAllowedUsers = {
