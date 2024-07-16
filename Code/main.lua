@@ -240,9 +240,6 @@ function NewLapProcedure()
     if CanWrite == true and isLapSet == false and S1_raw > 0 and S2_raw > 0 and S3_raw > 0 then
       isLapSet = true
       RunTransactionInThread()
-      previousKersValue = nil
-      kersGainedOnLap = 0
-      kersUsedOnLap = 0
       CanWrite = false
     end
   end
@@ -1468,6 +1465,10 @@ json = require("json")
 
      https.postURL(TransactionURL,"Track="..TrackName.."&Player="..Username.."&LapTime="..Lap_Time.."&S1="..S1_raw.."&S2="..S2_raw.."&S3="..S3_raw.."&CarName="..CarNameCurrent.."&KersGained="..kersGainedOnLap)
      https.destroy()
+
+     previousKersValue = nil
+     kersGainedOnLap = 0
+     kersUsedOnLap = 0
 
      isLapSet = false
    end
