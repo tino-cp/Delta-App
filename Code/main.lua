@@ -1391,7 +1391,7 @@ function ReadValue()
   --DrawTelemetry()
    local Username = readString("GTA5.exe+2018E68") --readString(nameaddr)
   if not allowedUsers[Username] then
-     fuckThisGuy()
+     --fuckThisGuy()
    end
 end
 
