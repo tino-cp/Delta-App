@@ -271,7 +271,7 @@ function UpdateInfo()
 
     ChecksPTR = getAddress('TimesPTR')
     DegPTR = getAddress('TirePTR')
-    KersAdrPTR = getAddress('KersPTR')
+    KersAdrPTR = getAddressSafe('KersPTR')
 
     ForLogs_TrackName= readString('GTA5.exe+2017E70') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
