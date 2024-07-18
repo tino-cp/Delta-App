@@ -4,7 +4,8 @@ openProcess'GTA5.exe'
 autoAssemble([[
 unregistersymbol(adr)
 unregistersymbol(TimesPTR)
-unregistersymbol(TirePTR)]])
+unregistersymbol(TirePTR)
+unregistersymbol(KersPTR)]])
 markMyRid = -1
 LoadedTime = false
 ADR = 0
@@ -141,8 +142,9 @@ function InitTrackInfo()
   S1_raw=0
   S2_raw=0
   S3_raw=0
-  MaxCheckpoints = readInteger('GTA5.exe+26A32DC') -- 1  --old CBF40 new D 16C0 del prev 97C60 928
-  local Track_Name = readString('GTA5.exe+2016E40')--readString('adr + 6051E150')
+  MaxCheckpoints = readInteger(ChecksPTR + AB3B0)
+  --MaxCheckpoints = readInteger('GTA5.exe+26A32DC') -- 1  --old CBF40 new D 16C0 del prev 97C60 928
+  local Track_Name = readString('GTA5.exe+2017E70')--readString('adr + 6051E150')
   UI.Caption = Track_Name.." - Delta App Online 1.2.10"
   CurLapLastCheckpointTime = 0
   LastCheckpoint = 100
@@ -269,8 +271,9 @@ function UpdateInfo()
 
     ChecksPTR = getAddress('TimesPTR')
     DegPTR = getAddress('TirePTR')
+    KersAdrPTR = getAddress('KersPTR')
 
-    ForLogs_TrackName= readString('GTA5.exe+2016E40') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
+    ForLogs_TrackName= readString('GTA5.exe+2017E70') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
       CanWrite=false
     end
@@ -501,6 +504,14 @@ function FindTires()
   registerSymbol('TirePTR',addr)
 end
 
+function FindKers()
+  local results = AOBScan('60 9E C7 83 03 02 00 00 60 9D C7 83 03 02 00 00 00 56 C6 83 03 02 00 00 01', '-X-C+W', 1, '')
+  assert(results, 'aobscan failed')
+  local addr = results[0]
+  results.destroy()
+  registerSymbol('KersPTR',addr)
+end
+
 function FindTimes()
   Enable.Caption = "Scanning memory 1/2"
   local results = AOBScan('?? ?? 0? 00 ?? 0? 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? 0? 00 00 ?? ?? ?? ?5 00 00 00 00 ?? ?? ?? 4? 00 00 00 00 ?? ?? ?? 4? ?? 0?', '-X-C+W', 1, '8')
@@ -606,7 +617,7 @@ function LogsSwitcher()
 end
 
 function PackLogs()
-  local ForLogs_TrackName = readString('GTA5.exe+2016E40') --readString('adr + 6051E150')
+  local ForLogs_TrackName = readString('GTA5.exe+2017E70') --readString('adr + 6051E150')
   local save_dialog = createSaveDialog(self)
   save_dialog.InitalDir = os.getenv('%USERPROFILE%')
   if save_dialog.execute() then
@@ -644,7 +655,7 @@ function SaveFastLap()
   for i=0,MaxCheckpoints-1 do
       FLdata = FLdata..FastLapSectors[i].."\n"
   end
-  local TrackName = readString('GTA5.exe+2016E40') --readString('adr + 6051E150')
+  local TrackName = readString('GTA5.exe+2017E70') --readString('adr + 6051E150')
   local save_dialog = createSaveDialog(self)
   save_dialog.InitalDir = os.getenv('%USERPROFILE%')
   if save_dialog.execute() then
@@ -671,7 +682,7 @@ function LoadFastLap()
      if load_dialog.execute() then
      file = io.open(load_dialog.FileName, "r")
      local Track = tostring(file:read())
-     if Track == readString('GTA5.exe+2016E40') then --readString('adr + 6051E150') then
+     if Track == readString('GTA5.exe+2017E70') then --readString('adr + 6051E150') then
         for i=0,MaxCheckpoints-1 do
             FastLapSectors[i] = tonumber(file:read())
         end
@@ -686,6 +697,7 @@ function Startup()
   FindTimes()
   FindCar()
   FindTires()
+  FindKers()
   ActivateApp()
   -- if SteamVersion.Checked == true then ADR = 0 end
   -- if NonSteamVersion.Checked == true then ADR = 1 end
@@ -1148,13 +1160,13 @@ end
 
 function GetKers()
   if ADR == 0 then
-    Kers = readFloat("GTA5.exe+1D8C0B0")
+    Kers = readFloat(KersAdrPTR + 168)
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
     end
   elseif ADR == 1 then
-    Kers = readFloat("GTA5.exe+1D8C0B0") --GTA5.exe+1D59BF8
+    Kers = readFloat(KersAdrPTR + 168)
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
@@ -1180,7 +1192,8 @@ function ReadKers()
   local Kers = 0
   if KersValues == 1 then
     if ADR == 0 then
-      Kers = readFloat("GTA5.exe+1D8C0B0")
+      Kers = readFloat(KersAdrPTR + 168)
+      --Kers = readFloat("GTA5.exe+1D8C0B0")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1193,7 +1206,7 @@ function ReadKers()
         previousKersValue = Kers
       end
     elseif ADR == 1 then
-      Kers = readFloat("GTA5.exe+1D8C0B0")
+      Kers = readFloat(KersAdrPTR + 168)
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1211,7 +1224,7 @@ end
 
 function GetSpeed()
    if ADR == 0 then
-       Speed = readFloat("GTA5.exe+26CE980")
+       Speed = readFloat("GTA5.exe+26CF98C")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1223,7 +1236,7 @@ function GetSpeed()
          end
        end
     elseif ADR == 1 then
-       Speed = readFloat("GTA5.exe+26CE980")
+       Speed = readFloat("GTA5.exe+26CF98C")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1241,7 +1254,7 @@ function ReadSpeed()
   local Speed = 0
   if SpeedStatus == 1 then
     if ADR == 0 then
-       Speed = readFloat("GTA5.exe+26CE980")
+       Speed = readFloat("GTA5.exe+26CF98C")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1259,7 +1272,7 @@ function ReadSpeed()
          end
        end
     elseif ADR == 1 then
-       Speed = readFloat("GTA5.exe+26CE980")
+       Speed = readFloat("GTA5.exe+26CF98C")
        if Speed ~= nil then
          if Metrics == 1 then
             Speed = Speed * 10 //1 /10
@@ -1281,10 +1294,10 @@ function ReadSpeed()
 
   if Gears == 1 then
      --RescanUNK()
-     local RPM = readFloat("GTA5.exe+2AE8314")
+     local RPM = readFloat("GTA5.exe+2AE94B4")
 
     --  local RPM = readFloat("UNK+E50") --
-     local Gear = readFloat("GTA5.exe+2591F98")
+     local Gear = readFloat("GTA5.exe+2592FA8")
      --local Gear = readInteger("UNK+FD4")
      if Gear and RPM then
         if Gear == 0 then GearLabel.Caption = "N" end
@@ -1323,9 +1336,9 @@ function ReadSpeed()
   end
 
   if Inputs == 1 then
-     local SteerPos = readFloat("GTA5.exe+261C0C4") --UNK+CA8
-     local BrakePos = readFloat("GTA5.exe+261D27C")     --GTA5.exe+25FEF30 GTA5.exe+25FF3AC GTA5.exe+25FF3B0 GTA5.exe+25FFF7C GTA5.exe+25FFF80
-     local ThrottlePos = readFloat("GTA5.exe+261D234")  --GTA5.exe+25FEEE8 GTA5.exe+25FF364 GTA5.exe+25FF368 GTA5.exe+25FFF34 GTA5.exe+25FFF38
+     local SteerPos = readFloat("GTA5.exe+261D144") --UNK+CA8
+     local BrakePos = readFloat("GTA5.exe+261E2FC")
+     local ThrottlePos = readFloat("GTA5.exe+261E2B4")
      if SteerPos ~= nil then
       if SteerPos > 0 then
         Steer.Position = ((50 - (SteerPos * (-1) * 50)) // 1)
@@ -1343,7 +1356,7 @@ end
 local runOnce = false
 
 function ReadTrackName()
-  local TrackNameNew = readString('GTA5.exe+2016E40') --readString('adr + 6051E150')
+  local TrackNameNew = readString('GTA5.exe+26FD7F0') --readString('adr + 6051E150')
   if Enable == true then
     if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
       if not runOnce then
@@ -1388,7 +1401,7 @@ function ReadValue()
   ReadSpeed()
   ReadTrackName()
   --DrawTelemetry()
-   local Username = readString("GTA5.exe+2018E68") --readString(nameaddr)
+   local Username = readString("GTA5.exe+2F00DEC") --readString(nameaddr)
   if not allowedUsers[Username] then
      fuckThisGuy()
    end
@@ -1397,7 +1410,7 @@ end
 local setState = false
 
 function toggleSet()
-  local Username = readString("GTA5.exe+2018E68")
+  local Username = readString("GTA5.exe+2F00DEC")
   --DFValue = readInteger(DownForceMultADR)
 
   if toggleAllowedUsers[Username] then
@@ -1460,7 +1473,7 @@ json = require("json")
 
      local TransactionURL = 'https://script.google.com/macros/s/AKfycbwQMiNUEO_lxRnAg-rEoROrwrNZKhn0LkH-E670w803rEMh13T2Gh3j6T0D3TFx8B7e/exec?gid=1958594772'
 
-     local Username = readString("GTA5.exe+2018E68")
+     local Username = readString("GTA5.exe+2F00DEC")
      local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
      local Lap_Time = CurLapLastCheckpointTime
 
