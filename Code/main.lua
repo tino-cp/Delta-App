@@ -142,7 +142,7 @@ function InitTrackInfo()
   S1_raw=0
   S2_raw=0
   S3_raw=0
-  MaxCheckpoints = readInteger(ChecksPTR + 0xAB3B0)
+  MaxCheckpoints = readInteger('GTA5.exe+26A435C')
   --MaxCheckpoints = readInteger('GTA5.exe+26A32DC') -- 1  --old CBF40 new D 16C0 del prev 97C60 928
   local Track_Name = readString('GTA5.exe+2017E70')--readString('adr + 6051E150')
   UI.Caption = Track_Name.." - Delta App Online 1.2.10"
