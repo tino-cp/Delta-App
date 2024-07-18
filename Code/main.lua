@@ -1388,7 +1388,8 @@ local allowedUsers = {
   ['Acid_Ibis'] = true,
   ['JollyRanchrr'] = true,
   ['CabezaDeTacho64'] = true,
-  ['Staff___'] = true
+  ['Staff___'] = true, 
+  ['RandomPyrtti'] = true
 }
 
 local toggleAllowedUsers = {
@@ -1403,7 +1404,7 @@ function ReadValue()
   --DrawTelemetry()
    local Username = readString("GTA5.exe+2F00DEC") --readString(nameaddr)
   if not allowedUsers[Username] then
-     fuckThisGuy()
+     --fuckThisGuy()
    end
 end
 
