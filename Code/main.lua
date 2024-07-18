@@ -271,7 +271,7 @@ function UpdateInfo()
 
     ChecksPTR = getAddress('TimesPTR')
     DegPTR = getAddress('TirePTR')
-    KersAdrPTR = getAddressSafe('KersPTR')
+    KersAdrPTR = getAddress('KersPTR')
 
     ForLogs_TrackName= readString('GTA5.exe+2017E70') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
@@ -694,7 +694,7 @@ end
 function Startup()
   Enable.Enabled = false
   --FindAdr()
-  FindKers()
+  --FindKers()
   FindTimes()
   FindCar()
   FindTires()
@@ -1398,7 +1398,7 @@ local toggleAllowedUsers = {
 }
 
 function ReadValue()
-  ReadKers()
+  --ReadKers()
   ReadSpeed()
   ReadTrackName()
   --DrawTelemetry()
