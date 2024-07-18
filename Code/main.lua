@@ -505,7 +505,7 @@ function FindTires()
 end
 
 function FindKers()
-  local results = AOBScan('60 9E C7 83 03 02 00 00 60 9D C7 83 03 02 00 00 00 56 C6 83 03 02 00 00 01', '-X-C+W', 1, '')
+  local results = AOBScan('FF FF FF FF FF FF FF FF D4 78 3E 00 20 21 45', '-X-C+W', 1, '')
   assert(results, 'aobscan failed')
   local addr = results[0]
   results.destroy()
@@ -1160,13 +1160,13 @@ end
 
 function GetKers()
   if ADR == 0 then
-    Kers = readFloat(KersAdrPTR + 168)
+    Kers = readFloat(KersAdrPTR + 0x117)
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
     end
   elseif ADR == 1 then
-    Kers = readFloat(KersAdrPTR + 168)
+    Kers = readFloat(KersAdrPTR + 0x117)
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
@@ -1192,7 +1192,7 @@ function ReadKers()
   local Kers = 0
   if KersValues == 1 then
     if ADR == 0 then
-      Kers = readFloat(KersAdrPTR + 168)
+      Kers = readFloat(KersAdrPTR + 0x117)
       --Kers = readFloat("GTA5.exe+1D8C0B0")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
@@ -1206,7 +1206,7 @@ function ReadKers()
         previousKersValue = Kers
       end
     elseif ADR == 1 then
-      Kers = readFloat(KersAdrPTR + 168)
+      Kers = readFloat(KersAdrPTR + 0x117)
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
