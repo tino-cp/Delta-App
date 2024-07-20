@@ -697,7 +697,7 @@ function Startup()
   --FindKers()
   FindTimes()
   FindCar()
-  FindTires()
+  --FindTires()
   ActivateApp()
   -- if SteamVersion.Checked == true then ADR = 0 end
   -- if NonSteamVersion.Checked == true then ADR = 1 end
