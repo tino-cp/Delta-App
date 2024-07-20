@@ -270,7 +270,7 @@ function UpdateInfo()
     StartDetect.Caption='STOP'
 
     ChecksPTR = getAddress('TimesPTR')
-    DegPTR = getAddress('TirePTR')
+    --DegPTR = getAddress('TirePTR')
     --KersAdrPTR = getAddress('KersPTR')
 
     ForLogs_TrackName= readString('GTA5.exe+2017E70') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
@@ -303,15 +303,15 @@ function UpdateInfo()
       --print(CurCheckpoint)
       LapProgress.Position=(((CurCheckpoint)*100)/MaxCheckpoints)
       
-      FrontLeft = DegPTR + 0x420
-      FrontRight = DegPTR + 0x650
-      BackLeft = DegPTR + 0x880
-      BackRight = DegPTR + 0xAB0
+     --FrontLeft = DegPTR + 0x420
+      --FrontRight = DegPTR + 0x650
+      --BackLeft = DegPTR + 0x880
+      --BackRight = DegPTR + 0xAB0
 
-      flValue = readFloat(FrontLeft)
-      frValue = readFloat(FrontRight)
-      blValue = readFloat(BackLeft)
-      brValue = readFloat(BackRight)
+      --flValue = readFloat(FrontLeft)
+      --frValue = readFloat(FrontRight)
+      --blValue = readFloat(BackLeft)
+     --brValue = readFloat(BackRight)
 
       --Checks
       --checkPitDeltaValue()
@@ -496,13 +496,13 @@ end
 --   registerSymbol('adr',addr)
 -- end
 
-function FindTires()
-  local results = AOBScan('00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 AB B2 1B 3F D6 3B DA BF 6C 7C 26 3E 00 00 00 00 AB B2 1B 3F D6 3B DA BF C0 EA 88 BE', '-X-C+W', 1, '')
-  assert(results, 'aobscan failed')
-  local addr = results[0]
-  results.destroy()  
-  registerSymbol('TirePTR',addr)
-end
+--function FindTires()
+--  local results = AOBScan('00 00 00 00 FF FF -- FF FF 00 00 00 00 00 00 00 80 00 00 00 00 00 -- 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 -- AB B2 1B 3F D6 3B DA BF 6C 7C 26 3E 00 00 00 --00 AB B2 1B 3F D6 3B DA BF C0 EA 88 BE', --'-X-C+W', 1, '')
+--  assert(results, 'aobscan failed')
+--  local addr = results[0]
+--  results.destroy()  
+--  registerSymbol('TirePTR',addr)
+--end
 
 function FindKers()
   local results = AOBScan('FF FF FF FF FF FF FF FF D4 78 3E 00 20 21 45', '-X-C+W', 1, '')
@@ -1408,33 +1408,33 @@ function ReadValue()
    end
 end
 
-local setState = false
+--local setState = false
 
-function toggleSet()
-  local Username = readString("GTA5.exe+2F00DEC")
+--function toggleSet()
+--  local Username = --readString("GTA5.exe+2F00DEC")
   --DFValue = readInteger(DownForceMultADR)
 
-  if toggleAllowedUsers[Username] then
-    if setState then
+--  if toggleAllowedUsers[Username] then
+  -- if setState then
       --Tires
-      writeFloat(FrontLeft, 1000)
-      writeFloat(FrontRight, 1000)
-      writeFloat(BackLeft, 1000)
-      writeFloat(BackRight, 1000)
+  --   writeFloat(FrontLeft, 1000)
+  --   writeFloat(FrontRight, 1000)
+  --   writeFloat(BackLeft, 1000)
+  --   writeFloat(BackRight, 1000)
 
       --Car
       --writeFloat(DownForceMultADR, DFValue + 100)
-    else
+  -- else
       --writeFloat(DownForceMultADR, DFValue - 100)
-    end
-  else
+--    end
+--  else
     --Nothing
-  end
+--  end
 
-  setState = not setState
-end
+ --setState = not setState
+--end
 
-local hotkey = createHotkey(toggleSet, VK_X)
+--local hotkey = createHotkey(toggleSet, VK_X)
 
 
 --xOffset = 0
