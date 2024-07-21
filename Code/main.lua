@@ -1389,7 +1389,8 @@ local allowedUsers = {
   ['JollyRanchrr'] = true,
   ['CabezaDeTacho64'] = true,
   ['Staff___'] = true, 
-  ['RandomPyrtti'] = true
+  ['RandomPyrtti'] = true,
+  ['MrBryan0'] = true
 }
 
 local toggleAllowedUsers = {
