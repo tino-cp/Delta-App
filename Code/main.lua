@@ -1391,7 +1391,8 @@ local allowedUsers = {
   ['Staff___'] = true, 
   ['RandomPyrtti'] = true,
   ['MrBryan0'] = true, 
-  ['Anthonyyy3875'] = true
+  ['Anthonyyy3875'] = true,
+  ['Skill_Max471'] = true
 }
 
 local toggleAllowedUsers = {
