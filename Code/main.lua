@@ -1393,7 +1393,8 @@ local allowedUsers = {
   ['MrBryan0'] = true, 
   ['Anthonyyy3875'] = true,
   ['Skill_Max471'] = true,
-  ['Local_Dlr'] = true
+  ['Local_Dlr'] = true, 
+  ['SkillMaxx'] = true
 }
 
 local toggleAllowedUsers = {
