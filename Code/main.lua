@@ -1407,10 +1407,10 @@ function ReadValue()
   ReadSpeed()
   ReadTrackName()
   --DrawTelemetry()
-   local Username = readString("GTA5.exe+2F00DEC") --readString(nameaddr)
-  if not allowedUsers[Username] then
-     fuckThisGuy()
-   end
+  -- local Username = readString("GTA5.exe+2F00DEC") --readString(nameaddr)
+  --if not allowedUsers[Username] then
+  --   fuckThisGuy()
+  -- end
 end
 
 --local setState = false
