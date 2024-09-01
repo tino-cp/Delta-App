@@ -1475,8 +1475,9 @@ json = require("json")
      -- Season 9 R4:     local TransactionURL = 'https://script.google.com/macros/s/AKfycbymqG-HBngXYnOAYmV9652_iErVk_y8N93-5_bBCDno6eMrHkbZPpS_D5pKs6CdQXt1/exec?gid=855734058'
      -- Season 9 R5-R6:  local TransactionURL = 'https://script.google.com/macros/s/AKfycbyTvDM-6ZmbnhhjuE_N__8ubDnEb-BXG7-VpI1n6VLc_PGn74ESZR-tOiQ5ouIeW_kI/exec?gid=1958594772'
      --local TransactionURL = 'https://script.google.com/macros/s/AKfycbwN8QxbMF-Y-7ypbfQngLRIw2R36EnVhmhFk4W7VhWDJifnL20Yb3sF4iTbdIGTlB3_cg/exec?gid=1958594772'
+     --local TransactionURL = 'https://script.google.com/macros/s/AKfycbwQMiNUEO_lxRnAg-rEoROrwrNZKhn0LkH-E670w803rEMh13T2Gh3j6T0D3TFx8B7e/exec?gid=1958594772'
 
-     local TransactionURL = 'https://script.google.com/macros/s/AKfycbwQMiNUEO_lxRnAg-rEoROrwrNZKhn0LkH-E670w803rEMh13T2Gh3j6T0D3TFx8B7e/exec?gid=1958594772'
+     local TransactionURL = 'https://script.google.com/macros/s/AKfycbxJrpr4Jrn6Zzm6jBUcYWdgVHZcvfTWz4AJ4_Y3y3KnwVmbQSGZDgBmj1lMZW2UKd-N/exec?gid=1958594772'
 
      local Username = readString("GTA5.exe+2F00DEC")
      local S3_raw = CurLapLastCheckpointTime-S1_raw-S2_raw
