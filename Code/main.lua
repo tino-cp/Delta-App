@@ -271,7 +271,6 @@ function UpdateInfo()
 
     ChecksPTR = getAddress('TimesPTR')
     --DegPTR = getAddress('TirePTR')
-    --KersAdrPTR = getAddress('KersPTR')
 
     ForLogs_TrackName= readString('GTA5.exe+2017E70') --readString('adr + 6051E150') --new E3998 del 3A388 prev A9610
     if LogsEnabled == true then
@@ -504,13 +503,13 @@ end
 --  registerSymbol('TirePTR',addr)
 --end
 
-function FindKers()
-  local results = AOBScan('FF FF FF FF FF FF FF FF D4 78 3E 00 20 21 45', '-X-C+W', 1, '')
-  assert(results, 'aobscan failed')
-  local addr = results[0]
-  results.destroy()
-  registerSymbol('KersPTR',addr)
-end
+--function FindKers()
+--  local results = AOBScan('FF FF FF FF FF FF FF FF D4 78 3E 00 20 21 45', '-X-C+W', 1, '')
+--  assert(results, 'aobscan failed')
+--  local addr = results[0]
+--  results.destroy()
+--  registerSymbol('KersPTR',addr)
+--end
 
 function FindTimes()
   Enable.Caption = "Scanning memory 1/2"
@@ -1160,13 +1159,13 @@ end
 
 function GetKers()
   if ADR == 0 then
-    Kers = readFloat(KersAdrPTR + 0x117)
+    Kers = readFloat("GTA5.exe+1D8D060")
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
     end
   elseif ADR == 1 then
-    Kers = readFloat(KersAdrPTR + 0x117)
+    Kers = readFloat("GTA5.exe+1D8D060")
     if Speed ~= nil then
       Kers = Kers * 10 //1 /10
       return Kers
@@ -1192,8 +1191,8 @@ function ReadKers()
   local Kers = 0
   if KersValues == 1 then
     if ADR == 0 then
-      Kers = readFloat(KersAdrPTR + 0x117)
-      --Kers = readFloat("GTA5.exe+1D8C0B0")
+      --Kers = readFloat(KersAdrPTR + 0x117)
+      Kers = readFloat("GTA5.exe+1D8D060")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1206,7 +1205,7 @@ function ReadKers()
         previousKersValue = Kers
       end
     elseif ADR == 1 then
-      Kers = readFloat(KersAdrPTR + 0x117)
+      Kers = readFloat("GTA5.exe+1D8D060")
       if Kers ~= nil then
         Kers = Kers * 10 //1 /10
         KersValueBar.Position = Kers
@@ -1403,7 +1402,7 @@ local toggleAllowedUsers = {
 }
 
 function ReadValue()
-  --ReadKers()
+  ReadKers()
   ReadSpeed()
   ReadTrackName()
   --DrawTelemetry()
