@@ -126,7 +126,7 @@ function ActivateApp()
   previousKersValue = nil
   kersGainedOnLap = 0
   kersUsedOnLap = 0
-  TrackName = readString('GTA5.exe+2016E40') --readString('adr + 6051E150')
+  TrackName = readString('GTA5.exe+2017E70') --readString('adr + 6051E150')
   nameaddr = "[[[WorldPTR]+pCPed]+pCPlayerInfo]+oName"
 
   Value = createTimer(nil, false)
@@ -1355,7 +1355,7 @@ end
 local runOnce = false
 
 function ReadTrackName()
-  local TrackNameNew = readString('GTA5.exe+26FD7F0') --readString('adr + 6051E150')
+  local TrackNameNew = readString('GTA5.exe+2017E70') --readString('adr + 6051E150')
   if Enable == true then
     if TrackNameNew ~= '' and TrackNameNew ~= TrackName then
       if not runOnce then
